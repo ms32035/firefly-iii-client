@@ -3,7 +3,7 @@
 """
     Firefly III API Client
 
-    This is the Python client for Firefly III API  # noqa: E501
+    This is the Python client for Firefly III API
 
     OpenAPI spec version: 0.9.0
     Contact: thegrumpydictator@gmail.com
@@ -30,12 +30,12 @@ setup(
     description="Firefly III API Client",
     author="Marcin Szymanski",
     author_email="ms32035@gmail.com",
-    url="https://github.com/m32035/firefly-iii-client",
+    url="https://github.com/ms32035/firefly-iii-client",
     keywords=["OpenAPI", "OpenAPI-Generator", "Firefly III API Client"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    This is the Python client for Firefly III API  # noqa: E501
+    This is the Python client for Firefly III API
     """
 )
