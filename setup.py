@@ -28,6 +28,7 @@ setup(
     name=NAME,
     version=VERSION,
     description="Firefly III API Client",
+    author="Marcin Szymanski",
     author_email="ms32035@gmail.com",
     url="https://github.com/m32035/firefly-iii-client",
     keywords=["OpenAPI", "OpenAPI-Generator", "Firefly III API Client"],

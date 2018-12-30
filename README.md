@@ -54,10 +54,8 @@ from pprint import pprint
 
 # Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
-
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = 'YOUR_HOST_URL'
-
 
 # create an instance of the API class
 api_instance = firefly_iii_client.AboutApi(firefly_iii_client.ApiClient(configuration))
