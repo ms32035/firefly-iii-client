@@ -1,0 +1,468 @@
+# firefly_iii_client.RuleGroupsApi
+
+All URIs are relative to *https://demo.firefly-iii.org*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete_rule_group**](RuleGroupsApi.md#delete_rule_group) | **DELETE** /api/v1/rule_groups/{id} | Delete a rule group.
+[**fire_rule_group**](RuleGroupsApi.md#fire_rule_group) | **POST** /api/v1/rule_groups/{id}/trigger | Fire the rule group on your transactions.
+[**get_rule_group**](RuleGroupsApi.md#get_rule_group) | **GET** /api/v1/rule_groups/{id} | Get a single rule group.
+[**get_rule_groups**](RuleGroupsApi.md#get_rule_groups) | **GET** /api/v1/rule_groups | List all rule groups.
+[**get_rules_by_group**](RuleGroupsApi.md#get_rules_by_group) | **GET** /api/v1/rule_groups/{id}/rules | List rules in this rule group.
+[**store_rule_group**](RuleGroupsApi.md#store_rule_group) | **POST** /api/v1/rule_groups | Store a new rule group.
+[**test_rule_group**](RuleGroupsApi.md#test_rule_group) | **GET** /api/v1/rule_groups/{id}/test | Test which transactions would be hit by the rule group. No changes will be made.
+[**update_rule_group**](RuleGroupsApi.md#update_rule_group) | **PUT** /api/v1/rule_groups/{id} | Update existing rule group.
+
+
+# **delete_rule_group**
+> delete_rule_group(id)
+
+Delete a rule group.
+
+Delete a rule group.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth): 
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = firefly_iii_client.RuleGroupsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the rule group.
+
+try:
+    # Delete a rule group.
+    api_instance.delete_rule_group(id)
+except ApiException as e:
+    print("Exception when calling RuleGroupsApi->delete_rule_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the rule group. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fire_rule_group**
+> fire_rule_group(id, start=start, end=end, accounts=accounts)
+
+Fire the rule group on your transactions.
+
+Fire the rule group on your transactions. Changes will be made by the rules in the rule group! Limit the result if you want to.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth): 
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = firefly_iii_client.RuleGroupsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the rule group.
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  (optional)
+accounts = 1,2,3 # str | Limit the testing of the rule group to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  (optional)
+
+try:
+    # Fire the rule group on your transactions.
+    api_instance.fire_rule_group(id, start=start, end=end, accounts=accounts)
+except ApiException as e:
+    print("Exception when calling RuleGroupsApi->fire_rule_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the rule group. | 
+ **start** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  | [optional] 
+ **accounts** | **str**| Limit the testing of the rule group to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_rule_group**
+> RuleGroupSingle get_rule_group(id)
+
+Get a single rule group.
+
+Get a single rule group. This does not include the rules. For that, see below.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth): 
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = firefly_iii_client.RuleGroupsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the rule group.
+
+try:
+    # Get a single rule group.
+    api_response = api_instance.get_rule_group(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RuleGroupsApi->get_rule_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the rule group. | 
+
+### Return type
+
+[**RuleGroupSingle**](RuleGroupSingle.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_rule_groups**
+> RuleGroupArray get_rule_groups(page=page)
+
+List all rule groups.
+
+List all rule groups.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth): 
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = firefly_iii_client.RuleGroupsApi(firefly_iii_client.ApiClient(configuration))
+page = 1 # int | Page number. The default pagination is 50 (optional)
+
+try:
+    # List all rule groups.
+    api_response = api_instance.get_rule_groups(page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RuleGroupsApi->get_rule_groups: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number. The default pagination is 50 | [optional] 
+
+### Return type
+
+[**RuleGroupArray**](RuleGroupArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_rules_by_group**
+> RuleArray get_rules_by_group(id, page=page)
+
+List rules in this rule group.
+
+List rules in this rule group.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth): 
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = firefly_iii_client.RuleGroupsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the rule group.
+page = 1 # int | Page number. The default pagination is 50. (optional)
+
+try:
+    # List rules in this rule group.
+    api_response = api_instance.get_rules_by_group(id, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RuleGroupsApi->get_rules_by_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the rule group. | 
+ **page** | **int**| Page number. The default pagination is 50. | [optional] 
+
+### Return type
+
+[**RuleArray**](RuleArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **store_rule_group**
+> RuleGroupSingle store_rule_group(rule_group_update)
+
+Store a new rule group.
+
+Creates a new rule group. The data required can be submitted as a JSON body or as a list of parameters.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth): 
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = firefly_iii_client.RuleGroupsApi(firefly_iii_client.ApiClient(configuration))
+rule_group_update = firefly_iii_client.RuleGroupUpdate() # RuleGroupUpdate | JSON array or key=value pairs with the necessary rule group information. See the model for the exact specifications.
+
+try:
+    # Store a new rule group.
+    api_response = api_instance.store_rule_group(rule_group_update)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RuleGroupsApi->store_rule_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rule_group_update** | [**RuleGroupUpdate**](RuleGroupUpdate.md)| JSON array or key&#x3D;value pairs with the necessary rule group information. See the model for the exact specifications. | 
+
+### Return type
+
+[**RuleGroupSingle**](RuleGroupSingle.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **test_rule_group**
+> TransactionArray test_rule_group(id, page=page, start=start, end=end, search_limit=search_limit, triggered_limit=triggered_limit, accounts=accounts)
+
+Test which transactions would be hit by the rule group. No changes will be made.
+
+Test which transactions would be hit by the rule group. No changes will be made. Limit the result if you want to.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth): 
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = firefly_iii_client.RuleGroupsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the rule group.
+page = 1 # int | Page number. The default pagination is 50 items. (optional)
+start = 2018-09-17 # str | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
+end = 2018-09-17 # str | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
+search_limit = 56 # int | Maximum number of transactions Firefly III will try. Don't set this too high, or it will take Firefly III very long to run the test. I suggest a max of 200.  (optional)
+triggered_limit = 56 # int | Maximum number of transactions the rule group can actually trigger on, before Firefly III stops. I would suggest setting this to 10 or 15. Don't go above the user's page size, because browsing to page 2 or 3 of a test result would fire the test again, making any navigation efforts very slow.  (optional)
+accounts = 1,2,3 # str | Limit the testing of the rule group to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  (optional)
+
+try:
+    # Test which transactions would be hit by the rule group. No changes will be made.
+    api_response = api_instance.test_rule_group(id, page=page, start=start, end=end, search_limit=search_limit, triggered_limit=triggered_limit, accounts=accounts)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RuleGroupsApi->test_rule_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the rule group. | 
+ **page** | **int**| Page number. The default pagination is 50 items. | [optional] 
+ **start** | **str**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional] 
+ **end** | **str**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional] 
+ **search_limit** | **int**| Maximum number of transactions Firefly III will try. Don&#39;t set this too high, or it will take Firefly III very long to run the test. I suggest a max of 200.  | [optional] 
+ **triggered_limit** | **int**| Maximum number of transactions the rule group can actually trigger on, before Firefly III stops. I would suggest setting this to 10 or 15. Don&#39;t go above the user&#39;s page size, because browsing to page 2 or 3 of a test result would fire the test again, making any navigation efforts very slow.  | [optional] 
+ **accounts** | **str**| Limit the testing of the rule group to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  | [optional] 
+
+### Return type
+
+[**TransactionArray**](TransactionArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_rule_group**
+> RuleGroupSingle update_rule_group(id, rule_group_update)
+
+Update existing rule group.
+
+Update existing rule group.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth): 
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = firefly_iii_client.RuleGroupsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the rule group.
+rule_group_update = firefly_iii_client.RuleGroupUpdate() # RuleGroupUpdate | JSON array with updated rule group information. See the model for the exact specifications.
+
+try:
+    # Update existing rule group.
+    api_response = api_instance.update_rule_group(id, rule_group_update)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RuleGroupsApi->update_rule_group: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the rule group. | 
+ **rule_group_update** | [**RuleGroupUpdate**](RuleGroupUpdate.md)| JSON array with updated rule group information. See the model for the exact specifications. | 
+
+### Return type
+
+[**RuleGroupSingle**](RuleGroupSingle.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
