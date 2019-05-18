@@ -53,7 +53,7 @@ from firefly_iii_client.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: firefly_iii_auth
-configuration = firefly_iii_client.Configuration()
+configuration = firefly_iii_client.configuration.Configuration()
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = 'YOUR_HOST_URL'
 
