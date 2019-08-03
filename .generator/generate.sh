@@ -40,8 +40,9 @@ python3 /generator/postprocess.py /build/stage
 
 USER=$(stat -c '%u' /build/src/docker-compose.yml)
 GROUP=$(stat -c '%g' /build/src/docker-compose.yml)
-chown -R $USER:$GROUP /build/stage
 
-rm -rf /build/target/*
+
+cd /build/target && ls -A1 /build/target | xargs rm -rf
 echo 'Copy stage to target'
-cp -r /build/stage/* /build/target/
+cp -r /build/stage/{.[!.],}* /build/target/
+chown -R $USER:$GROUP /build/target
