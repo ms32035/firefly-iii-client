@@ -18,9 +18,14 @@ checkStatus
 python3 /generator/preprocess.py ${SPEC_FILE} /build/firefly-iii-processed.yaml
 checkStatus
 
+cp -r /build/src /build/stage
+rm -rf /build/stage/target
+cd /build/stage && git checkout -f
+rm -rf /build/stage/.git
+
 java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar generate \
 -i /build/firefly-iii-processed.yaml \
--o /build/target \
+-o /build/stage \
 -g python \
 --git-user-id ms32035 \
 --git-repo-id firefly-iii-client \
@@ -31,8 +36,12 @@ java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-ge
 -DpackageUrl=https://github.com/ms32035/firefly-iii-client
 checkStatus
 
-python3 /generator/postprocess.py /build/target
+python3 /generator/postprocess.py /build/stage
 
-USER=$(stat -c '%u' /docker-compose.yml)
-GROUP=$(stat -c '%g' /docker-compose.yml)
-chown -R $USER:$GROUP /build/target
+USER=$(stat -c '%u' /build/src/docker-compose.yml)
+GROUP=$(stat -c '%g' /build/src/docker-compose.yml)
+chown -R $USER:$GROUP /build/stage
+
+rm -rf /build/target/*
+echo 'Copy stage to target'
+cp -r /build/stage/* /build/target/

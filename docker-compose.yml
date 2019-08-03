@@ -4,6 +4,6 @@ services:
     build: .
     volumes:
       - ./target:/build/target
-      - ./docker-compose.yml:/docker-compose.yml:ro # this is to get the same UID and GID
+      - .:/build/src:ro
     environment:
       API_VERSION: 0.10.0
