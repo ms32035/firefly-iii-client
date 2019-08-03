@@ -1,0 +1,9 @@
+version: '3'
+services:
+  firefly_iii_client_generator:
+    build: .
+    volumes:
+      - ./target:/build/target
+      - ./docker-compose.yml:/docker-compose.yml:ro # this is to get the same UID and GID
+    environment:
+      API_VERSION: 0.10.0

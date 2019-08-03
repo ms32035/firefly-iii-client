@@ -29,4 +29,4 @@ readme_rep = [('thegrumpydictator@gmail.com', 'ms32035@gmail.com'),
               ('pip install git+https://github.com/ms32035/firefly-iii-client.git',
                'pip install firefly-iii-client'), (CONF_STRING_OLD, CONF_STRING_NEW)]
 
-#file_replace(os.path.join(ROOT_DIR, 'README.md'), readme_rep)
+file_replace(os.path.join(ROOT_DIR, 'README.md'), readme_rep)

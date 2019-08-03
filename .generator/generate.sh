@@ -10,17 +10,17 @@ if [[ ! -z $1 ]]
 then
     SPEC_FILE=$1
 else
-    SPEC_FILE=/firefly-iii.yaml
+    SPEC_FILE=/build/firefly-iii.yaml
     wget https://api-docs.firefly-iii.org/firefly-iii-${API_VERSION}.yaml -O ${SPEC_FILE}
 fi
 checkStatus
 
-python3 /generator/preprocess.py ${SPEC_FILE} /firefly-iii-processed.yaml
+python3 /generator/preprocess.py ${SPEC_FILE} /build/firefly-iii-processed.yaml
 checkStatus
 
 java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar generate \
--i /firefly-iii-processed.yaml \
--o /firefly-iii-client \
+-i /build/firefly-iii-processed.yaml \
+-o /build/target \
 -g python \
 --git-user-id ms32035 \
 --git-repo-id firefly-iii-client \
@@ -31,4 +31,8 @@ java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-ge
 -DpackageUrl=https://github.com/ms32035/firefly-iii-client
 checkStatus
 
-python3 /generator/postprocess.py /firefly-iii-client
+python3 /generator/postprocess.py /build/target
+
+USER=$(stat -c '%u' /docker-compose.yml)
+GROUP=$(stat -c '%g' /docker-compose.yml)
+chown -R $USER:$GROUP /build/target
