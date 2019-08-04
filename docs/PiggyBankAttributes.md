@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **int** | The ID of the asset account this piggy bank is connected to. | [optional] 
+**account_name** | **str** | The name of the asset account this piggy bank is connected to. | [optional] 
 **active** | **bool** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **currency_code** | **str** |  | [optional] 

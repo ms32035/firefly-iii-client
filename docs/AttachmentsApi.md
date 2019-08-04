@@ -22,19 +22,20 @@ With this endpoint you delete an attachment, including any stored file data.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the single.
 
@@ -64,6 +65,12 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Attachment deleted. |  -  |
+**404** | No such attachment |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_attachment**
@@ -75,19 +82,20 @@ This endpoint allows you to download the binary content of a transaction. It wil
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the attachment.
 
@@ -118,6 +126,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested attachment |  -  |
+**404** | File not found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_attachment**
@@ -129,19 +143,20 @@ Get a single attachment. This endpoint only returns the available metadata for t
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the attachment.
 
@@ -172,6 +187,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested attachment |  -  |
+**404** | Attachment not found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_attachments**
@@ -183,19 +204,20 @@ This endpoint lists all attachments.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
@@ -226,6 +248,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of attachments. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_attachment**
@@ -237,19 +264,20 @@ Creates a new attachment. The data required can be submitted as a JSON body or a
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
 attachment_update = firefly_iii_client.AttachmentUpdate() # AttachmentUpdate | JSON array or key=value pairs with the necessary attachment information. See the model for the exact specifications.
 
@@ -280,6 +308,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | New attachment stored, result in response. |  -  |
+**422** | Validation errors (see body) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_attachment**
@@ -291,19 +325,20 @@ Update the meta data for an existing attachment. This endpoint does not allow yo
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the attachment.
 attachment_update = firefly_iii_client.AttachmentUpdate() # AttachmentUpdate | JSON array with updated attachment information. See the model for the exact specifications.
@@ -336,6 +371,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated attachment stored, result in response |  -  |
+**422** | Validation errors (see body) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_attachment**
@@ -347,19 +388,20 @@ Use this endpoint to upload (and possible overwrite) the file contents of an att
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the attachment.
 body = '/path/to/file' # file |  (optional)
@@ -390,6 +432,12 @@ void (empty response body)
 
  - **Content-Type**: application/octet-stream
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Upload was a success |  -  |
+**404** | File not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

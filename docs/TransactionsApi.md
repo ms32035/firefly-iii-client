@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**get_attachments_by_transactions**](TransactionsApi.md#get_attachments_by_transactions) | **GET** /api/v1/transactions/{id}/attachments | Lists all attachments.
 [**get_events_by_transactions**](TransactionsApi.md#get_events_by_transactions) | **GET** /api/v1/transactions/{id}/piggy_bank_events | Lists all piggy bank events.
 [**get_transaction**](TransactionsApi.md#get_transaction) | **GET** /api/v1/transactions/{id} | Get a single transaction.
-[**get_transactions**](TransactionsApi.md#get_transactions) | **GET** /api/v1/transactions | List all the user&#39;s transactions.
+[**get_transactions**](TransactionsApi.md#get_transactions) | **GET** /api/v1/transactions | List all the user&#39;s transactions. 
 [**store_transaction**](TransactionsApi.md#store_transaction) | **POST** /api/v1/transactions | Store a new transaction
 [**update_transaction**](TransactionsApi.md#update_transaction) | **PUT** /api/v1/transactions/{id} | Update existing transaction.
 
@@ -22,19 +22,20 @@ Delete a transaction.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the transaction.
 
@@ -64,6 +65,12 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Transaction deleted. |  -  |
+**404** | No such transaction. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_attachments_by_transactions**
@@ -75,19 +82,20 @@ Lists all attachments.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the transaction.
 page = 1 # int | Page number. The default pagination is 50. (optional)
@@ -120,6 +128,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of attachments |  -  |
+**404** | No such transaction. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_events_by_transactions**
@@ -131,19 +145,20 @@ Lists all piggy bank events.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the transaction.
 page = 1 # int | Page number. The default pagination is 50. (optional)
@@ -176,6 +191,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of piggy bank events. |  -  |
+**404** | No such transaction. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transaction**
@@ -187,19 +208,20 @@ Get a single transaction.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the transaction. Note that this ID is different from the ID you see in the URL of your Firefly III instance.
 
@@ -230,38 +252,45 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested transaction. |  -  |
+**404** | Transaction not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions**
 > TransactionArray get_transactions(page=page, start=start, end=end, type=type)
 
-List all the user's transactions.
+List all the user's transactions. 
 
 List all the user's transactions.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = 2018-09-17 # str | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
-end = 2018-09-17 # str | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
+start = '2018-09-17' # str | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
+end = '2018-09-17' # str | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
 type = 'type_example' # str | Optional filter on the transaction type(s) returned. (optional)
 
 try:
-    # List all the user's transactions.
+    # List all the user's transactions. 
     api_response = api_instance.get_transactions(page=page, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
@@ -290,6 +319,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of transactions. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_transaction**
@@ -301,19 +335,20 @@ Creates a new transaction. The data required can be submitted as a JSON body or 
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 transaction_update = firefly_iii_client.TransactionUpdate() # TransactionUpdate | JSON array or key=value pairs with the necessary transaction information. See the model for the exact specifications.
 
@@ -344,6 +379,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | New transaction stored(s), result in response. |  -  |
+**422** | Validation errors (see body) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_transaction**
@@ -355,19 +396,20 @@ Update an existing transaction.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the transaction.
 transaction_update = firefly_iii_client.TransactionUpdate() # TransactionUpdate | JSON array with updated transaction information. See the model for the exact specifications.
@@ -399,6 +441,12 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated transaction stored, result in response |  -  |
+**422** | Validation errors (see body) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

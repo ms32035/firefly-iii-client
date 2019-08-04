@@ -31,21 +31,22 @@ Make this currency the default currency. If the currency is not enabled, it will
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = USD # str | The currency code.
+code = 'USD' # str | The currency code.
 
 try:
     # Make currency default currency.
@@ -74,6 +75,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Currency has been made the default currency. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_currency**
@@ -85,21 +91,22 @@ Delete a currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = GBP # str | The currency code.
+code = 'GBP' # str | The currency code.
 
 try:
     # Delete a currency.
@@ -127,6 +134,12 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Currency deleted. |  -  |
+**404** | No such currency |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disable_currency**
@@ -138,19 +151,20 @@ Disable a currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
 code = 56 # int | The currency code.
 
@@ -181,6 +195,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Currency was disabled. |  -  |
+**409** | Currency cannot be disabled, because it is still in use. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **enable_currency**
@@ -192,21 +212,22 @@ Enable a single currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = USD # str | The currency code.
+code = 'USD' # str | The currency code.
 
 try:
     # Enable a single currency.
@@ -235,6 +256,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Currency was enabled. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_accounts_by_currency**
@@ -246,21 +272,22 @@ List all accounts with this currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = USD # str | The currency code.
+code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 date = 'date_example' # str | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 type = 'type_example' # str | Optional filter on the account type(s) returned (optional)
@@ -295,6 +322,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of accounts |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_available_budgets_by_currency**
@@ -306,21 +338,22 @@ List all available budgets with this currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = EUR # str | The currency code.
+code = 'EUR' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50 (optional)
 
 try:
@@ -351,6 +384,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of available budgets |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_bills_by_currency**
@@ -362,21 +400,22 @@ List all bills with this currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = USD # str | The currency code.
+code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
 try:
@@ -407,6 +446,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of bills. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_budget_limits_by_currency**
@@ -418,21 +462,22 @@ List all budget limits with this currency
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = USD # str | The currency code.
+code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 start = '2013-10-20' # date | Start date for the budget limit list. (optional)
 end = '2013-10-20' # date | End date for the budget limit list. (optional)
@@ -467,6 +512,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of budget limits. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_currencies**
@@ -478,19 +528,20 @@ List all currencies.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
@@ -521,6 +572,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of currencies. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_currency**
@@ -532,21 +588,22 @@ Get a single currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = USD # str | The currency code.
+code = 'USD' # str | The currency code.
 
 try:
     # Get a single currency.
@@ -575,6 +632,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested currency |  -  |
+**404** | Currency not found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_exchange_rates_by_currency**
@@ -586,21 +649,22 @@ List all known exchange rates.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = GBP # str | The currency code.
+code = 'GBP' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 date = '2013-10-20' # date | The date of which you want to know the exchange rate  (optional)
 start = '2013-10-20' # date | Use this instead of the date parameter to search for a range of currency exchange values.  (optional)
@@ -637,6 +701,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of exchange rates |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_recurrences_by_currency**
@@ -648,21 +717,22 @@ List all recurring transactions with this currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = EUR # str | The currency code.
+code = 'EUR' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
 try:
@@ -693,6 +763,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of recurring transactions |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_rules_by_currency**
@@ -704,21 +779,22 @@ List all rules with this currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = USD # str | The currency code.
+code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination per 50. (optional)
 
 try:
@@ -749,6 +825,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of rules |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions_by_currency**
@@ -760,24 +841,25 @@ List all transactions with this currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = USD # str | The currency code.
+code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination is per 50. (optional)
-start_date = 2018-09-17 # str | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
-end_date = 2018-12-31 # str | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
+start_date = '2018-09-17' # str | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
+end_date = '2018-12-31' # str | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
 type = 'type_example' # str | Optional filter on the transaction type(s) returned (optional)
 
 try:
@@ -811,6 +893,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of transactions. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_currency**
@@ -822,19 +909,20 @@ Creates a new currency. The data required can be submitted as a JSON body or as 
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
 currency_update = firefly_iii_client.CurrencyUpdate() # CurrencyUpdate | JSON array or key=value pairs with the necessary currency information. See the model for the exact specifications.
 
@@ -865,6 +953,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | New currency stored, result in response. |  -  |
+**422** | Validation errors (see body) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_currency**
@@ -876,21 +970,22 @@ Update existing currency.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = EUR # str | The currency code.
+code = 'EUR' # str | The currency code.
 currency_update = firefly_iii_client.CurrencyUpdate() # CurrencyUpdate | JSON array with updated currency information. See the model for the exact specifications.
 
 try:
@@ -920,6 +1015,12 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated currency stored, result in response |  -  |
+**422** | Validation errors (see body) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

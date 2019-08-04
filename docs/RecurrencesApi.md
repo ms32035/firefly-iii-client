@@ -22,19 +22,20 @@ Delete a recurring transaction. Transactions created will not be deleted.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the recurring transaction.
 
@@ -64,6 +65,12 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Recurring transaction deleted. |  -  |
+**404** | No such recurring transaction |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_recurrence**
@@ -75,19 +82,20 @@ Get a single recurring transaction.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the recurring transaction.
 
@@ -118,6 +126,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested recurring transaction |  -  |
+**404** | Recurring transaction not found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_recurring**
@@ -129,19 +143,20 @@ List all recurring transactions.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
@@ -172,6 +187,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of recurring transactions. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions_by_recurrence**
@@ -183,24 +203,25 @@ List all transactions created by a recurring transaction, optionally limited to 
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the recurring transaction.
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = 2018-09-17 # str | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
-end = 2018-09-17 # str | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
+start = '2018-09-17' # str | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
+end = '2018-09-17' # str | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
 type = 'type_example' # str | Optional filter on the transaction type(s) returned (optional)
 
 try:
@@ -234,6 +255,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of transactions |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_recurrence**
@@ -245,19 +271,20 @@ Creates a new recurring transaction. The data required can be submitted as a JSO
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 recurrence_update = firefly_iii_client.RecurrenceUpdate() # RecurrenceUpdate | JSON array or key=value pairs with the necessary recurring transaction information. See the model for the exact specifications.
 
@@ -288,6 +315,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | New recurring transaction stored, result in response. |  -  |
+**422** | Validation errors (see body) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **trigger_recurrence**
@@ -299,19 +332,20 @@ Triggers the recurring transactions, like a cron job would. If the schedule does
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 
 try:
@@ -337,6 +371,12 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Triggered. Due to the way it&#39;s fired (an asynchronous job), the result cannot be shown to you. |  -  |
+**204** | Not triggered (not yet due or unable to). |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_recurrence**
@@ -348,19 +388,20 @@ Update existing recurring transaction.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the recurring transaction.
 recurrence_update = firefly_iii_client.RecurrenceUpdate() # RecurrenceUpdate | JSON array with updated recurring transaction information. See the model for the exact specifications.
@@ -392,6 +433,12 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated recurring transaction stored, result in response |  -  |
+**422** | Validation errors (see body) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

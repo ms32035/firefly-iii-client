@@ -27,6 +27,8 @@ CONF_STRING_NEW = """configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = 'YOUR_HOST_URL'"""
 readme_rep = [('thegrumpydictator@gmail.com', 'ms32035@gmail.com'),
               ('pip install git+https://github.com/ms32035/firefly-iii-client.git',
-               'pip install firefly-iii-client'), (CONF_STRING_OLD, CONF_STRING_NEW)]
+               'pip install firefly-iii-client'), (CONF_STRING_OLD, CONF_STRING_NEW),
+              ('configuration = firefly_iii_client.Configuration()',
+               'configuration = firefly_iii_client.configuration.Configuration()')]
 
 file_replace(os.path.join(ROOT_DIR, 'README.md'), readme_rep)

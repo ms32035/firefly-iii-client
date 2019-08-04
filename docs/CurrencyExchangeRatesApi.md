@@ -16,22 +16,23 @@ Get an exchange rate. If Firefly III doesn't know the rate it will set the rate 
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.CurrencyExchangeRatesApi(firefly_iii_client.ApiClient(configuration))
-_from = EUR # str | The source currency code. If omitted, defaults to EUR. (optional)
-to = USD # str | The destination currency code. If omitted, defaults to USD. (optional)
+_from = 'EUR' # str | The source currency code. If omitted, defaults to EUR. (optional)
+to = 'USD' # str | The destination currency code. If omitted, defaults to USD. (optional)
 date = '2013-10-20' # date | The date you want to know the exchange rate on. (optional)
 amount = 120.12 # float | The amount in the source currency. If added, Firefly III will calculate the amount in the destination currency. (optional)
 
@@ -64,6 +65,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The exchange rate as requested |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

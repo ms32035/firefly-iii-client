@@ -27,19 +27,20 @@ Delete a budget. Transactions will not be deleted.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the budget.
 
@@ -69,6 +70,12 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Budget deleted. |  -  |
+**404** | No such budget |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_budget_limit**
@@ -80,19 +87,20 @@ Delete a budget limit.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget limit.
 
@@ -122,6 +130,12 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Budget limit deleted. |  -  |
+**404** | No such budget limit |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_budget**
@@ -133,23 +147,24 @@ Get a single budget. If the start date and end date are submitted as well, the \
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget.
-start_date = 2018-09-17 # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
-end_date = 2018-12-31 # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
+start_date = '2018-09-17' # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
+end_date = '2018-12-31' # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
 
 try:
     # Get a single budget.
@@ -180,6 +195,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested budget |  -  |
+**404** | Budget not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_budget_limit**
@@ -189,19 +210,20 @@ Get single budget limit.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget limit.
 
@@ -232,6 +254,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested budget limit |  -  |
+**404** | Budget limit not found. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_budget_limits**
@@ -243,23 +271,24 @@ Get all budget limits for this budget and the money spent, and money left. You c
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget.
-start = 2018-09-17 # str | A date formatted YYYY-MM-DD.  (optional)
-end = 2018-12-31 # str | A date formatted YYYY-MM-DD.  (optional)
+start = '2018-09-17' # str | A date formatted YYYY-MM-DD.  (optional)
+end = '2018-12-31' # str | A date formatted YYYY-MM-DD.  (optional)
 
 try:
     # Get all limits
@@ -290,6 +319,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of budget limits applicable to this budget. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_budgets**
@@ -301,23 +335,24 @@ List all the budgets the user has made. If the start date and end date are submi
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = 2018-09-17 # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
-end = 2018-12-31 # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
+start = '2018-09-17' # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
+end = '2018-12-31' # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
 
 try:
     # List all budgets.
@@ -348,10 +383,15 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of budgets. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions_by_budget**
-> TransactionArray get_transactions_by_budget(id, page=page, start=start, end=end, type=type)
+> TransactionArray get_transactions_by_budget(id, limit=limit, page=page, start=start, end=end, type=type)
 
 All transactions to a budget.
 
@@ -359,29 +399,31 @@ Get all transactions linked to a budget, possibly limited by start and end
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the budget.
+limit = 5 # int | Limits the number of results on one page. (optional)
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = 2018-09-17 # str | A date formatted YYYY-MM-DD.  (optional)
-end = 2018-12-31 # str | A date formatted YYYY-MM-DD.  (optional)
+start = '2018-09-17' # str | A date formatted YYYY-MM-DD.  (optional)
+end = '2018-12-31' # str | A date formatted YYYY-MM-DD.  (optional)
 type = 'type_example' # str | Optional filter on the transaction type(s) returned (optional)
 
 try:
     # All transactions to a budget.
-    api_response = api_instance.get_transactions_by_budget(id, page=page, start=start, end=end, type=type)
+    api_response = api_instance.get_transactions_by_budget(id, limit=limit, page=page, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BudgetsApi->get_transactions_by_budget: %s\n" % e)
@@ -392,6 +434,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the budget. | 
+ **limit** | **int**| Limits the number of results on one page. | [optional] 
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
  **start** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
  **end** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
@@ -410,6 +453,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of transactions. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions_by_budget_limit**
@@ -421,19 +469,20 @@ List all the transactions within one budget limit. The start and end date are di
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget limit.
 page = 1 # int | Page number. The default pagination is 50. (optional)
@@ -468,6 +517,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of transactions. |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_budget**
@@ -479,19 +533,20 @@ Creates a new budget. The data required can be submitted as a JSON body or as a 
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 budget_update = firefly_iii_client.BudgetUpdate() # BudgetUpdate | JSON array or key=value pairs with the necessary budget information. See the model for the exact specifications.
 
@@ -522,6 +577,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | New budget stored, result in response. |  -  |
+**422** | Validation errors (see body) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_budget_limit**
@@ -533,19 +594,20 @@ Store a new budget limit.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the budget.
 budget_limit_update = firefly_iii_client.BudgetLimitUpdate() # BudgetLimitUpdate | JSON array or key=value pairs with the necessary budget information. See the model for the exact specifications.
@@ -578,6 +640,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | New budget limit stored, result in response. |  -  |
+**422** | Validation errors (see body) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_budget**
@@ -589,19 +657,20 @@ Update existing budget. This endpoint cannot be used to set budget amount limits
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the budget.
 budget_update = firefly_iii_client.BudgetUpdate() # BudgetUpdate | JSON array with updated budget information. See the model for the exact specifications.
@@ -634,6 +703,12 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated budget stored, result in response |  -  |
+**422** | Validation errors (see body) |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_budget_limit**
@@ -645,19 +720,20 @@ Update existing budget limit.
 
 ### Example
 
-* OAuth Authentication (firefly_iii_auth): 
+* OAuth Authentication (firefly_iii_auth):
 ```python
 from __future__ import print_function
 import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-
-# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget limit. The budget limit MUST be associated to the budget ID.
 budget_limit_update = firefly_iii_client.BudgetLimitUpdate() # BudgetLimitUpdate | JSON array with updated budget limit information. See the model for the exact specifications.
@@ -689,6 +765,12 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated budget limit stored, result in response |  -  |
+**422** | Validation errors (see body) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
