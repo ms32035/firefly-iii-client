@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[Currency]**](Currency.md) |  | [optional] 
-**links** | [**PageLink**](PageLink.md) |  | [optional] 
-**meta** | [**Meta**](Meta.md) |  | [optional] 
+**data** | [**list[CurrencyRead]**](CurrencyRead.md) |  | 
+**links** | [**PageLink**](PageLink.md) |  | 
+**meta** | [**Meta**](Meta.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

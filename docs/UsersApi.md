@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_user**](UsersApi.md#delete_user) | **DELETE** /api/v1/users/{id} | Delete a user.
 [**get_user**](UsersApi.md#get_user) | **GET** /api/v1/users/{id} | Get a single user.
-[**get_users**](UsersApi.md#get_users) | **GET** /api/v1/users | List all users.
+[**list_user**](UsersApi.md#list_user) | **GET** /api/v1/users | List all users.
 [**store_user**](UsersApi.md#store_user) | **POST** /api/v1/users | Store a new user
 [**update_user**](UsersApi.md#update_user) | **PUT** /api/v1/users/{id} | Update an existing user&#39;s information.
 
@@ -133,8 +133,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_users**
-> UserArray get_users(page=page)
+# **list_user**
+> UserArray list_user(page=page)
 
 List all users.
 
@@ -161,10 +161,10 @@ page = 1 # int | The page number, if necessary. The default pagination is 50, so
 
 try:
     # List all users.
-    api_response = api_instance.get_users(page=page)
+    api_response = api_instance.list_user(page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UsersApi->get_users: %s\n" % e)
+    print("Exception when calling UsersApi->list_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_user**
-> UserSingle store_user(user_update)
+> UserSingle store_user(user)
 
 Store a new user
 
@@ -217,11 +217,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.UsersApi(firefly_iii_client.ApiClient(configuration))
-user_update = firefly_iii_client.UserUpdate() # UserUpdate | JSON array or key=value pairs with the necessary user information. See the model for the exact specifications.
+user = firefly_iii_client.User() # User | JSON array or key=value pairs with the necessary user information. See the model for the exact specifications.
 
 try:
     # Store a new user
-    api_response = api_instance.store_user(user_update)
+    api_response = api_instance.store_user(user)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->store_user: %s\n" % e)
@@ -231,7 +231,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_update** | [**UserUpdate**](UserUpdate.md)| JSON array or key&#x3D;value pairs with the necessary user information. See the model for the exact specifications. | 
+ **user** | [**User**](User.md)| JSON array or key&#x3D;value pairs with the necessary user information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_user**
-> UserSingle update_user(id, user_update)
+> UserSingle update_user(id, user)
 
 Update an existing user's information.
 
@@ -279,11 +279,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.UsersApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The user ID.
-user_update = firefly_iii_client.UserUpdate() # UserUpdate | JSON array with updated user information. See the model for the exact specifications.
+user = firefly_iii_client.User() # User | JSON array with updated user information. See the model for the exact specifications.
 
 try:
     # Update an existing user's information.
-    api_response = api_instance.update_user(id, user_update)
+    api_response = api_instance.update_user(id, user)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->update_user: %s\n" % e)
@@ -294,7 +294,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The user ID. | 
- **user_update** | [**UserUpdate**](UserUpdate.md)| JSON array with updated user information. See the model for the exact specifications. | 
+ **user** | [**User**](User.md)| JSON array with updated user information. See the model for the exact specifications. | 
 
 ### Return type
 

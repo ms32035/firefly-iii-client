@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_recurrence**](RecurrencesApi.md#delete_recurrence) | **DELETE** /api/v1/recurrences/{id} | Delete a recurring transaction.
 [**get_recurrence**](RecurrencesApi.md#get_recurrence) | **GET** /api/v1/recurrences/{id} | Get a single recurring transaction.
-[**get_recurring**](RecurrencesApi.md#get_recurring) | **GET** /api/v1/recurrences | List all recurring transactions.
-[**get_transactions_by_recurrence**](RecurrencesApi.md#get_transactions_by_recurrence) | **GET** /api/v1/recurrences/{id}/transactions | List all transactions created by a recurring transaction.
+[**list_recurrence**](RecurrencesApi.md#list_recurrence) | **GET** /api/v1/recurrences | List all recurring transactions.
+[**list_transaction_by_recurrence**](RecurrencesApi.md#list_transaction_by_recurrence) | **GET** /api/v1/recurrences/{id}/transactions | List all transactions created by a recurring transaction.
 [**store_recurrence**](RecurrencesApi.md#store_recurrence) | **POST** /api/v1/recurrences | Store a new recurring transaction
 [**trigger_recurrence**](RecurrencesApi.md#trigger_recurrence) | **POST** /api/v1/recurrences/trigger | Trigger the creation of recurring transactions (like a cron job).
 [**update_recurrence**](RecurrencesApi.md#update_recurrence) | **PUT** /api/v1/recurrences/{id} | Update existing recurring transaction.
@@ -134,8 +134,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_recurring**
-> RecurrenceArray get_recurring(page=page)
+# **list_recurrence**
+> RecurrenceArray list_recurrence(page=page)
 
 List all recurring transactions.
 
@@ -162,10 +162,10 @@ page = 1 # int | Page number. The default pagination is 50. (optional)
 
 try:
     # List all recurring transactions.
-    api_response = api_instance.get_recurring(page=page)
+    api_response = api_instance.list_recurrence(page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling RecurrencesApi->get_recurring: %s\n" % e)
+    print("Exception when calling RecurrencesApi->list_recurrence: %s\n" % e)
 ```
 
 ### Parameters
@@ -194,8 +194,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transactions_by_recurrence**
-> TransactionArray get_transactions_by_recurrence(id, page=page, start=start, end=end, type=type)
+# **list_transaction_by_recurrence**
+> TransactionArray list_transaction_by_recurrence(id, page=page, start=start, end=end, type=type)
 
 List all transactions created by a recurring transaction.
 
@@ -220,16 +220,16 @@ configuration.host = "https://demo.firefly-iii.org"
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the recurring transaction.
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
-end = '2018-09-17' # str | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
-type = 'type_example' # str | Optional filter on the transaction type(s) returned (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
+type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
 try:
     # List all transactions created by a recurring transaction.
-    api_response = api_instance.get_transactions_by_recurrence(id, page=page, start=start, end=end, type=type)
+    api_response = api_instance.list_transaction_by_recurrence(id, page=page, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling RecurrencesApi->get_transactions_by_recurrence: %s\n" % e)
+    print("Exception when calling RecurrencesApi->list_transaction_by_recurrence: %s\n" % e)
 ```
 
 ### Parameters
@@ -238,9 +238,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the recurring transaction. | 
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD. Both the start and end date must be present.  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD. Both the start and end date must be present.  | [optional] 
- **type** | **str**| Optional filter on the transaction type(s) returned | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD. Both the start and end date must be present.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD. Both the start and end date must be present.  | [optional] 
+ **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned | [optional] 
 
 ### Return type
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_recurrence**
-> RecurrenceSingle store_recurrence(recurrence_update)
+> RecurrenceSingle store_recurrence(recurrence)
 
 Store a new recurring transaction
 
@@ -286,11 +286,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
-recurrence_update = firefly_iii_client.RecurrenceUpdate() # RecurrenceUpdate | JSON array or key=value pairs with the necessary recurring transaction information. See the model for the exact specifications.
+recurrence = firefly_iii_client.Recurrence() # Recurrence | JSON array or key=value pairs with the necessary recurring transaction information. See the model for the exact specifications.
 
 try:
     # Store a new recurring transaction
-    api_response = api_instance.store_recurrence(recurrence_update)
+    api_response = api_instance.store_recurrence(recurrence)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecurrencesApi->store_recurrence: %s\n" % e)
@@ -300,7 +300,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **recurrence_update** | [**RecurrenceUpdate**](RecurrenceUpdate.md)| JSON array or key&#x3D;value pairs with the necessary recurring transaction information. See the model for the exact specifications. | 
+ **recurrence** | [**Recurrence**](Recurrence.md)| JSON array or key&#x3D;value pairs with the necessary recurring transaction information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -380,7 +380,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_recurrence**
-> RecurrenceSingle update_recurrence(id, recurrence_update)
+> RecurrenceSingle update_recurrence(id, recurrence)
 
 Update existing recurring transaction.
 
@@ -404,11 +404,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the recurring transaction.
-recurrence_update = firefly_iii_client.RecurrenceUpdate() # RecurrenceUpdate | JSON array with updated recurring transaction information. See the model for the exact specifications.
+recurrence = firefly_iii_client.Recurrence() # Recurrence | JSON array with updated recurring transaction information. See the model for the exact specifications.
 
 try:
     # Update existing recurring transaction.
-    api_response = api_instance.update_recurrence(id, recurrence_update)
+    api_response = api_instance.update_recurrence(id, recurrence)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RecurrencesApi->update_recurrence: %s\n" % e)
@@ -419,7 +419,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the recurring transaction. | 
- **recurrence_update** | [**RecurrenceUpdate**](RecurrenceUpdate.md)| JSON array with updated recurring transaction information. See the model for the exact specifications. | 
+ **recurrence** | [**Recurrence**](Recurrence.md)| JSON array with updated recurring transaction information. See the model for the exact specifications. | 
 
 ### Return type
 

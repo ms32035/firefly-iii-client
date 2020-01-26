@@ -3,10 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**PiggyBankEventAttributes**](PiggyBankEventAttributes.md) |  | [optional] 
-**id** | **int** |  | [optional] 
-**links** | [**ObjectLink**](ObjectLink.md) |  | [optional] 
-**type** | **str** | Immutable value indicating the object type. | [optional] 
+**amount** | **float** |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
+**currency_code** | **str** |  | [optional] 
+**currency_decimal_places** | **int** |  | [optional] 
+**currency_id** | **int** |  | [optional] 
+**currency_symbol** | **str** |  | [optional] 
+**journal_id** | **int** | The journal associated with the event. | [optional] 
+**transaction_id** | **int** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

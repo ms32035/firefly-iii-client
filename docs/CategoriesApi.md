@@ -5,9 +5,9 @@ All URIs are relative to *https://demo.firefly-iii.org*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_category**](CategoriesApi.md#delete_category) | **DELETE** /api/v1/categories/{id} | Delete a category.
-[**get_categories**](CategoriesApi.md#get_categories) | **GET** /api/v1/categories | List all categories.
 [**get_category**](CategoriesApi.md#get_category) | **GET** /api/v1/categories/{id} | Get a single category.
-[**get_transactions_by_category**](CategoriesApi.md#get_transactions_by_category) | **GET** /api/v1/categories/{id}/transactions | List all transactions in a category.
+[**list_category**](CategoriesApi.md#list_category) | **GET** /api/v1/categories | List all categories.
+[**list_transaction_by_category**](CategoriesApi.md#list_transaction_by_category) | **GET** /api/v1/categories/{id}/transactions | List all transactions in a category.
 [**store_category**](CategoriesApi.md#store_category) | **POST** /api/v1/categories | Store a new category
 [**update_category**](CategoriesApi.md#update_category) | **PUT** /api/v1/categories/{id} | Update existing category.
 
@@ -72,66 +72,6 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_categories**
-> CategoryArray get_categories(page=page)
-
-List all categories.
-
-List all categories.
-
-### Example
-
-* OAuth Authentication (firefly_iii_auth):
-```python
-from __future__ import print_function
-import time
-import firefly_iii_client
-from firefly_iii_client.rest import ApiException
-from pprint import pprint
-configuration = firefly_iii_client.Configuration()
-# Configure OAuth2 access token for authorization: firefly_iii_auth
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CategoriesApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
-
-try:
-    # List all categories.
-    api_response = api_instance.get_categories(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number. The default pagination is 50. | [optional] 
-
-### Return type
-
-[**CategoryArray**](CategoryArray.md)
-
-### Authorization
-
-[firefly_iii_auth](../README.md#firefly_iii_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A list of categories. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_category**
 > CategorySingle get_category(id)
 
@@ -193,8 +133,68 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transactions_by_category**
-> TransactionArray get_transactions_by_category(id, page=page, start=start, end=end, type=type)
+# **list_category**
+> CategoryArray list_category(page=page)
+
+List all categories.
+
+List all categories.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.CategoriesApi(firefly_iii_client.ApiClient(configuration))
+page = 1 # int | Page number. The default pagination is 50. (optional)
+
+try:
+    # List all categories.
+    api_response = api_instance.list_category(page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->list_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **int**| Page number. The default pagination is 50. | [optional] 
+
+### Return type
+
+[**CategoryArray**](CategoryArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of categories. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_transaction_by_category**
+> TransactionArray list_transaction_by_category(id, page=page, start=start, end=end, type=type)
 
 List all transactions in a category.
 
@@ -219,16 +219,16 @@ configuration.host = "https://demo.firefly-iii.org"
 api_instance = firefly_iii_client.CategoriesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the category.
 page = 1 # int | Page number. The default pagination is per 50. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
-end = '2018-12-31' # str | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
-type = 'type_example' # str | Optional filter on the transaction type(s) returned (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
+type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
 try:
     # List all transactions in a category.
-    api_response = api_instance.get_transactions_by_category(id, page=page, start=start, end=end, type=type)
+    api_response = api_instance.list_transaction_by_category(id, page=page, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling CategoriesApi->get_transactions_by_category: %s\n" % e)
+    print("Exception when calling CategoriesApi->list_transaction_by_category: %s\n" % e)
 ```
 
 ### Parameters
@@ -237,9 +237,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the category. | 
  **page** | **int**| Page number. The default pagination is per 50. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD, to limit the result list.  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD, to limit the result list.  | [optional] 
- **type** | **str**| Optional filter on the transaction type(s) returned | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD, to limit the result list.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD, to limit the result list.  | [optional] 
+ **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned | [optional] 
 
 ### Return type
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_category**
-> CategorySingle store_category(category_update)
+> CategorySingle store_category(category)
 
 Store a new category
 
@@ -285,11 +285,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.CategoriesApi(firefly_iii_client.ApiClient(configuration))
-category_update = firefly_iii_client.CategoryUpdate() # CategoryUpdate | JSON array or key=value pairs with the necessary category information. See the model for the exact specifications.
+category = firefly_iii_client.Category() # Category | JSON array or key=value pairs with the necessary category information. See the model for the exact specifications.
 
 try:
     # Store a new category
-    api_response = api_instance.store_category(category_update)
+    api_response = api_instance.store_category(category)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CategoriesApi->store_category: %s\n" % e)
@@ -299,7 +299,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category_update** | [**CategoryUpdate**](CategoryUpdate.md)| JSON array or key&#x3D;value pairs with the necessary category information. See the model for the exact specifications. | 
+ **category** | [**Category**](Category.md)| JSON array or key&#x3D;value pairs with the necessary category information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_category**
-> CategorySingle update_category(id, category_update)
+> CategorySingle update_category(id, category)
 
 Update existing category.
 
@@ -347,11 +347,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.CategoriesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the category.
-category_update = firefly_iii_client.CategoryUpdate() # CategoryUpdate | JSON array with updated category information. See the model for the exact specifications.
+category = firefly_iii_client.Category() # Category | JSON array with updated category information. See the model for the exact specifications.
 
 try:
     # Update existing category.
-    api_response = api_instance.update_category(id, category_update)
+    api_response = api_instance.update_category(id, category)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CategoriesApi->update_category: %s\n" % e)
@@ -362,7 +362,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the category. | 
- **category_update** | [**CategoryUpdate**](CategoryUpdate.md)| JSON array with updated category information. See the model for the exact specifications. | 
+ **category** | [**Category**](Category.md)| JSON array with updated category information. See the model for the exact specifications. | 
 
 ### Return type
 

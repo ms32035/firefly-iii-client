@@ -6,9 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_account**](AccountsApi.md#delete_account) | **DELETE** /api/v1/accounts/{id} | Permanently delete account.
 [**get_account**](AccountsApi.md#get_account) | **GET** /api/v1/accounts/{id} | Get single account.
-[**get_accounts**](AccountsApi.md#get_accounts) | **GET** /api/v1/accounts | List all accounts.
-[**get_piggies_by_account**](AccountsApi.md#get_piggies_by_account) | **GET** /api/v1/accounts/{id}/piggy_banks | List all piggy banks related to the account.
-[**get_transactions_by_account**](AccountsApi.md#get_transactions_by_account) | **GET** /api/v1/accounts/{id}/transactions | List all transactions related to the account.
+[**list_account**](AccountsApi.md#list_account) | **GET** /api/v1/accounts | List all accounts.
+[**list_piggy_bank_by_account**](AccountsApi.md#list_piggy_bank_by_account) | **GET** /api/v1/accounts/{id}/piggy_banks | List all piggy banks related to the account.
+[**list_transaction_by_account**](AccountsApi.md#list_transaction_by_account) | **GET** /api/v1/accounts/{id}/transactions | List all transactions related to the account.
 [**store_account**](AccountsApi.md#store_account) | **POST** /api/v1/accounts | Create new account.
 [**update_account**](AccountsApi.md#update_account) | **PUT** /api/v1/accounts/{id} | Update existing account.
 
@@ -98,7 +98,7 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the account.
-date = 'date_example' # str | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
+date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 
 try:
     # Get single account.
@@ -113,7 +113,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the account. | 
- **date** | **str**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional] 
+ **date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional] 
 
 ### Return type
 
@@ -136,8 +136,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_accounts**
-> AccountArray get_accounts(page=page, date=date, type=type)
+# **list_account**
+> AccountArray list_account(page=page, date=date, type=type)
 
 List all accounts.
 
@@ -162,14 +162,14 @@ configuration.host = "https://demo.firefly-iii.org"
 api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
-type = 'type_example' # str | Optional filter on the account type(s) returned (optional)
+type = firefly_iii_client.AccountTypeFilter() # AccountTypeFilter | Optional filter on the account type(s) returned (optional)
 
 try:
     # List all accounts.
-    api_response = api_instance.get_accounts(page=page, date=date, type=type)
+    api_response = api_instance.list_account(page=page, date=date, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccountsApi->get_accounts: %s\n" % e)
+    print("Exception when calling AccountsApi->list_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
  **date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional] 
- **type** | **str**| Optional filter on the account type(s) returned | [optional] 
+ **type** | [**AccountTypeFilter**](.md)| Optional filter on the account type(s) returned | [optional] 
 
 ### Return type
 
@@ -200,8 +200,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_piggies_by_account**
-> PiggyBankArray get_piggies_by_account(id, page=page)
+# **list_piggy_bank_by_account**
+> PiggyBankArray list_piggy_bank_by_account(id, page=page)
 
 List all piggy banks related to the account.
 
@@ -229,10 +229,10 @@ page = 56 # int | Page number. The default pagination is per 50 items. (optional
 
 try:
     # List all piggy banks related to the account.
-    api_response = api_instance.get_piggies_by_account(id, page=page)
+    api_response = api_instance.list_piggy_bank_by_account(id, page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccountsApi->get_piggies_by_account: %s\n" % e)
+    print("Exception when calling AccountsApi->list_piggy_bank_by_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -262,8 +262,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transactions_by_account**
-> TransactionArray get_transactions_by_account(id, page=page, limit=limit, start=start, end=end, type=type)
+# **list_transaction_by_account**
+> TransactionArray list_transaction_by_account(id, page=page, limit=limit, start=start, end=end, type=type)
 
 List all transactions related to the account.
 
@@ -289,16 +289,16 @@ api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(confi
 id = 1 # int | The ID of the account.
 page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 limit = 5 # int | Limits the number of results on one page. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD.  (optional)
-end = '2018-09-17' # str | A date formatted YYYY-MM-DD.  (optional)
-type = 'type_example' # str | Optional filter on the transaction type(s) returned. (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
 try:
     # List all transactions related to the account.
-    api_response = api_instance.get_transactions_by_account(id, page=page, limit=limit, start=start, end=end, type=type)
+    api_response = api_instance.list_transaction_by_account(id, page=page, limit=limit, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccountsApi->get_transactions_by_account: %s\n" % e)
+    print("Exception when calling AccountsApi->list_transaction_by_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -308,9 +308,9 @@ Name | Type | Description  | Notes
  **id** | **int**| The ID of the account. | 
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
  **limit** | **int**| Limits the number of results on one page. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
- **type** | **str**| Optional filter on the transaction type(s) returned. | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
+ **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned. | [optional] 
 
 ### Return type
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_account**
-> AccountSingle store_account(account_update)
+> AccountSingle store_account(account)
 
 Create new account.
 
@@ -356,11 +356,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-account_update = firefly_iii_client.AccountUpdate() # AccountUpdate | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
+account = firefly_iii_client.Account() # Account | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
 
 try:
     # Create new account.
-    api_response = api_instance.store_account(account_update)
+    api_response = api_instance.store_account(account)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountsApi->store_account: %s\n" % e)
@@ -370,7 +370,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_update** | [**AccountUpdate**](AccountUpdate.md)| JSON array with the necessary account information or key&#x3D;value pairs. See the model for the exact specifications. | 
+ **account** | [**Account**](Account.md)| JSON array with the necessary account information or key&#x3D;value pairs. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_account**
-> AccountSingle update_account(id, account_update)
+> AccountSingle update_account(id, account)
 
 Update existing account.
 
@@ -418,11 +418,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the account.
-account_update = firefly_iii_client.AccountUpdate() # AccountUpdate | JSON array or formdata with updated account information. See the model for the exact specifications.
+account = firefly_iii_client.Account() # Account | JSON array or formdata with updated account information. See the model for the exact specifications.
 
 try:
     # Update existing account.
-    api_response = api_instance.update_account(id, account_update)
+    api_response = api_instance.update_account(id, account)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountsApi->update_account: %s\n" % e)
@@ -433,7 +433,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the account. | 
- **account_update** | [**AccountUpdate**](AccountUpdate.md)| JSON array or formdata with updated account information. See the model for the exact specifications. | 
+ **account** | [**Account**](Account.md)| JSON array or formdata with updated account information. See the model for the exact specifications. | 
 
 ### Return type
 

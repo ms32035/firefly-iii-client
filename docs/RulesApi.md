@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**delete_rule**](RulesApi.md#delete_rule) | **DELETE** /api/v1/rules/{id} | Delete an rule.
 [**fire_rule**](RulesApi.md#fire_rule) | **POST** /api/v1/rules/{id}/trigger | Fire the rule on your transactions.
 [**get_rule**](RulesApi.md#get_rule) | **GET** /api/v1/rules/{id} | Get a single rule.
-[**get_rules**](RulesApi.md#get_rules) | **GET** /api/v1/rules | List all rules.
+[**list_rule**](RulesApi.md#list_rule) | **GET** /api/v1/rules | List all rules.
 [**store_rule**](RulesApi.md#store_rule) | **POST** /api/v1/rules | Store a new rule
 [**test_rule**](RulesApi.md#test_rule) | **GET** /api/v1/rules/{id}/test | Test which transactions would be hit by the rule. No changes will be made.
 [**update_rule**](RulesApi.md#update_rule) | **PUT** /api/v1/rules/{id} | Update existing rule.
@@ -199,8 +199,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_rules**
-> RuleArray get_rules(page=page)
+# **list_rule**
+> RuleArray list_rule(page=page)
 
 List all rules.
 
@@ -227,10 +227,10 @@ page = 1 # int | Page number. The default pagination is 50. (optional)
 
 try:
     # List all rules.
-    api_response = api_instance.get_rules(page=page)
+    api_response = api_instance.list_rule(page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling RulesApi->get_rules: %s\n" % e)
+    print("Exception when calling RulesApi->list_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_rule**
-> RuleSingle store_rule(rule_update)
+> RuleSingle store_rule(rule)
 
 Store a new rule
 
@@ -283,11 +283,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
-rule_update = firefly_iii_client.RuleUpdate() # RuleUpdate | JSON array or key=value pairs with the necessary rule information. See the model for the exact specifications.
+rule = firefly_iii_client.Rule() # Rule | JSON array or key=value pairs with the necessary rule information. See the model for the exact specifications.
 
 try:
     # Store a new rule
-    api_response = api_instance.store_rule(rule_update)
+    api_response = api_instance.store_rule(rule)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RulesApi->store_rule: %s\n" % e)
@@ -297,7 +297,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rule_update** | [**RuleUpdate**](RuleUpdate.md)| JSON array or key&#x3D;value pairs with the necessary rule information. See the model for the exact specifications. | 
+ **rule** | [**Rule**](Rule.md)| JSON array or key&#x3D;value pairs with the necessary rule information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -346,8 +346,8 @@ configuration.host = "https://demo.firefly-iii.org"
 api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the rule.
 page = 1 # int | Page number. The default pagination is 50 items. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
-end = '2018-09-17' # str | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
 search_limit = 56 # int | Maximum number of transactions Firefly III will try. Don't set this too high, or it will take Firefly III very long to run the test. I suggest a max of 200.  (optional)
 triggered_limit = 56 # int | Maximum number of transactions the rule can actually trigger on, before Firefly III stops. I would suggest setting this to 10 or 15. Don't go above the user's page size, because browsing to page 2 or 3 of a test result would fire the test again, making any navigation efforts very slow.  (optional)
 accounts = '1,2,3' # str | Limit the testing of the rule to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  (optional)
@@ -366,8 +366,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the rule. | 
  **page** | **int**| Page number. The default pagination is 50 items. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional] 
  **search_limit** | **int**| Maximum number of transactions Firefly III will try. Don&#39;t set this too high, or it will take Firefly III very long to run the test. I suggest a max of 200.  | [optional] 
  **triggered_limit** | **int**| Maximum number of transactions the rule can actually trigger on, before Firefly III stops. I would suggest setting this to 10 or 15. Don&#39;t go above the user&#39;s page size, because browsing to page 2 or 3 of a test result would fire the test again, making any navigation efforts very slow.  | [optional] 
  **accounts** | **str**| Limit the testing of the rule to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  | [optional] 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_rule**
-> RuleSingle update_rule(id, rule_update)
+> RuleSingle update_rule(id, rule)
 
 Update existing rule.
 
@@ -417,11 +417,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the object.X
-rule_update = firefly_iii_client.RuleUpdate() # RuleUpdate | JSON array with updated rule information. See the model for the exact specifications.
+rule = firefly_iii_client.Rule() # Rule | JSON array with updated rule information. See the model for the exact specifications.
 
 try:
     # Update existing rule.
-    api_response = api_instance.update_rule(id, rule_update)
+    api_response = api_instance.update_rule(id, rule)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RulesApi->update_rule: %s\n" % e)
@@ -432,7 +432,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the object.X | 
- **rule_update** | [**RuleUpdate**](RuleUpdate.md)| JSON array with updated rule information. See the model for the exact specifications. | 
+ **rule** | [**Rule**](Rule.md)| JSON array with updated rule information. See the model for the exact specifications. | 
 
 ### Return type
 

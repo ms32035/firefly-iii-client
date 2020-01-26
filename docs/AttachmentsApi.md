@@ -4,12 +4,12 @@ All URIs are relative to *https://demo.firefly-iii.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_attachment**](AttachmentsApi.md#delete_attachment) | **DELETE** /api/v1/attachment/{id} | Delete an attachment.
+[**delete_attachment**](AttachmentsApi.md#delete_attachment) | **DELETE** /api/v1/attachments/{id} | Delete an attachment.
 [**download_attachment**](AttachmentsApi.md#download_attachment) | **GET** /api/v1/attachments/{id}/download | Download a single attachment.
-[**get_attachment**](AttachmentsApi.md#get_attachment) | **GET** /api/v1/attachment/{id} | Get a single attachment.
-[**get_attachments**](AttachmentsApi.md#get_attachments) | **GET** /api/v1/attachments | List all attachments.
+[**get_attachment**](AttachmentsApi.md#get_attachment) | **GET** /api/v1/attachments/{id} | Get a single attachment.
+[**list_attachment**](AttachmentsApi.md#list_attachment) | **GET** /api/v1/attachments | List all attachments.
 [**store_attachment**](AttachmentsApi.md#store_attachment) | **POST** /api/v1/attachments | Store a new attachment.
-[**update_attachment**](AttachmentsApi.md#update_attachment) | **PUT** /api/v1/attachment/{id} | Update existing attachment.
+[**update_attachment**](AttachmentsApi.md#update_attachment) | **PUT** /api/v1/attachments/{id} | Update existing attachment.
 [**upload_attachment**](AttachmentsApi.md#upload_attachment) | **POST** /api/v1/attachments/{id}/upload | Upload an attachment.
 
 
@@ -195,8 +195,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_attachments**
-> AttachmentArray get_attachments(page=page)
+# **list_attachment**
+> AttachmentArray list_attachment(page=page)
 
 List all attachments.
 
@@ -223,10 +223,10 @@ page = 1 # int | Page number. The default pagination is 50. (optional)
 
 try:
     # List all attachments.
-    api_response = api_instance.get_attachments(page=page)
+    api_response = api_instance.list_attachment(page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AttachmentsApi->get_attachments: %s\n" % e)
+    print("Exception when calling AttachmentsApi->list_attachment: %s\n" % e)
 ```
 
 ### Parameters
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_attachment**
-> AttachmentSingle store_attachment(attachment_update)
+> AttachmentSingle store_attachment(attachment)
 
 Store a new attachment.
 
@@ -279,11 +279,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
-attachment_update = firefly_iii_client.AttachmentUpdate() # AttachmentUpdate | JSON array or key=value pairs with the necessary attachment information. See the model for the exact specifications.
+attachment = firefly_iii_client.Attachment() # Attachment | JSON array or key=value pairs with the necessary attachment information. See the model for the exact specifications.
 
 try:
     # Store a new attachment.
-    api_response = api_instance.store_attachment(attachment_update)
+    api_response = api_instance.store_attachment(attachment)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AttachmentsApi->store_attachment: %s\n" % e)
@@ -293,7 +293,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attachment_update** | [**AttachmentUpdate**](AttachmentUpdate.md)| JSON array or key&#x3D;value pairs with the necessary attachment information. See the model for the exact specifications. | 
+ **attachment** | [**Attachment**](Attachment.md)| JSON array or key&#x3D;value pairs with the necessary attachment information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_attachment**
-> AttachmentSingle update_attachment(id, attachment_update)
+> AttachmentSingle update_attachment(id, attachment)
 
 Update existing attachment.
 
@@ -341,11 +341,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the attachment.
-attachment_update = firefly_iii_client.AttachmentUpdate() # AttachmentUpdate | JSON array with updated attachment information. See the model for the exact specifications.
+attachment = firefly_iii_client.Attachment() # Attachment | JSON array with updated attachment information. See the model for the exact specifications.
 
 try:
     # Update existing attachment.
-    api_response = api_instance.update_attachment(id, attachment_update)
+    api_response = api_instance.update_attachment(id, attachment)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AttachmentsApi->update_attachment: %s\n" % e)
@@ -356,7 +356,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the attachment. | 
- **attachment_update** | [**AttachmentUpdate**](AttachmentUpdate.md)| JSON array with updated attachment information. See the model for the exact specifications. | 
+ **attachment** | [**Attachment**](Attachment.md)| JSON array with updated attachment information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -438,6 +438,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 **204** | Upload was a success |  -  |
 **404** | File not found |  -  |
+**422** | Upload invalid or empty file. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_available_budget**](AvailableBudgetsApi.md#delete_available_budget) | **DELETE** /api/v1/available_budgets/{id} | Delete an available budget.
 [**get_available_budget**](AvailableBudgetsApi.md#get_available_budget) | **GET** /api/v1/available_budgets/{id} | Get a single available budget.
-[**get_available_budgets**](AvailableBudgetsApi.md#get_available_budgets) | **GET** /api/v1/available_budgets | List all available budget amounts.
+[**list_available_budget**](AvailableBudgetsApi.md#list_available_budget) | **GET** /api/v1/available_budgets | List all available budget amounts.
 [**store_available_budget**](AvailableBudgetsApi.md#store_available_budget) | **POST** /api/v1/available_budgets | Store a new available budget
 [**update_available_budget**](AvailableBudgetsApi.md#update_available_budget) | **PUT** /api/v1/available_budgets/{id} | Update existing available budget, to change for example the date range of the amount or the amount itself.
 
@@ -132,8 +132,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_available_budgets**
-> AvailableBudgetArray get_available_budgets(page=page, start=start, end=end)
+# **list_available_budget**
+> AvailableBudgetArray list_available_budget(page=page, start=start, end=end)
 
 List all available budget amounts.
 
@@ -157,15 +157,15 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.AvailableBudgetsApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD.  (optional)
-end = '2018-12-31' # str | A date formatted YYYY-MM-DD.  (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
 
 try:
     # List all available budget amounts.
-    api_response = api_instance.get_available_budgets(page=page, start=start, end=end)
+    api_response = api_instance.list_available_budget(page=page, start=start, end=end)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AvailableBudgetsApi->get_available_budgets: %s\n" % e)
+    print("Exception when calling AvailableBudgetsApi->list_available_budget: %s\n" % e)
 ```
 
 ### Parameters
@@ -173,8 +173,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
 
 ### Return type
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_available_budget**
-> AvailableBudgetSingle store_available_budget(available_budget_update)
+> AvailableBudgetSingle store_available_budget(available_budget)
 
 Store a new available budget
 
@@ -220,11 +220,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.AvailableBudgetsApi(firefly_iii_client.ApiClient(configuration))
-available_budget_update = firefly_iii_client.AvailableBudgetUpdate() # AvailableBudgetUpdate | JSON array or key=value pairs with the necessary available budget information. See the model for the exact specifications.
+available_budget = firefly_iii_client.AvailableBudget() # AvailableBudget | JSON array or key=value pairs with the necessary available budget information. See the model for the exact specifications.
 
 try:
     # Store a new available budget
-    api_response = api_instance.store_available_budget(available_budget_update)
+    api_response = api_instance.store_available_budget(available_budget)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AvailableBudgetsApi->store_available_budget: %s\n" % e)
@@ -234,7 +234,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **available_budget_update** | [**AvailableBudgetUpdate**](AvailableBudgetUpdate.md)| JSON array or key&#x3D;value pairs with the necessary available budget information. See the model for the exact specifications. | 
+ **available_budget** | [**AvailableBudget**](AvailableBudget.md)| JSON array or key&#x3D;value pairs with the necessary available budget information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_available_budget**
-> AvailableBudgetSingle update_available_budget(id, available_budget_update)
+> AvailableBudgetSingle update_available_budget(id, available_budget)
 
 Update existing available budget, to change for example the date range of the amount or the amount itself.
 
@@ -282,11 +282,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.AvailableBudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the object.X
-available_budget_update = firefly_iii_client.AvailableBudgetUpdate() # AvailableBudgetUpdate | JSON array or form value with updated available budget information. See the model for the exact specifications.
+available_budget = firefly_iii_client.AvailableBudget() # AvailableBudget | JSON array or form value with updated available budget information. See the model for the exact specifications.
 
 try:
     # Update existing available budget, to change for example the date range of the amount or the amount itself.
-    api_response = api_instance.update_available_budget(id, available_budget_update)
+    api_response = api_instance.update_available_budget(id, available_budget)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AvailableBudgetsApi->update_available_budget: %s\n" % e)
@@ -297,7 +297,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the object.X | 
- **available_budget_update** | [**AvailableBudgetUpdate**](AvailableBudgetUpdate.md)| JSON array or form value with updated available budget information. See the model for the exact specifications. | 
+ **available_budget** | [**AvailableBudget**](AvailableBudget.md)| JSON array or form value with updated available budget information. See the model for the exact specifications. | 
 
 ### Return type
 

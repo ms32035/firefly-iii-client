@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /api/v1/tags/{tag} | Delete an tag.
 [**get_tag**](TagsApi.md#get_tag) | **GET** /api/v1/tags/{tag} | Get a single tag.
 [**get_tag_cloud**](TagsApi.md#get_tag_cloud) | **GET** /api/v1/tag-cloud | Returns a basic tag cloud.
-[**get_tags**](TagsApi.md#get_tags) | **GET** /api/v1/tags | List all tags.
-[**get_transactions_by_tag**](TagsApi.md#get_transactions_by_tag) | **GET** /api/v1/tags/{tag}/transactions | List all transactions with this tag.
+[**list_tag**](TagsApi.md#list_tag) | **GET** /api/v1/tags | List all tags.
+[**list_transaction_by_tag**](TagsApi.md#list_transaction_by_tag) | **GET** /api/v1/tags/{tag}/transactions | List all transactions with this tag.
 [**store_tag**](TagsApi.md#store_tag) | **POST** /api/v1/tags | Store a new tag
 [**update_tag**](TagsApi.md#update_tag) | **PUT** /api/v1/tags/{tag} | Update existing tag.
 
@@ -198,8 +198,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_tags**
-> TagArray get_tags(page=page)
+# **list_tag**
+> TagArray list_tag(page=page)
 
 List all tags.
 
@@ -226,10 +226,10 @@ page = 56 # int | Page number (optional)
 
 try:
     # List all tags.
-    api_response = api_instance.get_tags(page=page)
+    api_response = api_instance.list_tag(page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TagsApi->get_tags: %s\n" % e)
+    print("Exception when calling TagsApi->list_tag: %s\n" % e)
 ```
 
 ### Parameters
@@ -258,8 +258,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transactions_by_tag**
-> TransactionArray get_transactions_by_tag(tag, page=page, start=start, end=end, type=type)
+# **list_transaction_by_tag**
+> TransactionArray list_transaction_by_tag(tag, page=page, start=start, end=end, type=type)
 
 List all transactions with this tag.
 
@@ -284,16 +284,16 @@ configuration.host = "https://demo.firefly-iii.org"
 api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
 tag = 'groceries' # str | Either the tag itself or the tag ID.
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
-end = '2018-09-17' # str | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
-type = 'type_example' # str | Optional filter on the transaction type(s) returned. (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
+type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
 try:
     # List all transactions with this tag.
-    api_response = api_instance.get_transactions_by_tag(tag, page=page, start=start, end=end, type=type)
+    api_response = api_instance.list_transaction_by_tag(tag, page=page, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TagsApi->get_transactions_by_tag: %s\n" % e)
+    print("Exception when calling TagsApi->list_transaction_by_tag: %s\n" % e)
 ```
 
 ### Parameters
@@ -302,9 +302,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tag** | **str**| Either the tag itself or the tag ID. | 
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  | [optional] 
- **type** | **str**| Optional filter on the transaction type(s) returned. | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  | [optional] 
+ **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned. | [optional] 
 
 ### Return type
 
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_tag**
-> TagSingle store_tag(tag_update)
+> TagSingle store_tag(tag_model)
 
 Store a new tag
 
@@ -350,11 +350,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-tag_update = firefly_iii_client.TagUpdate() # TagUpdate | JSON array or key=value pairs with the necessary tag information. See the model for the exact specifications.
+tag_model = firefly_iii_client.TagModel() # TagModel | JSON array or key=value pairs with the necessary tag information. See the model for the exact specifications.
 
 try:
     # Store a new tag
-    api_response = api_instance.store_tag(tag_update)
+    api_response = api_instance.store_tag(tag_model)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagsApi->store_tag: %s\n" % e)
@@ -364,7 +364,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag_update** | [**TagUpdate**](TagUpdate.md)| JSON array or key&#x3D;value pairs with the necessary tag information. See the model for the exact specifications. | 
+ **tag_model** | [**TagModel**](TagModel.md)| JSON array or key&#x3D;value pairs with the necessary tag information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tag**
-> TagSingle update_tag(tag, tag_update)
+> TagSingle update_tag(tag, tag_model)
 
 Update existing tag.
 
@@ -412,11 +412,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
 tag = 'groceries' # str | Either the tag itself or the tag ID.
-tag_update = firefly_iii_client.TagUpdate() # TagUpdate | JSON array with updated tag information. See the model for the exact specifications.
+tag_model = firefly_iii_client.TagModel() # TagModel | JSON array with updated tag information. See the model for the exact specifications.
 
 try:
     # Update existing tag.
-    api_response = api_instance.update_tag(tag, tag_update)
+    api_response = api_instance.update_tag(tag, tag_model)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagsApi->update_tag: %s\n" % e)
@@ -427,7 +427,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tag** | **str**| Either the tag itself or the tag ID. | 
- **tag_update** | [**TagUpdate**](TagUpdate.md)| JSON array with updated tag information. See the model for the exact specifications. | 
+ **tag_model** | [**TagModel**](TagModel.md)| JSON array with updated tag information. See the model for the exact specifications. | 
 
 ### Return type
 

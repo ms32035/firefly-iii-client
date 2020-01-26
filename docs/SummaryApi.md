@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_basic_summary**
-> list[BasicSummaryEntry] get_basic_summary(start, end)
+> list[BasicSummaryEntry] get_basic_summary(start, end, currency_code=currency_code)
 
 Returns basic sums of the users data.
 
@@ -33,10 +33,11 @@ configuration.host = "https://demo.firefly-iii.org"
 api_instance = firefly_iii_client.SummaryApi(firefly_iii_client.ApiClient(configuration))
 start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
+currency_code = 'currency_code_example' # str | A currency code like EUR or USD, to filter the result.  (optional)
 
 try:
     # Returns basic sums of the users data.
-    api_response = api_instance.get_basic_summary(start, end)
+    api_response = api_instance.get_basic_summary(start, end, currency_code=currency_code)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SummaryApi->get_basic_summary: %s\n" % e)
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **date**| A date formatted YYYY-MM-DD.  | 
  **end** | **date**| A date formatted YYYY-MM-DD.  | 
+ **currency_code** | **str**| A currency code like EUR or USD, to filter the result.  | [optional] 
 
 ### Return type
 

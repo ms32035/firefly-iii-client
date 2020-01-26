@@ -8,10 +8,10 @@ Method | HTTP request | Description
 [**delete_budget_limit**](BudgetsApi.md#delete_budget_limit) | **DELETE** /api/v1/budgets/limits/{id} | Delete a budget limit.
 [**get_budget**](BudgetsApi.md#get_budget) | **GET** /api/v1/budgets/{id} | Get a single budget.
 [**get_budget_limit**](BudgetsApi.md#get_budget_limit) | **GET** /api/v1/budgets/limits/{id} | Get single budget limit.
-[**get_budget_limits**](BudgetsApi.md#get_budget_limits) | **GET** /api/v1/budgets/{id}/limits | Get all limits
-[**get_budgets**](BudgetsApi.md#get_budgets) | **GET** /api/v1/budgets | List all budgets.
-[**get_transactions_by_budget**](BudgetsApi.md#get_transactions_by_budget) | **GET** /api/v1/budgets/{id}/transactions | All transactions to a budget.
-[**get_transactions_by_budget_limit**](BudgetsApi.md#get_transactions_by_budget_limit) | **GET** /api/v1/budgets/limits/{id}/transactions | List all transactions by a budget limit ID.
+[**list_budget**](BudgetsApi.md#list_budget) | **GET** /api/v1/budgets | List all budgets.
+[**list_budget_limit_by_budget**](BudgetsApi.md#list_budget_limit_by_budget) | **GET** /api/v1/budgets/{id}/limits | Get all limits
+[**list_transaction_by_budget**](BudgetsApi.md#list_transaction_by_budget) | **GET** /api/v1/budgets/{id}/transactions | All transactions to a budget.
+[**list_transaction_by_budget_limit**](BudgetsApi.md#list_transaction_by_budget_limit) | **GET** /api/v1/budgets/limits/{id}/transactions | List all transactions by a budget limit ID.
 [**store_budget**](BudgetsApi.md#store_budget) | **POST** /api/v1/budgets | Store a new budget
 [**store_budget_limit**](BudgetsApi.md#store_budget_limit) | **POST** /api/v1/budgets/{id}/limits | Store new budget limit.
 [**update_budget**](BudgetsApi.md#update_budget) | **PUT** /api/v1/budgets/{id} | Update existing budget.
@@ -163,8 +163,8 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget.
-start_date = '2018-09-17' # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
-end_date = '2018-12-31' # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
+start_date = '2013-10-20' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
+end_date = '2013-10-20' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
 
 try:
     # Get a single budget.
@@ -179,8 +179,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the requested budget. | 
- **start_date** | **str**| A date formatted YYYY-MM-DD, to get info on how much the user has spent.  | [optional] 
- **end_date** | **str**| A date formatted YYYY-MM-DD, to get info on how much the user has spent.  | [optional] 
+ **start_date** | **date**| A date formatted YYYY-MM-DD, to get info on how much the user has spent.  | [optional] 
+ **end_date** | **date**| A date formatted YYYY-MM-DD, to get info on how much the user has spent.  | [optional] 
 
 ### Return type
 
@@ -262,72 +262,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_budget_limits**
-> BudgetLimitArray get_budget_limits(id, start=start, end=end)
-
-Get all limits
-
-Get all budget limits for this budget and the money spent, and money left. You can limit the list by submitting a date range as well. The \"spent\" array for each budget limit is NOT influenced by the start and end date of your query, but by the start and end date of the budget limit itself. 
-
-### Example
-
-* OAuth Authentication (firefly_iii_auth):
-```python
-from __future__ import print_function
-import time
-import firefly_iii_client
-from firefly_iii_client.rest import ApiException
-from pprint import pprint
-configuration = firefly_iii_client.Configuration()
-# Configure OAuth2 access token for authorization: firefly_iii_auth
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the requested budget.
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD.  (optional)
-end = '2018-12-31' # str | A date formatted YYYY-MM-DD.  (optional)
-
-try:
-    # Get all limits
-    api_response = api_instance.get_budget_limits(id, start=start, end=end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BudgetsApi->get_budget_limits: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the requested budget. | 
- **start** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
-
-### Return type
-
-[**BudgetLimitArray**](BudgetLimitArray.md)
-
-### Authorization
-
-[firefly_iii_auth](../README.md#firefly_iii_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A list of budget limits applicable to this budget. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_budgets**
-> BudgetArray get_budgets(page=page, start=start, end=end)
+# **list_budget**
+> BudgetArray list_budget(page=page, start=start, end=end)
 
 List all budgets.
 
@@ -351,15 +287,15 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
-end = '2018-12-31' # str | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
 
 try:
     # List all budgets.
-    api_response = api_instance.get_budgets(page=page, start=start, end=end)
+    api_response = api_instance.list_budget(page=page, start=start, end=end)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BudgetsApi->get_budgets: %s\n" % e)
+    print("Exception when calling BudgetsApi->list_budget: %s\n" % e)
 ```
 
 ### Parameters
@@ -367,8 +303,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  | [optional] 
 
 ### Return type
 
@@ -390,8 +326,72 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transactions_by_budget**
-> TransactionArray get_transactions_by_budget(id, limit=limit, page=page, start=start, end=end, type=type)
+# **list_budget_limit_by_budget**
+> BudgetLimitArray list_budget_limit_by_budget(id, start=start, end=end)
+
+Get all limits
+
+Get all budget limits for this budget and the money spent, and money left. You can limit the list by submitting a date range as well. The \"spent\" array for each budget limit is NOT influenced by the start and end date of your query, but by the start and end date of the budget limit itself. 
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the requested budget.
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+
+try:
+    # Get all limits
+    api_response = api_instance.list_budget_limit_by_budget(id, start=start, end=end)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BudgetsApi->list_budget_limit_by_budget: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the requested budget. | 
+ **start** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
+
+### Return type
+
+[**BudgetLimitArray**](BudgetLimitArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of budget limits applicable to this budget. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_transaction_by_budget**
+> TransactionArray list_transaction_by_budget(id, limit=limit, page=page, start=start, end=end, type=type)
 
 All transactions to a budget.
 
@@ -417,16 +417,16 @@ api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(config
 id = 1 # int | The ID of the budget.
 limit = 5 # int | Limits the number of results on one page. (optional)
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD.  (optional)
-end = '2018-12-31' # str | A date formatted YYYY-MM-DD.  (optional)
-type = 'type_example' # str | Optional filter on the transaction type(s) returned (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
 try:
     # All transactions to a budget.
-    api_response = api_instance.get_transactions_by_budget(id, limit=limit, page=page, start=start, end=end, type=type)
+    api_response = api_instance.list_transaction_by_budget(id, limit=limit, page=page, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BudgetsApi->get_transactions_by_budget: %s\n" % e)
+    print("Exception when calling BudgetsApi->list_transaction_by_budget: %s\n" % e)
 ```
 
 ### Parameters
@@ -436,9 +436,9 @@ Name | Type | Description  | Notes
  **id** | **int**| The ID of the budget. | 
  **limit** | **int**| Limits the number of results on one page. | [optional] 
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD.  | [optional] 
- **type** | **str**| Optional filter on the transaction type(s) returned | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
+ **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned | [optional] 
 
 ### Return type
 
@@ -460,8 +460,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transactions_by_budget_limit**
-> TransactionArray get_transactions_by_budget_limit(id, page=page, type=type)
+# **list_transaction_by_budget_limit**
+> TransactionArray list_transaction_by_budget_limit(id, page=page, type=type)
 
 List all transactions by a budget limit ID.
 
@@ -486,14 +486,14 @@ configuration.host = "https://demo.firefly-iii.org"
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget limit.
 page = 1 # int | Page number. The default pagination is 50. (optional)
-type = 'type_example' # str | Optional filter on the transaction type(s) returned (optional)
+type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
 try:
     # List all transactions by a budget limit ID.
-    api_response = api_instance.get_transactions_by_budget_limit(id, page=page, type=type)
+    api_response = api_instance.list_transaction_by_budget_limit(id, page=page, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BudgetsApi->get_transactions_by_budget_limit: %s\n" % e)
+    print("Exception when calling BudgetsApi->list_transaction_by_budget_limit: %s\n" % e)
 ```
 
 ### Parameters
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the requested budget limit. | 
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **type** | **str**| Optional filter on the transaction type(s) returned | [optional] 
+ **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned | [optional] 
 
 ### Return type
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_budget**
-> BudgetSingle store_budget(budget_update)
+> BudgetSingle store_budget(budget)
 
 Store a new budget
 
@@ -548,11 +548,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
-budget_update = firefly_iii_client.BudgetUpdate() # BudgetUpdate | JSON array or key=value pairs with the necessary budget information. See the model for the exact specifications.
+budget = firefly_iii_client.Budget() # Budget | JSON array or key=value pairs with the necessary budget information. See the model for the exact specifications.
 
 try:
     # Store a new budget
-    api_response = api_instance.store_budget(budget_update)
+    api_response = api_instance.store_budget(budget)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BudgetsApi->store_budget: %s\n" % e)
@@ -562,7 +562,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_update** | [**BudgetUpdate**](BudgetUpdate.md)| JSON array or key&#x3D;value pairs with the necessary budget information. See the model for the exact specifications. | 
+ **budget** | [**Budget**](Budget.md)| JSON array or key&#x3D;value pairs with the necessary budget information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_budget_limit**
-> BudgetLimitSingle store_budget_limit(id, budget_limit_update)
+> BudgetLimitSingle store_budget_limit(id, budget_limit)
 
 Store new budget limit.
 
@@ -610,11 +610,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the budget.
-budget_limit_update = firefly_iii_client.BudgetLimitUpdate() # BudgetLimitUpdate | JSON array or key=value pairs with the necessary budget information. See the model for the exact specifications.
+budget_limit = firefly_iii_client.BudgetLimit() # BudgetLimit | JSON array or key=value pairs with the necessary budget information. See the model for the exact specifications.
 
 try:
     # Store new budget limit.
-    api_response = api_instance.store_budget_limit(id, budget_limit_update)
+    api_response = api_instance.store_budget_limit(id, budget_limit)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BudgetsApi->store_budget_limit: %s\n" % e)
@@ -625,7 +625,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the budget. | 
- **budget_limit_update** | [**BudgetLimitUpdate**](BudgetLimitUpdate.md)| JSON array or key&#x3D;value pairs with the necessary budget information. See the model for the exact specifications. | 
+ **budget_limit** | [**BudgetLimit**](BudgetLimit.md)| JSON array or key&#x3D;value pairs with the necessary budget information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -649,7 +649,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_budget**
-> BudgetSingle update_budget(id, budget_update)
+> BudgetSingle update_budget(id, budget)
 
 Update existing budget.
 
@@ -673,11 +673,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the budget.
-budget_update = firefly_iii_client.BudgetUpdate() # BudgetUpdate | JSON array with updated budget information. See the model for the exact specifications.
+budget = firefly_iii_client.Budget() # Budget | JSON array with updated budget information. See the model for the exact specifications.
 
 try:
     # Update existing budget.
-    api_response = api_instance.update_budget(id, budget_update)
+    api_response = api_instance.update_budget(id, budget)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BudgetsApi->update_budget: %s\n" % e)
@@ -688,7 +688,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the budget. | 
- **budget_update** | [**BudgetUpdate**](BudgetUpdate.md)| JSON array with updated budget information. See the model for the exact specifications. | 
+ **budget** | [**Budget**](Budget.md)| JSON array with updated budget information. See the model for the exact specifications. | 
 
 ### Return type
 
@@ -712,7 +712,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_budget_limit**
-> BudgetLimitSingle update_budget_limit(id, budget_limit_update)
+> BudgetLimitSingle update_budget_limit(id, budget_limit)
 
 Update existing budget limit.
 
@@ -736,11 +736,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the requested budget limit. The budget limit MUST be associated to the budget ID.
-budget_limit_update = firefly_iii_client.BudgetLimitUpdate() # BudgetLimitUpdate | JSON array with updated budget limit information. See the model for the exact specifications.
+budget_limit = firefly_iii_client.BudgetLimit() # BudgetLimit | JSON array with updated budget limit information. See the model for the exact specifications.
 
 try:
     # Update existing budget limit.
-    api_response = api_instance.update_budget_limit(id, budget_limit_update)
+    api_response = api_instance.update_budget_limit(id, budget_limit)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BudgetsApi->update_budget_limit: %s\n" % e)
@@ -751,7 +751,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the requested budget limit. The budget limit MUST be associated to the budget ID. | 
- **budget_limit_update** | [**BudgetLimitUpdate**](BudgetLimitUpdate.md)| JSON array with updated budget limit information. See the model for the exact specifications. | 
+ **budget_limit** | [**BudgetLimit**](BudgetLimit.md)| JSON array with updated budget limit information. See the model for the exact specifications. | 
 
 ### Return type
 

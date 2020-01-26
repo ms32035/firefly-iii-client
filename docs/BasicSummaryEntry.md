@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency_code** | **str** |  | [optional] 
 **currency_decimal_places** | **int** | Number of decimals for the associated currency. | [optional] 
-**currency_id** | **float** | The currency ID of the associated currency. | [optional] 
+**currency_id** | **int** | The currency ID of the associated currency. | [optional] 
 **currency_symbol** | **str** |  | [optional] 
 **key** | **str** | This is a reference to the type of info shared, not influenced by translations or user preferences. | [optional] 
 **local_icon** | **str** | Reference to a font-awesome icon without the fa- part. | [optional] 

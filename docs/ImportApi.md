@@ -5,8 +5,8 @@ All URIs are relative to *https://demo.firefly-iii.org*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_import**](ImportApi.md#get_import) | **GET** /api/v1/import/{key} | Show info on a single import
-[**get_imports**](ImportApi.md#get_imports) | **GET** /api/v1/import/list | List al imports
-[**get_transactions_by_import**](ImportApi.md#get_transactions_by_import) | **GET** /api/v1/import/{key}/transactions | List all transactions related to the import job. The correlation is made through the tag.
+[**list_import**](ImportApi.md#list_import) | **GET** /api/v1/import/list | List al imports
+[**list_transaction_by_import**](ImportApi.md#list_transaction_by_import) | **GET** /api/v1/import/{key}/transactions | List all transactions related to the import job. The correlation is made through the tag.
 
 
 # **get_import**
@@ -70,8 +70,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_imports**
-> ImportJobArray get_imports(page=page)
+# **list_import**
+> ImportJobArray list_import(page=page)
 
 List al imports
 
@@ -98,10 +98,10 @@ page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
 try:
     # List al imports
-    api_response = api_instance.get_imports(page=page)
+    api_response = api_instance.list_import(page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ImportApi->get_imports: %s\n" % e)
+    print("Exception when calling ImportApi->list_import: %s\n" % e)
 ```
 
 ### Parameters
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transactions_by_import**
-> TransactionArray get_transactions_by_import(key, page=page, start=start, end=end, type=type)
+# **list_transaction_by_import**
+> TransactionArray list_transaction_by_import(key, page=page, start=start, end=end, type=type)
 
 List all transactions related to the import job. The correlation is made through the tag.
 
@@ -156,16 +156,16 @@ configuration.host = "https://demo.firefly-iii.org"
 api_instance = firefly_iii_client.ImportApi(firefly_iii_client.ApiClient(configuration))
 key = 'abcde' # str | The key of the import job
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
-end = '2018-09-17' # str | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
-type = 'type_example' # str | Optional filter on the transaction type(s) returned. (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
+type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
 try:
     # List all transactions related to the import job. The correlation is made through the tag.
-    api_response = api_instance.get_transactions_by_import(key, page=page, start=start, end=end, type=type)
+    api_response = api_instance.list_transaction_by_import(key, page=page, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ImportApi->get_transactions_by_import: %s\n" % e)
+    print("Exception when calling ImportApi->list_transaction_by_import: %s\n" % e)
 ```
 
 ### Parameters
@@ -174,9 +174,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **str**| The key of the import job | 
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  | [optional] 
- **type** | **str**| Optional filter on the transaction type(s) returned. | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  | [optional] 
+ **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned. | [optional] 
 
 ### Return type
 

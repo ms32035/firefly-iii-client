@@ -5,10 +5,11 @@ All URIs are relative to *https://demo.firefly-iii.org*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_transaction**](TransactionsApi.md#delete_transaction) | **DELETE** /api/v1/transactions/{id} | Delete a transaction.
-[**get_attachments_by_transactions**](TransactionsApi.md#get_attachments_by_transactions) | **GET** /api/v1/transactions/{id}/attachments | Lists all attachments.
-[**get_events_by_transactions**](TransactionsApi.md#get_events_by_transactions) | **GET** /api/v1/transactions/{id}/piggy_bank_events | Lists all piggy bank events.
 [**get_transaction**](TransactionsApi.md#get_transaction) | **GET** /api/v1/transactions/{id} | Get a single transaction.
-[**get_transactions**](TransactionsApi.md#get_transactions) | **GET** /api/v1/transactions | List all the user&#39;s transactions. 
+[**get_transaction_by_journal**](TransactionsApi.md#get_transaction_by_journal) | **GET** /api/v1/transaction-journals/{id} | Get a single transaction, based on one of the underlying transaction journals.
+[**list_attachment_by_transaction**](TransactionsApi.md#list_attachment_by_transaction) | **GET** /api/v1/transactions/{id}/attachments | Lists all attachments.
+[**list_event_by_transaction**](TransactionsApi.md#list_event_by_transaction) | **GET** /api/v1/transactions/{id}/piggy_bank_events | Lists all piggy bank events.
+[**list_transaction**](TransactionsApi.md#list_transaction) | **GET** /api/v1/transactions | List all the user&#39;s transactions. 
 [**store_transaction**](TransactionsApi.md#store_transaction) | **POST** /api/v1/transactions | Store a new transaction
 [**update_transaction**](TransactionsApi.md#update_transaction) | **PUT** /api/v1/transactions/{id} | Update existing transaction.
 
@@ -73,8 +74,130 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_attachments_by_transactions**
-> AttachmentArray get_attachments_by_transactions(id, page=page)
+# **get_transaction**
+> TransactionSingle get_transaction(id)
+
+Get a single transaction.
+
+Get a single transaction.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the transaction.
+
+try:
+    # Get a single transaction.
+    api_response = api_instance.get_transaction(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TransactionsApi->get_transaction: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the transaction. | 
+
+### Return type
+
+[**TransactionSingle**](TransactionSingle.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested transaction. |  -  |
+**404** | Transaction not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transaction_by_journal**
+> TransactionSingle get_transaction_by_journal(id)
+
+Get a single transaction, based on one of the underlying transaction journals.
+
+Get a single transaction by underlying journal.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the transaction journal.
+
+try:
+    # Get a single transaction, based on one of the underlying transaction journals.
+    api_response = api_instance.get_transaction_by_journal(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TransactionsApi->get_transaction_by_journal: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the transaction journal. | 
+
+### Return type
+
+[**TransactionSingle**](TransactionSingle.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The requested transaction. |  -  |
+**404** | Transaction not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_attachment_by_transaction**
+> AttachmentArray list_attachment_by_transaction(id, page=page)
 
 Lists all attachments.
 
@@ -102,10 +225,10 @@ page = 1 # int | Page number. The default pagination is 50. (optional)
 
 try:
     # Lists all attachments.
-    api_response = api_instance.get_attachments_by_transactions(id, page=page)
+    api_response = api_instance.list_attachment_by_transaction(id, page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TransactionsApi->get_attachments_by_transactions: %s\n" % e)
+    print("Exception when calling TransactionsApi->list_attachment_by_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -136,8 +259,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_events_by_transactions**
-> PiggyBankEventArray get_events_by_transactions(id, page=page)
+# **list_event_by_transaction**
+> PiggyBankEventArray list_event_by_transaction(id, page=page)
 
 Lists all piggy bank events.
 
@@ -165,10 +288,10 @@ page = 1 # int | Page number. The default pagination is 50. (optional)
 
 try:
     # Lists all piggy bank events.
-    api_response = api_instance.get_events_by_transactions(id, page=page)
+    api_response = api_instance.list_event_by_transaction(id, page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TransactionsApi->get_events_by_transactions: %s\n" % e)
+    print("Exception when calling TransactionsApi->list_event_by_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -199,69 +322,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transaction**
-> TransactionSingle get_transaction(id)
-
-Get a single transaction.
-
-Get a single transaction.
-
-### Example
-
-* OAuth Authentication (firefly_iii_auth):
-```python
-from __future__ import print_function
-import time
-import firefly_iii_client
-from firefly_iii_client.rest import ApiException
-from pprint import pprint
-configuration = firefly_iii_client.Configuration()
-# Configure OAuth2 access token for authorization: firefly_iii_auth
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction. Note that this ID is different from the ID you see in the URL of your Firefly III instance.
-
-try:
-    # Get a single transaction.
-    api_response = api_instance.get_transaction(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->get_transaction: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction. Note that this ID is different from the ID you see in the URL of your Firefly III instance. | 
-
-### Return type
-
-[**TransactionSingle**](TransactionSingle.md)
-
-### Authorization
-
-[firefly_iii_auth](../README.md#firefly_iii_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The requested transaction. |  -  |
-**404** | Transaction not found. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_transactions**
-> TransactionArray get_transactions(page=page, start=start, end=end, type=type)
+# **list_transaction**
+> TransactionArray list_transaction(page=page, start=start, end=end, type=type)
 
 List all the user's transactions. 
 
@@ -285,16 +347,16 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2018-09-17' # str | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
-end = '2018-09-17' # str | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
-type = 'type_example' # str | Optional filter on the transaction type(s) returned. (optional)
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
+type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
 try:
     # List all the user's transactions. 
-    api_response = api_instance.get_transactions(page=page, start=start, end=end, type=type)
+    api_response = api_instance.list_transaction(page=page, start=start, end=end, type=type)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TransactionsApi->get_transactions: %s\n" % e)
+    print("Exception when calling TransactionsApi->list_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -302,9 +364,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **start** | **str**| A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  | [optional] 
- **end** | **str**| A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  | [optional] 
- **type** | **str**| Optional filter on the transaction type(s) returned. | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  | [optional] 
+ **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned. | [optional] 
 
 ### Return type
 
@@ -327,7 +389,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_transaction**
-> TransactionArray store_transaction(transaction_update)
+> TransactionSingle store_transaction(transaction)
 
 Store a new transaction
 
@@ -350,11 +412,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-transaction_update = firefly_iii_client.TransactionUpdate() # TransactionUpdate | JSON array or key=value pairs with the necessary transaction information. See the model for the exact specifications.
+transaction = firefly_iii_client.Transaction() # Transaction | JSON array or key=value pairs with the necessary transaction information. See the model for the exact specifications.
 
 try:
     # Store a new transaction
-    api_response = api_instance.store_transaction(transaction_update)
+    api_response = api_instance.store_transaction(transaction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->store_transaction: %s\n" % e)
@@ -364,11 +426,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transaction_update** | [**TransactionUpdate**](TransactionUpdate.md)| JSON array or key&#x3D;value pairs with the necessary transaction information. See the model for the exact specifications. | 
+ **transaction** | [**Transaction**](Transaction.md)| JSON array or key&#x3D;value pairs with the necessary transaction information. See the model for the exact specifications. | 
 
 ### Return type
 
-[**TransactionArray**](TransactionArray.md)
+[**TransactionSingle**](TransactionSingle.md)
 
 ### Authorization
 
@@ -388,7 +450,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_transaction**
-> TransactionSingle update_transaction(id, transaction_update)
+> TransactionSingle update_transaction(id, transaction)
 
 Update existing transaction.
 
@@ -412,11 +474,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the transaction.
-transaction_update = firefly_iii_client.TransactionUpdate() # TransactionUpdate | JSON array with updated transaction information. See the model for the exact specifications.
+transaction = firefly_iii_client.Transaction() # Transaction | JSON array with updated transaction information. See the model for the exact specifications.
 
 try:
     # Update existing transaction.
-    api_response = api_instance.update_transaction(id, transaction_update)
+    api_response = api_instance.update_transaction(id, transaction)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->update_transaction: %s\n" % e)
@@ -427,7 +489,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the transaction. | 
- **transaction_update** | [**TransactionUpdate**](TransactionUpdate.md)| JSON array with updated transaction information. See the model for the exact specifications. | 
+ **transaction** | [**Transaction**](Transaction.md)| JSON array with updated transaction information. See the model for the exact specifications. | 
 
 ### Return type
 

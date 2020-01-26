@@ -5,7 +5,7 @@ All URIs are relative to *https://demo.firefly-iii.org*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_preference**](PreferencesApi.md#get_preference) | **GET** /api/v1/preferences/{name} | Return a single preference.
-[**get_preferences**](PreferencesApi.md#get_preferences) | **GET** /api/v1/preferences | List all users preferences.
+[**list_preference**](PreferencesApi.md#list_preference) | **GET** /api/v1/preferences | List all users preferences.
 [**update_preference**](PreferencesApi.md#update_preference) | **PUT** /api/v1/preferences/{name} | Update preference
 
 
@@ -69,8 +69,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_preferences**
-> PreferenceArray get_preferences(page=page)
+# **list_preference**
+> PreferenceArray list_preference(page=page)
 
 List all users preferences.
 
@@ -97,10 +97,10 @@ page = 1 # int | Page number. The default pagination is 50. (optional)
 
 try:
     # List all users preferences.
-    api_response = api_instance.get_preferences(page=page)
+    api_response = api_instance.list_preference(page=page)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PreferencesApi->get_preferences: %s\n" % e)
+    print("Exception when calling PreferencesApi->list_preference: %s\n" % e)
 ```
 
 ### Parameters
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_preference**
-> PreferenceSingle update_preference(name, preference_update)
+> PreferenceSingle update_preference(name, preference)
 
 Update preference
 
@@ -154,11 +154,11 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.PreferencesApi(firefly_iii_client.ApiClient(configuration))
 name = 'currencyPreference' # str | The name of the preference. Will always overwrite. Will be created if it does not exist.
-preference_update = firefly_iii_client.PreferenceUpdate() # PreferenceUpdate | JSON array or key=value pairs with the necessary preference information. See the model for the exact specifications.
+preference = firefly_iii_client.Preference() # Preference | JSON array or key=value pairs with the necessary preference information. See the model for the exact specifications.
 
 try:
     # Update preference
-    api_response = api_instance.update_preference(name, preference_update)
+    api_response = api_instance.update_preference(name, preference)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PreferencesApi->update_preference: %s\n" % e)
@@ -169,7 +169,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| The name of the preference. Will always overwrite. Will be created if it does not exist. | 
- **preference_update** | [**PreferenceUpdate**](PreferenceUpdate.md)| JSON array or key&#x3D;value pairs with the necessary preference information. See the model for the exact specifications. | 
+ **preference** | [**Preference**](Preference.md)| JSON array or key&#x3D;value pairs with the necessary preference information. See the model for the exact specifications. | 
 
 ### Return type
 
