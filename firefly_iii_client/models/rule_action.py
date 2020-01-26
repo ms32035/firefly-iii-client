@@ -213,7 +213,7 @@ class RuleAction(object):
         :param type: The type of this RuleAction.  # noqa: E501
         :type: str
         """
-        allowed_values = ["user_action", "set_category", "clear_category", "set_budget", "clear_budget", "add_tag", "remove_tag", "remove_all_tags", "set_description", "append_description", "prepend_description", "aet_source_account", "set_destination_account", "set_notes", "append_notes", "prepend_notes", "clear_notes", "link_to_bill", "convert_withdrawal", "convert_deposit", "convert_transfer"]  # noqa: E501
+        allowed_values = ["user_action", "set_category", "clear_category", "set_budget", "clear_budget", "add_tag", "remove_tag", "remove_all_tags", "set_description", "append_description", "prepend_description", "set_source_account", "set_destination_account", "set_notes", "append_notes", "prepend_notes", "clear_notes", "link_to_bill", "convert_withdrawal", "convert_deposit", "convert_transfer"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
