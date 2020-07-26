@@ -23,6 +23,9 @@ rm -rf /build/stage/target
 cd /build/stage && git checkout -f
 rm -rf /build/stage/.git
 
+java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar validate \
+-i /build/firefly-iii-processed.yaml
+
 java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar generate \
 -i /build/firefly-iii-processed.yaml \
 -o /build/stage \
@@ -30,10 +33,11 @@ java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-ge
 --git-user-id ms32035 \
 --git-repo-id firefly-iii-client \
 --enable-post-process-file \
--DpackageName=firefly_iii_client \
--DprojectName="Firefly III API Client" \
--DpackageVersion=${API_VERSION} \
--DpackageUrl=https://github.com/ms32035/firefly-iii-client
+--additional-properties=\
+packageName=firefly_iii_client,\
+projectName="Firefly III API Client",\
+packageVersion=${API_VERSION},\
+packageUrl=https://github.com/ms32035/firefly-iii-client
 checkStatus
 
 python3 /generator/postprocess.py /build/stage
