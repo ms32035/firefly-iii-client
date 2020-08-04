@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**disable_currency**](CurrenciesApi.md#disable_currency) | **POST** /api/v1/currencies/{code}/disable | Disable a currency.
 [**enable_currency**](CurrenciesApi.md#enable_currency) | **POST** /api/v1/currencies/{code}/enable | Enable a single currency.
 [**get_currency**](CurrenciesApi.md#get_currency) | **GET** /api/v1/currencies/{code} | Get a single currency.
+[**get_default_currency**](CurrenciesApi.md#get_default_currency) | **GET** /api/v1/currencies/default | Get the user&#39;s default currency.
 [**list_account_by_currency**](CurrenciesApi.md#list_account_by_currency) | **GET** /api/v1/currencies/{code}/accounts | List all accounts with this currency.
 [**list_available_budget_by_currency**](CurrenciesApi.md#list_available_budget_by_currency) | **GET** /api/v1/currencies/{code}/available_budgets | List all available budgets with this currency.
 [**list_bill_by_currency**](CurrenciesApi.md#list_bill_by_currency) | **GET** /api/v1/currencies/{code}/bills | List all bills with this currency.
@@ -321,6 +322,62 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | The requested currency |  -  |
 **404** | Currency not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_default_currency**
+> CurrencySingle get_default_currency()
+
+Get the user's default currency.
+
+Get the user's default currency.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
+
+try:
+    # Get the user's default currency.
+    api_response = api_instance.get_default_currency()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CurrenciesApi->get_default_currency: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CurrencySingle**](CurrencySingle.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The default currency |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /api/v1/tags/{tag} | Delete an tag.
 [**get_tag**](TagsApi.md#get_tag) | **GET** /api/v1/tags/{tag} | Get a single tag.
 [**get_tag_cloud**](TagsApi.md#get_tag_cloud) | **GET** /api/v1/tag-cloud | Returns a basic tag cloud.
+[**list_attachment_by_tag**](TagsApi.md#list_attachment_by_tag) | **GET** /api/v1/tags/{tag}/attachments | Lists all attachments.
 [**list_tag**](TagsApi.md#list_tag) | **GET** /api/v1/tags | List all tags.
 [**list_transaction_by_tag**](TagsApi.md#list_transaction_by_tag) | **GET** /api/v1/tags/{tag}/transactions | List all transactions with this tag.
 [**store_tag**](TagsApi.md#store_tag) | **POST** /api/v1/tags | Store a new tag
@@ -195,6 +196,69 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A tag cloud |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_attachment_by_tag**
+> AttachmentArray list_attachment_by_tag(tag, page=page)
+
+Lists all attachments.
+
+Lists all attachments.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
+tag = 'groceries' # str | Either the tag itself or the tag ID.
+page = 1 # int | Page number. The default pagination is 50. (optional)
+
+try:
+    # Lists all attachments.
+    api_response = api_instance.list_attachment_by_tag(tag, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TagsApi->list_attachment_by_tag: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tag** | **str**| Either the tag itself or the tag ID. | 
+ **page** | **int**| Page number. The default pagination is 50. | [optional] 
+
+### Return type
+
+[**AttachmentArray**](AttachmentArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of attachments |  -  |
+**404** | No such tag. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

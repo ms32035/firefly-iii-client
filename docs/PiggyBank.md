@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **left_to_save** | **float** |  | [optional] 
 **name** | **str** |  | 
 **notes** | **str** |  | [optional] 
+**object_group_id** | **int** | The group ID of the group this object is part of. NULL if no group. | [optional] 
+**object_group_order** | **int** | The order of the group. At least 1, for the highest sorting. | [optional] 
+**object_group_title** | **str** | The name of the group. NULL if no group. | [optional] 
 **order** | **int** |  | [optional] 
 **percentage** | **float** |  | [optional] 
 **save_per_month** | **float** |  | [optional] 

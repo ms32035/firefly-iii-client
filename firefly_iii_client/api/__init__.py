@@ -21,6 +21,7 @@ from firefly_iii_client.api.preferences_api import PreferencesApi
 from firefly_iii_client.api.recurrences_api import RecurrencesApi
 from firefly_iii_client.api.rule_groups_api import RuleGroupsApi
 from firefly_iii_client.api.rules_api import RulesApi
+from firefly_iii_client.api.search_api import SearchApi
 from firefly_iii_client.api.summary_api import SummaryApi
 from firefly_iii_client.api.tags_api import TagsApi
 from firefly_iii_client.api.transactions_api import TransactionsApi

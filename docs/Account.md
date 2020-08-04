@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **current_balance_date** | **date** |  | [optional] 
 **iban** | **str** |  | [optional] 
 **include_net_worth** | **bool** | If omitted, defaults to true. | [optional] 
-**interest** | **float** | Mandatory when type is liability. Interest percentage. | [optional] 
+**interest** | **str** | Mandatory when type is liability. Interest percentage. | [optional] 
 **interest_period** | **str** | Mandatory when type is liability. Period over which the interest is calculated. | [optional] 
 **liability_amount** | **float** | Mandatory when type is liability. Amount of money in the liability. Must be positive. | [optional] 
 **liability_start_date** | **date** | Mandatory when type is liability. Start date for the liability. | [optional] 

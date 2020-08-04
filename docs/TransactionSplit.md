@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **float** | Amount of the transaction. | 
+**amount** | **str** | Amount of the transaction. | 
 **bill_id** | **int** | Optional. Use either this or the bill_name | [optional] 
 **bill_name** | **str** | Optional. Use either this or the bill_id | [optional] 
 **book_date** | **date** |  | [optional] 
@@ -18,17 +18,17 @@ Name | Type | Description | Notes
 **currency_name** | **str** |  | [optional] 
 **currency_symbol** | **str** |  | [optional] 
 **date** | **date** | Date of the transaction | 
-**description** | **str** | Description of the transaction. Will only be used if more than one split is submitted. | 
+**description** | **str** | Description of the transaction. | 
 **destination_iban** | **str** |  | [optional] 
 **destination_id** | **int** | ID of the destination account. For a deposit or a transfer, this must always be an asset account. For withdrawals this must be an expense account. | 
 **destination_name** | **str** | Name of the destination account. You can submit the name instead of the ID. For everything except transfers, the account will be auto-generated if unknown, so submitting a name is enough. | [optional] 
 **destination_type** | [**AccountTypeProperty**](AccountTypeProperty.md) |  | [optional] 
 **due_date** | **date** |  | [optional] 
 **external_id** | **str** | Reference to external ID in other systems. | [optional] 
-**foreign_amount** | **float** | The amount in a foreign currency. | [optional] 
-**foreign_currency_code** | **str** | Currency code. Default is NULL. Can be used instead of the foreign_currency_id, but either is required when submitting a foreign amount. | [optional] 
+**foreign_amount** | **str** | The amount in a foreign currency. | [optional] 
+**foreign_currency_code** | **str** | Currency code of the foreign currency. Default is NULL. Can be used instead of the foreign_currency_id, but this or the ID is required when submitting a foreign amount. | [optional] 
 **foreign_currency_decimal_places** | **int** | Number of decimals in the currency | [optional] 
-**foreign_currency_id** | **int** | Currency ID. Default is null. Is required when you submit a foreign amount. | [optional] 
+**foreign_currency_id** | **int** | Currency ID of the foreign currency. Default is null. Is required when you submit a foreign amount. | [optional] 
 **foreign_currency_symbol** | **str** |  | [optional] 
 **import_hash_v2** | **str** | Hash value of original import transaction (for duplicate detection). | [optional] 
 **interest_date** | **date** |  | [optional] 

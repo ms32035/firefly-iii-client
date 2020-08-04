@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_category**](CategoriesApi.md#delete_category) | **DELETE** /api/v1/categories/{id} | Delete a category.
 [**get_category**](CategoriesApi.md#get_category) | **GET** /api/v1/categories/{id} | Get a single category.
+[**list_attachment_by_category**](CategoriesApi.md#list_attachment_by_category) | **GET** /api/v1/categories/{id}/attachments | Lists all attachments.
 [**list_category**](CategoriesApi.md#list_category) | **GET** /api/v1/categories | List all categories.
 [**list_transaction_by_category**](CategoriesApi.md#list_transaction_by_category) | **GET** /api/v1/categories/{id}/transactions | List all transactions in a category.
 [**store_category**](CategoriesApi.md#store_category) | **POST** /api/v1/categories | Store a new category
@@ -73,7 +74,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_category**
-> CategorySingle get_category(id)
+> CategorySingle get_category(id, start=start, end=end)
 
 Get a single category.
 
@@ -97,10 +98,12 @@ configuration.host = "https://demo.firefly-iii.org"
 # Create an instance of the API class
 api_instance = firefly_iii_client.CategoriesApi(firefly_iii_client.ApiClient(configuration))
 id = 1 # int | The ID of the category.
+start = '2013-10-20' # date | A date formatted YYYY-MM-DD, to show spent and earned info.  (optional)
+end = '2013-10-20' # date | A date formatted YYYY-MM-DD, to show spent and earned info.  (optional)
 
 try:
     # Get a single category.
-    api_response = api_instance.get_category(id)
+    api_response = api_instance.get_category(id, start=start, end=end)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CategoriesApi->get_category: %s\n" % e)
@@ -111,6 +114,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the category. | 
+ **start** | **date**| A date formatted YYYY-MM-DD, to show spent and earned info.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD, to show spent and earned info.  | [optional] 
 
 ### Return type
 
@@ -130,6 +135,69 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | The requested category |  -  |
 **404** | Category not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_attachment_by_category**
+> AttachmentArray list_attachment_by_category(id, page=page)
+
+Lists all attachments.
+
+Lists all attachments.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.CategoriesApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the category.
+page = 1 # int | Page number. The default pagination is 50. (optional)
+
+try:
+    # Lists all attachments.
+    api_response = api_instance.list_attachment_by_category(id, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CategoriesApi->list_attachment_by_category: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the category. | 
+ **page** | **int**| Page number. The default pagination is 50. | [optional] 
+
+### Return type
+
+[**AttachmentArray**](AttachmentArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of attachments |  -  |
+**404** | No such category. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_budget_limit**](BudgetsApi.md#delete_budget_limit) | **DELETE** /api/v1/budgets/limits/{id} | Delete a budget limit.
 [**get_budget**](BudgetsApi.md#get_budget) | **GET** /api/v1/budgets/{id} | Get a single budget.
 [**get_budget_limit**](BudgetsApi.md#get_budget_limit) | **GET** /api/v1/budgets/limits/{id} | Get single budget limit.
+[**list_attachment_by_budget**](BudgetsApi.md#list_attachment_by_budget) | **GET** /api/v1/budgets/{id}/attachments | Lists all attachments.
 [**list_budget**](BudgetsApi.md#list_budget) | **GET** /api/v1/budgets | List all budgets.
 [**list_budget_limit_by_budget**](BudgetsApi.md#list_budget_limit_by_budget) | **GET** /api/v1/budgets/{id}/limits | Get all limits
 [**list_transaction_by_budget**](BudgetsApi.md#list_transaction_by_budget) | **GET** /api/v1/budgets/{id}/transactions | All transactions to a budget.
@@ -259,6 +260,69 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | The requested budget limit |  -  |
 **404** | Budget limit not found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_attachment_by_budget**
+> AttachmentArray list_attachment_by_budget(id, page=page)
+
+Lists all attachments.
+
+Lists all attachments.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.BudgetsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the budget.
+page = 1 # int | Page number. The default pagination is 50. (optional)
+
+try:
+    # Lists all attachments.
+    api_response = api_instance.list_attachment_by_budget(id, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BudgetsApi->list_attachment_by_budget: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the budget. | 
+ **page** | **int**| Page number. The default pagination is 50. | [optional] 
+
+### Return type
+
+[**AttachmentArray**](AttachmentArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of attachments |  -  |
+**404** | No such budget. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

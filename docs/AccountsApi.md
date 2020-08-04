@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**delete_account**](AccountsApi.md#delete_account) | **DELETE** /api/v1/accounts/{id} | Permanently delete account.
 [**get_account**](AccountsApi.md#get_account) | **GET** /api/v1/accounts/{id} | Get single account.
 [**list_account**](AccountsApi.md#list_account) | **GET** /api/v1/accounts | List all accounts.
+[**list_attachment_by_account**](AccountsApi.md#list_attachment_by_account) | **GET** /api/v1/accounts/{id}/attachments | Lists all attachments.
 [**list_piggy_bank_by_account**](AccountsApi.md#list_piggy_bank_by_account) | **GET** /api/v1/accounts/{id}/piggy_banks | List all piggy banks related to the account.
 [**list_transaction_by_account**](AccountsApi.md#list_transaction_by_account) | **GET** /api/v1/accounts/{id}/transactions | List all transactions related to the account.
 [**store_account**](AccountsApi.md#store_account) | **POST** /api/v1/accounts | Create new account.
@@ -197,6 +198,69 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of accounts |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_attachment_by_account**
+> AttachmentArray list_attachment_by_account(id, page=page)
+
+Lists all attachments.
+
+Lists all attachments.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+```python
+from __future__ import print_function
+import time
+import firefly_iii_client
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+configuration = firefly_iii_client.Configuration()
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://demo.firefly-iii.org
+configuration.host = "https://demo.firefly-iii.org"
+# Create an instance of the API class
+api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
+id = 1 # int | The ID of the account.
+page = 1 # int | Page number. The default pagination is 50. (optional)
+
+try:
+    # Lists all attachments.
+    api_response = api_instance.list_attachment_by_account(id, page=page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountsApi->list_attachment_by_account: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| The ID of the account. | 
+ **page** | **int**| Page number. The default pagination is 50. | [optional] 
+
+### Return type
+
+[**AttachmentArray**](AttachmentArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of attachments |  -  |
+**404** | No such account. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
