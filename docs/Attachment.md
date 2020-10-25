@@ -5,15 +5,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attachable_id** | **int** | ID of the model this attachment is linked to. | 
 **attachable_type** | **str** | The object class to which the attachment must be linked. | 
-**created_at** | **datetime** |  | [optional] 
+**created_at** | **datetime** |  | [optional] [readonly] 
 **download_uri** | **str** |  | [optional] 
 **filename** | **str** |  | 
 **md5** | **str** | MD5 hash of the file for basic duplicate detection. | [optional] 
-**mime** | **str** |  | [optional] 
+**mime** | **str** |  | [optional] [readonly] 
 **notes** | **str** |  | [optional] 
-**size** | **int** |  | [optional] 
+**size** | **int** |  | [optional] [readonly] 
 **title** | **str** |  | [optional] 
-**updated_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] [readonly] 
 **upload_uri** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

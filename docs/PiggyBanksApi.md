@@ -29,21 +29,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PiggyBanksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the piggy bank.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    id = 1 # int | The ID of the piggy bank.
 
-try:
-    # Delete a piggy bank.
-    api_instance.delete_piggy_bank(id)
-except ApiException as e:
-    print("Exception when calling PiggyBanksApi->delete_piggy_bank: %s\n" % e)
+    try:
+        # Delete a piggy bank.
+        api_instance.delete_piggy_bank(id)
+    except ApiException as e:
+        print("Exception when calling PiggyBanksApi->delete_piggy_bank: %s\n" % e)
 ```
 
 ### Parameters
@@ -89,22 +102,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PiggyBanksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the piggy bank.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    id = 1 # int | The ID of the piggy bank.
 
-try:
-    # Get a single piggy bank.
-    api_response = api_instance.get_piggy_bank(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PiggyBanksApi->get_piggy_bank: %s\n" % e)
+    try:
+        # Get a single piggy bank.
+        api_response = api_instance.get_piggy_bank(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PiggyBanksApi->get_piggy_bank: %s\n" % e)
 ```
 
 ### Parameters
@@ -150,23 +176,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PiggyBanksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the piggy bank.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    id = 1 # int | The ID of the piggy bank.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # Lists all attachments.
-    api_response = api_instance.list_attachment_by_piggy_bank(id, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PiggyBanksApi->list_attachment_by_piggy_bank: %s\n" % e)
+    try:
+        # Lists all attachments.
+        api_response = api_instance.list_attachment_by_piggy_bank(id, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PiggyBanksApi->list_attachment_by_piggy_bank: %s\n" % e)
 ```
 
 ### Parameters
@@ -213,23 +252,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PiggyBanksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the piggy bank
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    id = 1 # int | The ID of the piggy bank
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all events linked to a piggy bank.
-    api_response = api_instance.list_event_by_piggy_bank(id, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PiggyBanksApi->list_event_by_piggy_bank: %s\n" % e)
+    try:
+        # List all events linked to a piggy bank.
+        api_response = api_instance.list_event_by_piggy_bank(id, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PiggyBanksApi->list_event_by_piggy_bank: %s\n" % e)
 ```
 
 ### Parameters
@@ -275,22 +327,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PiggyBanksApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all piggy banks.
-    api_response = api_instance.list_piggy_bank(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PiggyBanksApi->list_piggy_bank: %s\n" % e)
+    try:
+        # List all piggy banks.
+        api_response = api_instance.list_piggy_bank(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PiggyBanksApi->list_piggy_bank: %s\n" % e)
 ```
 
 ### Parameters
@@ -335,22 +400,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PiggyBanksApi(firefly_iii_client.ApiClient(configuration))
-piggy_bank = firefly_iii_client.PiggyBank() # PiggyBank | JSON array or key=value pairs with the necessary piggy bank information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    piggy_bank = firefly_iii_client.PiggyBank() # PiggyBank | JSON array or key=value pairs with the necessary piggy bank information. See the model for the exact specifications.
 
-try:
-    # Store a new piggy bank
-    api_response = api_instance.store_piggy_bank(piggy_bank)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PiggyBanksApi->store_piggy_bank: %s\n" % e)
+    try:
+        # Store a new piggy bank
+        api_response = api_instance.store_piggy_bank(piggy_bank)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PiggyBanksApi->store_piggy_bank: %s\n" % e)
 ```
 
 ### Parameters
@@ -396,23 +474,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PiggyBanksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the piggy bank
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    id = 1 # int | The ID of the piggy bank
 piggy_bank = firefly_iii_client.PiggyBank() # PiggyBank | JSON array with updated piggy bank information. See the model for the exact specifications.
 
-try:
-    # Update existing piggy bank.
-    api_response = api_instance.update_piggy_bank(id, piggy_bank)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PiggyBanksApi->update_piggy_bank: %s\n" % e)
+    try:
+        # Update existing piggy bank.
+        api_response = api_instance.update_piggy_bank(id, piggy_bank)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PiggyBanksApi->update_piggy_bank: %s\n" % e)
 ```
 
 ### Parameters

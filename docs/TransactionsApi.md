@@ -30,21 +30,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TransactionsApi(api_client)
+    id = 1 # int | The ID of the transaction.
 
-try:
-    # Delete a transaction.
-    api_instance.delete_transaction(id)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->delete_transaction: %s\n" % e)
+    try:
+        # Delete a transaction.
+        api_instance.delete_transaction(id)
+    except ApiException as e:
+        print("Exception when calling TransactionsApi->delete_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -90,22 +103,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TransactionsApi(api_client)
+    id = 1 # int | The ID of the transaction.
 
-try:
-    # Get a single transaction.
-    api_response = api_instance.get_transaction(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->get_transaction: %s\n" % e)
+    try:
+        # Get a single transaction.
+        api_response = api_instance.get_transaction(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TransactionsApi->get_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -151,22 +177,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction journal.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TransactionsApi(api_client)
+    id = 1 # int | The ID of the transaction journal.
 
-try:
-    # Get a single transaction, based on one of the underlying transaction journals.
-    api_response = api_instance.get_transaction_by_journal(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->get_transaction_by_journal: %s\n" % e)
+    try:
+        # Get a single transaction, based on one of the underlying transaction journals.
+        api_response = api_instance.get_transaction_by_journal(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TransactionsApi->get_transaction_by_journal: %s\n" % e)
 ```
 
 ### Parameters
@@ -212,23 +251,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TransactionsApi(api_client)
+    id = 1 # int | The ID of the transaction.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # Lists all attachments.
-    api_response = api_instance.list_attachment_by_transaction(id, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->list_attachment_by_transaction: %s\n" % e)
+    try:
+        # Lists all attachments.
+        api_response = api_instance.list_attachment_by_transaction(id, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TransactionsApi->list_attachment_by_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -275,23 +327,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TransactionsApi(api_client)
+    id = 1 # int | The ID of the transaction.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # Lists all piggy bank events.
-    api_response = api_instance.list_event_by_transaction(id, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->list_event_by_transaction: %s\n" % e)
+    try:
+        # Lists all piggy bank events.
+        api_response = api_instance.list_event_by_transaction(id, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TransactionsApi->list_event_by_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -338,25 +403,38 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TransactionsApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
+start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
+end = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
 type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
-try:
-    # List all the user's transactions. 
-    api_response = api_instance.list_transaction(page=page, start=start, end=end, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->list_transaction: %s\n" % e)
+    try:
+        # List all the user's transactions. 
+        api_response = api_instance.list_transaction(page=page, start=start, end=end, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TransactionsApi->list_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -404,22 +482,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-transaction = firefly_iii_client.Transaction() # Transaction | JSON array or key=value pairs with the necessary transaction information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TransactionsApi(api_client)
+    transaction = firefly_iii_client.Transaction() # Transaction | JSON array or key=value pairs with the necessary transaction information. See the model for the exact specifications.
 
-try:
-    # Store a new transaction
-    api_response = api_instance.store_transaction(transaction)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->store_transaction: %s\n" % e)
+    try:
+        # Store a new transaction
+        api_response = api_instance.store_transaction(transaction)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TransactionsApi->store_transaction: %s\n" % e)
 ```
 
 ### Parameters
@@ -465,23 +556,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TransactionsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TransactionsApi(api_client)
+    id = 1 # int | The ID of the transaction.
 transaction = firefly_iii_client.Transaction() # Transaction | JSON array with updated transaction information. See the model for the exact specifications.
 
-try:
-    # Update existing transaction.
-    api_response = api_instance.update_transaction(id, transaction)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TransactionsApi->update_transaction: %s\n" % e)
+    try:
+        # Update existing transaction.
+        api_response = api_instance.update_transaction(id, transaction)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TransactionsApi->update_transaction: %s\n" % e)
 ```
 
 ### Parameters

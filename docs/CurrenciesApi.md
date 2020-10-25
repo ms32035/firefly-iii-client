@@ -39,22 +39,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'USD' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
 
-try:
-    # Make currency default currency.
-    api_response = api_instance.default_currency(code)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->default_currency: %s\n" % e)
+    try:
+        # Make currency default currency.
+        api_response = api_instance.default_currency(code)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->default_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -99,21 +112,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'GBP' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'GBP' # str | The currency code.
 
-try:
-    # Delete a currency.
-    api_instance.delete_currency(code)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->delete_currency: %s\n" % e)
+    try:
+        # Delete a currency.
+        api_instance.delete_currency(code)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->delete_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -159,22 +185,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 56 # int | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 56 # int | The currency code.
 
-try:
-    # Disable a currency.
-    api_response = api_instance.disable_currency(code)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->disable_currency: %s\n" % e)
+    try:
+        # Disable a currency.
+        api_response = api_instance.disable_currency(code)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->disable_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -220,22 +259,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'USD' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
 
-try:
-    # Enable a single currency.
-    api_response = api_instance.enable_currency(code)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->enable_currency: %s\n" % e)
+    try:
+        # Enable a single currency.
+        api_response = api_instance.enable_currency(code)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->enable_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -280,22 +332,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'USD' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
 
-try:
-    # Get a single currency.
-    api_response = api_instance.get_currency(code)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->get_currency: %s\n" % e)
+    try:
+        # Get a single currency.
+        api_response = api_instance.get_currency(code)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->get_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -341,21 +406,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-
-try:
-    # Get the user's default currency.
-    api_response = api_instance.get_default_currency()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->get_default_currency: %s\n" % e)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    
+    try:
+        # Get the user's default currency.
+        api_response = api_instance.get_default_currency()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->get_default_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -397,25 +475,38 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'USD' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 date = 'date_example' # str | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 type = firefly_iii_client.AccountTypeFilter() # AccountTypeFilter | Optional filter on the account type(s) returned (optional)
 
-try:
-    # List all accounts with this currency.
-    api_response = api_instance.list_account_by_currency(code, page=page, date=date, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_account_by_currency: %s\n" % e)
+    try:
+        # List all accounts with this currency.
+        api_response = api_instance.list_account_by_currency(code, page=page, date=date, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_account_by_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -463,23 +554,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'EUR' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'EUR' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50 (optional)
 
-try:
-    # List all available budgets with this currency.
-    api_response = api_instance.list_available_budget_by_currency(code, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_available_budget_by_currency: %s\n" % e)
+    try:
+        # List all available budgets with this currency.
+        api_response = api_instance.list_available_budget_by_currency(code, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_available_budget_by_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -525,23 +629,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'USD' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all bills with this currency.
-    api_response = api_instance.list_bill_by_currency(code, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_bill_by_currency: %s\n" % e)
+    try:
+        # List all bills with this currency.
+        api_response = api_instance.list_bill_by_currency(code, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_bill_by_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -587,25 +704,38 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'USD' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2013-10-20' # date | Start date for the budget limit list. (optional)
-end = '2013-10-20' # date | End date for the budget limit list. (optional)
+start = 'Mon Jan 01 00:00:00 GMT 2018' # date | Start date for the budget limit list. (optional)
+end = 'Wed Jan 31 00:00:00 GMT 2018' # date | End date for the budget limit list. (optional)
 
-try:
-    # List all budget limits with this currency
-    api_response = api_instance.list_budget_limit_by_currency(code, page=page, start=start, end=end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_budget_limit_by_currency: %s\n" % e)
+    try:
+        # List all budget limits with this currency
+        api_response = api_instance.list_budget_limit_by_currency(code, page=page, start=start, end=end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_budget_limit_by_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -653,22 +783,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all currencies.
-    api_response = api_instance.list_currency(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_currency: %s\n" % e)
+    try:
+        # List all currencies.
+        api_response = api_instance.list_currency(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -713,26 +856,39 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'GBP' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'GBP' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 date = '2013-10-20' # date | The date of which you want to know the exchange rate  (optional)
 start = '2013-10-20' # date | Use this instead of the date parameter to search for a range of currency exchange values.  (optional)
 end = '2013-10-20' # date | Use this instead of the date parameter to search for a range of currency exchange values.  (optional)
 
-try:
-    # List all known exchange rates with (from or to) this currency.
-    api_response = api_instance.list_exchange_rate_by_currency(code, page=page, date=date, start=start, end=end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_exchange_rate_by_currency: %s\n" % e)
+    try:
+        # List all known exchange rates with (from or to) this currency.
+        api_response = api_instance.list_exchange_rate_by_currency(code, page=page, date=date, start=start, end=end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_exchange_rate_by_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -781,23 +937,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'EUR' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'EUR' # str | The currency code.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all recurring transactions with this currency.
-    api_response = api_instance.list_recurrence_by_currency(code, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_recurrence_by_currency: %s\n" % e)
+    try:
+        # List all recurring transactions with this currency.
+        api_response = api_instance.list_recurrence_by_currency(code, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_recurrence_by_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -843,23 +1012,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'USD' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination per 50. (optional)
 
-try:
-    # List all rules with this currency.
-    api_response = api_instance.list_rule_by_currency(code, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_rule_by_currency: %s\n" % e)
+    try:
+        # List all rules with this currency.
+        api_response = api_instance.list_rule_by_currency(code, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_rule_by_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -905,26 +1087,39 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'USD' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
 page = 1 # int | Page number. The default pagination is per 50. (optional)
-start_date = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
-end_date = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
+start_date = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
+end_date = 'Mon Dec 31 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
 type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
-try:
-    # List all transactions with this currency.
-    api_response = api_instance.list_transaction_by_currency(code, page=page, start_date=start_date, end_date=end_date, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->list_transaction_by_currency: %s\n" % e)
+    try:
+        # List all transactions with this currency.
+        api_response = api_instance.list_transaction_by_currency(code, page=page, start_date=start_date, end_date=end_date, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->list_transaction_by_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -973,22 +1168,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-currency = firefly_iii_client.Currency() # Currency | JSON array or key=value pairs with the necessary currency information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    currency = firefly_iii_client.Currency() # Currency | JSON array or key=value pairs with the necessary currency information. See the model for the exact specifications.
 
-try:
-    # Store a new currency
-    api_response = api_instance.store_currency(currency)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->store_currency: %s\n" % e)
+    try:
+        # Store a new currency
+        api_response = api_instance.store_currency(currency)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->store_currency: %s\n" % e)
 ```
 
 ### Parameters
@@ -1034,23 +1242,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.CurrenciesApi(firefly_iii_client.ApiClient(configuration))
-code = 'EUR' # str | The currency code.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'EUR' # str | The currency code.
 currency = firefly_iii_client.Currency() # Currency | JSON array with updated currency information. See the model for the exact specifications.
 
-try:
-    # Update existing currency.
-    api_response = api_instance.update_currency(code, currency)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CurrenciesApi->update_currency: %s\n" % e)
+    try:
+        # Update existing currency.
+        api_response = api_instance.update_currency(code, currency)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CurrenciesApi->update_currency: %s\n" % e)
 ```
 
 ### Parameters

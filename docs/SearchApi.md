@@ -24,25 +24,38 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.SearchApi(firefly_iii_client.ApiClient(configuration))
-query = 'checking' # str | The query you wish to search for.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.SearchApi(api_client)
+    query = 'checking' # str | The query you wish to search for.
 type = firefly_iii_client.AccountTypeFilter() # AccountTypeFilter | The type of accounts you wish to limit the search to.
 field = firefly_iii_client.AccountSearchFieldFilter() # AccountSearchFieldFilter | The account field(s) you want to search in.
 page = 1 # int | Page number. The default pagination is 50 (optional)
 
-try:
-    # Search for accounts
-    api_response = api_instance.search_accounts(query, type, field, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SearchApi->search_accounts: %s\n" % e)
+    try:
+        # Search for accounts
+        api_response = api_instance.search_accounts(query, type, field, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SearchApi->search_accounts: %s\n" % e)
 ```
 
 ### Parameters
@@ -90,23 +103,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.SearchApi(firefly_iii_client.ApiClient(configuration))
-query = 'groceries' # str | The query you wish to search for.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.SearchApi(api_client)
+    query = 'groceries' # str | The query you wish to search for.
 page = 1 # int | Page number. The default pagination is 50 (optional)
 
-try:
-    # Search for transactions
-    api_response = api_instance.search_transactions(query, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling SearchApi->search_transactions: %s\n" % e)
+    try:
+        # Search for transactions
+        api_response = api_instance.search_transactions(query, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling SearchApi->search_transactions: %s\n" % e)
 ```
 
 ### Parameters

@@ -33,21 +33,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the link type.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    id = 1 # int | The ID of the link type.
 
-try:
-    # Permanently delete link type.
-    api_instance.delete_link_type(id)
-except ApiException as e:
-    print("Exception when calling LinksApi->delete_link_type: %s\n" % e)
+    try:
+        # Permanently delete link type.
+        api_instance.delete_link_type(id)
+    except ApiException as e:
+        print("Exception when calling LinksApi->delete_link_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -94,21 +107,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction link.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    id = 1 # int | The ID of the transaction link.
 
-try:
-    # Permanently delete link between transactions.
-    api_instance.delete_transaction_link(id)
-except ApiException as e:
-    print("Exception when calling LinksApi->delete_transaction_link: %s\n" % e)
+    try:
+        # Permanently delete link between transactions.
+        api_instance.delete_transaction_link(id)
+    except ApiException as e:
+        print("Exception when calling LinksApi->delete_transaction_link: %s\n" % e)
 ```
 
 ### Parameters
@@ -154,22 +180,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the link type.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    id = 1 # int | The ID of the link type.
 
-try:
-    # Get single a link type.
-    api_response = api_instance.get_link_type(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->get_link_type: %s\n" % e)
+    try:
+        # Get single a link type.
+        api_response = api_instance.get_link_type(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->get_link_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -215,22 +254,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction link.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    id = 1 # int | The ID of the transaction link.
 
-try:
-    # Get a single link.
-    api_response = api_instance.get_transaction_link(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->get_transaction_link: %s\n" % e)
+    try:
+        # Get a single link.
+        api_response = api_instance.get_transaction_link(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->get_transaction_link: %s\n" % e)
 ```
 
 ### Parameters
@@ -276,22 +328,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50 items. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50 items. (optional)
 
-try:
-    # List all types of links.
-    api_response = api_instance.list_link_type(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->list_link_type: %s\n" % e)
+    try:
+        # List all types of links.
+        api_response = api_instance.list_link_type(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->list_link_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -336,26 +401,39 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the link type.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    id = 1 # int | The ID of the link type.
 page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
+start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
+end = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
 type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
-try:
-    # List all transactions under this link type.
-    api_response = api_instance.list_transaction_by_link_type(id, page=page, start=start, end=end, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->list_transaction_by_link_type: %s\n" % e)
+    try:
+        # List all transactions under this link type.
+        api_response = api_instance.list_transaction_by_link_type(id, page=page, start=start, end=end, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->list_transaction_by_link_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -404,22 +482,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is per 50 items. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
-try:
-    # List all transaction links.
-    api_response = api_instance.list_transaction_link(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->list_transaction_link: %s\n" % e)
+    try:
+        # List all transaction links.
+        api_response = api_instance.list_transaction_link(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->list_transaction_link: %s\n" % e)
 ```
 
 ### Parameters
@@ -464,22 +555,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-link_type = firefly_iii_client.LinkType() # LinkType | JSON array with the necessary link type information or key=value pairs. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    link_type = firefly_iii_client.LinkType() # LinkType | JSON array with the necessary link type information or key=value pairs. See the model for the exact specifications.
 
-try:
-    # Create a new link type
-    api_response = api_instance.store_link_type(link_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->store_link_type: %s\n" % e)
+    try:
+        # Create a new link type
+        api_response = api_instance.store_link_type(link_type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->store_link_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -525,22 +629,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-transaction_link = firefly_iii_client.TransactionLink() # TransactionLink | JSON array with the necessary link type information or key=value pairs. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    transaction_link = firefly_iii_client.TransactionLink() # TransactionLink | JSON array with the necessary link type information or key=value pairs. See the model for the exact specifications.
 
-try:
-    # Create a new link between transactions
-    api_response = api_instance.store_transaction_link(transaction_link)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->store_transaction_link: %s\n" % e)
+    try:
+        # Create a new link between transactions
+        api_response = api_instance.store_transaction_link(transaction_link)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->store_transaction_link: %s\n" % e)
 ```
 
 ### Parameters
@@ -586,23 +703,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the link type.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    id = 1 # int | The ID of the link type.
 link_type = firefly_iii_client.LinkType() # LinkType | JSON array or formdata with updated link type information. See the model for the exact specifications.
 
-try:
-    # Update existing link type.
-    api_response = api_instance.update_link_type(id, link_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->update_link_type: %s\n" % e)
+    try:
+        # Update existing link type.
+        api_response = api_instance.update_link_type(id, link_type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->update_link_type: %s\n" % e)
 ```
 
 ### Parameters
@@ -650,23 +780,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.LinksApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the transaction link.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    id = 1 # int | The ID of the transaction link.
 transaction_link = firefly_iii_client.TransactionLink() # TransactionLink | JSON array or formdata with updated link type information. See the model for the exact specifications.
 
-try:
-    # Update an existing link between transactions.
-    api_response = api_instance.update_transaction_link(id, transaction_link)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling LinksApi->update_transaction_link: %s\n" % e)
+    try:
+        # Update an existing link between transactions.
+        api_response = api_instance.update_transaction_link(id, transaction_link)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling LinksApi->update_transaction_link: %s\n" % e)
 ```
 
 ### Parameters

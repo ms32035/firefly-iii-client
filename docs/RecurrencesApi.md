@@ -29,21 +29,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the recurring transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RecurrencesApi(api_client)
+    id = 1 # int | The ID of the recurring transaction.
 
-try:
-    # Delete a recurring transaction.
-    api_instance.delete_recurrence(id)
-except ApiException as e:
-    print("Exception when calling RecurrencesApi->delete_recurrence: %s\n" % e)
+    try:
+        # Delete a recurring transaction.
+        api_instance.delete_recurrence(id)
+    except ApiException as e:
+        print("Exception when calling RecurrencesApi->delete_recurrence: %s\n" % e)
 ```
 
 ### Parameters
@@ -89,22 +102,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the recurring transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RecurrencesApi(api_client)
+    id = 1 # int | The ID of the recurring transaction.
 
-try:
-    # Get a single recurring transaction.
-    api_response = api_instance.get_recurrence(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecurrencesApi->get_recurrence: %s\n" % e)
+    try:
+        # Get a single recurring transaction.
+        api_response = api_instance.get_recurrence(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RecurrencesApi->get_recurrence: %s\n" % e)
 ```
 
 ### Parameters
@@ -150,22 +176,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RecurrencesApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all recurring transactions.
-    api_response = api_instance.list_recurrence(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecurrencesApi->list_recurrence: %s\n" % e)
+    try:
+        # List all recurring transactions.
+        api_response = api_instance.list_recurrence(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RecurrencesApi->list_recurrence: %s\n" % e)
 ```
 
 ### Parameters
@@ -210,26 +249,39 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the recurring transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RecurrencesApi(api_client)
+    id = 1 # int | The ID of the recurring transaction.
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
+start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
+end = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
 type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
-try:
-    # List all transactions created by a recurring transaction.
-    api_response = api_instance.list_transaction_by_recurrence(id, page=page, start=start, end=end, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecurrencesApi->list_transaction_by_recurrence: %s\n" % e)
+    try:
+        # List all transactions created by a recurring transaction.
+        api_response = api_instance.list_transaction_by_recurrence(id, page=page, start=start, end=end, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RecurrencesApi->list_transaction_by_recurrence: %s\n" % e)
 ```
 
 ### Parameters
@@ -278,22 +330,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
-recurrence = firefly_iii_client.Recurrence() # Recurrence | JSON array or key=value pairs with the necessary recurring transaction information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RecurrencesApi(api_client)
+    recurrence = firefly_iii_client.Recurrence() # Recurrence | JSON array or key=value pairs with the necessary recurring transaction information. See the model for the exact specifications.
 
-try:
-    # Store a new recurring transaction
-    api_response = api_instance.store_recurrence(recurrence)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecurrencesApi->store_recurrence: %s\n" % e)
+    try:
+        # Store a new recurring transaction
+        api_response = api_instance.store_recurrence(recurrence)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RecurrencesApi->store_recurrence: %s\n" % e)
 ```
 
 ### Parameters
@@ -339,20 +404,33 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
-
-try:
-    # Trigger the creation of recurring transactions (like a cron job).
-    api_instance.trigger_recurrence()
-except ApiException as e:
-    print("Exception when calling RecurrencesApi->trigger_recurrence: %s\n" % e)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RecurrencesApi(api_client)
+    
+    try:
+        # Trigger the creation of recurring transactions (like a cron job).
+        api_instance.trigger_recurrence()
+    except ApiException as e:
+        print("Exception when calling RecurrencesApi->trigger_recurrence: %s\n" % e)
 ```
 
 ### Parameters
@@ -395,23 +473,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RecurrencesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the recurring transaction.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RecurrencesApi(api_client)
+    id = 1 # int | The ID of the recurring transaction.
 recurrence = firefly_iii_client.Recurrence() # Recurrence | JSON array with updated recurring transaction information. See the model for the exact specifications.
 
-try:
-    # Update existing recurring transaction.
-    api_response = api_instance.update_recurrence(id, recurrence)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RecurrencesApi->update_recurrence: %s\n" % e)
+    try:
+        # Update existing recurring transaction.
+        api_response = api_instance.update_recurrence(id, recurrence)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RecurrencesApi->update_recurrence: %s\n" % e)
 ```
 
 ### Parameters

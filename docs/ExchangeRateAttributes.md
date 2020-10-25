@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **float** | The amount in the \&quot;to\&quot;-currency, if provided in the request. | [optional] 
+**amount** | **str** | The amount in the \&quot;to\&quot;-currency, if provided in the request. | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **date** | **date** |  | [optional] 
 **from_currency_code** | **str** |  | [optional] 

@@ -27,24 +27,37 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.ChartsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the available budget.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.ChartsApi(api_client)
+    id = 1 # int | The ID of the available budget.
 start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 
-try:
-    # Dashboard chart with an overview of the available budget.
-    api_response = api_instance.get_chart_ab_overview(id, start, end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChartsApi->get_chart_ab_overview: %s\n" % e)
+    try:
+        # Dashboard chart with an overview of the available budget.
+        api_response = api_instance.get_chart_ab_overview(id, start, end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ChartsApi->get_chart_ab_overview: %s\n" % e)
 ```
 
 ### Parameters
@@ -91,23 +104,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.ChartsApi(firefly_iii_client.ApiClient(configuration))
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.ChartsApi(api_client)
+    start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 
-try:
-    # Dashboard chart with expense account balance information.
-    api_response = api_instance.get_chart_account_expense(start, end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChartsApi->get_chart_account_expense: %s\n" % e)
+    try:
+        # Dashboard chart with expense account balance information.
+        api_response = api_instance.get_chart_account_expense(start, end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ChartsApi->get_chart_account_expense: %s\n" % e)
 ```
 
 ### Parameters
@@ -153,23 +179,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.ChartsApi(firefly_iii_client.ApiClient(configuration))
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.ChartsApi(api_client)
+    start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 
-try:
-    # Dashboard chart with asset account balance information.
-    api_response = api_instance.get_chart_account_overview(start, end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChartsApi->get_chart_account_overview: %s\n" % e)
+    try:
+        # Dashboard chart with asset account balance information.
+        api_response = api_instance.get_chart_account_overview(start, end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ChartsApi->get_chart_account_overview: %s\n" % e)
 ```
 
 ### Parameters
@@ -215,23 +254,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.ChartsApi(firefly_iii_client.ApiClient(configuration))
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.ChartsApi(api_client)
+    start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 
-try:
-    # Dashboard chart with revenue account balance information.
-    api_response = api_instance.get_chart_account_revenue(start, end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChartsApi->get_chart_account_revenue: %s\n" % e)
+    try:
+        # Dashboard chart with revenue account balance information.
+        api_response = api_instance.get_chart_account_revenue(start, end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ChartsApi->get_chart_account_revenue: %s\n" % e)
 ```
 
 ### Parameters
@@ -277,23 +329,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.ChartsApi(firefly_iii_client.ApiClient(configuration))
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.ChartsApi(api_client)
+    start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 
-try:
-    # Dashboard chart with an overview of the users categories.
-    api_response = api_instance.get_chart_category_overview(start, end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChartsApi->get_chart_category_overview: %s\n" % e)
+    try:
+        # Dashboard chart with an overview of the users categories.
+        api_response = api_instance.get_chart_category_overview(start, end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ChartsApi->get_chart_category_overview: %s\n" % e)
 ```
 
 ### Parameters

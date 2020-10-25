@@ -29,21 +29,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the rule.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RulesApi(api_client)
+    id = 1 # int | The ID of the rule.
 
-try:
-    # Delete an rule.
-    api_instance.delete_rule(id)
-except ApiException as e:
-    print("Exception when calling RulesApi->delete_rule: %s\n" % e)
+    try:
+        # Delete an rule.
+        api_instance.delete_rule(id)
+    except ApiException as e:
+        print("Exception when calling RulesApi->delete_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -89,24 +102,37 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the rule.
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  (optional)
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RulesApi(api_client)
+    id = 1 # int | The ID of the rule.
+start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  (optional)
+end = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  (optional)
 accounts = '1,2,3' # str | Limit the testing of the rule to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  (optional)
 
-try:
-    # Fire the rule on your transactions.
-    api_instance.fire_rule(id, start=start, end=end, accounts=accounts)
-except ApiException as e:
-    print("Exception when calling RulesApi->fire_rule: %s\n" % e)
+    try:
+        # Fire the rule on your transactions.
+        api_instance.fire_rule(id, start=start, end=end, accounts=accounts)
+    except ApiException as e:
+        print("Exception when calling RulesApi->fire_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -154,22 +180,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the object.X
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RulesApi(api_client)
+    id = 1 # int | The ID of the object.X
 
-try:
-    # Get a single rule.
-    api_response = api_instance.get_rule(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RulesApi->get_rule: %s\n" % e)
+    try:
+        # Get a single rule.
+        api_response = api_instance.get_rule(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RulesApi->get_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -215,22 +254,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RulesApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all rules.
-    api_response = api_instance.list_rule(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RulesApi->list_rule: %s\n" % e)
+    try:
+        # List all rules.
+        api_response = api_instance.list_rule(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RulesApi->list_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -275,22 +327,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
-rule = firefly_iii_client.Rule() # Rule | JSON array or key=value pairs with the necessary rule information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RulesApi(api_client)
+    rule = firefly_iii_client.Rule() # Rule | JSON array or key=value pairs with the necessary rule information. See the model for the exact specifications.
 
-try:
-    # Store a new rule
-    api_response = api_instance.store_rule(rule)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RulesApi->store_rule: %s\n" % e)
+    try:
+        # Store a new rule
+        api_response = api_instance.store_rule(rule)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RulesApi->store_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -321,7 +386,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **test_rule**
-> TransactionArray test_rule(id, page=page, start=start, end=end, search_limit=search_limit, triggered_limit=triggered_limit, accounts=accounts)
+> TransactionArray test_rule(id, start=start, end=end, accounts=accounts)
 
 Test which transactions would be hit by the rule. No changes will be made.
 
@@ -336,28 +401,38 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the rule.
-page = 1 # int | Page number. The default pagination is 50 items. (optional)
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
-search_limit = 56 # int | Maximum number of transactions Firefly III will try. Don't set this too high, or it will take Firefly III very long to run the test. I suggest a max of 200.  (optional)
-triggered_limit = 56 # int | Maximum number of transactions the rule can actually trigger on, before Firefly III stops. I would suggest setting this to 10 or 15. Don't go above the user's page size, because browsing to page 2 or 3 of a test result would fire the test again, making any navigation efforts very slow.  (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RulesApi(api_client)
+    id = 1 # int | The ID of the rule.
+start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
+end = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
 accounts = '1,2,3' # str | Limit the testing of the rule to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  (optional)
 
-try:
-    # Test which transactions would be hit by the rule. No changes will be made.
-    api_response = api_instance.test_rule(id, page=page, start=start, end=end, search_limit=search_limit, triggered_limit=triggered_limit, accounts=accounts)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RulesApi->test_rule: %s\n" % e)
+    try:
+        # Test which transactions would be hit by the rule. No changes will be made.
+        api_response = api_instance.test_rule(id, start=start, end=end, accounts=accounts)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RulesApi->test_rule: %s\n" % e)
 ```
 
 ### Parameters
@@ -365,11 +440,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| The ID of the rule. | 
- **page** | **int**| Page number. The default pagination is 50 items. | [optional] 
  **start** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional] 
  **end** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional] 
- **search_limit** | **int**| Maximum number of transactions Firefly III will try. Don&#39;t set this too high, or it will take Firefly III very long to run the test. I suggest a max of 200.  | [optional] 
- **triggered_limit** | **int**| Maximum number of transactions the rule can actually trigger on, before Firefly III stops. I would suggest setting this to 10 or 15. Don&#39;t go above the user&#39;s page size, because browsing to page 2 or 3 of a test result would fire the test again, making any navigation efforts very slow.  | [optional] 
  **accounts** | **str**| Limit the testing of the rule to these asset accounts. Only asset accounts will be accepted. Other types will be silently dropped.  | [optional] 
 
 ### Return type
@@ -408,23 +480,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.RulesApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the object.X
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.RulesApi(api_client)
+    id = 1 # int | The ID of the object.X
 rule = firefly_iii_client.Rule() # Rule | JSON array with updated rule information. See the model for the exact specifications.
 
-try:
-    # Update existing rule.
-    api_response = api_instance.update_rule(id, rule)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RulesApi->update_rule: %s\n" % e)
+    try:
+        # Update existing rule.
+        api_response = api_instance.update_rule(id, rule)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RulesApi->update_rule: %s\n" % e)
 ```
 
 ### Parameters

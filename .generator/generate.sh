@@ -11,7 +11,7 @@ then
     SPEC_FILE=$1
 else
     SPEC_FILE=/build/firefly-iii.yaml
-    wget https://api-docs.firefly-iii.org/firefly-iii-${API_VERSION}.yaml -O ${SPEC_FILE}
+    curl https://api-docs.firefly-iii.org/firefly-iii-${API_VERSION}.yaml -o ${SPEC_FILE}
 fi
 checkStatus
 

@@ -27,21 +27,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AvailableBudgetsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the available budget.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    id = 1 # int | The ID of the available budget.
 
-try:
-    # Delete an available budget.
-    api_instance.delete_available_budget(id)
-except ApiException as e:
-    print("Exception when calling AvailableBudgetsApi->delete_available_budget: %s\n" % e)
+    try:
+        # Delete an available budget.
+        api_instance.delete_available_budget(id)
+    except ApiException as e:
+        print("Exception when calling AvailableBudgetsApi->delete_available_budget: %s\n" % e)
 ```
 
 ### Parameters
@@ -87,22 +100,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AvailableBudgetsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the available budget.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    id = 1 # int | The ID of the available budget.
 
-try:
-    # Get a single available budget.
-    api_response = api_instance.get_available_budget(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AvailableBudgetsApi->get_available_budget: %s\n" % e)
+    try:
+        # Get a single available budget.
+        api_response = api_instance.get_available_budget(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AvailableBudgetsApi->get_available_budget: %s\n" % e)
 ```
 
 ### Parameters
@@ -148,24 +174,37 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AvailableBudgetsApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
+start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD.  (optional)
+end = 'Mon Dec 31 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD.  (optional)
 
-try:
-    # List all available budget amounts.
-    api_response = api_instance.list_available_budget(page=page, start=start, end=end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AvailableBudgetsApi->list_available_budget: %s\n" % e)
+    try:
+        # List all available budget amounts.
+        api_response = api_instance.list_available_budget(page=page, start=start, end=end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AvailableBudgetsApi->list_available_budget: %s\n" % e)
 ```
 
 ### Parameters
@@ -212,22 +251,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AvailableBudgetsApi(firefly_iii_client.ApiClient(configuration))
-available_budget = firefly_iii_client.AvailableBudget() # AvailableBudget | JSON array or key=value pairs with the necessary available budget information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    available_budget = firefly_iii_client.AvailableBudget() # AvailableBudget | JSON array or key=value pairs with the necessary available budget information. See the model for the exact specifications.
 
-try:
-    # Store a new available budget
-    api_response = api_instance.store_available_budget(available_budget)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AvailableBudgetsApi->store_available_budget: %s\n" % e)
+    try:
+        # Store a new available budget
+        api_response = api_instance.store_available_budget(available_budget)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AvailableBudgetsApi->store_available_budget: %s\n" % e)
 ```
 
 ### Parameters
@@ -273,23 +325,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AvailableBudgetsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the object.X
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    id = 1 # int | The ID of the object.X
 available_budget = firefly_iii_client.AvailableBudget() # AvailableBudget | JSON array or form value with updated available budget information. See the model for the exact specifications.
 
-try:
-    # Update existing available budget, to change for example the date range of the amount or the amount itself.
-    api_response = api_instance.update_available_budget(id, available_budget)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AvailableBudgetsApi->update_available_budget: %s\n" % e)
+    try:
+        # Update existing available budget, to change for example the date range of the amount or the amount itself.
+        api_response = api_instance.update_available_budget(id, available_budget)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AvailableBudgetsApi->update_available_budget: %s\n" % e)
 ```
 
 ### Parameters

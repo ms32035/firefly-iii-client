@@ -29,21 +29,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the single.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    id = 1 # int | The ID of the single.
 
-try:
-    # Delete an attachment.
-    api_instance.delete_attachment(id)
-except ApiException as e:
-    print("Exception when calling AttachmentsApi->delete_attachment: %s\n" % e)
+    try:
+        # Delete an attachment.
+        api_instance.delete_attachment(id)
+    except ApiException as e:
+        print("Exception when calling AttachmentsApi->delete_attachment: %s\n" % e)
 ```
 
 ### Parameters
@@ -89,22 +102,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the attachment.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    id = 1 # int | The ID of the attachment.
 
-try:
-    # Download a single attachment.
-    api_response = api_instance.download_attachment(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AttachmentsApi->download_attachment: %s\n" % e)
+    try:
+        # Download a single attachment.
+        api_response = api_instance.download_attachment(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AttachmentsApi->download_attachment: %s\n" % e)
 ```
 
 ### Parameters
@@ -150,22 +176,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the attachment.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    id = 1 # int | The ID of the attachment.
 
-try:
-    # Get a single attachment.
-    api_response = api_instance.get_attachment(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AttachmentsApi->get_attachment: %s\n" % e)
+    try:
+        # Get a single attachment.
+        api_response = api_instance.get_attachment(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AttachmentsApi->get_attachment: %s\n" % e)
 ```
 
 ### Parameters
@@ -211,22 +250,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all attachments.
-    api_response = api_instance.list_attachment(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AttachmentsApi->list_attachment: %s\n" % e)
+    try:
+        # List all attachments.
+        api_response = api_instance.list_attachment(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AttachmentsApi->list_attachment: %s\n" % e)
 ```
 
 ### Parameters
@@ -271,22 +323,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
-attachment = firefly_iii_client.Attachment() # Attachment | JSON array or key=value pairs with the necessary attachment information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    attachment = firefly_iii_client.Attachment() # Attachment | JSON array or key=value pairs with the necessary attachment information. See the model for the exact specifications.
 
-try:
-    # Store a new attachment.
-    api_response = api_instance.store_attachment(attachment)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AttachmentsApi->store_attachment: %s\n" % e)
+    try:
+        # Store a new attachment.
+        api_response = api_instance.store_attachment(attachment)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AttachmentsApi->store_attachment: %s\n" % e)
 ```
 
 ### Parameters
@@ -332,23 +397,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the attachment.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    id = 1 # int | The ID of the attachment.
 attachment = firefly_iii_client.Attachment() # Attachment | JSON array with updated attachment information. See the model for the exact specifications.
 
-try:
-    # Update existing attachment.
-    api_response = api_instance.update_attachment(id, attachment)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AttachmentsApi->update_attachment: %s\n" % e)
+    try:
+        # Update existing attachment.
+        api_response = api_instance.update_attachment(id, attachment)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AttachmentsApi->update_attachment: %s\n" % e)
 ```
 
 ### Parameters
@@ -395,22 +473,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AttachmentsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the attachment.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    id = 1 # int | The ID of the attachment.
 body = '/path/to/file' # file |  (optional)
 
-try:
-    # Upload an attachment.
-    api_instance.upload_attachment(id, body=body)
-except ApiException as e:
-    print("Exception when calling AttachmentsApi->upload_attachment: %s\n" % e)
+    try:
+        # Upload an attachment.
+        api_instance.upload_attachment(id, body=body)
+    except ApiException as e:
+        print("Exception when calling AttachmentsApi->upload_attachment: %s\n" % e)
 ```
 
 ### Parameters

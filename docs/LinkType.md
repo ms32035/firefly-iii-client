@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**editable** | **bool** |  | [optional] 
+**editable** | **bool** |  | [optional] [readonly] 
 **inward** | **str** |  | 
 **name** | **str** |  | 
 **outward** | **str** |  | 

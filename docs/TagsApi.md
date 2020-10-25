@@ -30,21 +30,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-tag = 'groceries' # str | Either the tag itself or the tag ID.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TagsApi(api_client)
+    tag = 'groceries' # str | Either the tag itself or the tag ID.
 
-try:
-    # Delete an tag.
-    api_instance.delete_tag(tag)
-except ApiException as e:
-    print("Exception when calling TagsApi->delete_tag: %s\n" % e)
+    try:
+        # Delete an tag.
+        api_instance.delete_tag(tag)
+    except ApiException as e:
+        print("Exception when calling TagsApi->delete_tag: %s\n" % e)
 ```
 
 ### Parameters
@@ -90,23 +103,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-tag = 'groceries' # str | Either the tag itself or the tag ID.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TagsApi(api_client)
+    tag = 'groceries' # str | Either the tag itself or the tag ID.
 page = 56 # int | Page number (optional)
 
-try:
-    # Get a single tag.
-    api_response = api_instance.get_tag(tag, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TagsApi->get_tag: %s\n" % e)
+    try:
+        # Get a single tag.
+        api_response = api_instance.get_tag(tag, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TagsApi->get_tag: %s\n" % e)
 ```
 
 ### Parameters
@@ -153,23 +179,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TagsApi(api_client)
+    start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
 
-try:
-    # Returns a basic tag cloud.
-    api_response = api_instance.get_tag_cloud(start, end)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TagsApi->get_tag_cloud: %s\n" % e)
+    try:
+        # Returns a basic tag cloud.
+        api_response = api_instance.get_tag_cloud(start, end)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TagsApi->get_tag_cloud: %s\n" % e)
 ```
 
 ### Parameters
@@ -215,23 +254,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-tag = 'groceries' # str | Either the tag itself or the tag ID.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TagsApi(api_client)
+    tag = 'groceries' # str | Either the tag itself or the tag ID.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # Lists all attachments.
-    api_response = api_instance.list_attachment_by_tag(tag, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TagsApi->list_attachment_by_tag: %s\n" % e)
+    try:
+        # Lists all attachments.
+        api_response = api_instance.list_attachment_by_tag(tag, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TagsApi->list_attachment_by_tag: %s\n" % e)
 ```
 
 ### Parameters
@@ -278,22 +330,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-page = 56 # int | Page number (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TagsApi(api_client)
+    page = 56 # int | Page number (optional)
 
-try:
-    # List all tags.
-    api_response = api_instance.list_tag(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TagsApi->list_tag: %s\n" % e)
+    try:
+        # List all tags.
+        api_response = api_instance.list_tag(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TagsApi->list_tag: %s\n" % e)
 ```
 
 ### Parameters
@@ -338,26 +403,39 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-tag = 'groceries' # str | Either the tag itself or the tag ID.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TagsApi(api_client)
+    tag = 'groceries' # str | Either the tag itself or the tag ID.
 page = 1 # int | Page number. The default pagination is 50. (optional)
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
+start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
+end = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
 type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
-try:
-    # List all transactions with this tag.
-    api_response = api_instance.list_transaction_by_tag(tag, page=page, start=start, end=end, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TagsApi->list_transaction_by_tag: %s\n" % e)
+    try:
+        # List all transactions with this tag.
+        api_response = api_instance.list_transaction_by_tag(tag, page=page, start=start, end=end, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TagsApi->list_transaction_by_tag: %s\n" % e)
 ```
 
 ### Parameters
@@ -406,22 +484,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-tag_model = firefly_iii_client.TagModel() # TagModel | JSON array or key=value pairs with the necessary tag information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TagsApi(api_client)
+    tag_model = firefly_iii_client.TagModel() # TagModel | JSON array or key=value pairs with the necessary tag information. See the model for the exact specifications.
 
-try:
-    # Store a new tag
-    api_response = api_instance.store_tag(tag_model)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TagsApi->store_tag: %s\n" % e)
+    try:
+        # Store a new tag
+        api_response = api_instance.store_tag(tag_model)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TagsApi->store_tag: %s\n" % e)
 ```
 
 ### Parameters
@@ -467,23 +558,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.TagsApi(firefly_iii_client.ApiClient(configuration))
-tag = 'groceries' # str | Either the tag itself or the tag ID.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.TagsApi(api_client)
+    tag = 'groceries' # str | Either the tag itself or the tag ID.
 tag_model = firefly_iii_client.TagModel() # TagModel | JSON array with updated tag information. See the model for the exact specifications.
 
-try:
-    # Update existing tag.
-    api_response = api_instance.update_tag(tag, tag_model)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TagsApi->update_tag: %s\n" % e)
+    try:
+        # Update existing tag.
+        api_response = api_instance.update_tag(tag, tag_model)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling TagsApi->update_tag: %s\n" % e)
 ```
 
 ### Parameters

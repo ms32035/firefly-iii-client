@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **float** | The amount earned. | [optional] 
+**amount** | **str** | The amount earned. | [optional] 
 **currency_code** | **str** |  | [optional] 
 **currency_decimal_places** | **int** | Number of decimals supported by the currency | [optional] 
 **currency_id** | **int** |  | [optional] 

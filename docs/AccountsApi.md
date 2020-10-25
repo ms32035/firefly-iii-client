@@ -30,21 +30,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the account.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AccountsApi(api_client)
+    id = 1 # int | The ID of the account.
 
-try:
-    # Permanently delete account.
-    api_instance.delete_account(id)
-except ApiException as e:
-    print("Exception when calling AccountsApi->delete_account: %s\n" % e)
+    try:
+        # Permanently delete account.
+        api_instance.delete_account(id)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->delete_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -90,23 +103,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the account.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AccountsApi(api_client)
+    id = 1 # int | The ID of the account.
 date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 
-try:
-    # Get single account.
-    api_response = api_instance.get_account(id, date=date)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->get_account: %s\n" % e)
+    try:
+        # Get single account.
+        api_response = api_instance.get_account(id, date=date)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -153,24 +179,37 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is per 50 items. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AccountsApi(api_client)
+    page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 type = firefly_iii_client.AccountTypeFilter() # AccountTypeFilter | Optional filter on the account type(s) returned (optional)
 
-try:
-    # List all accounts.
-    api_response = api_instance.list_account(page=page, date=date, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->list_account: %s\n" % e)
+    try:
+        # List all accounts.
+        api_response = api_instance.list_account(page=page, date=date, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->list_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -217,23 +256,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the account.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AccountsApi(api_client)
+    id = 1 # int | The ID of the account.
 page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # Lists all attachments.
-    api_response = api_instance.list_attachment_by_account(id, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->list_attachment_by_account: %s\n" % e)
+    try:
+        # Lists all attachments.
+        api_response = api_instance.list_attachment_by_account(id, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->list_attachment_by_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -280,23 +332,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the account.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AccountsApi(api_client)
+    id = 1 # int | The ID of the account.
 page = 56 # int | Page number. The default pagination is per 50 items. (optional)
 
-try:
-    # List all piggy banks related to the account.
-    api_response = api_instance.list_piggy_bank_by_account(id, page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->list_piggy_bank_by_account: %s\n" % e)
+    try:
+        # List all piggy banks related to the account.
+        api_response = api_instance.list_piggy_bank_by_account(id, page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->list_piggy_bank_by_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -342,27 +407,40 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the account.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AccountsApi(api_client)
+    id = 1 # int | The ID of the account.
 page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 limit = 5 # int | Limits the number of results on one page. (optional)
-start = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD.  (optional)
+start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD.  (optional)
+end = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD.  (optional)
 type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
-try:
-    # List all transactions related to the account.
-    api_response = api_instance.list_transaction_by_account(id, page=page, limit=limit, start=start, end=end, type=type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->list_transaction_by_account: %s\n" % e)
+    try:
+        # List all transactions related to the account.
+        api_response = api_instance.list_transaction_by_account(id, page=page, limit=limit, start=start, end=end, type=type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->list_transaction_by_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -412,22 +490,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-account = firefly_iii_client.Account() # Account | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AccountsApi(api_client)
+    account = firefly_iii_client.Account() # Account | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
 
-try:
-    # Create new account.
-    api_response = api_instance.store_account(account)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->store_account: %s\n" % e)
+    try:
+        # Create new account.
+        api_response = api_instance.store_account(account)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->store_account: %s\n" % e)
 ```
 
 ### Parameters
@@ -473,23 +564,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AccountsApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The ID of the account.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AccountsApi(api_client)
+    id = 1 # int | The ID of the account.
 account = firefly_iii_client.Account() # Account | JSON array or formdata with updated account information. See the model for the exact specifications.
 
-try:
-    # Update existing account.
-    api_response = api_instance.update_account(id, account)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->update_account: %s\n" % e)
+    try:
+        # Update existing account.
+        api_response = api_instance.update_account(id, account)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->update_account: %s\n" % e)
 ```
 
 ### Parameters

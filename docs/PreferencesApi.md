@@ -25,22 +25,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PreferencesApi(firefly_iii_client.ApiClient(configuration))
-name = 'currencyPreference' # str | The name of the preference.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PreferencesApi(api_client)
+    name = 'currencyPreference' # str | The name of the preference.
 
-try:
-    # Return a single preference.
-    api_response = api_instance.get_preference(name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PreferencesApi->get_preference: %s\n" % e)
+    try:
+        # Return a single preference.
+        api_response = api_instance.get_preference(name)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PreferencesApi->get_preference: %s\n" % e)
 ```
 
 ### Parameters
@@ -85,22 +98,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PreferencesApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | Page number. The default pagination is 50. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PreferencesApi(api_client)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
-try:
-    # List all users preferences.
-    api_response = api_instance.list_preference(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PreferencesApi->list_preference: %s\n" % e)
+    try:
+        # List all users preferences.
+        api_response = api_instance.list_preference(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PreferencesApi->list_preference: %s\n" % e)
 ```
 
 ### Parameters
@@ -145,23 +171,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.PreferencesApi(firefly_iii_client.ApiClient(configuration))
-name = 'currencyPreference' # str | The name of the preference. Will always overwrite. Will be created if it does not exist.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.PreferencesApi(api_client)
+    name = 'currencyPreference' # str | The name of the preference. Will always overwrite. Will be created if it does not exist.
 preference = firefly_iii_client.Preference() # Preference | JSON array or key=value pairs with the necessary preference information. See the model for the exact specifications.
 
-try:
-    # Update preference
-    api_response = api_instance.update_preference(name, preference)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PreferencesApi->update_preference: %s\n" % e)
+    try:
+        # Update preference
+        api_response = api_instance.update_preference(name, preference)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PreferencesApi->update_preference: %s\n" % e)
 ```
 
 ### Parameters

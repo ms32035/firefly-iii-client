@@ -6,6 +6,7 @@ from __future__ import absolute_import
 from firefly_iii_client.api.about_api import AboutApi
 from firefly_iii_client.api.accounts_api import AccountsApi
 from firefly_iii_client.api.attachments_api import AttachmentsApi
+from firefly_iii_client.api.autocomplete_api import AutocompleteApi
 from firefly_iii_client.api.available_budgets_api import AvailableBudgetsApi
 from firefly_iii_client.api.bills_api import BillsApi
 from firefly_iii_client.api.budgets_api import BudgetsApi
@@ -13,7 +14,7 @@ from firefly_iii_client.api.categories_api import CategoriesApi
 from firefly_iii_client.api.charts_api import ChartsApi
 from firefly_iii_client.api.configuration_api import ConfigurationApi
 from firefly_iii_client.api.currencies_api import CurrenciesApi
-from firefly_iii_client.api.currency_exchange_rates_api import CurrencyExchangeRatesApi
+from firefly_iii_client.api.data_api import DataApi
 from firefly_iii_client.api.import_api import ImportApi
 from firefly_iii_client.api.links_api import LinksApi
 from firefly_iii_client.api.piggy_banks_api import PiggyBanksApi

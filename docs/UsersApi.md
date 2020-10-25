@@ -27,21 +27,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.UsersApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The user ID.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.UsersApi(api_client)
+    id = 1 # int | The user ID.
 
-try:
-    # Delete a user.
-    api_instance.delete_user(id)
-except ApiException as e:
-    print("Exception when calling UsersApi->delete_user: %s\n" % e)
+    try:
+        # Delete a user.
+        api_instance.delete_user(id)
+    except ApiException as e:
+        print("Exception when calling UsersApi->delete_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -88,22 +101,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.UsersApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The user ID.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.UsersApi(api_client)
+    id = 1 # int | The user ID.
 
-try:
-    # Get a single user.
-    api_response = api_instance.get_user(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UsersApi->get_user: %s\n" % e)
+    try:
+        # Get a single user.
+        api_response = api_instance.get_user(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsersApi->get_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -149,22 +175,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.UsersApi(firefly_iii_client.ApiClient(configuration))
-page = 1 # int | The page number, if necessary. The default pagination is 50, so 50 users per page. (optional)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.UsersApi(api_client)
+    page = 1 # int | The page number, if necessary. The default pagination is 50, so 50 users per page. (optional)
 
-try:
-    # List all users.
-    api_response = api_instance.list_user(page=page)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UsersApi->list_user: %s\n" % e)
+    try:
+        # List all users.
+        api_response = api_instance.list_user(page=page)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsersApi->list_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -209,22 +248,35 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.UsersApi(firefly_iii_client.ApiClient(configuration))
-user = firefly_iii_client.User() # User | JSON array or key=value pairs with the necessary user information. See the model for the exact specifications.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.UsersApi(api_client)
+    user = firefly_iii_client.User() # User | JSON array or key=value pairs with the necessary user information. See the model for the exact specifications.
 
-try:
-    # Store a new user
-    api_response = api_instance.store_user(user)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UsersApi->store_user: %s\n" % e)
+    try:
+        # Store a new user
+        api_response = api_instance.store_user(user)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsersApi->store_user: %s\n" % e)
 ```
 
 ### Parameters
@@ -270,23 +322,36 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.UsersApi(firefly_iii_client.ApiClient(configuration))
-id = 1 # int | The user ID.
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.UsersApi(api_client)
+    id = 1 # int | The user ID.
 user = firefly_iii_client.User() # User | JSON array with updated user information. See the model for the exact specifications.
 
-try:
-    # Update an existing user's information.
-    api_response = api_instance.update_user(id, user)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UsersApi->update_user: %s\n" % e)
+    try:
+        # Update an existing user's information.
+        api_response = api_instance.update_user(id, user)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UsersApi->update_user: %s\n" % e)
 ```
 
 ### Parameters

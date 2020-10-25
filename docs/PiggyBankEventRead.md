@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**PiggyBank**](PiggyBank.md) |  | 
-**id** | **str** |  | 
+**attributes** | [**PiggyBankEvent**](PiggyBankEvent.md) |  | 
+**id** | **int** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 
 

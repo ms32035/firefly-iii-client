@@ -24,21 +24,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AboutApi(firefly_iii_client.ApiClient(configuration))
-
-try:
-    # System information end point.
-    api_response = api_instance.get_about()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AboutApi->get_about: %s\n" % e)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AboutApi(api_client)
+    
+    try:
+        # System information end point.
+        api_response = api_instance.get_about()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AboutApi->get_about: %s\n" % e)
 ```
 
 ### Parameters
@@ -80,21 +93,34 @@ import time
 import firefly_iii_client
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
-configuration = firefly_iii_client.Configuration()
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
 # Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://demo.firefly-iii.org
-configuration.host = "https://demo.firefly-iii.org"
-# Create an instance of the API class
-api_instance = firefly_iii_client.AboutApi(firefly_iii_client.ApiClient(configuration))
-
-try:
-    # Currently authenticated user endpoint.
-    api_response = api_instance.get_current_user()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AboutApi->get_current_user: %s\n" % e)
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AboutApi(api_client)
+    
+    try:
+        # Currently authenticated user endpoint.
+        api_response = api_instance.get_current_user()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AboutApi->get_current_user: %s\n" % e)
 ```
 
 ### Parameters
