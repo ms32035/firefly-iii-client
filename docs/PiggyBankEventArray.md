@@ -1,9 +1,10 @@
 # PiggyBankEventArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[PiggyBankEventRead]**](PiggyBankEventRead.md) |  | 
+**data** | [**[PiggyBankEventRead]**](PiggyBankEventRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

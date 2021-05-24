@@ -1,13 +1,14 @@
 # BasicSummaryEntry
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency_code** | **str** |  | [optional] 
 **currency_decimal_places** | **int** | Number of decimals for the associated currency. | [optional] 
-**currency_id** | **int** | The currency ID of the associated currency. | [optional] 
+**currency_id** | **str** | The currency ID of the associated currency. | [optional] 
 **currency_symbol** | **str** |  | [optional] 
-**key** | **str** | This is a reference to the type of info shared, not influenced by translations or user preferences. | [optional] 
+**key** | **str** | This is a reference to the type of info shared, not influenced by translations or user preferences. The EUR value is a reference to the currency code. Possibilities are: balance-in-ABC, spent-in-ABC, earned-in-ABC, bills-paid-in-ABC, bills-unpaid-in-ABC, left-to-spend-in-ABC and net-worth-in-ABC. | [optional] 
 **local_icon** | **str** | Reference to a font-awesome icon without the fa- part. | [optional] 
 **monetary_value** | **float** | The amount as a float. | [optional] 
 **sub_title** | **str** | A short explanation of the amounts origin. Already formatted according to the locale of the user or translated, if relevant. | [optional] 

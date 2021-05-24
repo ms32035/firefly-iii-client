@@ -6,4 +6,4 @@ services:
       - ./target:/build/target
       - .:/build/src:ro
     environment:
-      API_VERSION: 1.4.0
+      API_VERSION: 1.5.2

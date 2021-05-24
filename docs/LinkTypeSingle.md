@@ -1,5 +1,6 @@
 # LinkTypeSingle
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

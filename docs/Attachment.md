@@ -1,16 +1,17 @@
 # Attachment
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attachable_id** | **int** | ID of the model this attachment is linked to. | 
+**attachable_id** | **str** | ID of the model this attachment is linked to. | 
 **attachable_type** | **str** | The object class to which the attachment must be linked. | 
+**filename** | **str** |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **download_uri** | **str** |  | [optional] 
-**filename** | **str** |  | 
 **md5** | **str** | MD5 hash of the file for basic duplicate detection. | [optional] 
 **mime** | **str** |  | [optional] [readonly] 
-**notes** | **str** |  | [optional] 
+**notes** | **str, none_type** |  | [optional] 
 **size** | **int** |  | [optional] [readonly] 
 **title** | **str** |  | [optional] 
 **updated_at** | **datetime** |  | [optional] [readonly] 

@@ -1,10 +1,11 @@
 # AttachmentRead
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**Attachment**](Attachment.md) |  | 
-**id** | **int** |  | 
+**id** | **str** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 
 

@@ -1,9 +1,10 @@
 # LinkTypeArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[LinkTypeRead]**](LinkTypeRead.md) |  | 
+**data** | [**[LinkTypeRead]**](LinkTypeRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

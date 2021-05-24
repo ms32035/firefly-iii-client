@@ -1,5 +1,6 @@
 # PiggyBankSingle
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

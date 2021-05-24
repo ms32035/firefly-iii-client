@@ -1,9 +1,10 @@
 # RuleGroupArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[RuleGroupRead]**](RuleGroupRead.md) |  | 
+**data** | [**[RuleGroupRead]**](RuleGroupRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

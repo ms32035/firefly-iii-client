@@ -25,10 +25,9 @@ Will permanently delete an account. Any associated transactions and piggy banks 
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import accounts_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -50,21 +49,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AccountsApi(api_client)
+    api_instance = accounts_api.AccountsApi(api_client)
     id = 1 # int | The ID of the account.
 
+    # example passing only required values which don't have defaults set
     try:
         # Permanently delete account.
         api_instance.delete_account(id)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AccountsApi->delete_account: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. | 
+ **id** | **int**| The ID of the account. |
 
 ### Return type
 
@@ -79,6 +80,7 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -88,7 +90,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account**
-> AccountSingle get_account(id, date=date)
+> AccountSingle get_account(id)
 
 Get single account.
 
@@ -98,10 +100,10 @@ Returns a single account by its ID.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import accounts_api
+from firefly_iii_client.model.account_single import AccountSingle
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -123,24 +125,35 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AccountsApi(api_client)
+    api_instance = accounts_api.AccountsApi(api_client)
     id = 1 # int | The ID of the account.
-date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
+    date = dateutil_parser('1970-01-01').date() # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # Get single account.
+        api_response = api_instance.get_account(id)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling AccountsApi->get_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Get single account.
         api_response = api_instance.get_account(id, date=date)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AccountsApi->get_account: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. | 
- **date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional] 
+ **id** | **int**| The ID of the account. |
+ **date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional]
 
 ### Return type
 
@@ -153,7 +166,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -164,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_account**
-> AccountArray list_account(page=page, date=date, type=type)
+> AccountArray list_account()
 
 List all accounts.
 
@@ -174,10 +188,11 @@ This endpoint returns a list of all the accounts owned by the authenticated user
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import accounts_api
+from firefly_iii_client.model.account_type_filter import AccountTypeFilter
+from firefly_iii_client.model.account_array import AccountArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -199,26 +214,29 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AccountsApi(api_client)
+    api_instance = accounts_api.AccountsApi(api_client)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
-type = firefly_iii_client.AccountTypeFilter() # AccountTypeFilter | Optional filter on the account type(s) returned (optional)
+    date = dateutil_parser('1970-01-01').date() # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
+    type = AccountTypeFilter("all") # AccountTypeFilter | Optional filter on the account type(s) returned (optional)
 
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # List all accounts.
         api_response = api_instance.list_account(page=page, date=date, type=type)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AccountsApi->list_account: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
- **date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional] 
- **type** | [**AccountTypeFilter**](.md)| Optional filter on the account type(s) returned | [optional] 
+ **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
+ **date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional]
+ **type** | **AccountTypeFilter**| Optional filter on the account type(s) returned | [optional]
 
 ### Return type
 
@@ -231,7 +249,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -241,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_attachment_by_account**
-> AttachmentArray list_attachment_by_account(id, page=page)
+> AttachmentArray list_attachment_by_account(id)
 
 Lists all attachments.
 
@@ -251,10 +270,10 @@ Lists all attachments.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import accounts_api
+from firefly_iii_client.model.attachment_array import AttachmentArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -276,24 +295,35 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AccountsApi(api_client)
+    api_instance = accounts_api.AccountsApi(api_client)
     id = 1 # int | The ID of the account.
-page = 1 # int | Page number. The default pagination is 50. (optional)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # Lists all attachments.
+        api_response = api_instance.list_attachment_by_account(id)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling AccountsApi->list_attachment_by_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Lists all attachments.
         api_response = api_instance.list_attachment_by_account(id, page=page)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AccountsApi->list_attachment_by_account: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. | 
- **page** | **int**| Page number. The default pagination is 50. | [optional] 
+ **id** | **int**| The ID of the account. |
+ **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
 
@@ -306,7 +336,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -317,7 +348,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_piggy_bank_by_account**
-> PiggyBankArray list_piggy_bank_by_account(id, page=page)
+> PiggyBankArray list_piggy_bank_by_account(id)
 
 List all piggy banks related to the account.
 
@@ -327,10 +358,10 @@ This endpoint returns a list of all the piggy banks connected to the account.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import accounts_api
+from firefly_iii_client.model.piggy_bank_array import PiggyBankArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -352,24 +383,35 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AccountsApi(api_client)
+    api_instance = accounts_api.AccountsApi(api_client)
     id = 1 # int | The ID of the account.
-page = 56 # int | Page number. The default pagination is per 50 items. (optional)
+    page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # List all piggy banks related to the account.
+        api_response = api_instance.list_piggy_bank_by_account(id)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling AccountsApi->list_piggy_bank_by_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # List all piggy banks related to the account.
         api_response = api_instance.list_piggy_bank_by_account(id, page=page)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AccountsApi->list_piggy_bank_by_account: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. | 
- **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
+ **id** | **int**| The ID of the account. |
+ **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
 
 ### Return type
 
@@ -382,7 +424,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -392,7 +435,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_transaction_by_account**
-> TransactionArray list_transaction_by_account(id, page=page, limit=limit, start=start, end=end, type=type)
+> TransactionArray list_transaction_by_account(id)
 
 List all transactions related to the account.
 
@@ -402,10 +445,11 @@ This endpoint returns a list of all the transactions connected to the account.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import accounts_api
+from firefly_iii_client.model.transaction_type_filter import TransactionTypeFilter
+from firefly_iii_client.model.transaction_array import TransactionArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -427,32 +471,43 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AccountsApi(api_client)
+    api_instance = accounts_api.AccountsApi(api_client)
     id = 1 # int | The ID of the account.
-page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-limit = 5 # int | Limits the number of results on one page. (optional)
-start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD.  (optional)
-end = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD.  (optional)
-type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
+    page = 1 # int | Page number. The default pagination is per 50 items. (optional)
+    limit = 5 # int | Limits the number of results on one page. (optional)
+    start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
+    end = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
+    type = TransactionTypeFilter("all") # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # List all transactions related to the account.
+        api_response = api_instance.list_transaction_by_account(id)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling AccountsApi->list_transaction_by_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # List all transactions related to the account.
         api_response = api_instance.list_transaction_by_account(id, page=page, limit=limit, start=start, end=end, type=type)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AccountsApi->list_transaction_by_account: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. | 
- **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
- **limit** | **int**| Limits the number of results on one page. | [optional] 
- **start** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
- **end** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
- **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned. | [optional] 
+ **id** | **int**| The ID of the account. |
+ **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
+ **limit** | **int**| Limits the number of results on one page. | [optional]
+ **start** | **date**| A date formatted YYYY-MM-DD.  | [optional]
+ **end** | **date**| A date formatted YYYY-MM-DD.  | [optional]
+ **type** | **TransactionTypeFilter**| Optional filter on the transaction type(s) returned. | [optional]
 
 ### Return type
 
@@ -465,7 +520,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -475,7 +531,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_account**
-> AccountSingle store_account(account)
+> AccountSingle store_account(account_store)
 
 Create new account.
 
@@ -485,10 +541,12 @@ Creates a new account. The data required can be submitted as a JSON body or as a
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import accounts_api
+from firefly_iii_client.model.account_single import AccountSingle
+from firefly_iii_client.model.account_store import AccountStore
+from firefly_iii_client.model.validation_error import ValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -510,22 +568,48 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AccountsApi(api_client)
-    account = firefly_iii_client.Account() # Account | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
+    api_instance = accounts_api.AccountsApi(api_client)
+    account_store = AccountStore(
+        account_number="7009312345678",
+        account_role="defaultAsset",
+        active=False,
+        bic="BOFAUS3N",
+        credit_card_type="monthlyFull",
+        currency_code="EUR",
+        currency_id="12",
+        iban="GB98MIDL07009312345678",
+        include_net_worth=True,
+        interest="5.3",
+        interest_period="monthly",
+        latitude=51.983333,
+        liability_type="loan",
+        longitude=5.916667,
+        monthly_payment_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
+        name="My checking account",
+        notes="Some example notes",
+        opening_balance="-1012.12",
+        opening_balance_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
+        order=1,
+        type="asset",
+        virtual_balance="123.45",
+        zoom_level=6,
+    ) # AccountStore | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
 
+    # example passing only required values which don't have defaults set
     try:
         # Create new account.
-        api_response = api_instance.store_account(account)
+        api_response = api_instance.store_account(account_store)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AccountsApi->store_account: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | [**Account**](Account.md)| JSON array with the necessary account information or key&#x3D;value pairs. See the model for the exact specifications. | 
+ **account_store** | [**AccountStore**](AccountStore.md)| JSON array with the necessary account information or key&#x3D;value pairs. See the model for the exact specifications. |
 
 ### Return type
 
@@ -538,7 +622,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json, application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -549,7 +634,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_account**
-> AccountSingle update_account(id, account)
+> AccountSingle update_account(id, account_update)
 
 Update existing account.
 
@@ -559,10 +644,12 @@ Used to update a single account. All fields that are not submitted will be clear
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import accounts_api
+from firefly_iii_client.model.account_single import AccountSingle
+from firefly_iii_client.model.account_update import AccountUpdate
+from firefly_iii_client.model.validation_error import ValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -584,24 +671,49 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AccountsApi(api_client)
+    api_instance = accounts_api.AccountsApi(api_client)
     id = 1 # int | The ID of the account.
-account = firefly_iii_client.Account() # Account | JSON array or formdata with updated account information. See the model for the exact specifications.
+    account_update = AccountUpdate(
+        account_number="7009312345678",
+        account_role="defaultAsset",
+        active=False,
+        bic="BOFAUS3N",
+        credit_card_type="monthlyFull",
+        currency_code="EUR",
+        currency_id="12",
+        iban="GB98MIDL07009312345678",
+        include_net_worth=True,
+        interest="5.3",
+        interest_period="monthly",
+        latitude=51.983333,
+        liability_type="loan",
+        longitude=5.916667,
+        monthly_payment_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
+        name="My checking account",
+        notes="Some example notes",
+        opening_balance="-1012.12",
+        opening_balance_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
+        order=1,
+        virtual_balance="123.45",
+        zoom_level=6,
+    ) # AccountUpdate | JSON array or formdata with updated account information. See the model for the exact specifications.
 
+    # example passing only required values which don't have defaults set
     try:
         # Update existing account.
-        api_response = api_instance.update_account(id, account)
+        api_response = api_instance.update_account(id, account_update)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AccountsApi->update_account: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. | 
- **account** | [**Account**](Account.md)| JSON array or formdata with updated account information. See the model for the exact specifications. | 
+ **id** | **int**| The ID of the account. |
+ **account_update** | [**AccountUpdate**](AccountUpdate.md)| JSON array or formdata with updated account information. See the model for the exact specifications. |
 
 ### Return type
 
@@ -614,7 +726,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json, application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

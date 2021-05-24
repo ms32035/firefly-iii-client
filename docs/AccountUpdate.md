@@ -1,29 +1,31 @@
 # AccountUpdate
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_number** | **str** |  | [optional] 
-**account_role** | **str** | Is only mandatory when the type is asset. | 
-**active** | **bool** | If omitted, defaults to true. | [optional] 
-**bic** | **str** |  | [optional] 
-**credit_card_type** | **str** | Mandatory when the account_role is ccAsset. Can only be monthlyFull. | [optional] 
-**currency_code** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
-**currency_id** | **int** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
-**iban** | **str** |  | [optional] 
-**include_net_worth** | **bool** | If omitted, defaults to true. | [optional] 
-**interest** | **float** | Mandatory when type is liability. Interest percentage. | 
-**interest_period** | **str** | Mandatory when type is liability. Period over which the interest is calculated. | 
-**liability_amount** | **float** | Mandatory when type is liability. Amount of money in the liability. Must be positive. | 
-**liability_start_date** | **date** | Mandatory when type is liability. Start date for the liability. | 
-**liability_type** | **str** | Mandatory when type is liability. Specifies the exact type. | 
-**monthly_payment_date** | **date** | Mandatory when the account_role is ccAsset. Moment at which CC payment installments are asked for by the bank. | [optional] 
 **name** | **str** |  | 
-**notes** | **str** |  | [optional] 
-**opening_balance** | **float** |  | [optional] 
-**opening_balance_date** | **date** |  | [optional] 
-**type** | **str** | Can only be one one these four account types. | 
-**virtual_balance** | **float** |  | [optional] 
+**account_number** | **str, none_type** |  | [optional] 
+**account_role** | **str, none_type** | Is only mandatory when the type is asset. | [optional] 
+**active** | **bool** | If omitted, defaults to true. | [optional] 
+**bic** | **str, none_type** |  | [optional] 
+**credit_card_type** | **str, none_type** | Mandatory when the account_role is ccAsset. Can only be monthlyFull or null. | [optional] 
+**currency_code** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
+**currency_id** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
+**iban** | **str, none_type** |  | [optional] 
+**include_net_worth** | **bool** | If omitted, defaults to true. | [optional] 
+**interest** | **str, none_type** | Mandatory when type is liability. Interest percentage. | [optional] 
+**interest_period** | **str, none_type** | Mandatory when type is liability. Period over which the interest is calculated. | [optional] 
+**latitude** | **float, none_type** | Latitude of the account&#39;s location, if applicable. Can be used to draw a map. If omitted, the existing location will be kept. If submitted as NULL, the current location will be removed. | [optional] 
+**liability_type** | **str, none_type** | Mandatory when type is liability. Specifies the exact type. | [optional] 
+**longitude** | **float, none_type** | Latitude of the account&#39;s location, if applicable. Can be used to draw a map. If omitted, the existing location will be kept. If submitted as NULL, the current location will be removed. | [optional] 
+**monthly_payment_date** | **date, none_type** | Mandatory when the account_role is ccAsset. Moment at which CC payment installments are asked for by the bank. | [optional] 
+**notes** | **str, none_type** |  | [optional] 
+**opening_balance** | **str** |  | [optional] 
+**opening_balance_date** | **date, none_type** |  | [optional] 
+**order** | **int** | Order of the account | [optional] 
+**virtual_balance** | **str** |  | [optional] 
+**zoom_level** | **int, none_type** | Zoom level for the map, if drawn. This to set the box right. Unfortunately this is a proprietary value because each map provider has different zoom levels. If omitted, the existing location will be kept. If submitted as NULL, the current location will be removed. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

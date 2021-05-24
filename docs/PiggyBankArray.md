@@ -1,9 +1,10 @@
 # PiggyBankArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[PiggyBankRead]**](PiggyBankRead.md) |  | 
+**data** | [**[PiggyBankRead]**](PiggyBankRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

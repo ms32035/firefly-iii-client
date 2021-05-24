@@ -1,10 +1,11 @@
 # RuleGroupRead
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**RuleGroup**](RuleGroup.md) |  | 
-**id** | **int** |  | 
+**id** | **str** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 
 

@@ -1,9 +1,10 @@
 # PreferenceArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[PreferenceRead]**](PreferenceRead.md) |  | 
+**data** | [**[PreferenceRead]**](PreferenceRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

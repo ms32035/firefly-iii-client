@@ -1,10 +1,11 @@
 # PiggyBankRead
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**PiggyBank**](PiggyBank.md) |  | 
-**id** | **int** |  | 
+**id** | **str** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 
 

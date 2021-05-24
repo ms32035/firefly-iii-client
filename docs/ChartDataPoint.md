@@ -1,5 +1,6 @@
 # ChartDataPoint
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

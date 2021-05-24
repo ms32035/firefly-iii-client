@@ -1,5 +1,6 @@
 # SystemInfoData
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

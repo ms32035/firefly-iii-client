@@ -1,9 +1,10 @@
 # UserArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[UserRead]**](UserRead.md) |  | 
+**data** | [**[UserRead]**](UserRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

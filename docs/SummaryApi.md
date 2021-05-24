@@ -8,20 +8,20 @@ Method | HTTP request | Description
 
 
 # **get_basic_summary**
-> list[BasicSummaryEntry] get_basic_summary(start, end, currency_code=currency_code)
+> BasicSummary get_basic_summary(start, end)
 
 Returns basic sums of the users data.
 
-Returns basic sums of the users data, like the net worth, spent and earned amounts. It is multi-currency, and is in Firefly III to populate the dashboard. 
+Returns basic sums of the users data, like the net worth, spent and earned amounts. It is multi-currency, and is used in Firefly III to populate the dashboard. 
 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import summary_api
+from firefly_iii_client.model.basic_summary import BasicSummary
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -43,30 +43,41 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.SummaryApi(api_client)
-    start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-currency_code = 'currency_code_example' # str | A currency code like EUR or USD, to filter the result.  (optional)
+    api_instance = summary_api.SummaryApi(api_client)
+    start = dateutil_parser('1970-01-01').date() # date | A date formatted YYYY-MM-DD. 
+    end = dateutil_parser('1970-01-01').date() # date | A date formatted YYYY-MM-DD. 
+    currency_code = "currency_code_example" # str | A currency code like EUR or USD, to filter the result.  (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # Returns basic sums of the users data.
+        api_response = api_instance.get_basic_summary(start, end)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling SummaryApi->get_basic_summary: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Returns basic sums of the users data.
         api_response = api_instance.get_basic_summary(start, end, currency_code=currency_code)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling SummaryApi->get_basic_summary: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start** | **date**| A date formatted YYYY-MM-DD.  | 
- **end** | **date**| A date formatted YYYY-MM-DD.  | 
- **currency_code** | **str**| A currency code like EUR or USD, to filter the result.  | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD.  |
+ **end** | **date**| A date formatted YYYY-MM-DD.  |
+ **currency_code** | **str**| A currency code like EUR or USD, to filter the result.  | [optional]
 
 ### Return type
 
-[**list[BasicSummaryEntry]**](BasicSummaryEntry.md)
+[**BasicSummary**](BasicSummary.md)
 
 ### Authorization
 
@@ -75,12 +86,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | An array of sums. It depends on the user what you can expect to get back, so please check out the documentation and try this out on the demo site. |  -  |
+**200** | An array of sums. It depends on the user what you can expect to get back, so please try this out on the demo site. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

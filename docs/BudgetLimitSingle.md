@@ -1,5 +1,6 @@
 # BudgetLimitSingle
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

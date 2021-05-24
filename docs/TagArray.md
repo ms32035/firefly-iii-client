@@ -1,9 +1,10 @@
 # TagArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[TagRead]**](TagRead.md) |  | 
+**data** | [**[TagRead]**](TagRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

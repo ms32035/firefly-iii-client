@@ -24,10 +24,9 @@ With this endpoint you delete an attachment, including any stored file data.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import attachments_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -49,21 +48,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    api_instance = attachments_api.AttachmentsApi(api_client)
     id = 1 # int | The ID of the single.
 
+    # example passing only required values which don't have defaults set
     try:
         # Delete an attachment.
         api_instance.delete_attachment(id)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AttachmentsApi->delete_attachment: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the single. | 
+ **id** | **int**| The ID of the single. |
 
 ### Return type
 
@@ -78,6 +79,7 @@ void (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
@@ -87,7 +89,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **download_attachment**
-> file download_attachment(id)
+> file_type download_attachment(id)
 
 Download a single attachment.
 
@@ -97,10 +99,9 @@ This endpoint allows you to download the binary content of a transaction. It wil
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import attachments_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -122,26 +123,28 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    api_instance = attachments_api.AttachmentsApi(api_client)
     id = 1 # int | The ID of the attachment.
 
+    # example passing only required values which don't have defaults set
     try:
         # Download a single attachment.
         api_response = api_instance.download_attachment(id)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AttachmentsApi->download_attachment: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the attachment. | 
+ **id** | **int**| The ID of the attachment. |
 
 ### Return type
 
-**file**
+**file_type**
 
 ### Authorization
 
@@ -151,6 +154,7 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -171,10 +175,10 @@ Get a single attachment. This endpoint only returns the available metadata for t
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import attachments_api
+from firefly_iii_client.model.attachment_single import AttachmentSingle
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -196,22 +200,24 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    api_instance = attachments_api.AttachmentsApi(api_client)
     id = 1 # int | The ID of the attachment.
 
+    # example passing only required values which don't have defaults set
     try:
         # Get a single attachment.
         api_response = api_instance.get_attachment(id)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AttachmentsApi->get_attachment: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the attachment. | 
+ **id** | **int**| The ID of the attachment. |
 
 ### Return type
 
@@ -224,7 +230,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -235,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_attachment**
-> AttachmentArray list_attachment(page=page)
+> AttachmentArray list_attachment()
 
 List all attachments.
 
@@ -245,10 +252,10 @@ This endpoint lists all attachments.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import attachments_api
+from firefly_iii_client.model.attachment_array import AttachmentArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -270,22 +277,25 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    api_instance = attachments_api.AttachmentsApi(api_client)
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # List all attachments.
         api_response = api_instance.list_attachment(page=page)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AttachmentsApi->list_attachment: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number. The default pagination is 50. | [optional] 
+ **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
 
@@ -298,7 +308,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -308,7 +319,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_attachment**
-> AttachmentSingle store_attachment(attachment)
+> AttachmentSingle store_attachment(attachment_store)
 
 Store a new attachment.
 
@@ -318,10 +329,12 @@ Creates a new attachment. The data required can be submitted as a JSON body or a
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import attachments_api
+from firefly_iii_client.model.validation_error import ValidationError
+from firefly_iii_client.model.attachment_single import AttachmentSingle
+from firefly_iii_client.model.attachment_store import AttachmentStore
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -343,22 +356,30 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AttachmentsApi(api_client)
-    attachment = firefly_iii_client.Attachment() # Attachment | JSON array or key=value pairs with the necessary attachment information. See the model for the exact specifications.
+    api_instance = attachments_api.AttachmentsApi(api_client)
+    attachment_store = AttachmentStore(
+        attachable_id="134",
+        attachable_type="Bill",
+        filename="file.pdf",
+        notes="Some notes",
+        title="Some PDF file",
+    ) # AttachmentStore | JSON array or key=value pairs with the necessary attachment information. See the model for the exact specifications.
 
+    # example passing only required values which don't have defaults set
     try:
         # Store a new attachment.
-        api_response = api_instance.store_attachment(attachment)
+        api_response = api_instance.store_attachment(attachment_store)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AttachmentsApi->store_attachment: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attachment** | [**Attachment**](Attachment.md)| JSON array or key&#x3D;value pairs with the necessary attachment information. See the model for the exact specifications. | 
+ **attachment_store** | [**AttachmentStore**](AttachmentStore.md)| JSON array or key&#x3D;value pairs with the necessary attachment information. See the model for the exact specifications. |
 
 ### Return type
 
@@ -371,7 +392,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json, application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -382,7 +404,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_attachment**
-> AttachmentSingle update_attachment(id, attachment)
+> AttachmentSingle update_attachment(id, attachment_update)
 
 Update existing attachment.
 
@@ -392,10 +414,12 @@ Update the meta data for an existing attachment. This endpoint does not allow yo
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import attachments_api
+from firefly_iii_client.model.attachment_update import AttachmentUpdate
+from firefly_iii_client.model.validation_error import ValidationError
+from firefly_iii_client.model.attachment_single import AttachmentSingle
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -417,24 +441,30 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    api_instance = attachments_api.AttachmentsApi(api_client)
     id = 1 # int | The ID of the attachment.
-attachment = firefly_iii_client.Attachment() # Attachment | JSON array with updated attachment information. See the model for the exact specifications.
+    attachment_update = AttachmentUpdate(
+        filename="file.pdf",
+        notes="Some notes",
+        title="Some PDF file",
+    ) # AttachmentUpdate | JSON array with updated attachment information. See the model for the exact specifications.
 
+    # example passing only required values which don't have defaults set
     try:
         # Update existing attachment.
-        api_response = api_instance.update_attachment(id, attachment)
+        api_response = api_instance.update_attachment(id, attachment_update)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AttachmentsApi->update_attachment: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the attachment. | 
- **attachment** | [**Attachment**](Attachment.md)| JSON array with updated attachment information. See the model for the exact specifications. | 
+ **id** | **int**| The ID of the attachment. |
+ **attachment_update** | [**AttachmentUpdate**](AttachmentUpdate.md)| JSON array with updated attachment information. See the model for the exact specifications. |
 
 ### Return type
 
@@ -447,7 +477,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json, application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -458,7 +489,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_attachment**
-> upload_attachment(id, body=body)
+> upload_attachment(id)
 
 Upload an attachment.
 
@@ -468,10 +499,9 @@ Use this endpoint to upload (and possible overwrite) the file contents of an att
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import attachments_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -493,23 +523,33 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AttachmentsApi(api_client)
+    api_instance = attachments_api.AttachmentsApi(api_client)
     id = 1 # int | The ID of the attachment.
-body = '/path/to/file' # file |  (optional)
+    body = open('/path/to/file', 'rb') # file_type |  (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # Upload an attachment.
+        api_instance.upload_attachment(id)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling AttachmentsApi->upload_attachment: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Upload an attachment.
         api_instance.upload_attachment(id, body=body)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AttachmentsApi->upload_attachment: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the attachment. | 
- **body** | **file**|  | [optional] 
+ **id** | **int**| The ID of the attachment. |
+ **body** | **file_type**|  | [optional]
 
 ### Return type
 
@@ -523,6 +563,7 @@ void (empty response body)
 
  - **Content-Type**: application/octet-stream
  - **Accept**: Not defined
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -1,5 +1,6 @@
 # RuleGroupSingle
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

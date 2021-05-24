@@ -1,8 +1,7 @@
-FROM openapitools/openapi-generator-cli:v4.3.1
+FROM openapitools/openapi-generator-cli:v5.1.1
 
-RUN apk add \
-   --update ca-certificates openssl python3 git curl && \
-   update-ca-certificates && \
+RUN apt update && \ 
+   apt install -yqq ca-certificates openssl python3 git curl python3-pip && \
    pip3 install pyyaml && \
    mkdir /build && \
    chmod 777 /build

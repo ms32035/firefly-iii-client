@@ -1,5 +1,6 @@
 # AvailableBudgetSingle
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

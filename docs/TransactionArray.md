@@ -1,9 +1,10 @@
 # TransactionArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[TransactionRead]**](TransactionRead.md) |  | 
+**data** | [**[TransactionRead]**](TransactionRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

@@ -1,9 +1,10 @@
 # CurrencyArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[CurrencyRead]**](CurrencyRead.md) |  | 
+**data** | [**[CurrencyRead]**](CurrencyRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

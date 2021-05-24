@@ -24,10 +24,9 @@ Delete a piggy bank.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import piggy_banks_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -49,21 +48,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    api_instance = piggy_banks_api.PiggyBanksApi(api_client)
     id = 1 # int | The ID of the piggy bank.
 
+    # example passing only required values which don't have defaults set
     try:
         # Delete a piggy bank.
         api_instance.delete_piggy_bank(id)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling PiggyBanksApi->delete_piggy_bank: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank. | 
+ **id** | **int**| The ID of the piggy bank. |
 
 ### Return type
 
@@ -77,6 +78,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -97,10 +99,10 @@ Get a single piggy bank.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import piggy_banks_api
+from firefly_iii_client.model.piggy_bank_single import PiggyBankSingle
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -122,22 +124,24 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    api_instance = piggy_banks_api.PiggyBanksApi(api_client)
     id = 1 # int | The ID of the piggy bank.
 
+    # example passing only required values which don't have defaults set
     try:
         # Get a single piggy bank.
         api_response = api_instance.get_piggy_bank(id)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling PiggyBanksApi->get_piggy_bank: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank. | 
+ **id** | **int**| The ID of the piggy bank. |
 
 ### Return type
 
@@ -150,7 +154,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -161,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_attachment_by_piggy_bank**
-> AttachmentArray list_attachment_by_piggy_bank(id, page=page)
+> AttachmentArray list_attachment_by_piggy_bank(id)
 
 Lists all attachments.
 
@@ -171,10 +176,10 @@ Lists all attachments.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import piggy_banks_api
+from firefly_iii_client.model.attachment_array import AttachmentArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -196,24 +201,35 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    api_instance = piggy_banks_api.PiggyBanksApi(api_client)
     id = 1 # int | The ID of the piggy bank.
-page = 1 # int | Page number. The default pagination is 50. (optional)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # Lists all attachments.
+        api_response = api_instance.list_attachment_by_piggy_bank(id)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling PiggyBanksApi->list_attachment_by_piggy_bank: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # Lists all attachments.
         api_response = api_instance.list_attachment_by_piggy_bank(id, page=page)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling PiggyBanksApi->list_attachment_by_piggy_bank: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank. | 
- **page** | **int**| Page number. The default pagination is 50. | [optional] 
+ **id** | **int**| The ID of the piggy bank. |
+ **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
 
@@ -226,7 +242,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -237,7 +254,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_event_by_piggy_bank**
-> PiggyBankEventArray list_event_by_piggy_bank(id, page=page)
+> PiggyBankEventArray list_event_by_piggy_bank(id)
 
 List all events linked to a piggy bank.
 
@@ -247,10 +264,10 @@ List all events linked to a piggy bank (adding and removing money).
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import piggy_banks_api
+from firefly_iii_client.model.piggy_bank_event_array import PiggyBankEventArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -272,24 +289,35 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    api_instance = piggy_banks_api.PiggyBanksApi(api_client)
     id = 1 # int | The ID of the piggy bank
-page = 1 # int | Page number. The default pagination is 50. (optional)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
 
+    # example passing only required values which don't have defaults set
+    try:
+        # List all events linked to a piggy bank.
+        api_response = api_instance.list_event_by_piggy_bank(id)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling PiggyBanksApi->list_event_by_piggy_bank: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # List all events linked to a piggy bank.
         api_response = api_instance.list_event_by_piggy_bank(id, page=page)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling PiggyBanksApi->list_event_by_piggy_bank: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank | 
- **page** | **int**| Page number. The default pagination is 50. | [optional] 
+ **id** | **int**| The ID of the piggy bank |
+ **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
 
@@ -302,7 +330,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -312,7 +341,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_piggy_bank**
-> PiggyBankArray list_piggy_bank(page=page)
+> PiggyBankArray list_piggy_bank()
 
 List all piggy banks.
 
@@ -322,10 +351,10 @@ List all piggy banks.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import piggy_banks_api
+from firefly_iii_client.model.piggy_bank_array import PiggyBankArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -347,22 +376,25 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    api_instance = piggy_banks_api.PiggyBanksApi(api_client)
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # List all piggy banks.
         api_response = api_instance.list_piggy_bank(page=page)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling PiggyBanksApi->list_piggy_bank: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number. The default pagination is 50. | [optional] 
+ **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
 
@@ -375,7 +407,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -385,7 +418,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_piggy_bank**
-> PiggyBankSingle store_piggy_bank(piggy_bank)
+> PiggyBankSingle store_piggy_bank(piggy_bank_store)
 
 Store a new piggy bank
 
@@ -395,10 +428,12 @@ Creates a new piggy bank. The data required can be submitted as a JSON body or a
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import piggy_banks_api
+from firefly_iii_client.model.piggy_bank_single import PiggyBankSingle
+from firefly_iii_client.model.piggy_bank_store import PiggyBankStore
+from firefly_iii_client.model.validation_error import ValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -420,22 +455,35 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
-    piggy_bank = firefly_iii_client.PiggyBank() # PiggyBank | JSON array or key=value pairs with the necessary piggy bank information. See the model for the exact specifications.
+    api_instance = piggy_banks_api.PiggyBanksApi(api_client)
+    piggy_bank_store = PiggyBankStore(
+        account_id="13",
+        current_amount="123.45",
+        name="New digital camera",
+        notes="Some notes",
+        object_group_id="5",
+        object_group_title="Example Group",
+        order=5,
+        start_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
+        target_amount="123.45",
+        target_date=dateutil_parser('Thu Sep 17 00:00:00 UTC 2020').date(),
+    ) # PiggyBankStore | JSON array or key=value pairs with the necessary piggy bank information. See the model for the exact specifications.
 
+    # example passing only required values which don't have defaults set
     try:
         # Store a new piggy bank
-        api_response = api_instance.store_piggy_bank(piggy_bank)
+        api_response = api_instance.store_piggy_bank(piggy_bank_store)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling PiggyBanksApi->store_piggy_bank: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **piggy_bank** | [**PiggyBank**](PiggyBank.md)| JSON array or key&#x3D;value pairs with the necessary piggy bank information. See the model for the exact specifications. | 
+ **piggy_bank_store** | [**PiggyBankStore**](PiggyBankStore.md)| JSON array or key&#x3D;value pairs with the necessary piggy bank information. See the model for the exact specifications. |
 
 ### Return type
 
@@ -448,7 +496,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json, application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -459,7 +508,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_piggy_bank**
-> PiggyBankSingle update_piggy_bank(id, piggy_bank)
+> PiggyBankSingle update_piggy_bank(id, piggy_bank_update)
 
 Update existing piggy bank.
 
@@ -469,10 +518,12 @@ Update existing piggy bank.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import piggy_banks_api
+from firefly_iii_client.model.piggy_bank_single import PiggyBankSingle
+from firefly_iii_client.model.piggy_bank_update import PiggyBankUpdate
+from firefly_iii_client.model.validation_error import ValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -494,24 +545,37 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.PiggyBanksApi(api_client)
+    api_instance = piggy_banks_api.PiggyBanksApi(api_client)
     id = 1 # int | The ID of the piggy bank
-piggy_bank = firefly_iii_client.PiggyBank() # PiggyBank | JSON array with updated piggy bank information. See the model for the exact specifications.
+    piggy_bank_update = PiggyBankUpdate(
+        account_id="13",
+        current_amount="123.45",
+        name="New digital camera",
+        notes="Some notes",
+        object_group_id="5",
+        object_group_title="Example Group",
+        order=5,
+        start_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
+        target_amount="123.45",
+        target_date=dateutil_parser('Thu Sep 17 00:00:00 UTC 2020').date(),
+    ) # PiggyBankUpdate | JSON array with updated piggy bank information. See the model for the exact specifications.
 
+    # example passing only required values which don't have defaults set
     try:
         # Update existing piggy bank.
-        api_response = api_instance.update_piggy_bank(id, piggy_bank)
+        api_response = api_instance.update_piggy_bank(id, piggy_bank_update)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling PiggyBanksApi->update_piggy_bank: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank | 
- **piggy_bank** | [**PiggyBank**](PiggyBank.md)| JSON array with updated piggy bank information. See the model for the exact specifications. | 
+ **id** | **int**| The ID of the piggy bank |
+ **piggy_bank_update** | [**PiggyBankUpdate**](PiggyBankUpdate.md)| JSON array with updated piggy bank information. See the model for the exact specifications. |
 
 ### Return type
 
@@ -524,7 +588,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json, application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

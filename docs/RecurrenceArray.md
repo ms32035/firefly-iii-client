@@ -1,9 +1,10 @@
 # RecurrenceArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[RecurrenceRead]**](RecurrenceRead.md) |  | 
+**data** | [**[RecurrenceRead]**](RecurrenceRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

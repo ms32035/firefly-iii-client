@@ -22,10 +22,9 @@ Delete an available budget. Not much more to say.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import available_budgets_api
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -47,21 +46,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    api_instance = available_budgets_api.AvailableBudgetsApi(api_client)
     id = 1 # int | The ID of the available budget.
 
+    # example passing only required values which don't have defaults set
     try:
         # Delete an available budget.
         api_instance.delete_available_budget(id)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AvailableBudgetsApi->delete_available_budget: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the available budget. | 
+ **id** | **int**| The ID of the available budget. |
 
 ### Return type
 
@@ -75,6 +76,7 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -95,10 +97,10 @@ Get a single available budget, by ID.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import available_budgets_api
+from firefly_iii_client.model.available_budget_single import AvailableBudgetSingle
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -120,22 +122,24 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    api_instance = available_budgets_api.AvailableBudgetsApi(api_client)
     id = 1 # int | The ID of the available budget.
 
+    # example passing only required values which don't have defaults set
     try:
         # Get a single available budget.
         api_response = api_instance.get_available_budget(id)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AvailableBudgetsApi->get_available_budget: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the available budget. | 
+ **id** | **int**| The ID of the available budget. |
 
 ### Return type
 
@@ -148,7 +152,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -159,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_available_budget**
-> AvailableBudgetArray list_available_budget(page=page, start=start, end=end)
+> AvailableBudgetArray list_available_budget()
 
 List all available budget amounts.
 
@@ -169,10 +174,10 @@ Firefly III allows users to set the amount that is available to be budgeted in s
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import available_budgets_api
+from firefly_iii_client.model.available_budget_array import AvailableBudgetArray
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -194,26 +199,29 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    api_instance = available_budgets_api.AvailableBudgetsApi(api_client)
     page = 1 # int | Page number. The default pagination is 50. (optional)
-start = 'Mon Sep 17 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD.  (optional)
-end = 'Mon Dec 31 00:00:00 GMT 2018' # date | A date formatted YYYY-MM-DD.  (optional)
+    start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
+    end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
 
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
         # List all available budget amounts.
         api_response = api_instance.list_available_budget(page=page, start=start, end=end)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AvailableBudgetsApi->list_available_budget: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number. The default pagination is 50. | [optional] 
- **start** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
- **end** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
+ **page** | **int**| Page number. The default pagination is 50. | [optional]
+ **start** | **date**| A date formatted YYYY-MM-DD.  | [optional]
+ **end** | **date**| A date formatted YYYY-MM-DD.  | [optional]
 
 ### Return type
 
@@ -226,7 +234,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -236,7 +245,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_available_budget**
-> AvailableBudgetSingle store_available_budget(available_budget)
+> AvailableBudgetSingle store_available_budget(available_budget_store)
 
 Store a new available budget
 
@@ -246,10 +255,12 @@ Creates a new available budget for a specified period. The data required can be 
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import available_budgets_api
+from firefly_iii_client.model.available_budget_single import AvailableBudgetSingle
+from firefly_iii_client.model.validation_error import ValidationError
+from firefly_iii_client.model.available_budget_store import AvailableBudgetStore
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -271,22 +282,30 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
-    available_budget = firefly_iii_client.AvailableBudget() # AvailableBudget | JSON array or key=value pairs with the necessary available budget information. See the model for the exact specifications.
+    api_instance = available_budgets_api.AvailableBudgetsApi(api_client)
+    available_budget_store = AvailableBudgetStore(
+        amount="123.45",
+        currency_code="EUR",
+        currency_id="5",
+        end=dateutil_parser('Sun Sep 17 00:00:00 UTC 2017').date(),
+        start=dateutil_parser('Sun Sep 17 00:00:00 UTC 2017').date(),
+    ) # AvailableBudgetStore | JSON array or key=value pairs with the necessary available budget information. See the model for the exact specifications.
 
+    # example passing only required values which don't have defaults set
     try:
         # Store a new available budget
-        api_response = api_instance.store_available_budget(available_budget)
+        api_response = api_instance.store_available_budget(available_budget_store)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AvailableBudgetsApi->store_available_budget: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **available_budget** | [**AvailableBudget**](AvailableBudget.md)| JSON array or key&#x3D;value pairs with the necessary available budget information. See the model for the exact specifications. | 
+ **available_budget_store** | [**AvailableBudgetStore**](AvailableBudgetStore.md)| JSON array or key&#x3D;value pairs with the necessary available budget information. See the model for the exact specifications. |
 
 ### Return type
 
@@ -299,7 +318,8 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Accept**: application/vnd.api+json, application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -310,7 +330,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_available_budget**
-> AvailableBudgetSingle update_available_budget(id, available_budget)
+> AvailableBudgetSingle update_available_budget(id, available_budget_update)
 
 Update existing available budget, to change for example the date range of the amount or the amount itself.
 
@@ -320,10 +340,12 @@ Update existing available budget.
 
 * OAuth Authentication (firefly_iii_auth):
 ```python
-from __future__ import print_function
 import time
 import firefly_iii_client
-from firefly_iii_client.rest import ApiException
+from firefly_iii_client.api import available_budgets_api
+from firefly_iii_client.model.available_budget_update import AvailableBudgetUpdate
+from firefly_iii_client.model.available_budget_single import AvailableBudgetSingle
+from firefly_iii_client.model.validation_error import ValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -345,24 +367,32 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # Enter a context with an instance of the API client
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
+    api_instance = available_budgets_api.AvailableBudgetsApi(api_client)
     id = 1 # int | The ID of the object.X
-available_budget = firefly_iii_client.AvailableBudget() # AvailableBudget | JSON array or form value with updated available budget information. See the model for the exact specifications.
+    available_budget_update = AvailableBudgetUpdate(
+        amount="123.45",
+        currency_code="EUR",
+        currency_id="5",
+        end=dateutil_parser('Sun Sep 17 00:00:00 UTC 2017').date(),
+        start=dateutil_parser('Sun Sep 17 00:00:00 UTC 2017').date(),
+    ) # AvailableBudgetUpdate | JSON array or form value with updated available budget information. See the model for the exact specifications.
 
+    # example passing only required values which don't have defaults set
     try:
         # Update existing available budget, to change for example the date range of the amount or the amount itself.
-        api_response = api_instance.update_available_budget(id, available_budget)
+        api_response = api_instance.update_available_budget(id, available_budget_update)
         pprint(api_response)
-    except ApiException as e:
+    except firefly_iii_client.ApiException as e:
         print("Exception when calling AvailableBudgetsApi->update_available_budget: %s\n" % e)
 ```
+
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the object.X | 
- **available_budget** | [**AvailableBudget**](AvailableBudget.md)| JSON array or form value with updated available budget information. See the model for the exact specifications. | 
+ **id** | **int**| The ID of the object.X |
+ **available_budget_update** | [**AvailableBudgetUpdate**](AvailableBudgetUpdate.md)| JSON array or form value with updated available budget information. See the model for the exact specifications. |
 
 ### Return type
 
@@ -374,8 +404,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/json
+ - **Content-Type**: application/vnd.api+json, application/x-www-form-urlencoded
+ - **Accept**: application/vnd.api+json, application/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |

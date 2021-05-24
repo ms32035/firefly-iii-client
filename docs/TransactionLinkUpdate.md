@@ -1,13 +1,14 @@
 # TransactionLinkUpdate
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inward_id** | **int** | The inward transaction journal_id for the link. This becomes the &#39;is paid by&#39; transaction of the set. | 
-**link_type_id** | **int** | The link type ID to use. You can also use the link_type_name field. | 
-**link_type_name** | **str** | The link type name to use. You can also use the link_type_id field. | [optional] 
-**notes** | **str** | Optional. Some notes. | [optional] 
-**outward_id** | **int** | The outward transaction journal_id for the link. This becomes the &#39;pays for&#39; transaction of the set. | 
+**inward_id** | **str** | The inward transaction transaction_journal_id for the link. This becomes the &#39;is paid by&#39; transaction of the set. | [optional] 
+**link_type_id** | **str** | The link type ID to use. Use this field OR use the link_type_name field. | [optional] 
+**link_type_name** | **str** | The link type name to use. Use this field OR use the link_type_id field. | [optional] 
+**notes** | **str, none_type** | Optional. Some notes. If you submit an empty string the current notes will be removed | [optional] 
+**outward_id** | **str** | The outward transaction transaction_journal_id for the link. This becomes the &#39;pays for&#39; transaction of the set. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

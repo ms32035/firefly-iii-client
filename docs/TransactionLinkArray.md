@@ -1,9 +1,10 @@
 # TransactionLinkArray
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**list[TransactionLinkRead]**](TransactionLinkRead.md) |  | 
+**data** | [**[TransactionLinkRead]**](TransactionLinkRead.md) |  | 
 **links** | [**PageLink**](PageLink.md) |  | 
 **meta** | [**Meta**](Meta.md) |  | 
 

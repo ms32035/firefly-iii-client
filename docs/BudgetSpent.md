@@ -1,11 +1,12 @@
 # BudgetSpent
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency_code** | **str** |  | [optional] 
 **currency_decimal_places** | **int** | Number of decimals supported by the currency | [optional] 
-**currency_id** | **int** |  | [optional] 
+**currency_id** | **str** |  | [optional] 
 **currency_symbol** | **str** |  | [optional] 
 **sum** | **str** | The amount spent. | [optional] 
 
