@@ -18,7 +18,7 @@ Python >= 3.6
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install firefly-iii-client
+pip install Firefly-III-API-Client
 ```
 (you may need to run `pip` with root permission: `sudo pip install firefly-iii-client`)
 
@@ -81,7 +81,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     try:
         # System information end point.
         api_response = api_instance.get_about()
-        pprint(api_response)
+        print(api_response)
     except firefly_iii_client.ApiException as e:
         print("Exception when calling AboutApi->get_about: %s\n" % e)
 ```
