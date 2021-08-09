@@ -18,9 +18,9 @@ Python >= 3.6
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install firefly-iii-client
+pip install Firefly-III-API-Client
 ```
-(you may need to run `pip` with root permission: `sudo pip install firefly-iii-client`)
+(you may need to run `pip` with root permission: `sudo pip install Firefly-III-API-Client`)
 
 Then import the package:
 ```python

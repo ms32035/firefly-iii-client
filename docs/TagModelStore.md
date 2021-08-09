@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **latitude** | **float, none_type** | Latitude of the tag&#39;s location, if applicable. Can be used to draw a map. | [optional] 
 **longitude** | **float, none_type** | Latitude of the tag&#39;s location, if applicable. Can be used to draw a map. | [optional] 
 **zoom_level** | **int, none_type** | Zoom level for the map, if drawn. This to set the box right. Unfortunately this is a proprietary value because each map provider has different zoom levels. | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **skip** | **int** | How many occurrences to skip. 0 means skip nothing. 1 means every other. | [optional] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **weekend** | **int** | How to respond when the recurring transaction falls in the weekend. Possible values: 1. Do nothing, just create it 2. Create no transaction. 3. Skip to the previous Friday. 4. Skip to the next Monday.  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

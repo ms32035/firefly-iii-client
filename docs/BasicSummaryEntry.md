@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **sub_title** | **str** | A short explanation of the amounts origin. Already formatted according to the locale of the user or translated, if relevant. | [optional] 
 **title** | **str** | A translated title for the information shared. | [optional] 
 **value_parsed** | **str** | The amount formatted according to the users locale | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

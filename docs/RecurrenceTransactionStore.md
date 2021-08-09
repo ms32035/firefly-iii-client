@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **foreign_currency_id** | **str, none_type** | Submit either a foreign_currency_id or a foreign_currency_code, or neither. | [optional] 
 **piggy_bank_id** | **str, none_type** | Optional. | [optional] 
 **tags** | **[str], none_type** | Array of tags. | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

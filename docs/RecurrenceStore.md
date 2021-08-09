@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **description** | **str** | Not to be confused with the description of the actual transaction(s) being created. | [optional] 
 **notes** | **str, none_type** |  | [optional] 
 **nr_of_repetitions** | **int, none_type** | Max number of created transactions. Use either this field or repeat_until. | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

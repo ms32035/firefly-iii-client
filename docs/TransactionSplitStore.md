@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 **sepa_ep** | **str, none_type** | SEPA External Purpose indicator | [optional] 
 **source_name** | **str, none_type** | Name of the source account. For a withdrawal or a transfer, this must always be an asset account. For deposits, this must be a revenue account. Can be used instead of the source_id. If the transaction is a deposit, the source_name can be filled in freely: the account will be created based on the name. | [optional] 
 **tags** | **[str], none_type** | Array of tags. | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

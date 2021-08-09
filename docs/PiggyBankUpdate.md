@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **start_date** | **date** | The date you started with this piggy bank. | [optional] 
 **target_amount** | **str** |  | [optional] 
 **target_date** | **date, none_type** | The date you intend to finish saving money. | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **auto_budget_period** | **str, none_type** | Period for the auto budget | [optional] 
 **auto_budget_type** | **str, none_type** | The type of auto-budget that Firefly III must create. | [optional] 
 **order** | **int** |  | [optional] [readonly] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

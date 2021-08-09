@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **link_type_name** | **str** | The link type name to use. You can also use the link_type_id field. | [optional] 
 **notes** | **str, none_type** | Optional. Some notes. | [optional] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
