@@ -19,6 +19,7 @@ Returns general system information and versions of the (supporting) software.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -75,6 +76,7 @@ This endpoint does not need any parameter.
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The available system information |  -  |
@@ -91,6 +93,7 @@ Firefly III has one endpoint for its various cron related tasks. Send a GET to t
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -164,6 +167,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The result of the cron job(s) firing. |  -  |
@@ -180,6 +184,7 @@ Returns the currently authenticated user.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -236,6 +241,7 @@ This endpoint does not need any parameter.
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The user |  -  |

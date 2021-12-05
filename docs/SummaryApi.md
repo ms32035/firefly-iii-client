@@ -17,6 +17,7 @@ Returns basic sums of the users data, like the net worth, spent and earned amoun
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -90,6 +91,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | An array of sums. It depends on the user what you can expect to get back, so please try this out on the demo site. |  -  |

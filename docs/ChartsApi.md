@@ -17,6 +17,7 @@ This endpoint returns the data required to generate a chart with basic asset acc
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -79,6 +80,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Line chart oriented chart information. Check out the model for more details. Each entry is a line (or bar) in the chart. |  -  |

@@ -26,6 +26,7 @@ Delete a transaction.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -84,6 +85,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Transaction deleted. |  -  |
@@ -101,6 +103,7 @@ Delete an individual journal (split) from a transaction.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -159,6 +162,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Transaction journal (split) deleted. |  -  |
@@ -176,6 +180,7 @@ Get a single transaction.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -236,6 +241,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested transaction. |  -  |
@@ -253,6 +259,7 @@ Get a single transaction by underlying journal (split).
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -313,6 +320,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested transaction. |  -  |
@@ -330,6 +338,7 @@ Lists all attachments.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -401,6 +410,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of attachments |  -  |
@@ -418,6 +428,7 @@ Lists all piggy bank events.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -489,6 +500,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of piggy bank events. |  -  |
@@ -506,6 +518,7 @@ Lists all the transaction links for an individual journal (a split). Don't use t
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -577,6 +590,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transaction links. |  -  |
@@ -594,6 +608,7 @@ List all the user's transactions.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -662,6 +677,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transactions. |  -  |
@@ -678,6 +694,7 @@ Creates a new transaction. The data required can be submitted as a JSON body or 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -710,6 +727,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     transaction_store = TransactionStore(
         apply_rules=False,
         error_if_duplicate_hash=False,
+        fire_webhooks=True,
         group_title="Split transaction title.",
         transactions=[
             TransactionSplitStore(
@@ -791,6 +809,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New transaction stored(s), result in response. |  -  |
@@ -808,6 +827,7 @@ Update an existing transaction.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -840,6 +860,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     id = 1 # int | The ID of the transaction.
     transaction_update = TransactionUpdate(
         apply_rules=False,
+        fire_webhooks=True,
         group_title="Split transaction title.",
         transactions=[
             TransactionSplitUpdate(
@@ -921,6 +942,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Updated transaction stored, result in response |  -  |

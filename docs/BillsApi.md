@@ -24,6 +24,7 @@ Delete a bill. This will not delete any associated rules. Will not remove associ
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -82,6 +83,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Bill deleted. |  -  |
@@ -99,6 +101,7 @@ Get a single bill.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -172,6 +175,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested bill |  -  |
@@ -189,6 +193,7 @@ This endpoint will list all attachments linked to the bill.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -260,6 +265,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of attachments |  -  |
@@ -276,6 +282,7 @@ This endpoint will list all the user's bills.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -341,6 +348,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of bills |  -  |
@@ -357,6 +365,7 @@ This endpoint will list all rules that have an action to set the bill to this bi
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -417,6 +426,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of rules |  -  |
@@ -433,6 +443,7 @@ This endpoint will list all transactions linked to this bill.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -509,6 +520,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transactions |  -  |
@@ -525,6 +537,7 @@ Creates a new bill. The data required can be submitted as a JSON body or as a li
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -560,7 +573,9 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         amount_min="123.45",
         currency_code="EUR",
         currency_id="5",
-        date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
+        date=dateutil_parser('2018-09-17T12:46:47+01:00'),
+        end_date=dateutil_parser('2018-09-17T12:46:47+01:00'),
+        extension_date=dateutil_parser('2018-09-17T12:46:47+01:00'),
         name="Rent",
         notes="Some example notes",
         object_group_id="5",
@@ -600,6 +615,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New bill stored, result in response. |  -  |
@@ -617,6 +633,7 @@ Update existing bill.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -653,7 +670,9 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         amount_min="123.45",
         currency_code="EUR",
         currency_id="5",
-        date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
+        date=dateutil_parser('2018-09-17T12:46:47+01:00'),
+        end_date=dateutil_parser('2018-09-17T12:46:47+01:00'),
+        extension_date=dateutil_parser('2018-09-17T12:46:47+01:00'),
         name="Rent",
         notes="Some example notes",
         object_group_id="5",
@@ -694,6 +713,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Updated bill stored, result in response |  -  |

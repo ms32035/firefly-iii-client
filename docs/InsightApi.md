@@ -40,6 +40,7 @@ This endpoint gives a summary of the expenses made by the user, grouped by asset
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -113,6 +114,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of asset accounts and expense details. Each asset account has one row per currency. |  -  |
@@ -129,6 +131,7 @@ This endpoint gives a summary of the expenses made by the user, grouped by (any)
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -204,6 +207,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of budget and expense details. Each budget has one row per currency. |  -  |
@@ -220,6 +224,7 @@ This endpoint gives a summary of the expenses made by the user, grouped by (any)
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -295,6 +300,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of budget and expense details. Each budget has one row per currency. |  -  |
@@ -311,6 +317,7 @@ This endpoint gives a summary of the expenses made by the user, grouped by (any)
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -386,6 +393,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of category and expense details. Each category has one row per currency. |  -  |
@@ -402,6 +410,7 @@ This endpoint gives a summary of the expenses made by the user, grouped by expen
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -475,6 +484,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of expense accounts and expense details. Each expense acccount has one row per currency. |  -  |
@@ -491,6 +501,7 @@ This endpoint gives a summary of the expenses made by the user, including only e
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -564,6 +575,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of expense details. One row per currency. |  -  |
@@ -580,6 +592,7 @@ This endpoint gives a summary of the expenses made by the user, including only e
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -653,6 +666,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of expense details. One row per currency. |  -  |
@@ -669,6 +683,7 @@ This endpoint gives a summary of the expenses made by the user, including only e
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -742,6 +757,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of expense details. One row per currency. |  -  |
@@ -758,6 +774,7 @@ This endpoint gives a summary of the expenses made by the user, including only e
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -831,6 +848,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of expense details. One row per currency. |  -  |
@@ -847,6 +865,7 @@ This endpoint gives a summary of the expenses made by the user, grouped by (any)
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -922,6 +941,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of tag and expense details. Each tag has one row per currency. |  -  |
@@ -938,6 +958,7 @@ This endpoint gives a sum of the total expenses made by the user.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1011,6 +1032,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of sums in different currencies. |  -  |
@@ -1027,6 +1049,7 @@ This endpoint gives a summary of the income received by the user, grouped by ass
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1100,6 +1123,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of asset accounts and income details. Each asset account has one row per currency. |  -  |
@@ -1116,6 +1140,7 @@ This endpoint gives a summary of the income received by the user, grouped by (an
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1191,6 +1216,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of category and income details. Each category has one row per currency. |  -  |
@@ -1207,6 +1233,7 @@ This endpoint gives a summary of the income received by the user, including only
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1280,6 +1307,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of income details. One row per currency. |  -  |
@@ -1296,6 +1324,7 @@ This endpoint gives a summary of the income received by the user, including only
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1369,6 +1398,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of income details. One row per currency. |  -  |
@@ -1385,6 +1415,7 @@ This endpoint gives a summary of the income received by the user, grouped by rev
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1458,6 +1489,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of revenue accounts and income details. Each revenue acccount has one row per currency. |  -  |
@@ -1474,6 +1506,7 @@ This endpoint gives a summary of the income received by the user, grouped by (an
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1549,6 +1582,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of tag and income details. Each tag has one row per currency. |  -  |
@@ -1565,6 +1599,7 @@ This endpoint gives a sum of the total income received by the user.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1638,6 +1673,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of sums in different currencies. |  -  |
@@ -1654,6 +1690,7 @@ This endpoint gives a summary of the transfers made by the user, grouped by (any
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1729,6 +1766,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of category and transfer details. Each category has one row per currency. |  -  |
@@ -1745,6 +1783,7 @@ This endpoint gives a summary of the transfers made by the user, including only 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1818,6 +1857,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transfer details. One row per currency. |  -  |
@@ -1834,6 +1874,7 @@ This endpoint gives a summary of the transfers made by the user, including only 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1907,6 +1948,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transfer details. One row per currency. |  -  |
@@ -1923,6 +1965,7 @@ This endpoint gives a summary of the transfers created by the user, grouped by (
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1998,6 +2041,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of tag and transfer details. Each tag has one row per currency. |  -  |
@@ -2014,6 +2058,7 @@ This endpoint gives a sum of the total amount transfers made by the user.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -2087,6 +2132,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of sums in different currencies. |  -  |
@@ -2103,6 +2149,7 @@ This endpoint gives a summary of the transfers made by the user, grouped by asse
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -2176,6 +2223,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of asset accounts and transfer details. Each asset account has one row per currency. |  -  |

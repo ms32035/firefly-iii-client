@@ -4,7 +4,7 @@ All URIs are relative to *https://demo.firefly-iii.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bulk_account_move_transactions**](DataApi.md#bulk_account_move_transactions) | **POST** /api/v1/data/bulk/accounts/transactions | Bulk move transactions from one account to another.
+[**bulk_update_transactions**](DataApi.md#bulk_update_transactions) | **POST** /api/v1/data/bulk/transactions | Bulk update transaction properties. For more information, see https://docs.firefly-iii.org/firefly-iii/api/specials
 [**destroy_data**](DataApi.md#destroy_data) | **DELETE** /api/v1/data/destroy | Endpoint to destroy user data
 [**export_accounts**](DataApi.md#export_accounts) | **GET** /api/v1/data/export/accounts | Export account data from Firefly III
 [**export_bills**](DataApi.md#export_bills) | **GET** /api/v1/data/export/bills | Export bills from Firefly III
@@ -17,21 +17,21 @@ Method | HTTP request | Description
 [**export_transactions**](DataApi.md#export_transactions) | **GET** /api/v1/data/export/transactions | Export transaction data from Firefly III
 
 
-# **bulk_account_move_transactions**
-> bulk_account_move_transactions(bulk_account_transaction_object)
+# **bulk_update_transactions**
+> bulk_update_transactions(query)
 
-Bulk move transactions from one account to another.
+Bulk update transaction properties. For more information, see https://docs.firefly-iii.org/firefly-iii/api/specials
 
-Allows you to move all from one account to another. Requires two of the exact same accounts to work. Will not migrate deleted transactions. Both accounts must be of the exact same type (asset accounts for example). 
+Allows you to update transactions in bulk. 
 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
 from firefly_iii_client.api import data_api
-from firefly_iii_client.model.bulk_account_transaction_object import BulkAccountTransactionObject
 from pprint import pprint
 # Defining the host is optional and defaults to https://demo.firefly-iii.org
 # See configuration.py for a list of all supported configuration parameters.
@@ -54,17 +54,14 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = data_api.DataApi(api_client)
-    bulk_account_transaction_object = BulkAccountTransactionObject(
-        destination_account=17,
-        original_account=2,
-    ) # BulkAccountTransactionObject | JSON array with the necessary information to facilitate the move.
+    query = "query_example" # str | The JSON query.
 
     # example passing only required values which don't have defaults set
     try:
-        # Bulk move transactions from one account to another.
-        api_instance.bulk_account_move_transactions(bulk_account_transaction_object)
+        # Bulk update transaction properties. For more information, see https://docs.firefly-iii.org/firefly-iii/api/specials
+        api_instance.bulk_update_transactions(query)
     except firefly_iii_client.ApiException as e:
-        print("Exception when calling DataApi->bulk_account_move_transactions: %s\n" % e)
+        print("Exception when calling DataApi->bulk_update_transactions: %s\n" % e)
 ```
 
 
@@ -72,7 +69,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bulk_account_transaction_object** | [**BulkAccountTransactionObject**](BulkAccountTransactionObject.md)| JSON array with the necessary information to facilitate the move. |
+ **query** | **str**| The JSON query. |
 
 ### Return type
 
@@ -84,14 +81,15 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Empty response when the move was successful. |  -  |
+**204** | Empty response when the update was successful. A future improvement is to include the changed transactions. |  -  |
 **500** | Internal error. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -106,6 +104,7 @@ A call to this endpoint permanently destroys the requested data type. Use it wit
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -133,7 +132,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = data_api.DataApi(api_client)
-    objects = DataDestroyObject("budgets") # DataDestroyObject | The type of data that you wish to destroy.
+    objects = DataDestroyObject("budgets") # DataDestroyObject | The type of data that you wish to destroy. You can only use one at a time.
 
     # example passing only required values which don't have defaults set
     try:
@@ -148,7 +147,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **objects** | **DataDestroyObject**| The type of data that you wish to destroy. |
+ **objects** | **DataDestroyObject**| The type of data that you wish to destroy. You can only use one at a time. |
 
 ### Return type
 
@@ -165,6 +164,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Empty response when data has been destroyed. |  -  |
@@ -182,6 +182,7 @@ This endpoint allows you to export your accounts from Firefly III into a file. C
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -243,6 +244,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |
@@ -259,6 +261,7 @@ This endpoint allows you to export your bills from Firefly III into a file. Curr
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -320,6 +323,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |
@@ -336,6 +340,7 @@ This endpoint allows you to export your budgets and associated budget data from 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -397,6 +402,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |
@@ -413,6 +419,7 @@ This endpoint allows you to export your categories from Firefly III into a file.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -474,6 +481,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |
@@ -490,6 +498,7 @@ This endpoint allows you to export your piggy banks from Firefly III into a file
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -551,6 +560,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |
@@ -567,6 +577,7 @@ This endpoint allows you to export your recurring transactions from Firefly III 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -628,6 +639,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |
@@ -644,6 +656,7 @@ This endpoint allows you to export your rules and rule groups from Firefly III i
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -705,6 +718,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |
@@ -721,6 +735,7 @@ This endpoint allows you to export your tags from Firefly III into a file. Curre
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -782,6 +797,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |
@@ -798,6 +814,7 @@ This endpoint allows you to export transactions from Firefly III into a file. Cu
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -873,6 +890,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The exported transaction in a file. |  -  |

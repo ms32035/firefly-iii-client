@@ -23,6 +23,7 @@ With this endpoint you delete an attachment, including any stored file data.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -81,6 +82,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Attachment deleted. |  -  |
@@ -98,6 +100,7 @@ This endpoint allows you to download the binary content of a transaction. It wil
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -157,6 +160,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested attachment |  -  |
@@ -174,6 +178,7 @@ Get a single attachment. This endpoint only returns the available metadata for t
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -234,6 +239,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested attachment |  -  |
@@ -251,6 +257,7 @@ This endpoint lists all attachments.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -312,6 +319,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of attachments. |  -  |
@@ -328,6 +336,7 @@ Creates a new attachment. The data required can be submitted as a JSON body or a
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -396,6 +405,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New attachment stored, result in response. |  -  |
@@ -413,6 +423,7 @@ Update the meta data for an existing attachment. This endpoint does not allow yo
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -481,6 +492,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Updated attachment stored, result in response |  -  |
@@ -498,6 +510,7 @@ Use this endpoint to upload (and possible overwrite) the file contents of an att
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -566,6 +579,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Upload was a success |  -  |

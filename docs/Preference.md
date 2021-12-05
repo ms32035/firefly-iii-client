@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **dict** | The actual preference content. | 
+**data** | **bool, date, datetime, dict, float, int, list, str, none_type** | The actual preference content. | 
 **name** | **str** |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **updated_at** | **datetime** |  | [optional] [readonly] 

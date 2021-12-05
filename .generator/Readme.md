@@ -13,6 +13,7 @@ Any bugs in the generator are later fixed by `postprocess.py`.
 Generate the new python package
 
 ```
+docker-compose build
 docker-compose run firefly_iii_client_generator
 ```
 

@@ -20,6 +20,7 @@ Return a single preference and the value.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -80,6 +81,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A single preference. |  -  |
@@ -96,6 +98,7 @@ List all of the preferences of the user.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -157,6 +160,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of preferences. |  -  |
@@ -173,6 +177,7 @@ This endpoint creates a new preference. The name and data are free-format, and e
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -203,7 +208,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = preferences_api.PreferencesApi(api_client)
     preference = Preference(
-        data=,
+        data=None,
         name="currencyPreference",
     ) # Preference | JSON array with the necessary preference information or key=value pairs. See the model for the exact specifications.
 
@@ -238,6 +243,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New account stored, result in response. |  -  |
@@ -255,6 +261,7 @@ Update a user's preference.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -286,7 +293,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = preferences_api.PreferencesApi(api_client)
     name = "currencyPreference" # str | The name of the preference. Will always overwrite. Will be created if it does not exist.
     preference_update = PreferenceUpdate(
-        data=,
+        data=None,
     ) # PreferenceUpdate | JSON array or key=value pairs with the necessary preference information. See the model for the exact specifications.
 
     # example passing only required values which don't have defaults set
@@ -321,6 +328,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Updated preference. |  -  |

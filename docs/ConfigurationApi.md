@@ -19,6 +19,7 @@ Returns all editable and not-editable configuration values for this Firefly III 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -75,6 +76,7 @@ This endpoint does not need any parameter.
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | System configuration values |  -  |
@@ -91,6 +93,7 @@ Returns one configuration variable for this Firefly III installation
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -152,6 +155,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | One system configuration value |  -  |
@@ -168,6 +172,7 @@ Set a single configuration value. Not all configuration values can be updated so
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -200,7 +205,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = configuration_api.ConfigurationApi(api_client)
     name = ConfigValueUpdateFilter("configuration.is_demo_site") # ConfigValueUpdateFilter | The name of the configuration value you want to update.
     configuration_update = ConfigurationUpdate(
-        value=,
+        value=None,
     ) # ConfigurationUpdate | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
 
     # example passing only required values which don't have defaults set
@@ -235,6 +240,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New configuration value stored, result in response. |  -  |

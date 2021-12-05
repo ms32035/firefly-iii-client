@@ -24,6 +24,7 @@ Will permanently delete an account. Any associated transactions and piggy banks 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -82,6 +83,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Account deleted |  -  |
@@ -99,6 +101,7 @@ Returns a single account by its ID.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -170,6 +173,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested account |  -  |
@@ -187,6 +191,7 @@ This endpoint returns a list of all the accounts owned by the authenticated user
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -253,6 +258,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of accounts |  -  |
@@ -269,6 +275,7 @@ Lists all attachments.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -340,6 +347,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of attachments |  -  |
@@ -357,6 +365,7 @@ This endpoint returns a list of all the piggy banks connected to the account.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -428,6 +437,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of piggy banks |  -  |
@@ -444,6 +454,7 @@ This endpoint returns a list of all the transactions connected to the account.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -524,6 +535,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transactions |  -  |
@@ -540,6 +552,7 @@ Creates a new account. The data required can be submitted as a JSON body or as a
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -582,6 +595,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         interest="5.3",
         interest_period="monthly",
         latitude=51.983333,
+        liability_direction="credit",
         liability_type="loan",
         longitude=5.916667,
         monthly_payment_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
@@ -626,6 +640,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New account stored, result in response. |  -  |
@@ -643,6 +658,7 @@ Used to update a single account. All fields that are not submitted will be clear
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -730,6 +746,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Updated account stored, result in response |  -  |

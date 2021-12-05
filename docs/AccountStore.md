@@ -15,9 +15,10 @@ Name | Type | Description | Notes
 **currency_id** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
 **iban** | **str, none_type** |  | [optional] 
 **include_net_worth** | **bool** | If omitted, defaults to true. | [optional] 
-**interest** | **str, none_type** | Mandatory when type is liability. Interest percentage. | [optional] 
-**interest_period** | **str, none_type** | Mandatory when type is liability. Period over which the interest is calculated. | [optional] 
+**interest** | **str, none_type** | Mandatory when type is liability. Interest percentage. | [optional]  if omitted the server will use the default value of "0"
+**interest_period** | **str, none_type** | Mandatory when type is liability. Period over which the interest is calculated. | [optional]  if omitted the server will use the default value of "monthly"
 **latitude** | **float, none_type** | Latitude of the accounts&#39;s location, if applicable. Can be used to draw a map. | [optional] 
+**liability_direction** | **str, none_type** | &#39;credit&#39; indicates somebody owes you the liability. &#39;debit&#39; Indicates you owe this debt yourself. Works only for liabiltiies. | [optional]  if omitted the server will use the default value of "debit"
 **liability_type** | **str, none_type** | Mandatory when type is liability. Specifies the exact type. | [optional] 
 **longitude** | **float, none_type** | Latitude of the accounts&#39;s location, if applicable. Can be used to draw a map. | [optional] 
 **monthly_payment_date** | **date, none_type** | Mandatory when the account_role is ccAsset. Moment at which CC payment installments are asked for by the bank. | [optional] 

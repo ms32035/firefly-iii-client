@@ -28,6 +28,7 @@ Delete a webhook.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -86,6 +87,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Webhook deleted. |  -  |
@@ -104,6 +106,7 @@ Delete a webhook message. Any time a webhook is triggered the message is stored 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -164,6 +167,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Webhook message deleted. |  -  |
@@ -182,6 +186,7 @@ Delete a webhook message attempt. If you delete all attempts for a webhook messa
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -244,6 +249,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Webhook message attempt deleted. |  -  |
@@ -262,6 +268,7 @@ When a webhook is triggered it will store the actual content of the webhook in a
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -324,6 +331,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A single webhook message. |  -  |
@@ -341,6 +349,7 @@ When a webhook message fails to send it will store the failure in an \"attempt\"
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -405,6 +414,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A single webhook attempt. |  -  |
@@ -422,6 +432,7 @@ Gets all info of a single webhook.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -482,6 +493,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The requested webhook. |  -  |
@@ -499,6 +511,7 @@ When a webhook message fails to send it will store the failure in an \"attempt\"
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -572,6 +585,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of webhook attempts. |  -  |
@@ -589,6 +603,7 @@ When a webhook is triggered the actual message that will be send is stored in a 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -649,6 +664,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of webhook messages. |  -  |
@@ -666,6 +682,7 @@ List all the user's webhooks.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -727,6 +744,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of webhooks. |  -  |
@@ -743,6 +761,7 @@ Creates a new webhook. The data required can be submitted as a JSON body or as a
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -812,6 +831,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | New webhook stored, result in response. |  -  |
@@ -829,6 +849,7 @@ This endpoint will submit any open messages for this webhook. This is an asynchr
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -887,6 +908,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK! |  -  |
@@ -906,6 +928,7 @@ Update an existing webhook's information. If you wish to reset the secret, submi
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -978,6 +1001,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Updated webhook stored, result in response |  -  |

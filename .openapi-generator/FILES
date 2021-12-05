@@ -81,7 +81,6 @@ docs/BudgetSpent.md
 docs/BudgetStore.md
 docs/BudgetUpdate.md
 docs/BudgetsApi.md
-docs/BulkAccountTransactionObject.md
 docs/CategoriesApi.md
 docs/Category.md
 docs/CategoryArray.md
@@ -345,7 +344,6 @@ firefly_iii_client/model/budget_single.py
 firefly_iii_client/model/budget_spent.py
 firefly_iii_client/model/budget_store.py
 firefly_iii_client/model/budget_update.py
-firefly_iii_client/model/bulk_account_transaction_object.py
 firefly_iii_client/model/category.py
 firefly_iii_client/model/category_array.py
 firefly_iii_client/model/category_earned.py
@@ -531,7 +529,6 @@ test/test_basic_summary.py
 test/test_bill_store.py
 test/test_budget_limit_store.py
 test/test_budget_store.py
-test/test_bulk_account_transaction_object.py
 test/test_category_store.py
 test/test_chart_line.py
 test/test_config_value_filter.py

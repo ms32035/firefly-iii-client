@@ -6,12 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount_max** | **str** |  | 
 **amount_min** | **str** |  | 
-**date** | **date** |  | 
+**date** | **datetime** |  | 
 **name** | **str** |  | 
 **repeat_freq** | **str** | How often the bill must be paid. | 
 **active** | **bool** | If the bill is active. | [optional] 
 **currency_code** | **str** | Use either currency_id or currency_code | [optional] 
 **currency_id** | **str** | Use either currency_id or currency_code | [optional] 
+**end_date** | **datetime** | The date after which this bill is no longer valid or applicable | [optional] 
+**extension_date** | **datetime** | The date before which the bill must be renewed (or cancelled) | [optional] 
 **notes** | **str, none_type** |  | [optional] 
 **object_group_id** | **str, none_type** | The group ID of the group this object is part of. NULL if no group. | [optional] 
 **object_group_title** | **str, none_type** | The name of the group. NULL if no group. | [optional] 

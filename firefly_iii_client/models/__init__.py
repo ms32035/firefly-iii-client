@@ -83,7 +83,6 @@ from firefly_iii_client.model.budget_single import BudgetSingle
 from firefly_iii_client.model.budget_spent import BudgetSpent
 from firefly_iii_client.model.budget_store import BudgetStore
 from firefly_iii_client.model.budget_update import BudgetUpdate
-from firefly_iii_client.model.bulk_account_transaction_object import BulkAccountTransactionObject
 from firefly_iii_client.model.category import Category
 from firefly_iii_client.model.category_array import CategoryArray
 from firefly_iii_client.model.category_earned import CategoryEarned

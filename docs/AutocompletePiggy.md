@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **currency_code** | **str** | Currency code for this piggy bank. | [optional] 
 **currency_decimal_places** | **int** |  | [optional] 
 **currency_id** | **str** | Currency ID for this piggy bank. | [optional] 
+**currency_name** | **str** | Currency name for the currency used by this account. | [optional] 
 **currency_symbol** | **str** |  | [optional] 
 **object_group_id** | **str, none_type** | The group ID of the group this object is part of. NULL if no group. | [optional] 
 **object_group_title** | **str, none_type** | The name of the group. NULL if no group. | [optional] 

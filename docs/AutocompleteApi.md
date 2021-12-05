@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**get_budgets_ac**](AutocompleteApi.md#get_budgets_ac) | **GET** /api/v1/autocomplete/budgets | Returns all budgets of the user returned in a basic auto-complete array.
 [**get_categories_ac**](AutocompleteApi.md#get_categories_ac) | **GET** /api/v1/autocomplete/categories | Returns all categories of the user returned in a basic auto-complete array.
 [**get_currencies_ac**](AutocompleteApi.md#get_currencies_ac) | **GET** /api/v1/autocomplete/currencies | Returns all currencies of the user returned in a basic auto-complete array.
-[**get_currencies_code_ac**](AutocompleteApi.md#get_currencies_code_ac) | **GET** /api/v1/autocomplete/currencies-with-code | Returns all currencies of the user returned in a basic auto-complete array.
+[**get_currencies_code_ac**](AutocompleteApi.md#get_currencies_code_ac) | **GET** /api/v1/autocomplete/currencies-with-code | Returns all currencies of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
 [**get_object_groups_ac**](AutocompleteApi.md#get_object_groups_ac) | **GET** /api/v1/autocomplete/object-groups | Returns all object groups of the user returned in a basic auto-complete array.
 [**get_piggies_ac**](AutocompleteApi.md#get_piggies_ac) | **GET** /api/v1/autocomplete/piggy-banks | Returns all piggy banks of the user returned in a basic auto-complete array.
 [**get_piggies_balance_ac**](AutocompleteApi.md#get_piggies_balance_ac) | **GET** /api/v1/autocomplete/piggy-banks-with-balance | Returns all piggy banks of the user returned in a basic auto-complete array complemented with balance information.
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**get_tag_ac**](AutocompleteApi.md#get_tag_ac) | **GET** /api/v1/autocomplete/tags | Returns all tags of the user returned in a basic auto-complete array.
 [**get_transaction_types_ac**](AutocompleteApi.md#get_transaction_types_ac) | **GET** /api/v1/autocomplete/transaction-types | Returns all transaction types returned in a basic auto-complete array. English only.
 [**get_transactions_ac**](AutocompleteApi.md#get_transactions_ac) | **GET** /api/v1/autocomplete/transactions | Returns all transaction descriptions of the user returned in a basic auto-complete array.
-[**get_transactions_idac**](AutocompleteApi.md#get_transactions_idac) | **GET** /api/v1/autocomplete/transactions-with-id | Returns all transactions, complemented with their ID, of the user returned in a basic auto-complete array.
+[**get_transactions_idac**](AutocompleteApi.md#get_transactions_idac) | **GET** /api/v1/autocomplete/transactions-with-id | Returns all transactions, complemented with their ID, of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
 
 
 # **get_accounts_ac**
@@ -30,6 +30,7 @@ Returns all accounts of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -98,6 +99,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of accounts with very basic information. |  -  |
@@ -112,6 +114,7 @@ Returns all bills of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -175,6 +178,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of bills with very basic information. |  -  |
@@ -189,6 +193,7 @@ Returns all budgets of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -252,6 +257,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of budgets with very basic information. |  -  |
@@ -266,6 +272,7 @@ Returns all categories of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -329,6 +336,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of categories with very basic information. |  -  |
@@ -343,6 +351,7 @@ Returns all currencies of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -406,6 +415,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of currencies with very basic information. |  -  |
@@ -415,11 +425,12 @@ Name | Type | Description  | Notes
 # **get_currencies_code_ac**
 > AutocompleteCurrencyCodeArray get_currencies_code_ac()
 
-Returns all currencies of the user returned in a basic auto-complete array.
+Returns all currencies of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -453,7 +464,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Returns all currencies of the user returned in a basic auto-complete array.
+        # Returns all currencies of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
         api_response = api_instance.get_currencies_code_ac(query=query, limit=limit)
         pprint(api_response)
     except firefly_iii_client.ApiException as e:
@@ -483,9 +494,10 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A list of currencies with very basic information and the currency code between brackets. |  -  |
+**200** | A list of currencies with very basic information and the currency code between brackets. This endpoint is DEPRECATED and I suggest you DO NOT use it. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -497,6 +509,7 @@ Returns all object groups of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -560,6 +573,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of object groups with very basic information. |  -  |
@@ -574,6 +588,7 @@ Returns all piggy banks of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -637,6 +652,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of piggy banks with very basic information. |  -  |
@@ -651,6 +667,7 @@ Returns all piggy banks of the user returned in a basic auto-complete array comp
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -714,6 +731,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of piggy banks with very basic balance information. |  -  |
@@ -728,6 +746,7 @@ Returns all recurring transactions of the user returned in a basic auto-complete
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -791,6 +810,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of recurring transactions with very basic information. |  -  |
@@ -805,6 +825,7 @@ Returns all rule groups of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -868,6 +889,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of rule groups with very basic information. |  -  |
@@ -882,6 +904,7 @@ Returns all rules of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -945,6 +968,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of rules with very basic information. |  -  |
@@ -959,6 +983,7 @@ Returns all tags of the user returned in a basic auto-complete array.
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1022,6 +1047,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of tags with very basic information. |  -  |
@@ -1036,6 +1062,7 @@ Returns all transaction types returned in a basic auto-complete array. English o
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1099,6 +1126,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transaction types with very basic information. |  -  |
@@ -1113,6 +1141,7 @@ Returns all transaction descriptions of the user returned in a basic auto-comple
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1176,6 +1205,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transaction descriptions with very basic information. |  -  |
@@ -1185,11 +1215,12 @@ Name | Type | Description  | Notes
 # **get_transactions_idac**
 > AutocompleteTransactionIDArray get_transactions_idac()
 
-Returns all transactions, complemented with their ID, of the user returned in a basic auto-complete array.
+Returns all transactions, complemented with their ID, of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
 
 ### Example
 
 * OAuth Authentication (firefly_iii_auth):
+
 ```python
 import time
 import firefly_iii_client
@@ -1223,7 +1254,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # Returns all transactions, complemented with their ID, of the user returned in a basic auto-complete array.
+        # Returns all transactions, complemented with their ID, of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
         api_response = api_instance.get_transactions_idac(query=query, limit=limit)
         pprint(api_response)
     except firefly_iii_client.ApiException as e:
@@ -1253,9 +1284,10 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A list of transactions with very basic information. |  -  |
+**200** | A list of transactions with very basic information. This endpoint is DEPRECATED and I suggest you DO NOT use it. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
