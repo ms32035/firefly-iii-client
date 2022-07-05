@@ -51,7 +51,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    id = 1 # int | The ID of the account.
+    id = "123" # str | The ID of the account.
 
     # example passing only required values which don't have defaults set
     try:
@@ -66,7 +66,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. |
+ **id** | **str**| The ID of the account. |
 
 ### Return type
 
@@ -129,7 +129,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    id = 1 # int | The ID of the account.
+    id = "123" # str | The ID of the account.
     date = dateutil_parser('1970-01-01').date() # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 
     # example passing only required values which don't have defaults set
@@ -155,7 +155,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. |
+ **id** | **str**| The ID of the account. |
  **date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional]
 
 ### Return type
@@ -303,7 +303,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    id = 1 # int | The ID of the account.
+    id = "123" # str | The ID of the account.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -329,7 +329,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. |
+ **id** | **str**| The ID of the account. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -393,7 +393,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    id = 1 # int | The ID of the account.
+    id = "123" # str | The ID of the account.
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
     # example passing only required values which don't have defaults set
@@ -419,7 +419,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. |
+ **id** | **str**| The ID of the account. |
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
 
 ### Return type
@@ -483,7 +483,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    id = 1 # int | The ID of the account.
+    id = "123" # str | The ID of the account.
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     limit = 5 # int | Limits the number of results on one page. (optional)
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
@@ -513,7 +513,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. |
+ **id** | **str**| The ID of the account. |
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
  **limit** | **int**| Limits the number of results on one page. | [optional]
  **start** | **date**| A date formatted YYYY-MM-DD.  | [optional]
@@ -584,19 +584,19 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = accounts_api.AccountsApi(api_client)
     account_store = AccountStore(
         account_number="7009312345678",
-        account_role="defaultAsset",
+        account_role=AccountRoleProperty("defaultAsset"),
         active=False,
         bic="BOFAUS3N",
-        credit_card_type="monthlyFull",
+        credit_card_type=CreditCardType("monthlyFull"),
         currency_code="EUR",
         currency_id="12",
         iban="GB98MIDL07009312345678",
         include_net_worth=True,
         interest="5.3",
-        interest_period="monthly",
+        interest_period=InterestPeriod("monthly"),
         latitude=51.983333,
-        liability_direction="credit",
-        liability_type="loan",
+        liability_direction=LiabilityDirection("credit"),
+        liability_type=LiabilityType("loan"),
         longitude=5.916667,
         monthly_payment_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
         name="My checking account",
@@ -604,7 +604,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         opening_balance="-1012.12",
         opening_balance_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
         order=1,
-        type="asset",
+        type=ShortAccountTypeProperty("asset"),
         virtual_balance="123.45",
         zoom_level=6,
     ) # AccountStore | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
@@ -688,21 +688,21 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    id = 1 # int | The ID of the account.
+    id = "123" # str | The ID of the account.
     account_update = AccountUpdate(
         account_number="7009312345678",
-        account_role="defaultAsset",
+        account_role=AccountRoleProperty("defaultAsset"),
         active=False,
         bic="BOFAUS3N",
-        credit_card_type="monthlyFull",
+        credit_card_type=CreditCardType("monthlyFull"),
         currency_code="EUR",
         currency_id="12",
         iban="GB98MIDL07009312345678",
         include_net_worth=True,
         interest="5.3",
-        interest_period="monthly",
+        interest_period=InterestPeriod("monthly"),
         latitude=51.983333,
-        liability_type="loan",
+        liability_type=LiabilityType("loan"),
         longitude=5.916667,
         monthly_payment_date=dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date(),
         name="My checking account",
@@ -728,7 +728,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. |
+ **id** | **str**| The ID of the account. |
  **account_update** | [**AccountUpdate**](AccountUpdate.md)| JSON array or formdata with updated account information. See the model for the exact specifications. |
 
 ### Return type

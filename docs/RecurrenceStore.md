@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **repetitions** | [**[RecurrenceRepetitionStore]**](RecurrenceRepetitionStore.md) |  | 
 **title** | **str** |  | 
 **transactions** | [**[RecurrenceTransactionStore]**](RecurrenceTransactionStore.md) |  | 
-**type** | **str** |  | 
+**type** | [**RecurrenceTransactionType**](RecurrenceTransactionType.md) |  | 
 **active** | **bool** | If the recurrence is even active. | [optional] 
 **apply_rules** | **bool** | Whether or not to fire the rules after the creation of a transaction. | [optional] 
 **description** | **str** | Not to be confused with the description of the actual transaction(s) being created. | [optional] 

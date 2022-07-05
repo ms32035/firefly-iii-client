@@ -49,7 +49,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = object_groups_api.ObjectGroupsApi(api_client)
-    id = 1 # int | The ID of the object group.
+    id = "123" # str | The ID of the object group.
 
     # example passing only required values which don't have defaults set
     try:
@@ -64,7 +64,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the object group. |
+ **id** | **str**| The ID of the object group. |
 
 ### Return type
 
@@ -127,7 +127,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = object_groups_api.ObjectGroupsApi(api_client)
-    id = 1 # int | The ID of the object group.
+    id = "123" # str | The ID of the object group.
 
     # example passing only required values which don't have defaults set
     try:
@@ -143,7 +143,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the object group. |
+ **id** | **str**| The ID of the object group. |
 
 ### Return type
 
@@ -206,7 +206,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = object_groups_api.ObjectGroupsApi(api_client)
-    id = 1 # int | The ID of the account.
+    id = "123" # str | The ID of the account.
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
     # example passing only required values which don't have defaults set
@@ -232,7 +232,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. |
+ **id** | **str**| The ID of the account. |
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
 
 ### Return type
@@ -374,7 +374,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = object_groups_api.ObjectGroupsApi(api_client)
-    id = 1 # int | The ID of the account.
+    id = "123" # str | The ID of the account.
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
     # example passing only required values which don't have defaults set
@@ -400,7 +400,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the account. |
+ **id** | **str**| The ID of the account. |
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
 
 ### Return type
@@ -465,7 +465,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = object_groups_api.ObjectGroupsApi(api_client)
-    id = 1 # int | The ID of the object group
+    id = "123" # str | The ID of the object group
     object_group_update = ObjectGroupUpdate(
         order=1,
         title="My object group",
@@ -485,7 +485,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the object group |
+ **id** | **str**| The ID of the object group |
  **object_group_update** | [**ObjectGroupUpdate**](ObjectGroupUpdate.md)| JSON array with updated piggy bank information. See the model for the exact specifications. |
 
 ### Return type

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**list_links_by_journal**](TransactionsApi.md#list_links_by_journal) | **GET** /api/v1/transaction-journals/{id}/links | Lists all the transaction links for an individual journal (individual split).
 [**list_transaction**](TransactionsApi.md#list_transaction) | **GET** /api/v1/transactions | List all the user&#39;s transactions. 
 [**store_transaction**](TransactionsApi.md#store_transaction) | **POST** /api/v1/transactions | Store a new transaction
-[**update_transaction**](TransactionsApi.md#update_transaction) | **PUT** /api/v1/transactions/{id} | Update existing transaction.
+[**update_transaction**](TransactionsApi.md#update_transaction) | **PUT** /api/v1/transactions/{id} | Update existing transaction. For more information, see https://docs.firefly-iii.org/firefly-iii/api/specials
 
 
 # **delete_transaction**
@@ -53,7 +53,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    id = 1 # int | The ID of the transaction.
+    id = "123" # str | The ID of the transaction.
 
     # example passing only required values which don't have defaults set
     try:
@@ -68,7 +68,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction. |
+ **id** | **str**| The ID of the transaction. |
 
 ### Return type
 
@@ -130,7 +130,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    id = 1 # int | The ID of the transaction journal (the split) you wish to delete.
+    id = "123" # str | The ID of the transaction journal (the split) you wish to delete.
 
     # example passing only required values which don't have defaults set
     try:
@@ -145,7 +145,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction journal (the split) you wish to delete. |
+ **id** | **str**| The ID of the transaction journal (the split) you wish to delete. |
 
 ### Return type
 
@@ -208,7 +208,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    id = 1 # int | The ID of the transaction.
+    id = "123" # str | The ID of the transaction.
 
     # example passing only required values which don't have defaults set
     try:
@@ -224,7 +224,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction. |
+ **id** | **str**| The ID of the transaction. |
 
 ### Return type
 
@@ -287,7 +287,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    id = 1 # int | The ID of the transaction journal (split).
+    id = "123" # str | The ID of the transaction journal (split).
 
     # example passing only required values which don't have defaults set
     try:
@@ -303,7 +303,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction journal (split). |
+ **id** | **str**| The ID of the transaction journal (split). |
 
 ### Return type
 
@@ -366,7 +366,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    id = 1 # int | The ID of the transaction.
+    id = "123" # str | The ID of the transaction.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -392,7 +392,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction. |
+ **id** | **str**| The ID of the transaction. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -456,7 +456,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    id = 1 # int | The ID of the transaction.
+    id = "123" # str | The ID of the transaction.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -482,7 +482,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction. |
+ **id** | **str**| The ID of the transaction. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -546,7 +546,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    id = 1 # int | The ID of the transaction journal / the split.
+    id = "123" # str | The ID of the transaction journal / the split.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -572,7 +572,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction journal / the split. |
+ **id** | **str**| The ID of the transaction journal / the split. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -747,6 +747,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
                 destination_name="Buy and Large",
                 due_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 external_id="external_id_example",
+                external_url="external_url_example",
                 foreign_amount="123.45",
                 foreign_currency_code="USD",
                 foreign_currency_id="17",
@@ -773,7 +774,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
                 tags=[
                     "",
                 ],
-                type="withdrawal",
+                type=TransactionTypeProperty("withdrawal"),
             ),
         ],
     ) # TransactionStore | JSON array or key=value pairs with the necessary transaction information. See the model for the exact specifications.
@@ -820,7 +821,7 @@ Name | Type | Description  | Notes
 # **update_transaction**
 > TransactionSingle update_transaction(id, transaction_update)
 
-Update existing transaction.
+Update existing transaction. For more information, see https://docs.firefly-iii.org/firefly-iii/api/specials
 
 Update an existing transaction.
 
@@ -857,7 +858,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    id = 1 # int | The ID of the transaction.
+    id = "123" # str | The ID of the transaction.
     transaction_update = TransactionUpdate(
         apply_rules=False,
         fire_webhooks=True,
@@ -881,6 +882,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
                 destination_name="Buy and Large",
                 due_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 external_id="external_id_example",
+                external_url="external_url_example",
                 foreign_amount="123.45",
                 foreign_currency_code="USD",
                 foreign_currency_id="17",
@@ -912,7 +914,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # Update existing transaction.
+        # Update existing transaction. For more information, see https://docs.firefly-iii.org/firefly-iii/api/specials
         api_response = api_instance.update_transaction(id, transaction_update)
         pprint(api_response)
     except firefly_iii_client.ApiException as e:
@@ -924,7 +926,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction. |
+ **id** | **str**| The ID of the transaction. |
  **transaction_update** | [**TransactionUpdate**](TransactionUpdate.md)| JSON array with updated transaction information. See the model for the exact specifications. |
 
 ### Return type

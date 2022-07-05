@@ -51,7 +51,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = bills_api.BillsApi(api_client)
-    id = 1 # int | The ID of the bill.
+    id = "123" # str | The ID of the bill.
 
     # example passing only required values which don't have defaults set
     try:
@@ -66,7 +66,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the bill. |
+ **id** | **str**| The ID of the bill. |
 
 ### Return type
 
@@ -129,7 +129,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = bills_api.BillsApi(api_client)
-    id = 1 # int | The ID of the bill.
+    id = "123" # str | The ID of the bill.
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD. If it is are added to the request, Firefly III will calculate the appropriate payment and paid dates.  (optional)
     end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD. If it is added to the request, Firefly III will calculate the appropriate payment and paid dates.  (optional)
 
@@ -156,7 +156,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the bill. |
+ **id** | **str**| The ID of the bill. |
  **start** | **date**| A date formatted YYYY-MM-DD. If it is are added to the request, Firefly III will calculate the appropriate payment and paid dates.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD. If it is added to the request, Firefly III will calculate the appropriate payment and paid dates.  | [optional]
 
@@ -221,7 +221,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = bills_api.BillsApi(api_client)
-    id = 1 # int | The ID of the bill.
+    id = "123" # str | The ID of the bill.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -247,7 +247,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the bill. |
+ **id** | **str**| The ID of the bill. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -393,7 +393,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = bills_api.BillsApi(api_client)
-    id = 1 # int | The ID of the bill.
+    id = "123" # str | The ID of the bill.
 
     # example passing only required values which don't have defaults set
     try:
@@ -409,7 +409,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the bill. |
+ **id** | **str**| The ID of the bill. |
 
 ### Return type
 
@@ -472,7 +472,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = bills_api.BillsApi(api_client)
-    id = 1 # int | The ID of the bill.
+    id = "123" # str | The ID of the bill.
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
     end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
     type = TransactionTypeFilter("all") # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
@@ -500,7 +500,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the bill. |
+ **id** | **str**| The ID of the bill. |
  **start** | **date**| A date formatted YYYY-MM-DD.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD.  | [optional]
  **type** | **TransactionTypeFilter**| Optional filter on the transaction type(s) returned | [optional]
@@ -580,7 +580,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         notes="Some example notes",
         object_group_id="5",
         object_group_title="Example Group",
-        repeat_freq="monthly",
+        repeat_freq=BillRepeatFrequency("monthly"),
         skip=0,
     ) # BillStore | JSON array or key=value pairs with the necessary bill information. See the model for the exact specifications.
 
@@ -663,7 +663,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = bills_api.BillsApi(api_client)
-    id = 1 # int | The ID of the bill.
+    id = "123" # str | The ID of the bill.
     bill_update = BillUpdate(
         active=True,
         amount_max="123.45",
@@ -677,7 +677,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         notes="Some example notes",
         object_group_id="5",
         object_group_title="Example Group",
-        repeat_freq="monthly",
+        repeat_freq=BillRepeatFrequency("monthly"),
         skip=0,
     ) # BillUpdate | JSON array or key=value pairs with updated bill information. See the model for the exact specifications.
 
@@ -695,7 +695,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the bill. |
+ **id** | **str**| The ID of the bill. |
  **bill_update** | [**BillUpdate**](BillUpdate.md)| JSON array or key&#x3D;value pairs with updated bill information. See the model for the exact specifications. |
 
 ### Return type

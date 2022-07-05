@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**list_attachment_by_category**](CategoriesApi.md#list_attachment_by_category) | **GET** /api/v1/categories/{id}/attachments | Lists all attachments.
 [**list_category**](CategoriesApi.md#list_category) | **GET** /api/v1/categories | List all categories.
 [**list_transaction_by_category**](CategoriesApi.md#list_transaction_by_category) | **GET** /api/v1/categories/{id}/transactions | List all transactions in a category.
+[**list_transaction_without_category**](CategoriesApi.md#list_transaction_without_category) | **GET** /api/v1/categories/transactions-without-category | All transactions without a category.
 [**store_category**](CategoriesApi.md#store_category) | **POST** /api/v1/categories | Store a new category
 [**update_category**](CategoriesApi.md#update_category) | **PUT** /api/v1/categories/{id} | Update existing category.
 
@@ -50,7 +51,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    id = 1 # int | The ID of the category.
+    id = "123" # str | The ID of the category.
 
     # example passing only required values which don't have defaults set
     try:
@@ -65,7 +66,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the category. |
+ **id** | **str**| The ID of the category. |
 
 ### Return type
 
@@ -128,7 +129,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    id = 1 # int | The ID of the category.
+    id = "123" # str | The ID of the category.
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to show spent and earned info.  (optional)
     end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to show spent and earned info.  (optional)
 
@@ -155,7 +156,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the category. |
+ **id** | **str**| The ID of the category. |
  **start** | **date**| A date formatted YYYY-MM-DD, to show spent and earned info.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD, to show spent and earned info.  | [optional]
 
@@ -220,7 +221,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    id = 1 # int | The ID of the category.
+    id = "123" # str | The ID of the category.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -246,7 +247,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the category. |
+ **id** | **str**| The ID of the category. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -390,7 +391,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    id = 1 # int | The ID of the category.
+    id = "123" # str | The ID of the category.
     page = 1 # int | Page number. The default pagination is per 50. (optional)
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
     end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
@@ -419,10 +420,98 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the category. |
+ **id** | **str**| The ID of the category. |
  **page** | **int**| Page number. The default pagination is per 50. | [optional]
  **start** | **date**| A date formatted YYYY-MM-DD, to limit the result list.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD, to limit the result list.  | [optional]
+ **type** | **TransactionTypeFilter**| Optional filter on the transaction type(s) returned | [optional]
+
+### Return type
+
+[**TransactionArray**](TransactionArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.api+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of transactions. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_transaction_without_category**
+> TransactionArray list_transaction_without_category()
+
+All transactions without a category.
+
+Get all transactions without a category, possibly limited by start and end
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+
+```python
+import time
+import firefly_iii_client
+from firefly_iii_client.api import categories_api
+from firefly_iii_client.model.transaction_type_filter import TransactionTypeFilter
+from firefly_iii_client.model.transaction_array import TransactionArray
+from pprint import pprint
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = categories_api.CategoriesApi(api_client)
+    limit = 5 # int | Limits the number of results on one page. (optional)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
+    start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
+    end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
+    type = TransactionTypeFilter("all") # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # All transactions without a category.
+        api_response = api_instance.list_transaction_without_category(limit=limit, page=page, start=start, end=end, type=type)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling CategoriesApi->list_transaction_without_category: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Limits the number of results on one page. | [optional]
+ **page** | **int**| Page number. The default pagination is 50. | [optional]
+ **start** | **date**| A date formatted YYYY-MM-DD.  | [optional]
+ **end** | **date**| A date formatted YYYY-MM-DD.  | [optional]
  **type** | **TransactionTypeFilter**| Optional filter on the transaction type(s) returned | [optional]
 
 ### Return type
@@ -571,7 +660,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    id = 1 # int | The ID of the category.
+    id = "123" # str | The ID of the category.
     category_update = CategoryUpdate(
         name="Lunch",
         notes="Some example notes",
@@ -591,7 +680,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the category. |
+ **id** | **str**| The ID of the category. |
  **category_update** | [**CategoryUpdate**](CategoryUpdate.md)| JSON array with updated category information. See the model for the exact specifications. |
 
 ### Return type

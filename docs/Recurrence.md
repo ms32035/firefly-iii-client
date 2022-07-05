@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **repetitions** | [**[RecurrenceRepetition]**](RecurrenceRepetition.md) |  | [optional] 
 **title** | **str** |  | [optional] 
 **transactions** | [**[RecurrenceTransaction]**](RecurrenceTransaction.md) |  | [optional] 
-**type** | **str** |  | [optional] 
+**type** | [**RecurrenceTransactionType**](RecurrenceTransactionType.md) |  | [optional] 
 **updated_at** | **datetime** |  | [optional] [readonly] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

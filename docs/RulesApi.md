@@ -50,7 +50,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rules_api.RulesApi(api_client)
-    id = 1 # int | The ID of the rule.
+    id = "123" # str | The ID of the rule.
 
     # example passing only required values which don't have defaults set
     try:
@@ -65,7 +65,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule. |
+ **id** | **str**| The ID of the rule. |
 
 ### Return type
 
@@ -127,7 +127,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rules_api.RulesApi(api_client)
-    id = 1 # int | The ID of the rule.
+    id = "123" # str | The ID of the rule.
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. If the start date is not present, it will be set to one year ago. If you use this field, both the start date and the end date must be present.  (optional)
     end = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. If the end date is not present, it will be set to today. If you use this field, both the start date and the end date must be present.  (optional)
     accounts = ["1","2","3"] # [int] | Limit the triggering of the rule to these asset accounts or liabilities. Only asset accounts and liabilities will be accepted. Other types will be silently dropped.  (optional)
@@ -153,7 +153,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule. |
+ **id** | **str**| The ID of the rule. |
  **start** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. If the start date is not present, it will be set to one year ago. If you use this field, both the start date and the end date must be present.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. If the end date is not present, it will be set to today. If you use this field, both the start date and the end date must be present.  | [optional]
  **accounts** | **[int]**| Limit the triggering of the rule to these asset accounts or liabilities. Only asset accounts and liabilities will be accepted. Other types will be silently dropped.  | [optional]
@@ -218,7 +218,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rules_api.RulesApi(api_client)
-    id = 1 # int | The ID of the object.X
+    id = "123" # str | The ID of the object.X
 
     # example passing only required values which don't have defaults set
     try:
@@ -234,7 +234,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the object.X |
+ **id** | **str**| The ID of the object.X |
 
 ### Return type
 
@@ -384,7 +384,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
                 active=True,
                 order=5,
                 stop_processing=False,
-                type="set_category",
+                type=RuleActionKeyword("set_category"),
                 value="Daily groceries",
             ),
         ],
@@ -396,13 +396,13 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         stop_processing=False,
         strict=True,
         title="First rule title.",
-        trigger="store-journal",
+        trigger=RuleTriggerType("store-journal"),
         triggers=[
             RuleTriggerStore(
                 active=True,
                 order=5,
                 stop_processing=False,
-                type="user_action",
+                type=RuleTriggerKeyword("user_action"),
                 value="tag1",
             ),
         ],
@@ -485,7 +485,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rules_api.RulesApi(api_client)
-    id = 1 # int | The ID of the rule.
+    id = "123" # str | The ID of the rule.
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
     end = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
     accounts = ["1","2","3"] # [int] | Limit the testing of the rule to these asset accounts or liabilities. Only asset accounts and liabilities will be accepted. Other types will be silently dropped.  (optional)
@@ -513,7 +513,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule. |
+ **id** | **str**| The ID of the rule. |
  **start** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional]
  **accounts** | **[int]**| Limit the testing of the rule to these asset accounts or liabilities. Only asset accounts and liabilities will be accepted. Other types will be silently dropped.  | [optional]
@@ -580,14 +580,14 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rules_api.RulesApi(api_client)
-    id = 1 # int | The ID of the object.X
+    id = "123" # str | The ID of the object.X
     rule_update = RuleUpdate(
         actions=[
             RuleActionUpdate(
                 active=True,
                 order=5,
                 stop_processing=False,
-                type="set_category",
+                type=RuleActionKeyword("set_category"),
                 value="Daily groceries",
             ),
         ],
@@ -598,13 +598,13 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         stop_processing=False,
         strict=True,
         title="First rule title.",
-        trigger="store-journal",
+        trigger=RuleTriggerType("store-journal"),
         triggers=[
             RuleTriggerUpdate(
                 active=True,
                 order=5,
                 stop_processing=False,
-                type="user_action",
+                type=RuleTriggerKeyword("user_action"),
                 value="tag1",
             ),
         ],
@@ -624,7 +624,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the object.X |
+ **id** | **str**| The ID of the object.X |
  **rule_update** | [**RuleUpdate**](RuleUpdate.md)| JSON array with updated rule information. See the model for the exact specifications. |
 
 ### Return type

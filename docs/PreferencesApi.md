@@ -208,7 +208,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = preferences_api.PreferencesApi(api_client)
     preference = Preference(
-        data=None,
+        data=PolymorphicProperty(None),
         name="currencyPreference",
     ) # Preference | JSON array with the necessary preference information or key=value pairs. See the model for the exact specifications.
 
@@ -293,7 +293,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = preferences_api.PreferencesApi(api_client)
     name = "currencyPreference" # str | The name of the preference. Will always overwrite. Will be created if it does not exist.
     preference_update = PreferenceUpdate(
-        data=None,
+        data=PolymorphicProperty(None),
     ) # PreferenceUpdate | JSON array or key=value pairs with the necessary preference information. See the model for the exact specifications.
 
     # example passing only required values which don't have defaults set

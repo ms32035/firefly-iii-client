@@ -48,7 +48,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = available_budgets_api.AvailableBudgetsApi(api_client)
-    id = 1 # int | The ID of the available budget.
+    id = "123" # str | The ID of the available budget.
 
     # example passing only required values which don't have defaults set
     try:
@@ -63,7 +63,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the available budget. |
+ **id** | **str**| The ID of the available budget. |
 
 ### Return type
 
@@ -126,7 +126,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = available_budgets_api.AvailableBudgetsApi(api_client)
-    id = 1 # int | The ID of the available budget.
+    id = "123" # str | The ID of the available budget.
 
     # example passing only required values which don't have defaults set
     try:
@@ -142,7 +142,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the available budget. |
+ **id** | **str**| The ID of the available budget. |
 
 ### Return type
 
@@ -377,7 +377,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = available_budgets_api.AvailableBudgetsApi(api_client)
-    id = 1 # int | The ID of the object.X
+    id = "123" # str | The ID of the object.X
     available_budget_update = AvailableBudgetUpdate(
         amount="123.45",
         currency_code="EUR",
@@ -400,7 +400,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the object.X |
+ **id** | **str**| The ID of the object.X |
  **available_budget_update** | [**AvailableBudgetUpdate**](AvailableBudgetUpdate.md)| JSON array or form value with updated available budget information. See the model for the exact specifications. |
 
 ### Return type

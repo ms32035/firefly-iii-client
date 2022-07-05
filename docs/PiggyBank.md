@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** | The ID of the asset account this piggy bank is connected to. | 
 **name** | **str** |  | 
-**target_amount** | **str** |  | 
+**target_amount** | **str, none_type** |  | 
 **account_name** | **str** | The name of the asset account this piggy bank is connected to. | [optional] [readonly] 
 **active** | **bool** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **currency_id** | **str** |  | [optional] [readonly] 
 **currency_symbol** | **str** |  | [optional] [readonly] 
 **current_amount** | **str** |  | [optional] 
-**left_to_save** | **str** |  | [optional] [readonly] 
+**left_to_save** | **str, none_type** |  | [optional] [readonly] 
 **notes** | **str, none_type** |  | [optional] 
 **object_group_id** | **str, none_type** | The group ID of the group this object is part of. NULL if no group. | [optional] 
 **object_group_order** | **int, none_type** | The order of the group. At least 1, for the highest sorting. | [optional] [readonly] 
 **object_group_title** | **str, none_type** | The name of the group. NULL if no group. | [optional] 
 **order** | **int** |  | [optional] 
-**percentage** | **float** |  | [optional] [readonly] 
-**save_per_month** | **str** |  | [optional] [readonly] 
+**percentage** | **float, none_type** |  | [optional] [readonly] 
+**save_per_month** | **str, none_type** |  | [optional] [readonly] 
 **start_date** | **datetime** | The date you started with this piggy bank. | [optional] 
 **target_date** | **datetime, none_type** | The date you intend to finish saving money. | [optional] 
 **updated_at** | **datetime** |  | [optional] [readonly] 

@@ -54,7 +54,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = links_api.LinksApi(api_client)
-    id = 1 # int | The ID of the link type.
+    id = "123" # str | The ID of the link type.
 
     # example passing only required values which don't have defaults set
     try:
@@ -69,7 +69,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the link type. |
+ **id** | **str**| The ID of the link type. |
 
 ### Return type
 
@@ -132,7 +132,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = links_api.LinksApi(api_client)
-    id = 1 # int | The ID of the transaction link.
+    id = "123" # str | The ID of the transaction link.
 
     # example passing only required values which don't have defaults set
     try:
@@ -147,7 +147,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction link. |
+ **id** | **str**| The ID of the transaction link. |
 
 ### Return type
 
@@ -210,7 +210,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = links_api.LinksApi(api_client)
-    id = 1 # int | The ID of the link type.
+    id = "123" # str | The ID of the link type.
 
     # example passing only required values which don't have defaults set
     try:
@@ -226,7 +226,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the link type. |
+ **id** | **str**| The ID of the link type. |
 
 ### Return type
 
@@ -289,7 +289,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = links_api.LinksApi(api_client)
-    id = 1 # int | The ID of the transaction link.
+    id = "123" # str | The ID of the transaction link.
 
     # example passing only required values which don't have defaults set
     try:
@@ -305,7 +305,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction link. |
+ **id** | **str**| The ID of the transaction link. |
 
 ### Return type
 
@@ -448,7 +448,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = links_api.LinksApi(api_client)
-    id = 1 # int | The ID of the link type.
+    id = "123" # str | The ID of the link type.
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
     end = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
@@ -477,7 +477,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the link type. |
+ **id** | **str**| The ID of the link type. |
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
  **start** | **date**| A date formatted YYYY-MM-DD, to limit the results.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD, to limit the results.  | [optional]
@@ -796,7 +796,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = links_api.LinksApi(api_client)
-    id = 1 # int | The ID of the link type.
+    id = "123" # str | The ID of the link type.
     link_type_update = LinkTypeUpdate(
         inward="is (partially) paid for by",
         name="Paid",
@@ -817,7 +817,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the link type. |
+ **id** | **str**| The ID of the link type. |
  **link_type_update** | [**LinkTypeUpdate**](LinkTypeUpdate.md)| JSON array or formdata with updated link type information. See the model for the exact specifications. |
 
 ### Return type
@@ -884,7 +884,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = links_api.LinksApi(api_client)
-    id = 1 # int | The ID of the transaction link.
+    id = "123" # str | The ID of the transaction link.
     transaction_link_update = TransactionLinkUpdate(
         inward_id="131",
         link_type_id="5",
@@ -907,7 +907,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the transaction link. |
+ **id** | **str**| The ID of the transaction link. |
  **transaction_link_update** | [**TransactionLinkUpdate**](TransactionLinkUpdate.md)| JSON array or formdata with updated link type information. See the model for the exact specifications. |
 
 ### Return type

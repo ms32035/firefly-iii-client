@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** | The ID of the asset account this piggy bank is connected to. | 
 **name** | **str** |  | 
-**target_amount** | **str** |  | 
+**target_amount** | **str, none_type** |  | 
 **active** | **bool** |  | [optional] [readonly] 
 **current_amount** | **str** |  | [optional] 
 **notes** | **str, none_type** |  | [optional] 

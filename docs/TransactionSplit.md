@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the transaction. | 
 **destination_id** | **str, none_type** | ID of the destination account. For a deposit or a transfer, this must always be an asset account. For withdrawals this must be an expense account. | 
 **source_id** | **str, none_type** | ID of the source account. For a withdrawal or a transfer, this must always be an asset account. For deposits, this must be a revenue account. | 
-**type** | **str** | Type of transaction. | 
+**type** | [**TransactionTypeProperty**](TransactionTypeProperty.md) |  | 
 **bill_id** | **str, none_type** | Optional. Use either this or the bill_name | [optional] 
 **bill_name** | **str, none_type** | Optional. Use either this or the bill_id | [optional] 
 **book_date** | **datetime, none_type** |  | [optional] 
@@ -28,11 +28,13 @@ Name | Type | Description | Notes
 **destination_type** | [**AccountTypeProperty**](AccountTypeProperty.md) |  | [optional] 
 **due_date** | **datetime, none_type** |  | [optional] 
 **external_id** | **str, none_type** | Reference to external ID in other systems. | [optional] 
+**external_url** | **str, none_type** | External, custom URL for this transaction. | [optional] 
 **foreign_amount** | **str, none_type** | The amount in a foreign currency. | [optional] 
 **foreign_currency_code** | **str, none_type** | Currency code of the foreign currency. Default is NULL. Can be used instead of the foreign_currency_id, but this or the ID is required when submitting a foreign amount. | [optional] 
 **foreign_currency_decimal_places** | **int, none_type** | Number of decimals in the currency | [optional] [readonly] 
 **foreign_currency_id** | **str, none_type** | Currency ID of the foreign currency. Default is null. Is required when you submit a foreign amount. | [optional] 
 **foreign_currency_symbol** | **str, none_type** |  | [optional] [readonly] 
+**has_attachments** | **bool** | If the transaction has attachments. | [optional] 
 **import_hash_v2** | **str, none_type** | Hash value of original import transaction (for duplicate detection). | [optional] [readonly] 
 **interest_date** | **datetime, none_type** |  | [optional] 
 **internal_reference** | **str, none_type** | Reference to internal reference of other systems. | [optional] 

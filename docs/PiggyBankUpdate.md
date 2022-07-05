@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **object_group_title** | **str, none_type** | The name of the group. NULL if no group. | [optional] 
 **order** | **int** |  | [optional] 
 **start_date** | **date** | The date you started with this piggy bank. | [optional] 
-**target_amount** | **str** |  | [optional] 
+**target_amount** | **str, none_type** |  | [optional] 
 **target_date** | **date, none_type** | The date you intend to finish saving money. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

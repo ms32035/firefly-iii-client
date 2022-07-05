@@ -49,7 +49,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = recurrences_api.RecurrencesApi(api_client)
-    id = 1 # int | The ID of the recurring transaction.
+    id = "123" # str | The ID of the recurring transaction.
 
     # example passing only required values which don't have defaults set
     try:
@@ -64,7 +64,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the recurring transaction. |
+ **id** | **str**| The ID of the recurring transaction. |
 
 ### Return type
 
@@ -127,7 +127,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = recurrences_api.RecurrencesApi(api_client)
-    id = 1 # int | The ID of the recurring transaction.
+    id = "123" # str | The ID of the recurring transaction.
 
     # example passing only required values which don't have defaults set
     try:
@@ -143,7 +143,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the recurring transaction. |
+ **id** | **str**| The ID of the recurring transaction. |
 
 ### Return type
 
@@ -286,7 +286,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = recurrences_api.RecurrencesApi(api_client)
-    id = 1 # int | The ID of the recurring transaction.
+    id = "123" # str | The ID of the recurring transaction.
     page = 1 # int | Page number. The default pagination is 50. (optional)
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
     end = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD. Both the start and end date must be present.  (optional)
@@ -315,7 +315,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the recurring transaction. |
+ **id** | **str**| The ID of the recurring transaction. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
  **start** | **date**| A date formatted YYYY-MM-DD. Both the start and end date must be present.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD. Both the start and end date must be present.  | [optional]
@@ -395,7 +395,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
             RecurrenceRepetitionStore(
                 moment="3",
                 skip=0,
-                type="weekly",
+                type=RecurrenceRepetitionType("weekly"),
                 weekend=1,
             ),
         ],
@@ -419,7 +419,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
                 ],
             ),
         ],
-        type="withdrawal",
+        type=RecurrenceTransactionType("withdrawal"),
     ) # RecurrenceStore | JSON array or key=value pairs with the necessary recurring transaction information. See the model for the exact specifications.
 
     # example passing only required values which don't have defaults set
@@ -501,7 +501,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = recurrences_api.RecurrencesApi(api_client)
-    id = 1 # int | The ID of the recurring transaction.
+    id = "123" # str | The ID of the recurring transaction.
     recurrence_update = RecurrenceUpdate(
         active=True,
         apply_rules=True,
@@ -514,7 +514,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
             RecurrenceRepetitionUpdate(
                 moment="3",
                 skip=0,
-                type="weekly",
+                type=RecurrenceRepetitionType("weekly"),
                 weekend=1,
             ),
         ],
@@ -553,7 +553,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the recurring transaction. |
+ **id** | **str**| The ID of the recurring transaction. |
  **recurrence_update** | [**RecurrenceUpdate**](RecurrenceUpdate.md)| JSON array with updated recurring transaction information. See the model for the exact specifications. |
 
 ### Return type
