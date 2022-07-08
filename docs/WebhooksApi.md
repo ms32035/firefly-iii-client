@@ -55,7 +55,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
 
     # example passing only required values which don't have defaults set
     try:
@@ -70,7 +70,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
 
 ### Return type
 
@@ -133,7 +133,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
 
     # example passing only required values which don't have defaults set
@@ -149,7 +149,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
  **message_id** | **int**| The webhook message ID. |
 
 ### Return type
@@ -213,7 +213,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
     attempt_id = 1 # int | The webhook message attempt ID.
 
@@ -230,7 +230,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
  **message_id** | **int**| The webhook message ID. |
  **attempt_id** | **int**| The webhook message attempt ID. |
 
@@ -296,7 +296,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
 
     # example passing only required values which don't have defaults set
@@ -313,7 +313,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
  **message_id** | **int**| The webhook message ID. |
 
 ### Return type
@@ -377,7 +377,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
     attempt_id = 1 # int | The webhook attempt ID.
 
@@ -395,7 +395,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
  **message_id** | **int**| The webhook message ID. |
  **attempt_id** | **int**| The webhook attempt ID. |
 
@@ -460,7 +460,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
 
     # example passing only required values which don't have defaults set
     try:
@@ -476,7 +476,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
 
 ### Return type
 
@@ -539,7 +539,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -566,7 +566,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
  **message_id** | **int**| The webhook message ID. |
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional]
 
@@ -631,7 +631,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
 
     # example passing only required values which don't have defaults set
     try:
@@ -647,7 +647,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
 
 ### Return type
 
@@ -793,10 +793,10 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = webhooks_api.WebhooksApi(api_client)
     webhook_store = WebhookStore(
         active=False,
-        delivery="DELIVERY_JSON",
-        response="RESPONSE_TRANSACTIONS",
+        delivery=WebhookDelivery("DELIVERY_JSON"),
+        response=WebhookResponse("RESPONSE_TRANSACTIONS"),
         title="Update magic mirror on new transaction",
-        trigger="TRIGGER_DESTROY_TRANSACTION",
+        trigger=WebhookTrigger("TRIGGER_DESTROY_TRANSACTION"),
         url="https://example.com",
     ) # WebhookStore | JSON array or key=value pairs with the necessary webhook information. See the model for the exact specifications.
 
@@ -876,7 +876,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
 
     # example passing only required values which don't have defaults set
     try:
@@ -891,7 +891,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
 
 ### Return type
 
@@ -958,14 +958,14 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = webhooks_api.WebhooksApi(api_client)
-    id = 1 # int | The webhook ID.
+    id = "123" # str | The webhook ID.
     webhook_update = WebhookUpdate(
         active=False,
-        delivery="DELIVERY_JSON",
-        response="RESPONSE_TRANSACTIONS",
+        delivery=WebhookDelivery("DELIVERY_JSON"),
+        response=WebhookResponse("RESPONSE_TRANSACTIONS"),
         secret="iMLZLtLx2JHWhK9Dtyuoqyir",
         title="Update magic mirror on new transaction",
-        trigger="TRIGGER_DESTROY_TRANSACTION",
+        trigger=WebhookTrigger("TRIGGER_DESTROY_TRANSACTION"),
         url="https://example.com",
     ) # WebhookUpdate | JSON array with updated webhook information. See the model for the exact specifications.
 
@@ -983,7 +983,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The webhook ID. |
+ **id** | **str**| The webhook ID. |
  **webhook_update** | [**WebhookUpdate**](WebhookUpdate.md)| JSON array with updated webhook information. See the model for the exact specifications. |
 
 ### Return type

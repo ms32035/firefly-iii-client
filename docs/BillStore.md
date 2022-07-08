@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **amount_min** | **str** |  | 
 **date** | **datetime** |  | 
 **name** | **str** |  | 
-**repeat_freq** | **str** | How often the bill must be paid. | 
+**repeat_freq** | [**BillRepeatFrequency**](BillRepeatFrequency.md) |  | 
 **active** | **bool** | If the bill is active. | [optional] 
 **currency_code** | **str** | Use either currency_id or currency_code | [optional] 
 **currency_id** | **str** | Use either currency_id or currency_code | [optional] 

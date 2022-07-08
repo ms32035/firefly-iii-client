@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
 **account_number** | **str, none_type** |  | [optional] 
-**account_role** | **str, none_type** | Is only mandatory when the type is asset. | [optional] 
-**active** | **bool** | If omitted, defaults to true. | [optional] 
+**account_role** | [**AccountRoleProperty**](AccountRoleProperty.md) |  | [optional] 
+**active** | **bool** | If omitted, defaults to true. | [optional]  if omitted the server will use the default value of True
 **bic** | **str, none_type** |  | [optional] 
-**credit_card_type** | **str, none_type** | Mandatory when the account_role is ccAsset. Can only be monthlyFull or null. | [optional] 
+**credit_card_type** | [**CreditCardType**](CreditCardType.md) |  | [optional] 
 **currency_code** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
 **currency_id** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
 **iban** | **str, none_type** |  | [optional] 
-**include_net_worth** | **bool** | If omitted, defaults to true. | [optional] 
+**include_net_worth** | **bool** | If omitted, defaults to true. | [optional]  if omitted the server will use the default value of True
 **interest** | **str, none_type** | Mandatory when type is liability. Interest percentage. | [optional] 
-**interest_period** | **str, none_type** | Mandatory when type is liability. Period over which the interest is calculated. | [optional] 
+**interest_period** | [**InterestPeriod**](InterestPeriod.md) |  | [optional] 
 **latitude** | **float, none_type** | Latitude of the account&#39;s location, if applicable. Can be used to draw a map. If omitted, the existing location will be kept. If submitted as NULL, the current location will be removed. | [optional] 
-**liability_type** | **str, none_type** | Mandatory when type is liability. Specifies the exact type. | [optional] 
+**liability_type** | [**LiabilityType**](LiabilityType.md) |  | [optional] 
 **longitude** | **float, none_type** | Latitude of the account&#39;s location, if applicable. Can be used to draw a map. If omitted, the existing location will be kept. If submitted as NULL, the current location will be removed. | [optional] 
 **monthly_payment_date** | **date, none_type** | Mandatory when the account_role is ccAsset. Moment at which CC payment installments are asked for by the bank. | [optional] 
 **notes** | **str, none_type** |  | [optional] 

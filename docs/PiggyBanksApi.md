@@ -50,7 +50,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = piggy_banks_api.PiggyBanksApi(api_client)
-    id = 1 # int | The ID of the piggy bank.
+    id = "123" # str | The ID of the piggy bank.
 
     # example passing only required values which don't have defaults set
     try:
@@ -65,7 +65,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank. |
+ **id** | **str**| The ID of the piggy bank. |
 
 ### Return type
 
@@ -128,7 +128,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = piggy_banks_api.PiggyBanksApi(api_client)
-    id = 1 # int | The ID of the piggy bank.
+    id = "123" # str | The ID of the piggy bank.
 
     # example passing only required values which don't have defaults set
     try:
@@ -144,7 +144,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank. |
+ **id** | **str**| The ID of the piggy bank. |
 
 ### Return type
 
@@ -207,7 +207,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = piggy_banks_api.PiggyBanksApi(api_client)
-    id = 1 # int | The ID of the piggy bank.
+    id = "123" # str | The ID of the piggy bank.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -233,7 +233,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank. |
+ **id** | **str**| The ID of the piggy bank. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -297,7 +297,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = piggy_banks_api.PiggyBanksApi(api_client)
-    id = 1 # int | The ID of the piggy bank
+    id = "123" # str | The ID of the piggy bank
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -323,7 +323,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank |
+ **id** | **str**| The ID of the piggy bank |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -559,7 +559,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = piggy_banks_api.PiggyBanksApi(api_client)
-    id = 1 # int | The ID of the piggy bank
+    id = "123" # str | The ID of the piggy bank
     piggy_bank_update = PiggyBankUpdate(
         account_id="13",
         current_amount="123.45",
@@ -587,7 +587,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the piggy bank |
+ **id** | **str**| The ID of the piggy bank |
  **piggy_bank_update** | [**PiggyBankUpdate**](PiggyBankUpdate.md)| JSON array with updated piggy bank information. See the model for the exact specifications. |
 
 ### Return type

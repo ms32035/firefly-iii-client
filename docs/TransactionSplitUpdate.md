@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **destination_name** | **str, none_type** | Name of the destination account. You can submit the name instead of the ID. For everything except transfers, the account will be auto-generated if unknown, so submitting a name is enough. | [optional] 
 **due_date** | **datetime, none_type** |  | [optional] 
 **external_id** | **str, none_type** | Reference to external ID in other systems. | [optional] 
+**external_url** | **str, none_type** | External, custom URL for this transaction. | [optional] 
 **foreign_amount** | **str, none_type** | The amount in a foreign currency. | [optional] 
 **foreign_currency_code** | **str, none_type** | Currency code of the foreign currency. Default is NULL. Can be used instead of the foreign_currency_id, but this or the ID is required when submitting a foreign amount. | [optional] 
 **foreign_currency_decimal_places** | **int, none_type** | Number of decimals in the currency | [optional] [readonly] 

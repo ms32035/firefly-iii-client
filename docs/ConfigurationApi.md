@@ -205,7 +205,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = configuration_api.ConfigurationApi(api_client)
     name = ConfigValueUpdateFilter("configuration.is_demo_site") # ConfigValueUpdateFilter | The name of the configuration value you want to update.
     configuration_update = ConfigurationUpdate(
-        value=None,
+        value=PolymorphicProperty(None),
     ) # ConfigurationUpdate | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
 
     # example passing only required values which don't have defaults set

@@ -5,27 +5,27 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**type** | **str** | Can only be one one these account types. import, initial-balance and reconciliation cannot be set manually. | 
+**type** | [**ShortAccountTypeProperty**](ShortAccountTypeProperty.md) |  | 
 **account_number** | **str, none_type** |  | [optional] 
-**account_role** | **str, none_type** | Is only mandatory when the type is asset. | [optional] 
-**active** | **bool** | If omitted, defaults to true. | [optional] 
+**account_role** | [**AccountRoleProperty**](AccountRoleProperty.md) |  | [optional] 
+**active** | **bool** | If omitted, defaults to true. | [optional]  if omitted the server will use the default value of True
 **bic** | **str, none_type** |  | [optional] 
 **created_at** | **datetime** |  | [optional] [readonly] 
-**credit_card_type** | **str, none_type** | Mandatory when the account_role is ccAsset. Can only be monthlyFull or null. | [optional] 
+**credit_card_type** | [**CreditCardType**](CreditCardType.md) |  | [optional] 
 **currency_code** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
 **currency_decimal_places** | **int** |  | [optional] [readonly] 
 **currency_id** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
 **currency_symbol** | **str** |  | [optional] [readonly] 
 **current_balance** | **str** |  | [optional] [readonly] 
 **current_balance_date** | **datetime** |  | [optional] [readonly] 
-**current_debt** | **str** | Represents the current debt for liabilities. | [optional] 
+**current_debt** | **str, none_type** | Represents the current debt for liabilities. | [optional] 
 **iban** | **str, none_type** |  | [optional] 
-**include_net_worth** | **bool** | If omitted, defaults to true. | [optional] 
+**include_net_worth** | **bool** | If omitted, defaults to true. | [optional]  if omitted the server will use the default value of True
 **interest** | **str, none_type** | Mandatory when type is liability. Interest percentage. | [optional] 
-**interest_period** | **str, none_type** | Mandatory when type is liability. Period over which the interest is calculated. | [optional] 
+**interest_period** | [**LiabilityDirection**](LiabilityDirection.md) |  | [optional] 
 **latitude** | **float, none_type** | Latitude of the accounts&#39;s location, if applicable. Can be used to draw a map. | [optional] 
-**liability_direction** | **str** | &#39;credit&#39; indicates somebody owes you the liability. &#39;debit&#39; Indicates you owe this debt yourself. Works only for liabiltiies. | [optional] 
-**liability_type** | **str, none_type** | Mandatory when type is liability. Specifies the exact type. | [optional] 
+**liability_direction** | [**LiabilityDirection**](LiabilityDirection.md) |  | [optional] 
+**liability_type** | [**LiabilityType**](LiabilityType.md) |  | [optional] 
 **longitude** | **float, none_type** | Latitude of the accounts&#39;s location, if applicable. Can be used to draw a map. | [optional] 
 **monthly_payment_date** | **datetime, none_type** | Mandatory when the account_role is ccAsset. Moment at which CC payment installments are asked for by the bank. | [optional] 
 **notes** | **str, none_type** |  | [optional] 

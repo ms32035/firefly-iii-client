@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**list_budget_limit_by_budget**](BudgetsApi.md#list_budget_limit_by_budget) | **GET** /api/v1/budgets/{id}/limits | Get all limits for a budget.
 [**list_transaction_by_budget**](BudgetsApi.md#list_transaction_by_budget) | **GET** /api/v1/budgets/{id}/transactions | All transactions to a budget.
 [**list_transaction_by_budget_limit**](BudgetsApi.md#list_transaction_by_budget_limit) | **GET** /api/v1/budgets/{id}/limits/{limitId}/transactions | List all transactions by a budget limit ID.
+[**list_transaction_without_budget**](BudgetsApi.md#list_transaction_without_budget) | **GET** /api/v1/budgets/transactions-without-budget | All transactions without a budget.
 [**store_budget**](BudgetsApi.md#store_budget) | **POST** /api/v1/budgets | Store a new budget
 [**store_budget_limit**](BudgetsApi.md#store_budget_limit) | **POST** /api/v1/budgets/{id}/limits | Store new budget limit.
 [**update_budget**](BudgetsApi.md#update_budget) | **PUT** /api/v1/budgets/{id} | Update existing budget.
@@ -57,7 +58,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget.
+    id = "123" # str | The ID of the budget.
 
     # example passing only required values which don't have defaults set
     try:
@@ -72,7 +73,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. |
+ **id** | **str**| The ID of the budget. |
 
 ### Return type
 
@@ -134,8 +135,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget. The budget limit MUST be associated to the budget ID.
-    limit_id = 1 # int | The ID of the budget limit. The budget limit MUST be associated to the budget ID.
+    id = "123" # str | The ID of the budget. The budget limit MUST be associated to the budget ID.
+    limit_id = "123" # str | The ID of the budget limit. The budget limit MUST be associated to the budget ID.
 
     # example passing only required values which don't have defaults set
     try:
@@ -150,8 +151,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. The budget limit MUST be associated to the budget ID. |
- **limit_id** | **int**| The ID of the budget limit. The budget limit MUST be associated to the budget ID. |
+ **id** | **str**| The ID of the budget. The budget limit MUST be associated to the budget ID. |
+ **limit_id** | **str**| The ID of the budget limit. The budget limit MUST be associated to the budget ID. |
 
 ### Return type
 
@@ -214,7 +215,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the requested budget.
+    id = "123" # str | The ID of the requested budget.
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
     end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
 
@@ -241,7 +242,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the requested budget. |
+ **id** | **str**| The ID of the requested budget. |
  **start** | **date**| A date formatted YYYY-MM-DD, to get info on how much the user has spent.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD, to get info on how much the user has spent.  | [optional]
 
@@ -304,7 +305,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget. The budget limit MUST be associated to the budget ID.
+    id = "123" # str | The ID of the budget. The budget limit MUST be associated to the budget ID.
     limit_id = 1 # int | The ID of the budget limit. The budget limit MUST be associated to the budget ID.
 
     # example passing only required values which don't have defaults set
@@ -321,7 +322,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. The budget limit MUST be associated to the budget ID. |
+ **id** | **str**| The ID of the budget. The budget limit MUST be associated to the budget ID. |
  **limit_id** | **int**| The ID of the budget limit. The budget limit MUST be associated to the budget ID. |
 
 ### Return type
@@ -385,7 +386,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget.
+    id = "123" # str | The ID of the budget.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -411,7 +412,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. |
+ **id** | **str**| The ID of the budget. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -638,7 +639,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the requested budget.
+    id = "123" # str | The ID of the requested budget.
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
     end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
 
@@ -665,7 +666,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the requested budget. |
+ **id** | **str**| The ID of the requested budget. |
  **start** | **date**| A date formatted YYYY-MM-DD.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD.  | [optional]
 
@@ -730,7 +731,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget.
+    id = "123" # str | The ID of the budget.
     limit = 5 # int | Limits the number of results on one page. (optional)
     page = 1 # int | Page number. The default pagination is 50. (optional)
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
@@ -760,7 +761,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. |
+ **id** | **str**| The ID of the budget. |
  **limit** | **int**| Limits the number of results on one page. | [optional]
  **page** | **int**| Page number. The default pagination is 50. | [optional]
  **start** | **date**| A date formatted YYYY-MM-DD.  | [optional]
@@ -828,8 +829,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget. The budget limit MUST be associated to the budget ID.
-    limit_id = 1 # int | The ID of the budget limit. The budget limit MUST be associated to the budget ID.
+    id = "123" # str | The ID of the budget. The budget limit MUST be associated to the budget ID.
+    limit_id = "123" # str | The ID of the budget limit. The budget limit MUST be associated to the budget ID.
     page = 1 # int | Page number. The default pagination is 50. (optional)
     type = TransactionTypeFilter("all") # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
@@ -856,9 +857,97 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. The budget limit MUST be associated to the budget ID. |
- **limit_id** | **int**| The ID of the budget limit. The budget limit MUST be associated to the budget ID. |
+ **id** | **str**| The ID of the budget. The budget limit MUST be associated to the budget ID. |
+ **limit_id** | **str**| The ID of the budget limit. The budget limit MUST be associated to the budget ID. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
+ **type** | **TransactionTypeFilter**| Optional filter on the transaction type(s) returned | [optional]
+
+### Return type
+
+[**TransactionArray**](TransactionArray.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.api+json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of transactions. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_transaction_without_budget**
+> TransactionArray list_transaction_without_budget()
+
+All transactions without a budget.
+
+Get all transactions without a budget, possibly limited by start and end
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+
+```python
+import time
+import firefly_iii_client
+from firefly_iii_client.api import budgets_api
+from firefly_iii_client.model.transaction_type_filter import TransactionTypeFilter
+from firefly_iii_client.model.transaction_array import TransactionArray
+from pprint import pprint
+# Defining the host is optional and defaults to https://demo.firefly-iii.org
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: firefly_iii_auth
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = budgets_api.BudgetsApi(api_client)
+    limit = 5 # int | Limits the number of results on one page. (optional)
+    page = 1 # int | Page number. The default pagination is 50. (optional)
+    start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
+    end = dateutil_parser('Mon Dec 31 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD.  (optional)
+    type = TransactionTypeFilter("all") # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # All transactions without a budget.
+        api_response = api_instance.list_transaction_without_budget(limit=limit, page=page, start=start, end=end, type=type)
+        pprint(api_response)
+    except firefly_iii_client.ApiException as e:
+        print("Exception when calling BudgetsApi->list_transaction_without_budget: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| Limits the number of results on one page. | [optional]
+ **page** | **int**| Page number. The default pagination is 50. | [optional]
+ **start** | **date**| A date formatted YYYY-MM-DD.  | [optional]
+ **end** | **date**| A date formatted YYYY-MM-DD.  | [optional]
  **type** | **TransactionTypeFilter**| Optional filter on the transaction type(s) returned | [optional]
 
 ### Return type
@@ -928,9 +1017,10 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
         auto_budget_amount="-1012.12",
         auto_budget_currency_code="EUR",
         auto_budget_currency_id="12",
-        auto_budget_period="monthly",
-        auto_budget_type="reset",
+        auto_budget_period=AutoBudgetPeriod("monthly"),
+        auto_budget_type=AutoBudgetType("reset"),
         name="Bills",
+        notes="Some notes",
     ) # BudgetStore | JSON array or key=value pairs with the necessary budget information. See the model for the exact specifications.
 
     # example passing only required values which don't have defaults set
@@ -1012,7 +1102,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget.
+    id = "123" # str | The ID of the budget.
     budget_limit_store = BudgetLimitStore(
         amount="123.45",
         currency_code="EUR",
@@ -1035,7 +1125,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. |
+ **id** | **str**| The ID of the budget. |
  **budget_limit_store** | [**BudgetLimitStore**](BudgetLimitStore.md)| JSON array or key&#x3D;value pairs with the necessary budget information. See the model for the exact specifications. |
 
 ### Return type
@@ -1101,15 +1191,16 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget.
+    id = "123" # str | The ID of the budget.
     budget_update = BudgetUpdate(
         active=False,
         auto_budget_amount="-1012.12",
         auto_budget_currency_code="EUR",
         auto_budget_currency_id="12",
-        auto_budget_period="monthly",
-        auto_budget_type="reset",
+        auto_budget_period=AutoBudgetPeriod("monthly"),
+        auto_budget_type=AutoBudgetType("reset"),
         name="Bills",
+        notes="Some notes",
         order=5,
     ) # BudgetUpdate | JSON array with updated budget information. See the model for the exact specifications.
 
@@ -1127,7 +1218,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. |
+ **id** | **str**| The ID of the budget. |
  **budget_update** | [**BudgetUpdate**](BudgetUpdate.md)| JSON array with updated budget information. See the model for the exact specifications. |
 
 ### Return type
@@ -1193,8 +1284,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = budgets_api.BudgetsApi(api_client)
-    id = 1 # int | The ID of the budget. The budget limit MUST be associated to the budget ID.
-    limit_id = 1 # int | The ID of the budget limit. The budget limit MUST be associated to the budget ID.
+    id = "123" # str | The ID of the budget. The budget limit MUST be associated to the budget ID.
+    limit_id = "123" # str | The ID of the budget limit. The budget limit MUST be associated to the budget ID.
     budget_limit = BudgetLimit(
         amount="123.45",
         currency_code="EUR",
@@ -1217,8 +1308,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the budget. The budget limit MUST be associated to the budget ID. |
- **limit_id** | **int**| The ID of the budget limit. The budget limit MUST be associated to the budget ID. |
+ **id** | **str**| The ID of the budget. The budget limit MUST be associated to the budget ID. |
+ **limit_id** | **str**| The ID of the budget limit. The budget limit MUST be associated to the budget ID. |
  **budget_limit** | [**BudgetLimit**](BudgetLimit.md)| JSON array with updated budget limit information. See the model for the exact specifications. |
 
 ### Return type

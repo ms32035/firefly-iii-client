@@ -50,7 +50,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = attachments_api.AttachmentsApi(api_client)
-    id = 1 # int | The ID of the single.
+    id = "123" # str | The ID of the single.
 
     # example passing only required values which don't have defaults set
     try:
@@ -65,7 +65,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the single. |
+ **id** | **str**| The ID of the single. |
 
 ### Return type
 
@@ -127,7 +127,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = attachments_api.AttachmentsApi(api_client)
-    id = 1 # int | The ID of the attachment.
+    id = "123" # str | The ID of the attachment.
 
     # example passing only required values which don't have defaults set
     try:
@@ -143,7 +143,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the attachment. |
+ **id** | **str**| The ID of the attachment. |
 
 ### Return type
 
@@ -206,7 +206,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = attachments_api.AttachmentsApi(api_client)
-    id = 1 # int | The ID of the attachment.
+    id = "123" # str | The ID of the attachment.
 
     # example passing only required values which don't have defaults set
     try:
@@ -222,7 +222,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the attachment. |
+ **id** | **str**| The ID of the attachment. |
 
 ### Return type
 
@@ -368,7 +368,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = attachments_api.AttachmentsApi(api_client)
     attachment_store = AttachmentStore(
         attachable_id="134",
-        attachable_type="Bill",
+        attachable_type=AttachableType("Bill"),
         filename="file.pdf",
         notes="Some notes",
         title="Some PDF file",
@@ -453,7 +453,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = attachments_api.AttachmentsApi(api_client)
-    id = 1 # int | The ID of the attachment.
+    id = "123" # str | The ID of the attachment.
     attachment_update = AttachmentUpdate(
         filename="file.pdf",
         notes="Some notes",
@@ -474,7 +474,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the attachment. |
+ **id** | **str**| The ID of the attachment. |
  **attachment_update** | [**AttachmentUpdate**](AttachmentUpdate.md)| JSON array with updated attachment information. See the model for the exact specifications. |
 
 ### Return type
@@ -537,7 +537,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = attachments_api.AttachmentsApi(api_client)
-    id = 1 # int | The ID of the attachment.
+    id = "123" # str | The ID of the attachment.
     body = open('/path/to/file', 'rb') # file_type |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -561,7 +561,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the attachment. |
+ **id** | **str**| The ID of the attachment. |
  **body** | **file_type**|  | [optional]
 
 ### Return type

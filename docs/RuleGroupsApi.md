@@ -51,7 +51,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rule_groups_api.RuleGroupsApi(api_client)
-    id = 1 # int | The ID of the rule group.
+    id = "123" # str | The ID of the rule group.
 
     # example passing only required values which don't have defaults set
     try:
@@ -66,7 +66,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule group. |
+ **id** | **str**| The ID of the rule group. |
 
 ### Return type
 
@@ -128,7 +128,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rule_groups_api.RuleGroupsApi(api_client)
-    id = 1 # int | The ID of the rule group.
+    id = "123" # str | The ID of the rule group.
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  (optional)
     end = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  (optional)
     accounts = ["1","2","3"] # [int] | Limit the triggering of the rule group to these asset accounts or liabilities. Only asset accounts and liabilities will be accepted. Other types will be silently dropped.  (optional)
@@ -154,7 +154,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule group. |
+ **id** | **str**| The ID of the rule group. |
  **start** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the actions will be applied to. Both the start date and the end date must be present.  | [optional]
  **accounts** | **[int]**| Limit the triggering of the rule group to these asset accounts or liabilities. Only asset accounts and liabilities will be accepted. Other types will be silently dropped.  | [optional]
@@ -219,7 +219,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rule_groups_api.RuleGroupsApi(api_client)
-    id = 1 # int | The ID of the rule group.
+    id = "123" # str | The ID of the rule group.
 
     # example passing only required values which don't have defaults set
     try:
@@ -235,7 +235,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule group. |
+ **id** | **str**| The ID of the rule group. |
 
 ### Return type
 
@@ -298,7 +298,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rule_groups_api.RuleGroupsApi(api_client)
-    id = 1 # int | The ID of the rule group.
+    id = "123" # str | The ID of the rule group.
     page = 1 # int | Page number. The default pagination is 50. (optional)
 
     # example passing only required values which don't have defaults set
@@ -324,7 +324,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule group. |
+ **id** | **str**| The ID of the rule group. |
  **page** | **int**| Page number. The default pagination is 50. | [optional]
 
 ### Return type
@@ -552,7 +552,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rule_groups_api.RuleGroupsApi(api_client)
-    id = 1 # int | The ID of the rule group.
+    id = "123" # str | The ID of the rule group.
     page = 1 # int | Page number. The default pagination is 50 items. (optional)
     start = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
     end = dateutil_parser('Mon Sep 17 00:00:00 UTC 2018').date() # date | A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  (optional)
@@ -583,7 +583,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule group. |
+ **id** | **str**| The ID of the rule group. |
  **page** | **int**| Page number. The default pagination is 50 items. | [optional]
  **start** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional]
  **end** | **date**| A date formatted YYYY-MM-DD, to limit the transactions the test will be applied to. Both the start date and the end date must be present.  | [optional]
@@ -653,7 +653,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = rule_groups_api.RuleGroupsApi(api_client)
-    id = 1 # int | The ID of the rule group.
+    id = "123" # str | The ID of the rule group.
     rule_group_update = RuleGroupUpdate(
         active=True,
         description="Description of this rule group",
@@ -675,7 +675,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ID of the rule group. |
+ **id** | **str**| The ID of the rule group. |
  **rule_group_update** | [**RuleGroupUpdate**](RuleGroupUpdate.md)| JSON array with updated rule group information. See the model for the exact specifications. |
 
 ### Return type

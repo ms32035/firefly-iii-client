@@ -48,7 +48,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    id = 1 # int | The user ID.
+    id = "123" # str | The user ID.
 
     # example passing only required values which don't have defaults set
     try:
@@ -63,7 +63,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The user ID. |
+ **id** | **str**| The user ID. |
 
 ### Return type
 
@@ -127,7 +127,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    id = 1 # int | The user ID.
+    id = "123" # str | The user ID.
 
     # example passing only required values which don't have defaults set
     try:
@@ -143,7 +143,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The user ID. |
+ **id** | **str**| The user ID. |
 
 ### Return type
 
@@ -289,9 +289,9 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = users_api.UsersApi(api_client)
     user = User(
         blocked=False,
-        blocked_code="email_changed",
+        blocked_code=UserBlockedCodeProperty("email_changed"),
         email="james@firefly-iii.org",
-        role="owner",
+        role=UserRoleProperty("owner"),
     ) # User | JSON array or key=value pairs with the necessary user information. See the model for the exact specifications.
 
     # example passing only required values which don't have defaults set
@@ -373,12 +373,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = users_api.UsersApi(api_client)
-    id = 1 # int | The user ID.
+    id = "123" # str | The user ID.
     user = User(
         blocked=False,
-        blocked_code="email_changed",
+        blocked_code=UserBlockedCodeProperty("email_changed"),
         email="james@firefly-iii.org",
-        role="owner",
+        role=UserRoleProperty("owner"),
     ) # User | JSON array with updated user information. See the model for the exact specifications.
 
     # example passing only required values which don't have defaults set
@@ -395,7 +395,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The user ID. |
+ **id** | **str**| The user ID. |
  **user** | [**User**](User.md)| JSON array with updated user information. See the model for the exact specifications. |
 
 ### Return type

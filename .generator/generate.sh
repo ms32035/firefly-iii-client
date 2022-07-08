@@ -32,6 +32,7 @@ java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-ge
 -g python \
 --git-user-id ms32035 \
 --git-repo-id firefly-iii-client \
+--reserved-words-mappings self=self \
 --enable-post-process-file \
 --additional-properties=\
 packageName=firefly_iii_client,\

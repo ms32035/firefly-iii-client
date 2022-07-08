@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attachable_id** | **str** | ID of the model this attachment is linked to. | 
-**attachable_type** | **str** | The object class to which the attachment must be linked. | 
+**attachable_type** | [**AttachableType**](AttachableType.md) |  | 
 **filename** | **str** |  | 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **download_url** | **str** |  | [optional] 
