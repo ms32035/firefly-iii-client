@@ -1,4 +1,5 @@
-FROM openapitools/openapi-generator-cli:v5.3.0
+ARG OPENAPI_TAG
+FROM openapitools/openapi-generator-cli:${OPENAPI_TAG}
 
 RUN apt update && \ 
    apt install -yqq ca-certificates openssl python3 git curl python3-pip && \
