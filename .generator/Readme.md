@@ -2,10 +2,8 @@
 
 1) The code is generated automatically, using OpenAPI docker image.
 Any bugs in the generator are later fixed by `postprocess.py`.
-2) Pypi package versioning follows Firefly III API versions.
-3) Due to the above:
-   1) Your fix will not be released before the next package is released
-   2) PR directly to the code or docs will most likely be overwritten
+2) Pypi package versioning follows Firefly III API versions, with an additional build number.
+PRs directly to the code or docs will most likely be overwritten
     during next generation
 
 ## Using the generator

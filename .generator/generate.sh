@@ -6,24 +6,21 @@ if [[ ${retVal} -ne 0 ]]; then
 fi
 }
 
-echo API_VERSION=${API_VERSION}
+echo API_VERSION=${API_VERSION}${API_SUBVERSION}
+PACKAGE_VERSION=${API_VERSION}.${PACKAGE_BUILD}
 
 if [[ ! -z $1 ]]
 then
     SPEC_FILE=$1
 else
     SPEC_FILE=/build/firefly-iii.yaml
-    curl https://api-docs.firefly-iii.org/firefly-iii-${API_VERSION}.yaml -o ${SPEC_FILE}
+    curl https://api-docs.firefly-iii.org/firefly-iii-${API_VERSION}${API_SUBVERSION}.yaml -o ${SPEC_FILE}
 fi
 checkStatus
 
 python3 /generator/preprocess.py ${SPEC_FILE} /build/firefly-iii-processed.yaml
 checkStatus
 
-#cp -r /build/src /build/stage
-#rm -rf /build/stage/target
-#cd /build/stage && git checkout -f
-#rm -rf /build/stage/.git
 
 java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-generator-cli.jar validate \
 -i /build/firefly-iii-processed.yaml
@@ -39,7 +36,7 @@ java -jar /opt/openapi-generator/modules/openapi-generator-cli/target/openapi-ge
 --additional-properties=\
 packageName=firefly_iii_client,\
 projectName="Firefly III API Client",\
-packageVersion=${API_VERSION},\
+packageVersion=${PACKAGE_VERSION},\
 packageUrl=https://github.com/ms32035/firefly-iii-client
 checkStatus
 

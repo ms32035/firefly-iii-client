@@ -1,10 +1,12 @@
+# coding: utf-8
+
 # flake8: noqa
 
 # import all models into this package
 # if you have many models here with many references from one model to another this may
 # raise a RecursionError
 # to avoid this, import only the models that you directly need like:
-# from from firefly_iii_client.model.pet import Pet
+# from firefly_iii_client.model.pet import Pet
 # or import this package, but before doing it, use:
 # import sys
 # sys.setrecursionlimit(n)
@@ -66,11 +68,11 @@ from firefly_iii_client.model.available_budget_read import AvailableBudgetRead
 from firefly_iii_client.model.available_budget_single import AvailableBudgetSingle
 from firefly_iii_client.model.available_budget_store import AvailableBudgetStore
 from firefly_iii_client.model.available_budget_update import AvailableBudgetUpdate
+from firefly_iii_client.model.bad_request import BadRequest
 from firefly_iii_client.model.basic_summary import BasicSummary
 from firefly_iii_client.model.basic_summary_entry import BasicSummaryEntry
 from firefly_iii_client.model.bill import Bill
 from firefly_iii_client.model.bill_array import BillArray
-from firefly_iii_client.model.bill_paid_dates import BillPaidDates
 from firefly_iii_client.model.bill_read import BillRead
 from firefly_iii_client.model.bill_repeat_frequency import BillRepeatFrequency
 from firefly_iii_client.model.bill_single import BillSingle
@@ -123,6 +125,7 @@ from firefly_iii_client.model.insight_total_entry import InsightTotalEntry
 from firefly_iii_client.model.insight_transfer import InsightTransfer
 from firefly_iii_client.model.insight_transfer_entry import InsightTransferEntry
 from firefly_iii_client.model.interest_period import InterestPeriod
+from firefly_iii_client.model.internal_exception import InternalException
 from firefly_iii_client.model.liability_direction import LiabilityDirection
 from firefly_iii_client.model.liability_type import LiabilityType
 from firefly_iii_client.model.link_type import LinkType
@@ -132,14 +135,13 @@ from firefly_iii_client.model.link_type_single import LinkTypeSingle
 from firefly_iii_client.model.link_type_store import LinkTypeStore
 from firefly_iii_client.model.link_type_update import LinkTypeUpdate
 from firefly_iii_client.model.meta import Meta
-from firefly_iii_client.model.meta_pagination import MetaPagination
+from firefly_iii_client.model.not_found import NotFound
 from firefly_iii_client.model.object_group import ObjectGroup
 from firefly_iii_client.model.object_group_array import ObjectGroupArray
 from firefly_iii_client.model.object_group_read import ObjectGroupRead
 from firefly_iii_client.model.object_group_single import ObjectGroupSingle
 from firefly_iii_client.model.object_group_update import ObjectGroupUpdate
 from firefly_iii_client.model.object_link import ObjectLink
-from firefly_iii_client.model.object_link0 import ObjectLink0
 from firefly_iii_client.model.page_link import PageLink
 from firefly_iii_client.model.piggy_bank import PiggyBank
 from firefly_iii_client.model.piggy_bank_array import PiggyBankArray
@@ -193,8 +195,8 @@ from firefly_iii_client.model.rule_trigger_update import RuleTriggerUpdate
 from firefly_iii_client.model.rule_update import RuleUpdate
 from firefly_iii_client.model.short_account_type_property import ShortAccountTypeProperty
 from firefly_iii_client.model.string_array import StringArray
+from firefly_iii_client.model.string_array_item import StringArrayItem
 from firefly_iii_client.model.system_info import SystemInfo
-from firefly_iii_client.model.system_info_data import SystemInfoData
 from firefly_iii_client.model.tag_array import TagArray
 from firefly_iii_client.model.tag_model import TagModel
 from firefly_iii_client.model.tag_model_store import TagModelStore
@@ -218,6 +220,7 @@ from firefly_iii_client.model.transaction_store import TransactionStore
 from firefly_iii_client.model.transaction_type_filter import TransactionTypeFilter
 from firefly_iii_client.model.transaction_type_property import TransactionTypeProperty
 from firefly_iii_client.model.transaction_update import TransactionUpdate
+from firefly_iii_client.model.unauthenticated import Unauthenticated
 from firefly_iii_client.model.user import User
 from firefly_iii_client.model.user_array import UserArray
 from firefly_iii_client.model.user_blocked_code_property import UserBlockedCodeProperty
@@ -225,7 +228,6 @@ from firefly_iii_client.model.user_read import UserRead
 from firefly_iii_client.model.user_role_property import UserRoleProperty
 from firefly_iii_client.model.user_single import UserSingle
 from firefly_iii_client.model.validation_error import ValidationError
-from firefly_iii_client.model.validation_error_errors import ValidationErrorErrors
 from firefly_iii_client.model.webhook import Webhook
 from firefly_iii_client.model.webhook_array import WebhookArray
 from firefly_iii_client.model.webhook_attempt import WebhookAttempt
