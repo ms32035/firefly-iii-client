@@ -1,9 +1,12 @@
 .openapi-generator
+docs
+firefly_iii_client
+test
+LICENSE
 MANIFEST.in
 README.md
 requirements.txt
+setup.cfg
 setup.py
 test-requirements.txt
 tox.ini
-docs
-firefly_iii_client
