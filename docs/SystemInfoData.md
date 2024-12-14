@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**api_version** | **str** |  | [optional] 
+**api_version** | **str** | Same value as the version field. | [optional] 
 **driver** | **str** |  | [optional] 
 **os** | **str** |  | [optional] 
 **php_version** | **str** |  | [optional] 
