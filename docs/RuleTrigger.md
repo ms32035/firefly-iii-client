@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [optional] [readonly] 
 **id** | **str** |  | [optional] [readonly] 
 **order** | **int** | Order of the trigger | [optional] [readonly] 
+**prohibited** | **bool** | If &#39;prohibited&#39; is true, this rule trigger will be negated. &#39;Description is&#39; will become &#39;Description is NOT&#39; etc. | [optional] [default to False]
 **stop_processing** | **bool** | When true, other triggers will not be checked if this trigger was triggered. Defaults to false. | [optional] [default to False]
 **type** | [**RuleTriggerKeyword**](RuleTriggerKeyword.md) |  | 
 **updated_at** | **datetime** |  | [optional] [readonly] 

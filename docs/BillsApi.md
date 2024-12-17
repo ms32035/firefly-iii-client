@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_transaction_by_bill**
-> TransactionArray list_transaction_by_bill(id, x_trace_id=x_trace_id, start=start, end=end, type=type)
+> TransactionArray list_transaction_by_bill(id, x_trace_id=x_trace_id, limit=limit, page=page, start=start, end=end, type=type)
 
 List all transactions associated with the  bill.
 
@@ -503,13 +503,15 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.BillsApi(api_client)
     id = '123' # str | The ID of the bill.
     x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
+    page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
     end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
     type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
     try:
         # List all transactions associated with the  bill.
-        api_response = api_instance.list_transaction_by_bill(id, x_trace_id=x_trace_id, start=start, end=end, type=type)
+        api_response = api_instance.list_transaction_by_bill(id, x_trace_id=x_trace_id, limit=limit, page=page, start=start, end=end, type=type)
         print("The response of BillsApi->list_transaction_by_bill:\n")
         pprint(api_response)
     except Exception as e:
@@ -525,6 +527,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The ID of the bill. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
+ **limit** | **int**| Number of items per page. The default pagination is per 50 items. | [optional] 
+ **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
  **start** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
  **end** | **date**| A date formatted YYYY-MM-DD.  | [optional] 
  **type** | [**TransactionTypeFilter**](.md)| Optional filter on the transaction type(s) returned | [optional] 
