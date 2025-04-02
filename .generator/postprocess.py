@@ -8,10 +8,13 @@ OLD_EMAIL = "james@firefly-iii.org"
 NEW_EMAIL = "ms32035@gmail.com"
 
 
-
-
 REPLACEMENTS = {
-    "setup.py": {OLD_AUTHOR: NEW_AUTHOR, OLD_EMAIL: NEW_EMAIL, "  # noqa: E501": ""},
+    "setup.py": {
+        OLD_AUTHOR: NEW_AUTHOR,
+        OLD_EMAIL: NEW_EMAIL,
+        "  # noqa: E501": "",
+        'NAME = "Firefly III API Client"': 'NAME = "Firefly-III-API-Client"'
+    },
     "README.md": {
         OLD_EMAIL: NEW_EMAIL,
         "pip install git+https://github.com/ms32035/firefly-iii-client.git": "pip install firefly-iii-client",

@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "Firefly III API Client"
+NAME = "Firefly-III-API-Client"
 VERSION = "6.2.10.0"
 PYTHON_REQUIRES = ">= 3.8"
 REQUIRES = [
