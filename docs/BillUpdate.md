@@ -35,7 +35,7 @@ print(BillUpdate.to_json())
 # convert the object into a dict
 bill_update_dict = bill_update_instance.to_dict()
 # create an instance of BillUpdate from a dict
-bill_update_form_dict = bill_update.from_dict(bill_update_dict)
+bill_update_from_dict = BillUpdate.from_dict(bill_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

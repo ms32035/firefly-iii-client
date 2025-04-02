@@ -24,7 +24,7 @@ print(AutocompleteTag.to_json())
 # convert the object into a dict
 autocomplete_tag_dict = autocomplete_tag_instance.to_dict()
 # create an instance of AutocompleteTag from a dict
-autocomplete_tag_form_dict = autocomplete_tag.from_dict(autocomplete_tag_dict)
+autocomplete_tag_from_dict = AutocompleteTag.from_dict(autocomplete_tag_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

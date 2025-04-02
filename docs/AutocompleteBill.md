@@ -24,7 +24,7 @@ print(AutocompleteBill.to_json())
 # convert the object into a dict
 autocomplete_bill_dict = autocomplete_bill_instance.to_dict()
 # create an instance of AutocompleteBill from a dict
-autocomplete_bill_form_dict = autocomplete_bill.from_dict(autocomplete_bill_dict)
+autocomplete_bill_from_dict = AutocompleteBill.from_dict(autocomplete_bill_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

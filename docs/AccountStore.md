@@ -45,7 +45,7 @@ print(AccountStore.to_json())
 # convert the object into a dict
 account_store_dict = account_store_instance.to_dict()
 # create an instance of AccountStore from a dict
-account_store_form_dict = account_store.from_dict(account_store_dict)
+account_store_from_dict = AccountStore.from_dict(account_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

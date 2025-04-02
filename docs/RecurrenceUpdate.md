@@ -31,7 +31,7 @@ print(RecurrenceUpdate.to_json())
 # convert the object into a dict
 recurrence_update_dict = recurrence_update_instance.to_dict()
 # create an instance of RecurrenceUpdate from a dict
-recurrence_update_form_dict = recurrence_update.from_dict(recurrence_update_dict)
+recurrence_update_from_dict = RecurrenceUpdate.from_dict(recurrence_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

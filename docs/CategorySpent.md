@@ -26,7 +26,7 @@ print(CategorySpent.to_json())
 # convert the object into a dict
 category_spent_dict = category_spent_instance.to_dict()
 # create an instance of CategorySpent from a dict
-category_spent_form_dict = category_spent.from_dict(category_spent_dict)
+category_spent_from_dict = CategorySpent.from_dict(category_spent_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

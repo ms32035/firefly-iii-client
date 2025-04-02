@@ -27,7 +27,7 @@ print(TagModelUpdate.to_json())
 # convert the object into a dict
 tag_model_update_dict = tag_model_update_instance.to_dict()
 # create an instance of TagModelUpdate from a dict
-tag_model_update_form_dict = tag_model_update.from_dict(tag_model_update_dict)
+tag_model_update_from_dict = TagModelUpdate.from_dict(tag_model_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

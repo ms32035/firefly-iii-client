@@ -27,7 +27,7 @@ print(RuleTriggerStore.to_json())
 # convert the object into a dict
 rule_trigger_store_dict = rule_trigger_store_instance.to_dict()
 # create an instance of RuleTriggerStore from a dict
-rule_trigger_store_form_dict = rule_trigger_store.from_dict(rule_trigger_store_dict)
+rule_trigger_store_from_dict = RuleTriggerStore.from_dict(rule_trigger_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

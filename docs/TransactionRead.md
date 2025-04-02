@@ -25,7 +25,7 @@ print(TransactionRead.to_json())
 # convert the object into a dict
 transaction_read_dict = transaction_read_instance.to_dict()
 # create an instance of TransactionRead from a dict
-transaction_read_form_dict = transaction_read.from_dict(transaction_read_dict)
+transaction_read_from_dict = TransactionRead.from_dict(transaction_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

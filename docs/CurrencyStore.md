@@ -27,7 +27,7 @@ print(CurrencyStore.to_json())
 # convert the object into a dict
 currency_store_dict = currency_store_instance.to_dict()
 # create an instance of CurrencyStore from a dict
-currency_store_form_dict = currency_store.from_dict(currency_store_dict)
+currency_store_from_dict = CurrencyStore.from_dict(currency_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

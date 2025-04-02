@@ -23,7 +23,7 @@ print(AttachmentArray.to_json())
 # convert the object into a dict
 attachment_array_dict = attachment_array_instance.to_dict()
 # create an instance of AttachmentArray from a dict
-attachment_array_form_dict = attachment_array.from_dict(attachment_array_dict)
+attachment_array_from_dict = AttachmentArray.from_dict(attachment_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

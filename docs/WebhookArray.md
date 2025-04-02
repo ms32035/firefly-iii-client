@@ -24,7 +24,7 @@ print(WebhookArray.to_json())
 # convert the object into a dict
 webhook_array_dict = webhook_array_instance.to_dict()
 # create an instance of WebhookArray from a dict
-webhook_array_form_dict = webhook_array.from_dict(webhook_array_dict)
+webhook_array_from_dict = WebhookArray.from_dict(webhook_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -49,7 +49,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
     id = '123' # str | The ID of the available budget.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get a single available budget.
@@ -100,7 +100,8 @@ Name | Type | Description  | Notes
 
 List all available budget amounts.
 
-Firefly III allows users to set the amount that is available to be budgeted in so-called \"available budgets\". For example, the user could have 1200,- available to be divided during the coming month. This amount is used on the /budgets page. This endpoint returns all of these amounts and the periods for which they are set. 
+Firefly III allows users to set the amount that is available to be budgeted in so-called "available budgets". For example, the user could have 1200,- available to be divided during the coming month. This amount is used on the /budgets page. This endpoint returns all of these amounts and the periods for which they are set.
+
 
 ### Example
 
@@ -135,7 +136,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AvailableBudgetsApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)

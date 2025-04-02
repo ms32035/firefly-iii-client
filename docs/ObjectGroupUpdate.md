@@ -23,7 +23,7 @@ print(ObjectGroupUpdate.to_json())
 # convert the object into a dict
 object_group_update_dict = object_group_update_instance.to_dict()
 # create an instance of ObjectGroupUpdate from a dict
-object_group_update_form_dict = object_group_update.from_dict(object_group_update_dict)
+object_group_update_from_dict = ObjectGroupUpdate.from_dict(object_group_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

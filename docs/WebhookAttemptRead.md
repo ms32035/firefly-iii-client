@@ -24,7 +24,7 @@ print(WebhookAttemptRead.to_json())
 # convert the object into a dict
 webhook_attempt_read_dict = webhook_attempt_read_instance.to_dict()
 # create an instance of WebhookAttemptRead from a dict
-webhook_attempt_read_form_dict = webhook_attempt_read.from_dict(webhook_attempt_read_dict)
+webhook_attempt_read_from_dict = WebhookAttemptRead.from_dict(webhook_attempt_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

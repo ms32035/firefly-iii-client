@@ -24,7 +24,7 @@ print(PreferenceArray.to_json())
 # convert the object into a dict
 preference_array_dict = preference_array_instance.to_dict()
 # create an instance of PreferenceArray from a dict
-preference_array_form_dict = preference_array.from_dict(preference_array_dict)
+preference_array_from_dict = PreferenceArray.from_dict(preference_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

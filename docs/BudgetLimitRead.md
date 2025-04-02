@@ -24,7 +24,7 @@ print(BudgetLimitRead.to_json())
 # convert the object into a dict
 budget_limit_read_dict = budget_limit_read_instance.to_dict()
 # create an instance of BudgetLimitRead from a dict
-budget_limit_read_form_dict = budget_limit_read.from_dict(budget_limit_read_dict)
+budget_limit_read_from_dict = BudgetLimitRead.from_dict(budget_limit_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

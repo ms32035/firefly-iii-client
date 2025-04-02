@@ -24,7 +24,7 @@ print(TagArray.to_json())
 # convert the object into a dict
 tag_array_dict = tag_array_instance.to_dict()
 # create an instance of TagArray from a dict
-tag_array_form_dict = tag_array.from_dict(tag_array_dict)
+tag_array_from_dict = TagArray.from_dict(tag_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

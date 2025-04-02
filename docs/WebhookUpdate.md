@@ -28,7 +28,7 @@ print(WebhookUpdate.to_json())
 # convert the object into a dict
 webhook_update_dict = webhook_update_instance.to_dict()
 # create an instance of WebhookUpdate from a dict
-webhook_update_form_dict = webhook_update.from_dict(webhook_update_dict)
+webhook_update_from_dict = WebhookUpdate.from_dict(webhook_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

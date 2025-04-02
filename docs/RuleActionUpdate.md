@@ -26,7 +26,7 @@ print(RuleActionUpdate.to_json())
 # convert the object into a dict
 rule_action_update_dict = rule_action_update_instance.to_dict()
 # create an instance of RuleActionUpdate from a dict
-rule_action_update_form_dict = rule_action_update.from_dict(rule_action_update_dict)
+rule_action_update_from_dict = RuleActionUpdate.from_dict(rule_action_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

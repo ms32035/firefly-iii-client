@@ -32,7 +32,7 @@ print(RecurrenceStore.to_json())
 # convert the object into a dict
 recurrence_store_dict = recurrence_store_instance.to_dict()
 # create an instance of RecurrenceStore from a dict
-recurrence_store_form_dict = recurrence_store.from_dict(recurrence_store_dict)
+recurrence_store_from_dict = RecurrenceStore.from_dict(recurrence_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

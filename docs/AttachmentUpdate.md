@@ -24,7 +24,7 @@ print(AttachmentUpdate.to_json())
 # convert the object into a dict
 attachment_update_dict = attachment_update_instance.to_dict()
 # create an instance of AttachmentUpdate from a dict
-attachment_update_form_dict = attachment_update.from_dict(attachment_update_dict)
+attachment_update_from_dict = AttachmentUpdate.from_dict(attachment_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

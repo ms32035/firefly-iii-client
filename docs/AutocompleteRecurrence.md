@@ -24,7 +24,7 @@ print(AutocompleteRecurrence.to_json())
 # convert the object into a dict
 autocomplete_recurrence_dict = autocomplete_recurrence_instance.to_dict()
 # create an instance of AutocompleteRecurrence from a dict
-autocomplete_recurrence_form_dict = autocomplete_recurrence.from_dict(autocomplete_recurrence_dict)
+autocomplete_recurrence_from_dict = AutocompleteRecurrence.from_dict(autocomplete_recurrence_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

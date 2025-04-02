@@ -19,11 +19,12 @@ Method | HTTP request | Description
 
 
 # **bulk_update_transactions**
-> bulk_update_transactions(query)
+> bulk_update_transactions(query, x_trace_id=x_trace_id)
 
 Bulk update transaction properties. For more information, see https://docs.firefly-iii.org/references/firefly-iii/api/specials/
 
-Allows you to update transactions in bulk. 
+Allows you to update transactions in bulk.
+
 
 ### Example
 
@@ -58,10 +59,11 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
     query = 'query_example' # str | The JSON query.
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Bulk update transaction properties. For more information, see https://docs.firefly-iii.org/references/firefly-iii/api/specials/
-        api_instance.bulk_update_transactions(query)
+        api_instance.bulk_update_transactions(query, x_trace_id=x_trace_id)
     except Exception as e:
         print("Exception when calling DataApi->bulk_update_transactions: %s\n" % e)
 ```
@@ -74,6 +76,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| The JSON query. | 
+ **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 
 ### Return type
 
@@ -105,7 +108,9 @@ void (empty response body)
 
 Endpoint to destroy user data
 
-A call to this endpoint deletes the requested data type. Use it with care and always with user permission. The demo user is incapable of using this endpoint. 
+A call to this endpoint deletes the requested data type. Use it with care and always with user permission.
+The demo user is incapable of using this endpoint.
+
 
 ### Example
 
@@ -141,7 +146,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
     objects = firefly_iii_client.DataDestroyObject() # DataDestroyObject | The type of data that you wish to destroy. You can only use one at a time.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Endpoint to destroy user data
@@ -190,7 +195,8 @@ void (empty response body)
 
 Export account data from Firefly III
 
-This endpoint allows you to export your accounts from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export your accounts from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -225,7 +231,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
     try:
@@ -268,6 +274,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -277,7 +284,8 @@ Name | Type | Description  | Notes
 
 Export bills from Firefly III
 
-This endpoint allows you to export your bills from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export your bills from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -312,7 +320,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
     try:
@@ -364,7 +372,8 @@ Name | Type | Description  | Notes
 
 Export budgets and budget amount data from Firefly III
 
-This endpoint allows you to export your budgets and associated budget data from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export your budgets and associated budget data from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -399,7 +408,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
     try:
@@ -451,7 +460,8 @@ Name | Type | Description  | Notes
 
 Export category data from Firefly III
 
-This endpoint allows you to export your categories from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export your categories from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -486,7 +496,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
     try:
@@ -538,7 +548,8 @@ Name | Type | Description  | Notes
 
 Export piggy banks from Firefly III
 
-This endpoint allows you to export your piggy banks from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export your piggy banks from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -573,7 +584,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
     try:
@@ -625,7 +636,8 @@ Name | Type | Description  | Notes
 
 Export recurring transaction data from Firefly III
 
-This endpoint allows you to export your recurring transactions from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export your recurring transactions from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -660,7 +672,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
     try:
@@ -712,7 +724,8 @@ Name | Type | Description  | Notes
 
 Export rule groups and rule data from Firefly III
 
-This endpoint allows you to export your rules and rule groups from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export your rules and rule groups from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -747,7 +760,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
     try:
@@ -799,7 +812,8 @@ Name | Type | Description  | Notes
 
 Export tag data from Firefly III
 
-This endpoint allows you to export your tags from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export your tags from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -834,7 +848,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
     try:
@@ -886,7 +900,8 @@ Name | Type | Description  | Notes
 
 Export transaction data from Firefly III
 
-This endpoint allows you to export transactions from Firefly III into a file. Currently supports CSV exports only. 
+This endpoint allows you to export transactions from Firefly III into a file. Currently supports CSV exports only.
+
 
 ### Example
 
@@ -923,7 +938,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.DataApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = '1,2,3' # str | Limit the export of transactions to these accounts only. Only asset accounts will be accepted. Other types will be silently dropped.  (optional)
     type = firefly_iii_client.ExportFileFilter() # ExportFileFilter | The file type the export file (CSV is currently the only option). (optional)
 
@@ -979,7 +994,9 @@ Name | Type | Description  | Notes
 
 Endpoint to purge user data
 
-A call to this endpoint purges all previously deleted data. Use it with care and always with user permission. The demo user is incapable of using this endpoint. 
+A call to this endpoint purges all previously deleted data. Use it with care and always with user permission.
+The demo user is incapable of using this endpoint.
+
 
 ### Example
 
@@ -1013,7 +1030,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.DataApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Endpoint to purge user data
@@ -1051,6 +1068,7 @@ void (empty response body)
 **204** | Empty response when data has been purged. |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
+**404** | Page not found |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

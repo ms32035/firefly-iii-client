@@ -25,7 +25,7 @@ print(TransactionLinkRead.to_json())
 # convert the object into a dict
 transaction_link_read_dict = transaction_link_read_instance.to_dict()
 # create an instance of TransactionLinkRead from a dict
-transaction_link_read_form_dict = transaction_link_read.from_dict(transaction_link_read_dict)
+transaction_link_read_from_dict = TransactionLinkRead.from_dict(transaction_link_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

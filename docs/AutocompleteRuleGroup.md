@@ -24,7 +24,7 @@ print(AutocompleteRuleGroup.to_json())
 # convert the object into a dict
 autocomplete_rule_group_dict = autocomplete_rule_group_instance.to_dict()
 # create an instance of AutocompleteRuleGroup from a dict
-autocomplete_rule_group_form_dict = autocomplete_rule_group.from_dict(autocomplete_rule_group_dict)
+autocomplete_rule_group_from_dict = AutocompleteRuleGroup.from_dict(autocomplete_rule_group_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

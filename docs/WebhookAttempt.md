@@ -27,7 +27,7 @@ print(WebhookAttempt.to_json())
 # convert the object into a dict
 webhook_attempt_dict = webhook_attempt_instance.to_dict()
 # create an instance of WebhookAttempt from a dict
-webhook_attempt_form_dict = webhook_attempt.from_dict(webhook_attempt_dict)
+webhook_attempt_from_dict = WebhookAttempt.from_dict(webhook_attempt_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

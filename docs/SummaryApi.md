@@ -12,7 +12,8 @@ Method | HTTP request | Description
 
 Returns basic sums of the users data.
 
-Returns basic sums of the users data, like the net worth, spent and earned amounts. It is multi-currency, and is used in Firefly III to populate the dashboard. 
+Returns basic sums of the users data, like the net worth, spent and earned amounts. It is multi-currency, and is used in Firefly III to populate the dashboard.
+
 
 ### Example
 
@@ -49,7 +50,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.SummaryApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     currency_code = 'currency_code_example' # str | A currency code like EUR or USD, to filter the result.  (optional)
 
     try:

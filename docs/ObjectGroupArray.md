@@ -23,7 +23,7 @@ print(ObjectGroupArray.to_json())
 # convert the object into a dict
 object_group_array_dict = object_group_array_instance.to_dict()
 # create an instance of ObjectGroupArray from a dict
-object_group_array_form_dict = object_group_array.from_dict(object_group_array_dict)
+object_group_array_from_dict = ObjectGroupArray.from_dict(object_group_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,7 +22,7 @@ print(AttachmentSingle.to_json())
 # convert the object into a dict
 attachment_single_dict = attachment_single_instance.to_dict()
 # create an instance of AttachmentSingle from a dict
-attachment_single_form_dict = attachment_single.from_dict(attachment_single_dict)
+attachment_single_from_dict = AttachmentSingle.from_dict(attachment_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

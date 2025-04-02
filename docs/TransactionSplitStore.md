@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **bill_name** | **str** | Optional. Use either this or the bill_id | [optional] 
 **book_date** | **datetime** |  | [optional] 
 **budget_id** | **str** | The budget ID for this transaction. | [optional] 
-**budget_name** | **str** | The name of the budget to be used. If the budget name is unknown, the ID will be used or the value will be ignored. | [optional] [readonly] 
+**budget_name** | **str** | The name of the budget to be used. If the budget name is unknown, the ID will be used or the value will be ignored. | [optional] 
 **bunq_payment_id** | **str** | Internal ID of bunq transaction. Field is no longer used but still works. | [optional] 
 **category_id** | **str** | The category ID for this transaction. | [optional] 
 **category_name** | **str** | The name of the category to be used. If the category is unknown, it will be created. If the ID and the name point to different categories, the ID overrules the name. | [optional] 
@@ -64,7 +64,7 @@ print(TransactionSplitStore.to_json())
 # convert the object into a dict
 transaction_split_store_dict = transaction_split_store_instance.to_dict()
 # create an instance of TransactionSplitStore from a dict
-transaction_split_store_form_dict = transaction_split_store.from_dict(transaction_split_store_dict)
+transaction_split_store_from_dict = TransactionSplitStore.from_dict(transaction_split_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

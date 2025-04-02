@@ -24,7 +24,7 @@ print(CurrencyRead.to_json())
 # convert the object into a dict
 currency_read_dict = currency_read_instance.to_dict()
 # create an instance of CurrencyRead from a dict
-currency_read_form_dict = currency_read.from_dict(currency_read_dict)
+currency_read_from_dict = CurrencyRead.from_dict(currency_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

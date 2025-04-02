@@ -22,7 +22,7 @@ print(LinkTypeSingle.to_json())
 # convert the object into a dict
 link_type_single_dict = link_type_single_instance.to_dict()
 # create an instance of LinkTypeSingle from a dict
-link_type_single_form_dict = link_type_single.from_dict(link_type_single_dict)
+link_type_single_from_dict = LinkTypeSingle.from_dict(link_type_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

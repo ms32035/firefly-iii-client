@@ -53,7 +53,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
     tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Delete an tag.
@@ -138,7 +138,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
     tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -229,7 +229,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
     tag = 'groceries' # str | Either the tag itself or the tag ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -319,7 +319,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -410,7 +410,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
     tag = 'groceries' # str | Either the tag itself or the tag ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
@@ -508,7 +508,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
     tag_model_store = firefly_iii_client.TagModelStore() # TagModelStore | JSON array or key=value pairs with the necessary tag information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Store a new tag
@@ -598,7 +598,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.TagsApi(api_client)
     tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary.
     tag_model_update = firefly_iii_client.TagModelUpdate() # TagModelUpdate | JSON array with updated tag information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update existing tag.

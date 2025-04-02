@@ -26,7 +26,7 @@ print(CategoryEarned.to_json())
 # convert the object into a dict
 category_earned_dict = category_earned_instance.to_dict()
 # create an instance of CategoryEarned from a dict
-category_earned_form_dict = category_earned.from_dict(category_earned_dict)
+category_earned_from_dict = CategoryEarned.from_dict(category_earned_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

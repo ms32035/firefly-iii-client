@@ -22,7 +22,7 @@ print(BillSingle.to_json())
 # convert the object into a dict
 bill_single_dict = bill_single_instance.to_dict()
 # create an instance of BillSingle from a dict
-bill_single_form_dict = bill_single.from_dict(bill_single_dict)
+bill_single_from_dict = BillSingle.from_dict(bill_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

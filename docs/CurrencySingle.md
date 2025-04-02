@@ -22,7 +22,7 @@ print(CurrencySingle.to_json())
 # convert the object into a dict
 currency_single_dict = currency_single_instance.to_dict()
 # create an instance of CurrencySingle from a dict
-currency_single_form_dict = currency_single.from_dict(currency_single_dict)
+currency_single_from_dict = CurrencySingle.from_dict(currency_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

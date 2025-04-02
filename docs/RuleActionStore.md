@@ -26,7 +26,7 @@ print(RuleActionStore.to_json())
 # convert the object into a dict
 rule_action_store_dict = rule_action_store_instance.to_dict()
 # create an instance of RuleActionStore from a dict
-rule_action_store_form_dict = rule_action_store.from_dict(rule_action_store_dict)
+rule_action_store_from_dict = RuleActionStore.from_dict(rule_action_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

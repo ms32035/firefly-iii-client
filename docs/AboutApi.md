@@ -14,7 +14,8 @@ Method | HTTP request | Description
 
 System information end point.
 
-Returns general system information and versions of the (supporting) software. 
+Returns general system information and versions of the (supporting) software.
+
 
 ### Example
 
@@ -49,7 +50,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AboutApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # System information end point.
@@ -99,7 +100,10 @@ Name | Type | Description  | Notes
 
 Cron job endpoint
 
-Firefly III has one endpoint for its various cron related tasks. Send a GET to this endpoint to run the cron. The cron requires the CLI token to be present. The cron job will fire for all users. 
+Firefly III has one endpoint for its various cron related tasks. Send a GET to this endpoint
+to run the cron. The cron requires the CLI token to be present. The cron job will fire for all
+users.
+
 
 ### Example
 
@@ -135,7 +139,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AboutApi(api_client)
     cli_token = 'd5ea6b5fb774618dd6ad6ba6e0a7f55c' # str | The CLI token of any user in Firefly III, required to run the cron job.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     var_date = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD. This can be used to make the cron job pretend it's running on another day.  (optional)
     force = false # bool | Forces the cron job to fire, regardless of whether it has fired before. This may result in double transactions or weird budgets, so be careful.  (optional)
 
@@ -181,6 +185,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -190,7 +195,8 @@ Name | Type | Description  | Notes
 
 Currently authenticated user endpoint.
 
-Returns the currently authenticated user. 
+Returns the currently authenticated user.
+
 
 ### Example
 
@@ -225,7 +231,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AboutApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Currently authenticated user endpoint.

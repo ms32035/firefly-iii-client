@@ -35,7 +35,8 @@ Method | HTTP request | Description
 
 Insight into expenses, grouped by asset account.
 
-This endpoint gives a summary of the expenses made by the user, grouped by asset account. 
+This endpoint gives a summary of the expenses made by the user, grouped by asset account.
+
 
 ### Example
 
@@ -72,7 +73,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -117,6 +118,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -126,7 +128,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, grouped by bill.
 
-This endpoint gives a summary of the expenses made by the user, grouped by (any) bill. 
+This endpoint gives a summary of the expenses made by the user, grouped by (any) bill.
+
 
 ### Example
 
@@ -163,7 +166,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     bills = [["1","2","3"]] # List[int] | The bills to be included in the results.  (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
@@ -210,6 +213,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -219,7 +223,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, grouped by budget.
 
-This endpoint gives a summary of the expenses made by the user, grouped by (any) budget. 
+This endpoint gives a summary of the expenses made by the user, grouped by (any) budget.
+
 
 ### Example
 
@@ -256,7 +261,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     budgets = [["1","2","3"]] # List[int] | The budgets to be included in the results.  (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
@@ -303,6 +308,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -312,7 +318,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, grouped by category.
 
-This endpoint gives a summary of the expenses made by the user, grouped by (any) category. 
+This endpoint gives a summary of the expenses made by the user, grouped by (any) category.
+
 
 ### Example
 
@@ -349,7 +356,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     categories = [["1","2","3"]] # List[int] | The categories to be included in the results.  (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
@@ -396,6 +403,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -405,7 +413,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, grouped by expense account.
 
-This endpoint gives a summary of the expenses made by the user, grouped by expense account. 
+This endpoint gives a summary of the expenses made by the user, grouped by expense account.
+
 
 ### Example
 
@@ -442,7 +451,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you add the accounts ID's of expense accounts, only those accounts are included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. You can combine both asset / liability and expense account ID's. Other account ID's will be ignored.  (optional)
 
     try:
@@ -487,6 +496,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -496,7 +506,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, without bill.
 
-This endpoint gives a summary of the expenses made by the user, including only expenses with no bill. 
+This endpoint gives a summary of the expenses made by the user, including only expenses with no bill.
+
 
 ### Example
 
@@ -533,7 +544,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -578,6 +589,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -587,7 +599,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, without budget.
 
-This endpoint gives a summary of the expenses made by the user, including only expenses with no budget. 
+This endpoint gives a summary of the expenses made by the user, including only expenses with no budget.
+
 
 ### Example
 
@@ -624,7 +637,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -669,6 +682,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -678,7 +692,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, without category.
 
-This endpoint gives a summary of the expenses made by the user, including only expenses with no category. 
+This endpoint gives a summary of the expenses made by the user, including only expenses with no category.
+
 
 ### Example
 
@@ -715,7 +730,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -760,6 +775,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -769,7 +785,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, without tag.
 
-This endpoint gives a summary of the expenses made by the user, including only expenses with no tag. 
+This endpoint gives a summary of the expenses made by the user, including only expenses with no tag.
+
 
 ### Example
 
@@ -806,7 +823,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -851,6 +868,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -860,7 +878,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, grouped by tag.
 
-This endpoint gives a summary of the expenses made by the user, grouped by (any) tag. 
+This endpoint gives a summary of the expenses made by the user, grouped by (any) tag.
+
 
 ### Example
 
@@ -897,7 +916,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     tags = [["1","2","3"]] # List[int] | The tags to be included in the results.  (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
@@ -944,6 +963,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -953,7 +973,8 @@ Name | Type | Description  | Notes
 
 Insight into total expenses.
 
-This endpoint gives a sum of the total expenses made by the user. 
+This endpoint gives a sum of the total expenses made by the user.
+
 
 ### Example
 
@@ -990,7 +1011,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only withdrawals from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -1035,6 +1056,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1044,7 +1066,8 @@ Name | Type | Description  | Notes
 
 Insight into income, grouped by asset account.
 
-This endpoint gives a summary of the income received by the user, grouped by asset account. 
+This endpoint gives a summary of the income received by the user, grouped by asset account.
+
 
 ### Example
 
@@ -1081,7 +1104,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only deposits to those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -1126,6 +1149,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1135,7 +1159,8 @@ Name | Type | Description  | Notes
 
 Insight into income, grouped by category.
 
-This endpoint gives a summary of the income received by the user, grouped by (any) category. 
+This endpoint gives a summary of the income received by the user, grouped by (any) category.
+
 
 ### Example
 
@@ -1172,7 +1197,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     categories = [["1","2","3"]] # List[int] | The categories to be included in the results.  (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only deposits to those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
@@ -1219,6 +1244,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1228,7 +1254,8 @@ Name | Type | Description  | Notes
 
 Insight into income, without category.
 
-This endpoint gives a summary of the income received by the user, including only income with no category. 
+This endpoint gives a summary of the income received by the user, including only income with no category.
+
 
 ### Example
 
@@ -1265,7 +1292,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only deposits to those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -1310,6 +1337,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1319,7 +1347,8 @@ Name | Type | Description  | Notes
 
 Insight into income, without tag.
 
-This endpoint gives a summary of the income received by the user, including only income with no tag. 
+This endpoint gives a summary of the income received by the user, including only income with no tag.
+
 
 ### Example
 
@@ -1356,7 +1385,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only deposits to those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -1401,6 +1430,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1410,7 +1440,8 @@ Name | Type | Description  | Notes
 
 Insight into income, grouped by revenue account.
 
-This endpoint gives a summary of the income received by the user, grouped by revenue account. 
+This endpoint gives a summary of the income received by the user, grouped by revenue account.
+
 
 ### Example
 
@@ -1447,7 +1478,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you add the accounts ID's of revenue accounts, only those accounts are included in the results. If you include ID's of asset accounts or liabilities, only deposits to those asset accounts / liabilities will be included. You can combine both asset / liability and deposit account ID's. Other account ID's will be ignored.  (optional)
 
     try:
@@ -1492,6 +1523,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1501,7 +1533,8 @@ Name | Type | Description  | Notes
 
 Insight into income, grouped by tag.
 
-This endpoint gives a summary of the income received by the user, grouped by (any) tag. 
+This endpoint gives a summary of the income received by the user, grouped by (any) tag.
+
 
 ### Example
 
@@ -1538,7 +1571,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     tags = [["1","2","3"]] # List[int] | The tags to be included in the results.  (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only deposits to those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
@@ -1585,6 +1618,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1594,7 +1628,8 @@ Name | Type | Description  | Notes
 
 Insight into total income.
 
-This endpoint gives a sum of the total income received by the user. 
+This endpoint gives a sum of the total income received by the user.
+
 
 ### Example
 
@@ -1631,7 +1666,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only deposits to those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -1676,6 +1711,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1685,7 +1721,8 @@ Name | Type | Description  | Notes
 
 Insight into transfers, grouped by category.
 
-This endpoint gives a summary of the transfers made by the user, grouped by (any) category. 
+This endpoint gives a summary of the transfers made by the user, grouped by (any) category.
+
 
 ### Example
 
@@ -1722,7 +1759,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     categories = [["1","2","3"]] # List[int] | The categories to be included in the results.  (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only transfers between those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
@@ -1769,6 +1806,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1778,7 +1816,8 @@ Name | Type | Description  | Notes
 
 Insight into transfers, without category.
 
-This endpoint gives a summary of the transfers made by the user, including only transfers with no category. 
+This endpoint gives a summary of the transfers made by the user, including only transfers with no category.
+
 
 ### Example
 
@@ -1815,7 +1854,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only transfers between those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -1860,6 +1899,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1869,7 +1909,8 @@ Name | Type | Description  | Notes
 
 Insight into expenses, without tag.
 
-This endpoint gives a summary of the transfers made by the user, including only transfers with no tag. 
+This endpoint gives a summary of the transfers made by the user, including only transfers with no tag.
+
 
 ### Example
 
@@ -1906,7 +1947,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only transfers from those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -1951,6 +1992,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1960,7 +2002,8 @@ Name | Type | Description  | Notes
 
 Insight into transfers, grouped by tag.
 
-This endpoint gives a summary of the transfers created by the user, grouped by (any) tag. 
+This endpoint gives a summary of the transfers created by the user, grouped by (any) tag.
+
 
 ### Example
 
@@ -1997,7 +2040,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     tags = [["1","2","3"]] # List[int] | The tags to be included in the results.  (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only transfers between those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
@@ -2044,6 +2087,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2053,7 +2097,8 @@ Name | Type | Description  | Notes
 
 Insight into total transfers.
 
-This endpoint gives a sum of the total amount transfers made by the user. 
+This endpoint gives a sum of the total amount transfers made by the user.
+
 
 ### Example
 
@@ -2090,7 +2135,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only transfers between those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -2135,6 +2180,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -2144,7 +2190,8 @@ Name | Type | Description  | Notes
 
 Insight into transfers, grouped by account.
 
-This endpoint gives a summary of the transfers made by the user, grouped by asset account or lability. 
+This endpoint gives a summary of the transfers made by the user, grouped by asset account or lability.
+
 
 ### Example
 
@@ -2181,7 +2228,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.InsightApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     accounts = [["1","2","3"]] # List[int] | The accounts to be included in the results. If you include ID's of asset accounts or liabilities, only transfers between those asset accounts / liabilities will be included. Other account ID's will be ignored.  (optional)
 
     try:
@@ -2226,6 +2273,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

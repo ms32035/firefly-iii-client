@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **str** | The ID of the asset account this piggy bank is connected to. | 
-**account_name** | **str** | The name of the asset account this piggy bank is connected to. | [optional] [readonly] 
+**accounts** | [**List[PiggyBankAccountRead]**](PiggyBankAccountRead.md) |  | [optional] 
 **active** | **bool** |  | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **currency_code** | **str** |  | [optional] [readonly] 
@@ -43,7 +42,7 @@ print(PiggyBank.to_json())
 # convert the object into a dict
 piggy_bank_dict = piggy_bank_instance.to_dict()
 # create an instance of PiggyBank from a dict
-piggy_bank_form_dict = piggy_bank.from_dict(piggy_bank_dict)
+piggy_bank_from_dict = PiggyBank.from_dict(piggy_bank_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

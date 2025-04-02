@@ -27,7 +27,7 @@ print(CurrencyUpdate.to_json())
 # convert the object into a dict
 currency_update_dict = currency_update_instance.to_dict()
 # create an instance of CurrencyUpdate from a dict
-currency_update_form_dict = currency_update.from_dict(currency_update_dict)
+currency_update_from_dict = CurrencyUpdate.from_dict(currency_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,7 +25,7 @@ print(AutocompleteTransaction.to_json())
 # convert the object into a dict
 autocomplete_transaction_dict = autocomplete_transaction_instance.to_dict()
 # create an instance of AutocompleteTransaction from a dict
-autocomplete_transaction_form_dict = autocomplete_transaction.from_dict(autocomplete_transaction_dict)
+autocomplete_transaction_from_dict = AutocompleteTransaction.from_dict(autocomplete_transaction_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

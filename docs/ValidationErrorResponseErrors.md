@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **var_date** | **List[str]** |  | [optional] 
 **email** | **List[str]** |  | [optional] 
 **end** | **List[str]** |  | [optional] 
+**var_field** | **List[str]** |  | [optional] 
+**force** | **List[str]** |  | [optional] 
 **iban** | **List[str]** |  | [optional] 
 **name** | **List[str]** |  | [optional] 
 **role** | **List[str]** |  | [optional] 
@@ -31,7 +33,7 @@ print(ValidationErrorResponseErrors.to_json())
 # convert the object into a dict
 validation_error_response_errors_dict = validation_error_response_errors_instance.to_dict()
 # create an instance of ValidationErrorResponseErrors from a dict
-validation_error_response_errors_form_dict = validation_error_response_errors.from_dict(validation_error_response_errors_dict)
+validation_error_response_errors_from_dict = ValidationErrorResponseErrors.from_dict(validation_error_response_errors_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

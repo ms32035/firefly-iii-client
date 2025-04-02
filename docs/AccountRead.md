@@ -24,7 +24,7 @@ print(AccountRead.to_json())
 # convert the object into a dict
 account_read_dict = account_read_instance.to_dict()
 # create an instance of AccountRead from a dict
-account_read_form_dict = account_read.from_dict(account_read_dict)
+account_read_from_dict = AccountRead.from_dict(account_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

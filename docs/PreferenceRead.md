@@ -24,7 +24,7 @@ print(PreferenceRead.to_json())
 # convert the object into a dict
 preference_read_dict = preference_read_instance.to_dict()
 # create an instance of PreferenceRead from a dict
-preference_read_form_dict = preference_read.from_dict(preference_read_dict)
+preference_read_from_dict = PreferenceRead.from_dict(preference_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

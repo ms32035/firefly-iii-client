@@ -25,7 +25,7 @@ print(RecurrenceRepetitionStore.to_json())
 # convert the object into a dict
 recurrence_repetition_store_dict = recurrence_repetition_store_instance.to_dict()
 # create an instance of RecurrenceRepetitionStore from a dict
-recurrence_repetition_store_form_dict = recurrence_repetition_store.from_dict(recurrence_repetition_store_dict)
+recurrence_repetition_store_from_dict = RecurrenceRepetitionStore.from_dict(recurrence_repetition_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,7 +24,7 @@ print(RecurrenceArray.to_json())
 # convert the object into a dict
 recurrence_array_dict = recurrence_array_instance.to_dict()
 # create an instance of RecurrenceArray from a dict
-recurrence_array_form_dict = recurrence_array.from_dict(recurrence_array_dict)
+recurrence_array_from_dict = RecurrenceArray.from_dict(recurrence_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

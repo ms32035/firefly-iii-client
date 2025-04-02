@@ -24,7 +24,7 @@ print(CategoryRead.to_json())
 # convert the object into a dict
 category_read_dict = category_read_instance.to_dict()
 # create an instance of CategoryRead from a dict
-category_read_form_dict = category_read.from_dict(category_read_dict)
+category_read_from_dict = CategoryRead.from_dict(category_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | [optional] [readonly] 
 **download_url** | **str** |  | [optional] 
 **filename** | **str** |  | 
-**md5** | **str** | MD5 hash of the file for basic duplicate detection. | [optional] 
+**hash** | **str** | Hash of the file for basic duplicate detection. It&#39;s still md5 lol. | [optional] 
+**md5** | **str** | MD5 hash of the file for basic duplicate detection. This field is deprecated. | [optional] 
 **mime** | **str** |  | [optional] [readonly] 
 **notes** | **str** |  | [optional] 
 **size** | **int** |  | [optional] [readonly] 
@@ -33,7 +34,7 @@ print(Attachment.to_json())
 # convert the object into a dict
 attachment_dict = attachment_instance.to_dict()
 # create an instance of Attachment from a dict
-attachment_form_dict = attachment.from_dict(attachment_dict)
+attachment_from_dict = Attachment.from_dict(attachment_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -29,7 +29,7 @@ print(RuleAction.to_json())
 # convert the object into a dict
 rule_action_dict = rule_action_instance.to_dict()
 # create an instance of RuleAction from a dict
-rule_action_form_dict = rule_action.from_dict(rule_action_dict)
+rule_action_from_dict = RuleAction.from_dict(rule_action_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -49,7 +49,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.ConfigurationApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get Firefly III system configuration values.
@@ -136,7 +136,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.ConfigurationApi(api_client)
     name = firefly_iii_client.ConfigValueFilter() # ConfigValueFilter | The name of the configuration value you want to know.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get a single Firefly III system configuration value
@@ -226,7 +226,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.ConfigurationApi(api_client)
     name = firefly_iii_client.ConfigValueUpdateFilter() # ConfigValueUpdateFilter | The name of the configuration value you want to update.
     configuration_update = firefly_iii_client.ConfigurationUpdate() # ConfigurationUpdate | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update configuration value

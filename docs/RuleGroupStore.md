@@ -25,7 +25,7 @@ print(RuleGroupStore.to_json())
 # convert the object into a dict
 rule_group_store_dict = rule_group_store_instance.to_dict()
 # create an instance of RuleGroupStore from a dict
-rule_group_store_form_dict = rule_group_store.from_dict(rule_group_store_dict)
+rule_group_store_from_dict = RuleGroupStore.from_dict(rule_group_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

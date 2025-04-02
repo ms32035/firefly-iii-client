@@ -50,7 +50,7 @@ print(RecurrenceTransaction.to_json())
 # convert the object into a dict
 recurrence_transaction_dict = recurrence_transaction_instance.to_dict()
 # create an instance of RecurrenceTransaction from a dict
-recurrence_transaction_form_dict = recurrence_transaction.from_dict(recurrence_transaction_dict)
+recurrence_transaction_from_dict = RecurrenceTransaction.from_dict(recurrence_transaction_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,7 +25,7 @@ print(RecurrenceRepetitionUpdate.to_json())
 # convert the object into a dict
 recurrence_repetition_update_dict = recurrence_repetition_update_instance.to_dict()
 # create an instance of RecurrenceRepetitionUpdate from a dict
-recurrence_repetition_update_form_dict = recurrence_repetition_update.from_dict(recurrence_repetition_update_dict)
+recurrence_repetition_update_from_dict = RecurrenceRepetitionUpdate.from_dict(recurrence_repetition_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

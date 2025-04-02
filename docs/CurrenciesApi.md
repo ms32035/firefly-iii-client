@@ -9,11 +9,11 @@ Method | HTTP request | Description
 [**disable_currency**](CurrenciesApi.md#disable_currency) | **POST** /v1/currencies/{code}/disable | Disable a currency.
 [**enable_currency**](CurrenciesApi.md#enable_currency) | **POST** /v1/currencies/{code}/enable | Enable a single currency.
 [**get_currency**](CurrenciesApi.md#get_currency) | **GET** /v1/currencies/{code} | Get a single currency.
-[**get_default_currency**](CurrenciesApi.md#get_default_currency) | **GET** /v1/currencies/default | Get the user&#39;s default currency.
+[**get_native_currency**](CurrenciesApi.md#get_native_currency) | **GET** /v1/currencies/native | Get the native currency of the current administration.
 [**list_account_by_currency**](CurrenciesApi.md#list_account_by_currency) | **GET** /v1/currencies/{code}/accounts | List all accounts with this currency.
 [**list_available_budget_by_currency**](CurrenciesApi.md#list_available_budget_by_currency) | **GET** /v1/currencies/{code}/available-budgets | List all available budgets with this currency.
 [**list_bill_by_currency**](CurrenciesApi.md#list_bill_by_currency) | **GET** /v1/currencies/{code}/bills | List all bills with this currency.
-[**list_budget_limit_by_currency**](CurrenciesApi.md#list_budget_limit_by_currency) | **GET** /v1/currencies/{code}/budget_limits | List all budget limits with this currency
+[**list_budget_limit_by_currency**](CurrenciesApi.md#list_budget_limit_by_currency) | **GET** /v1/currencies/{code}/budget-limits | List all budget limits with this currency
 [**list_currency**](CurrenciesApi.md#list_currency) | **GET** /v1/currencies | List all currencies.
 [**list_recurrence_by_currency**](CurrenciesApi.md#list_recurrence_by_currency) | **GET** /v1/currencies/{code}/recurrences | List all recurring transactions with this currency.
 [**list_rule_by_currency**](CurrenciesApi.md#list_rule_by_currency) | **GET** /v1/currencies/{code}/rules | List all rules with this currency.
@@ -63,7 +63,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'USD' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Make currency default currency.
@@ -149,7 +149,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'GBP' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Delete a currency.
@@ -234,7 +234,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'GBP' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Disable a currency.
@@ -322,7 +322,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'USD' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Enable a single currency.
@@ -409,7 +409,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'USD' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get a single currency.
@@ -455,12 +455,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_default_currency**
-> CurrencySingle get_default_currency(x_trace_id=x_trace_id)
+# **get_native_currency**
+> CurrencySingle get_native_currency(x_trace_id=x_trace_id)
 
-Get the user's default currency.
+Get the native currency of the current administration.
 
-Get the user's default currency.
+Get the native currency of the current administration. This replaces what was called "the user's default currency" although they are essentially the same.
 
 ### Example
 
@@ -495,15 +495,15 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
-        # Get the user's default currency.
-        api_response = api_instance.get_default_currency(x_trace_id=x_trace_id)
-        print("The response of CurrenciesApi->get_default_currency:\n")
+        # Get the native currency of the current administration.
+        api_response = api_instance.get_native_currency(x_trace_id=x_trace_id)
+        print("The response of CurrenciesApi->get_native_currency:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CurrenciesApi->get_default_currency: %s\n" % e)
+        print("Exception when calling CurrenciesApi->get_native_currency: %s\n" % e)
 ```
 
 
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The default currency |  -  |
+**200** | The native currency |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
@@ -582,7 +582,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'USD' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     var_date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
@@ -677,7 +677,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'EUR' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -768,7 +768,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'USD' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -859,7 +859,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'USD' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     start = 'Mon Jan 01 00:00:00 UTC 2018' # date | Start date for the budget limit list. (optional)
@@ -953,7 +953,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -1043,7 +1043,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'EUR' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -1134,7 +1134,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'USD' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -1226,7 +1226,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'USD' # str | The currency code.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
@@ -1324,7 +1324,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     currency_store = firefly_iii_client.CurrencyStore() # CurrencyStore | JSON array or key=value pairs with the necessary currency information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Store a new currency
@@ -1414,7 +1414,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.CurrenciesApi(api_client)
     code = 'EUR' # str | The currency code.
     currency_update = firefly_iii_client.CurrencyUpdate() # CurrencyUpdate | JSON array with updated currency information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update existing currency.

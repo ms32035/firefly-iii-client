@@ -23,7 +23,7 @@ print(CategoryUpdate.to_json())
 # convert the object into a dict
 category_update_dict = category_update_instance.to_dict()
 # create an instance of CategoryUpdate from a dict
-category_update_form_dict = category_update.from_dict(category_update_dict)
+category_update_from_dict = CategoryUpdate.from_dict(category_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

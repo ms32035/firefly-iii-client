@@ -24,7 +24,7 @@ print(CurrencyArray.to_json())
 # convert the object into a dict
 currency_array_dict = currency_array_instance.to_dict()
 # create an instance of CurrencyArray from a dict
-currency_array_form_dict = currency_array.from_dict(currency_array_dict)
+currency_array_from_dict = CurrencyArray.from_dict(currency_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

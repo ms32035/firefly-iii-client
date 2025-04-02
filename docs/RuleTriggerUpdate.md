@@ -26,7 +26,7 @@ print(RuleTriggerUpdate.to_json())
 # convert the object into a dict
 rule_trigger_update_dict = rule_trigger_update_instance.to_dict()
 # create an instance of RuleTriggerUpdate from a dict
-rule_trigger_update_form_dict = rule_trigger_update.from_dict(rule_trigger_update_dict)
+rule_trigger_update_from_dict = RuleTriggerUpdate.from_dict(rule_trigger_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

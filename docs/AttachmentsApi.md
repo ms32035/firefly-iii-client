@@ -18,7 +18,8 @@ Method | HTTP request | Description
 
 Delete an attachment.
 
-With this endpoint you delete an attachment, including any stored file data. 
+With this endpoint you delete an attachment, including any stored file data.
+
 
 ### Example
 
@@ -53,7 +54,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AttachmentsApi(api_client)
     id = '123' # str | The ID of the single attachment.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Delete an attachment.
@@ -102,7 +103,8 @@ void (empty response body)
 
 Download a single attachment.
 
-This endpoint allows you to download the binary content of a transaction. It will be sent to you as a download, using the content type \"application/octet-stream\" and content disposition \"attachment; filename=example.pdf\". 
+This endpoint allows you to download the binary content of a transaction. It will be sent to you as a download, using the content type "application/octet-stream" and content disposition "attachment; filename=example.pdf".
+
 
 ### Example
 
@@ -137,7 +139,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AttachmentsApi(api_client)
     id = '123' # str | The ID of the attachment.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Download a single attachment.
@@ -188,7 +190,8 @@ Name | Type | Description  | Notes
 
 Get a single attachment.
 
-Get a single attachment. This endpoint only returns the available metadata for the attachment. Actual file data is handled in two other endpoints (see below). 
+Get a single attachment. This endpoint only returns the available metadata for the attachment. Actual file data is handled in two other endpoints (see below).
+
 
 ### Example
 
@@ -224,7 +227,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AttachmentsApi(api_client)
     id = '123' # str | The ID of the attachment.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get a single attachment.
@@ -275,7 +278,8 @@ Name | Type | Description  | Notes
 
 List all attachments.
 
-This endpoint lists all attachments. 
+This endpoint lists all attachments.
+
 
 ### Example
 
@@ -310,7 +314,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AttachmentsApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -364,7 +368,8 @@ Name | Type | Description  | Notes
 
 Store a new attachment.
 
-Creates a new attachment. The data required can be submitted as a JSON body or as a list of parameters. You cannot use this endpoint to upload the actual file data (see below). This endpoint only creates the attachment object. 
+Creates a new attachment. The data required can be submitted as a JSON body or as a list of parameters. You cannot use this endpoint to upload the actual file data (see below). This endpoint only creates the attachment object.
+
 
 ### Example
 
@@ -401,7 +406,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AttachmentsApi(api_client)
     attachment_store = firefly_iii_client.AttachmentStore() # AttachmentStore | JSON array or key=value pairs with the necessary attachment information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Store a new attachment.
@@ -453,7 +458,8 @@ Name | Type | Description  | Notes
 
 Update existing attachment.
 
-Update the meta data for an existing attachment. This endpoint does not allow you to upload or download data. For that, see below. 
+Update the meta data for an existing attachment. This endpoint does not allow you to upload or download data. For that, see below.
+
 
 ### Example
 
@@ -491,7 +497,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.AttachmentsApi(api_client)
     id = '123' # str | The ID of the attachment.
     attachment_update = firefly_iii_client.AttachmentUpdate() # AttachmentUpdate | JSON array with updated attachment information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update existing attachment.
@@ -544,7 +550,8 @@ Name | Type | Description  | Notes
 
 Upload an attachment.
 
-Use this endpoint to upload (and possible overwrite) the file contents of an attachment. Simply put the entire file in the body as binary data. 
+Use this endpoint to upload (and possible overwrite) the file contents of an attachment. Simply put the entire file in the body as binary data.
+
 
 ### Example
 
@@ -579,7 +586,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AttachmentsApi(api_client)
     id = '123' # str | The ID of the attachment.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     body = None # bytearray |  (optional)
 
     try:

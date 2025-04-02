@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**get_currencies_code_ac**](AutocompleteApi.md#get_currencies_code_ac) | **GET** /v1/autocomplete/currencies-with-code | Returns all currencies of the user returned in a basic auto-complete array. This endpoint is DEPRECATED and I suggest you DO NOT use it.
 [**get_object_groups_ac**](AutocompleteApi.md#get_object_groups_ac) | **GET** /v1/autocomplete/object-groups | Returns all object groups of the user returned in a basic auto-complete array.
 [**get_piggies_ac**](AutocompleteApi.md#get_piggies_ac) | **GET** /v1/autocomplete/piggy-banks | Returns all piggy banks of the user returned in a basic auto-complete array.
-[**get_piggies_balance_ac**](AutocompleteApi.md#get_piggies_balance_ac) | **GET** /v1/autocomplete/piggy-banks-with-balance | Returns all piggy banks of the user returned in a basic auto-complete array complemented with balance information.
+[**get_piggies_balance_ac**](AutocompleteApi.md#get_piggies_balance_ac) | **GET** /v1/autocomplete/piggy-banks-with-balance | Returns all piggy banks of the user returned in a basic auto-complete array.
 [**get_recurring_ac**](AutocompleteApi.md#get_recurring_ac) | **GET** /v1/autocomplete/recurring | Returns all recurring transactions of the user returned in a basic auto-complete array.
 [**get_rule_groups_ac**](AutocompleteApi.md#get_rule_groups_ac) | **GET** /v1/autocomplete/rule-groups | Returns all rule groups of the user returned in a basic auto-complete array.
 [**get_rules_ac**](AutocompleteApi.md#get_rules_ac) | **GET** /v1/autocomplete/rules | Returns all rules of the user returned in a basic auto-complete array.
@@ -61,7 +61,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
     var_date = '2020-09-17' # str | If the account is an asset account or a liability, the autocomplete will also return the balance of the account on this date. (optional)
@@ -110,6 +110,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -152,7 +153,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -197,6 +198,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -239,7 +241,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -284,6 +286,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -326,7 +329,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -371,6 +374,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -413,7 +417,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -458,6 +462,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -500,7 +505,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -587,7 +592,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -632,6 +637,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -674,7 +680,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -719,6 +725,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -726,7 +733,7 @@ Name | Type | Description  | Notes
 # **get_piggies_balance_ac**
 > List[AutocompletePiggyBalance] get_piggies_balance_ac(x_trace_id=x_trace_id, query=query, limit=limit)
 
-Returns all piggy banks of the user returned in a basic auto-complete array complemented with balance information.
+Returns all piggy banks of the user returned in a basic auto-complete array.
 
 ### Example
 
@@ -761,12 +768,12 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
     try:
-        # Returns all piggy banks of the user returned in a basic auto-complete array complemented with balance information.
+        # Returns all piggy banks of the user returned in a basic auto-complete array.
         api_response = api_instance.get_piggies_balance_ac(x_trace_id=x_trace_id, query=query, limit=limit)
         print("The response of AutocompleteApi->get_piggies_balance_ac:\n")
         pprint(api_response)
@@ -848,7 +855,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -893,6 +900,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -935,7 +943,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -980,6 +988,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1022,7 +1031,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -1067,6 +1076,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1109,7 +1119,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -1154,6 +1164,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1196,7 +1207,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -1241,6 +1252,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1283,7 +1295,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -1328,6 +1340,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1370,7 +1383,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AutocompleteApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
 
@@ -1415,6 +1428,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

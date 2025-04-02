@@ -22,7 +22,7 @@ print(PreferenceSingle.to_json())
 # convert the object into a dict
 preference_single_dict = preference_single_instance.to_dict()
 # create an instance of PreferenceSingle from a dict
-preference_single_form_dict = preference_single.from_dict(preference_single_dict)
+preference_single_from_dict = PreferenceSingle.from_dict(preference_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

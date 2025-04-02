@@ -22,7 +22,7 @@ print(SystemInfo.to_json())
 # convert the object into a dict
 system_info_dict = system_info_instance.to_dict()
 # create an instance of SystemInfo from a dict
-system_info_form_dict = system_info.from_dict(system_info_dict)
+system_info_from_dict = SystemInfo.from_dict(system_info_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

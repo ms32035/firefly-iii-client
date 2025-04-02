@@ -12,7 +12,8 @@ Method | HTTP request | Description
 
 Dashboard chart with asset account balance information.
 
-This endpoint returns the data required to generate a chart with basic asset account balance information. 
+This endpoint returns the data required to generate a chart with basic asset account balance information.
+
 
 ### Example
 
@@ -49,7 +50,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.ChartsApi(api_client)
     start = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
     end = '2013-10-20' # date | A date formatted YYYY-MM-DD. 
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Dashboard chart with asset account balance information.
@@ -92,6 +93,7 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
 **500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

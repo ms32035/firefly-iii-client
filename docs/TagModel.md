@@ -29,7 +29,7 @@ print(TagModel.to_json())
 # convert the object into a dict
 tag_model_dict = tag_model_instance.to_dict()
 # create an instance of TagModel from a dict
-tag_model_form_dict = tag_model.from_dict(tag_model_dict)
+tag_model_from_dict = TagModel.from_dict(tag_model_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

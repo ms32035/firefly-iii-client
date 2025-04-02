@@ -1,15 +1,14 @@
-version: '3'
 services:
   firefly_iii_client_generator:
     build:
       context: .
       args:
-        - OPENAPI_TAG=v7.4.0
+        - OPENAPI_TAG=v7.12.0
     volumes:
       - ./target:/build/target
       - .:/build/src:ro
       - ./.generator:/generator
     environment:
-      API_VERSION: 6.1.24
+      API_VERSION: 6.2.10
       API_SUBVERSION: "-v1"
       PACKAGE_BUILD: 0

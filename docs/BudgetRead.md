@@ -24,7 +24,7 @@ print(BudgetRead.to_json())
 # convert the object into a dict
 budget_read_dict = budget_read_instance.to_dict()
 # create an instance of BudgetRead from a dict
-budget_read_form_dict = budget_read.from_dict(budget_read_dict)
+budget_read_from_dict = BudgetRead.from_dict(budget_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,7 +23,7 @@ print(AutocompleteCategory.to_json())
 # convert the object into a dict
 autocomplete_category_dict = autocomplete_category_instance.to_dict()
 # create an instance of AutocompleteCategory from a dict
-autocomplete_category_form_dict = autocomplete_category.from_dict(autocomplete_category_dict)
+autocomplete_category_from_dict = AutocompleteCategory.from_dict(autocomplete_category_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

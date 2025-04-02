@@ -26,7 +26,7 @@ print(AutocompleteCurrencyCode.to_json())
 # convert the object into a dict
 autocomplete_currency_code_dict = autocomplete_currency_code_instance.to_dict()
 # create an instance of AutocompleteCurrencyCode from a dict
-autocomplete_currency_code_form_dict = autocomplete_currency_code.from_dict(autocomplete_currency_code_dict)
+autocomplete_currency_code_from_dict = AutocompleteCurrencyCode.from_dict(autocomplete_currency_code_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

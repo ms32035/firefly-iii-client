@@ -30,7 +30,7 @@ print(RecurrenceRepetition.to_json())
 # convert the object into a dict
 recurrence_repetition_dict = recurrence_repetition_instance.to_dict()
 # create an instance of RecurrenceRepetition from a dict
-recurrence_repetition_form_dict = recurrence_repetition.from_dict(recurrence_repetition_dict)
+recurrence_repetition_from_dict = RecurrenceRepetition.from_dict(recurrence_repetition_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

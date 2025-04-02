@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **search_accounts**
-> AccountArray search_accounts(query, field, x_trace_id=x_trace_id, limit=limit, page=page, type=type)
+> AccountArray search_accounts(query, var_field, x_trace_id=x_trace_id, limit=limit, page=page, type=type)
 
 Search for accounts
 
@@ -51,15 +51,15 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.SearchApi(api_client)
     query = 'checking' # str | The query you wish to search for.
-    field = firefly_iii_client.AccountSearchFieldFilter() # AccountSearchFieldFilter | The account field(s) you want to search in.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    var_field = firefly_iii_client.AccountSearchFieldFilter() # AccountSearchFieldFilter | The account field(s) you want to search in.
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     type = firefly_iii_client.AccountTypeFilter() # AccountTypeFilter | The type of accounts you wish to limit the search to. (optional)
 
     try:
         # Search for accounts
-        api_response = api_instance.search_accounts(query, field, x_trace_id=x_trace_id, limit=limit, page=page, type=type)
+        api_response = api_instance.search_accounts(query, var_field, x_trace_id=x_trace_id, limit=limit, page=page, type=type)
         print("The response of SearchApi->search_accounts:\n")
         pprint(api_response)
     except Exception as e:
@@ -74,7 +74,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **str**| The query you wish to search for. | 
- **field** | [**AccountSearchFieldFilter**](.md)| The account field(s) you want to search in. | 
+ **var_field** | [**AccountSearchFieldFilter**](.md)| The account field(s) you want to search in. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
  **limit** | **int**| Number of items per page. The default pagination is per 50 items. | [optional] 
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
@@ -146,7 +146,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.SearchApi(api_client)
     query = 'groceries' # str | The query you wish to search for.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 

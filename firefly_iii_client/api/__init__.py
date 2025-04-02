@@ -12,6 +12,7 @@ from firefly_iii_client.api.categories_api import CategoriesApi
 from firefly_iii_client.api.charts_api import ChartsApi
 from firefly_iii_client.api.configuration_api import ConfigurationApi
 from firefly_iii_client.api.currencies_api import CurrenciesApi
+from firefly_iii_client.api.currency_exchange_rates_api import CurrencyExchangeRatesApi
 from firefly_iii_client.api.data_api import DataApi
 from firefly_iii_client.api.insight_api import InsightApi
 from firefly_iii_client.api.links_api import LinksApi
@@ -25,6 +26,7 @@ from firefly_iii_client.api.search_api import SearchApi
 from firefly_iii_client.api.summary_api import SummaryApi
 from firefly_iii_client.api.tags_api import TagsApi
 from firefly_iii_client.api.transactions_api import TransactionsApi
+from firefly_iii_client.api.user_groups_api import UserGroupsApi
 from firefly_iii_client.api.users_api import UsersApi
 from firefly_iii_client.api.webhooks_api import WebhooksApi
 

@@ -22,7 +22,7 @@ print(AccountSingle.to_json())
 # convert the object into a dict
 account_single_dict = account_single_instance.to_dict()
 # create an instance of AccountSingle from a dict
-account_single_form_dict = account_single.from_dict(account_single_dict)
+account_single_from_dict = AccountSingle.from_dict(account_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

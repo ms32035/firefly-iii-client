@@ -43,7 +43,7 @@ print(AccountUpdate.to_json())
 # convert the object into a dict
 account_update_dict = account_update_instance.to_dict()
 # create an instance of AccountUpdate from a dict
-account_update_form_dict = account_update.from_dict(account_update_dict)
+account_update_from_dict = AccountUpdate.from_dict(account_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

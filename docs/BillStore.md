@@ -35,7 +35,7 @@ print(BillStore.to_json())
 # convert the object into a dict
 bill_store_dict = bill_store_instance.to_dict()
 # create an instance of BillStore from a dict
-bill_store_form_dict = bill_store.from_dict(bill_store_dict)
+bill_store_from_dict = BillStore.from_dict(bill_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

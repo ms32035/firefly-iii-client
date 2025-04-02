@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **currency_code** | **str** |  | [optional] 
 **currency_decimal_places** | **int** | Number of decimals for the currency associated to the data in the entries. | [optional] 
-**currency_id** | **str** | The currency ID of the currency associated to the data in the entries. | [optional] 
+**currency_id** | **str** | The currency ID of the currency associated to the data in the entries. This may be the native currency of administration. | [optional] 
 **currency_symbol** | **str** |  | [optional] 
 **end_date** | **datetime** |  | [optional] 
 **entries** | [**List[ChartDataPoint]**](ChartDataPoint.md) | The actual entries for this data set. They &#39;key&#39; value is the label for the data point. The value is the actual (numerical) value. | [optional] 
@@ -31,7 +31,7 @@ print(ChartDataSet.to_json())
 # convert the object into a dict
 chart_data_set_dict = chart_data_set_instance.to_dict()
 # create an instance of ChartDataSet from a dict
-chart_data_set_form_dict = chart_data_set.from_dict(chart_data_set_dict)
+chart_data_set_from_dict = ChartDataSet.from_dict(chart_data_set_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

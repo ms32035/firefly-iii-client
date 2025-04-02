@@ -26,7 +26,7 @@ print(MetaPagination.to_json())
 # convert the object into a dict
 meta_pagination_dict = meta_pagination_instance.to_dict()
 # create an instance of MetaPagination from a dict
-meta_pagination_form_dict = meta_pagination.from_dict(meta_pagination_dict)
+meta_pagination_from_dict = MetaPagination.from_dict(meta_pagination_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

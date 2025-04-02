@@ -5,11 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **str** | The ID of the asset account this piggy bank is connected to. | [optional] 
+**accounts** | [**List[PiggyBankAccountUpdate]**](PiggyBankAccountUpdate.md) |  | [optional] 
 **active** | **bool** |  | [optional] [readonly] 
 **currency_code** | **str** |  | [optional] [readonly] 
 **currency_id** | **str** |  | [optional] [readonly] 
-**current_amount** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **notes** | **str** |  | [optional] 
 **object_group_id** | **str** | The group ID of the group this object is part of. NULL if no group. | [optional] 
@@ -34,7 +33,7 @@ print(PiggyBankUpdate.to_json())
 # convert the object into a dict
 piggy_bank_update_dict = piggy_bank_update_instance.to_dict()
 # create an instance of PiggyBankUpdate from a dict
-piggy_bank_update_form_dict = piggy_bank_update.from_dict(piggy_bank_update_dict)
+piggy_bank_update_from_dict = PiggyBankUpdate.from_dict(piggy_bank_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

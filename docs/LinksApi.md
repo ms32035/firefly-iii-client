@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**list_transaction_link**](LinksApi.md#list_transaction_link) | **GET** /v1/transaction-links | List all transaction links.
 [**store_link_type**](LinksApi.md#store_link_type) | **POST** /v1/link-types | Create a new link type
 [**store_transaction_link**](LinksApi.md#store_transaction_link) | **POST** /v1/transaction-links | Create a new link between transactions
+[**update_currency_exchange_rate**](LinksApi.md#update_currency_exchange_rate) | **PUT** /v1/exchange-rates/{id} | Update existing currency exchange rate.
 [**update_link_type**](LinksApi.md#update_link_type) | **PUT** /v1/link-types/{id} | Update existing link type.
 [**update_transaction_link**](LinksApi.md#update_transaction_link) | **PUT** /v1/transaction-links/{id} | Update an existing link between transactions.
 
@@ -22,7 +23,8 @@ Method | HTTP request | Description
 
 Permanently delete link type.
 
-Will permanently delete a link type. The links between transactions will be removed. The transactions themselves remain. You cannot delete some of the system provided link types, indicated by the editable=false flag when you list it. 
+Will permanently delete a link type. The links between transactions will be removed. The transactions themselves remain. You cannot delete some of the system provided link types, indicated by the editable=false flag when you list it.
+
 
 ### Example
 
@@ -57,7 +59,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the link type.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Permanently delete link type.
@@ -106,7 +108,8 @@ void (empty response body)
 
 Permanently delete link between transactions.
 
-Will permanently delete link. Transactions remain. 
+Will permanently delete link. Transactions remain.
+
 
 ### Example
 
@@ -141,7 +144,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the transaction link.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Permanently delete link between transactions.
@@ -190,7 +193,8 @@ void (empty response body)
 
 Get single a link type.
 
-Returns a single link type by its ID. 
+Returns a single link type by its ID.
+
 
 ### Example
 
@@ -226,7 +230,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the link type.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get single a link type.
@@ -277,7 +281,8 @@ Name | Type | Description  | Notes
 
 Get a single link.
 
-Returns a single link by its ID. 
+Returns a single link by its ID.
+
 
 ### Example
 
@@ -313,7 +318,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the transaction link.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get a single link.
@@ -364,7 +369,8 @@ Name | Type | Description  | Notes
 
 List all types of links.
 
-List all the link types the system has. These include the default ones as well as any new ones. 
+List all the link types the system has. These include the default ones as well as any new ones.
+
 
 ### Example
 
@@ -399,7 +405,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -453,7 +459,8 @@ Name | Type | Description  | Notes
 
 List all transactions under this link type.
 
-List all transactions under this link type, both the inward and outward transactions. 
+List all transactions under this link type, both the inward and outward transactions.
+
 
 ### Example
 
@@ -490,7 +497,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the link type.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
@@ -551,7 +558,8 @@ Name | Type | Description  | Notes
 
 List all transaction links.
 
-List all the transaction links. 
+List all the transaction links.
+
 
 ### Example
 
@@ -586,7 +594,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -677,7 +685,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     link_type = firefly_iii_client.LinkType() # LinkType | JSON array with the necessary link type information or key=value pairs. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Create a new link type
@@ -766,7 +774,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     transaction_link_store = firefly_iii_client.TransactionLinkStore() # TransactionLinkStore | JSON array with the necessary link type information or key=value pairs. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Create a new link between transactions
@@ -813,12 +821,104 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_currency_exchange_rate**
+> CurrencyExchangeRateSingle update_currency_exchange_rate(id, currency_exchange_rate_update, x_trace_id=x_trace_id)
+
+Update existing currency exchange rate.
+
+Used to update a single currency exchange rate
+
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+* Bearer Authentication (local_bearer_auth):
+
+```python
+import firefly_iii_client
+from firefly_iii_client.models.currency_exchange_rate_single import CurrencyExchangeRateSingle
+from firefly_iii_client.models.currency_exchange_rate_update import CurrencyExchangeRateUpdate
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://demo.firefly-iii.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization: local_bearer_auth
+configuration = firefly_iii_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.LinksApi(api_client)
+    id = '123' # str | The ID of the currency exchange rate.
+    currency_exchange_rate_update = firefly_iii_client.CurrencyExchangeRateUpdate() # CurrencyExchangeRateUpdate | JSON array or formdata with updated exchange rate information. See the model for the exact specifications.
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
+
+    try:
+        # Update existing currency exchange rate.
+        api_response = api_instance.update_currency_exchange_rate(id, currency_exchange_rate_update, x_trace_id=x_trace_id)
+        print("The response of LinksApi->update_currency_exchange_rate:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LinksApi->update_currency_exchange_rate: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| The ID of the currency exchange rate. | 
+ **currency_exchange_rate_update** | [**CurrencyExchangeRateUpdate**](CurrencyExchangeRateUpdate.md)| JSON array or formdata with updated exchange rate information. See the model for the exact specifications. | 
+ **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
+
+### Return type
+
+[**CurrencyExchangeRateSingle**](CurrencyExchangeRateSingle.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth), [local_bearer_auth](../README.md#local_bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded
+ - **Accept**: application/vnd.api+json, application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Updated exchange rate stored, result in response |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthenticated |  -  |
+**404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_link_type**
 > LinkTypeSingle update_link_type(id, link_type_update, x_trace_id=x_trace_id)
 
 Update existing link type.
 
-Used to update a single link type. All fields that are not submitted will be cleared (set to NULL). The model will tell you which fields are mandatory. You cannot update some of the system provided link types, indicated by the editable=false flag when you list it. 
+Used to update a single link type. All fields that are not submitted will be cleared (set to NULL). The model will tell you which fields are mandatory. You cannot update some of the system provided link types, indicated by the editable=false flag when you list it.
+
 
 ### Example
 
@@ -856,7 +956,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the link type.
     link_type_update = firefly_iii_client.LinkTypeUpdate() # LinkTypeUpdate | JSON array or formdata with updated link type information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update existing link type.
@@ -909,7 +1009,8 @@ Name | Type | Description  | Notes
 
 Update an existing link between transactions.
 
-Used to update a single existing link. 
+Used to update a single existing link.
+
 
 ### Example
 
@@ -947,7 +1048,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the transaction link.
     transaction_link_update = firefly_iii_client.TransactionLinkUpdate() # TransactionLinkUpdate | JSON array or formdata with updated link type information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update an existing link between transactions.

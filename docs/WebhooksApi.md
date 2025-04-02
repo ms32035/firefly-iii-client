@@ -59,7 +59,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Delete a webhook.
@@ -144,7 +144,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Delete a webhook message.
@@ -231,7 +231,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     id = '123' # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
     attempt_id = 1 # int | The webhook message attempt ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Delete a webhook attempt.
@@ -319,7 +319,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get a single message from a webhook.
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 Get a single failed attempt from a single webhook message.
 
-When a webhook message fails to send it will store the failure in an \"attempt\". You can view and analyse these. Webhooks messages that receive too many attempts (failures) will not be fired. You must first clear out old attempts and try again. This endpoint shows you the details of a single attempt. The ID of the attempt must match the corresponding webhook and webhook message.
+When a webhook message fails to send it will store the failure in an "attempt". You can view and analyse these. Webhooks messages that receive too many attempts (failures) will not be fired. You must first clear out old attempts and try again. This endpoint shows you the details of a single attempt. The ID of the attempt must match the corresponding webhook and webhook message.
 
 ### Example
 
@@ -409,7 +409,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     id = '123' # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
     attempt_id = 1 # int | The webhook attempt ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get a single failed attempt from a single webhook message.
@@ -498,7 +498,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get a single webhook.
@@ -549,7 +549,7 @@ Name | Type | Description  | Notes
 
 Get all the failed attempts of a single webhook message.
 
-When a webhook message fails to send it will store the failure in an \"attempt\". You can view and analyse these. Webhook messages that receive too many attempts (failures) will not be sent again. You must first clear out old attempts before the message can go out again.
+When a webhook message fails to send it will store the failure in an "attempt". You can view and analyse these. Webhook messages that receive too many attempts (failures) will not be sent again. You must first clear out old attempts before the message can go out again.
 
 ### Example
 
@@ -586,7 +586,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
     message_id = 1 # int | The webhook message ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 Get all the messages of a single webhook.
 
-When a webhook is triggered the actual message that will be send is stored in a \"message\". You can view and analyse these messages.
+When a webhook is triggered the actual message that will be send is stored in a "message". You can view and analyse these messages.
 
 ### Example
 
@@ -678,7 +678,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Get all the messages of a single webhook.
@@ -764,7 +764,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.WebhooksApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -818,7 +818,8 @@ Name | Type | Description  | Notes
 
 Store a new webhook
 
-Creates a new webhook. The data required can be submitted as a JSON body or as a list of parameters. The webhook will be given a random secret. 
+Creates a new webhook. The data required can be submitted as a JSON body or as a list of parameters. The webhook will be given a random secret.
+
 
 ### Example
 
@@ -855,7 +856,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     webhook_store = firefly_iii_client.WebhookStore() # WebhookStore | JSON array or key=value pairs with the necessary webhook information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Store a new webhook
@@ -942,7 +943,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Submit messages for a webhook.
@@ -972,7 +973,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
@@ -980,8 +981,9 @@ void (empty response body)
 |-------------|-------------|------------------|
 **200** | OK! |  -  |
 **204** | No messages to send, so did nothing. |  -  |
-**404** | Webhook not found. |  -  |
-**500** | Error while sending. |  -  |
+**400** | Bad request |  -  |
+**404** | Page not found |  -  |
+**500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1026,7 +1028,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
     transaction_id = '123' # str | The transaction ID.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Trigger webhook for a given transaction.
@@ -1057,15 +1059,16 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Webhook triggered successfully. |  -  |
-**404** | Webhook or transaction not found. |  -  |
-**500** | Error while sending. |  -  |
+**400** | Bad request |  -  |
+**404** | Page not found |  -  |
+**500** | Internal exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1074,7 +1077,7 @@ void (empty response body)
 
 Update existing webhook.
 
-Update an existing webhook's information. If you wish to reset the secret, submit any value as the \"secret\". Firefly III will take this as a hint and reset the secret of the webhook.
+Update an existing webhook's information. If you wish to reset the secret, submit any value as the "secret". Firefly III will take this as a hint and reset the secret of the webhook.
 
 ### Example
 
@@ -1112,7 +1115,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.WebhooksApi(api_client)
     id = '123' # str | The webhook ID.
     webhook_update = firefly_iii_client.WebhookUpdate() # WebhookUpdate | JSON array with updated webhook information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update existing webhook.

@@ -22,7 +22,7 @@ print(ChartDataPoint.to_json())
 # convert the object into a dict
 chart_data_point_dict = chart_data_point_instance.to_dict()
 # create an instance of ChartDataPoint from a dict
-chart_data_point_form_dict = chart_data_point.from_dict(chart_data_point_dict)
+chart_data_point_from_dict = ChartDataPoint.from_dict(chart_data_point_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

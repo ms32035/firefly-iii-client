@@ -24,7 +24,7 @@ print(UserArray.to_json())
 # convert the object into a dict
 user_array_dict = user_array_instance.to_dict()
 # create an instance of UserArray from a dict
-user_array_form_dict = user_array.from_dict(user_array_dict)
+user_array_from_dict = UserArray.from_dict(user_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

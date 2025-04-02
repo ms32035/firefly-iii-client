@@ -25,7 +25,7 @@ print(RuleGroupUpdate.to_json())
 # convert the object into a dict
 rule_group_update_dict = rule_group_update_instance.to_dict()
 # create an instance of RuleGroupUpdate from a dict
-rule_group_update_form_dict = rule_group_update.from_dict(rule_group_update_dict)
+rule_group_update_from_dict = RuleGroupUpdate.from_dict(rule_group_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

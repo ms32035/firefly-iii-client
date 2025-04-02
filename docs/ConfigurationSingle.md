@@ -22,7 +22,7 @@ print(ConfigurationSingle.to_json())
 # convert the object into a dict
 configuration_single_dict = configuration_single_instance.to_dict()
 # create an instance of ConfigurationSingle from a dict
-configuration_single_form_dict = configuration_single.from_dict(configuration_single_dict)
+configuration_single_from_dict = ConfigurationSingle.from_dict(configuration_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,6 +17,12 @@ Name | Type | Description | Notes
 **end_date** | **datetime** | The date after which this bill is no longer valid or applicable | [optional] 
 **extension_date** | **datetime** | The date before which the bill must be renewed (or cancelled) | [optional] 
 **name** | **str** |  | 
+**native_amount_max** | **str** | The min amount of this bill in the user&#39;s native currency, if the original amount is in a different currency. | [optional] [readonly] 
+**native_amount_min** | **str** | The max amount of this bill in the user&#39;s native currency, if the original amount is in a different currency. | [optional] [readonly] 
+**native_currency_code** | **str** | The administration&#39;s native currency code. | [optional] [readonly] 
+**native_currency_decimal_places** | **int** | The administration&#39;s native currency decimal places. | [optional] [readonly] 
+**native_currency_id** | **str** | The administration&#39;s native currency ID. | [optional] [readonly] 
+**native_currency_symbol** | **str** | The administration&#39;s native currency symbol. | [optional] [readonly] 
 **next_expected_match** | **datetime** | When the bill is expected to be due. | [optional] [readonly] 
 **next_expected_match_diff** | **str** | Formatted (locally) when the bill is due. | [optional] [readonly] 
 **notes** | **str** |  | [optional] 
@@ -45,7 +51,7 @@ print(Bill.to_json())
 # convert the object into a dict
 bill_dict = bill_instance.to_dict()
 # create an instance of Bill from a dict
-bill_form_dict = bill.from_dict(bill_dict)
+bill_from_dict = Bill.from_dict(bill_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

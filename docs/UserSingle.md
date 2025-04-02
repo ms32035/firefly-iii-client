@@ -22,7 +22,7 @@ print(UserSingle.to_json())
 # convert the object into a dict
 user_single_dict = user_single_instance.to_dict()
 # create an instance of UserSingle from a dict
-user_single_form_dict = user_single.from_dict(user_single_dict)
+user_single_from_dict = UserSingle.from_dict(user_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

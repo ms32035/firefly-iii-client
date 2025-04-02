@@ -25,7 +25,7 @@ print(LinkTypeRead.to_json())
 # convert the object into a dict
 link_type_read_dict = link_type_read_instance.to_dict()
 # create an instance of LinkTypeRead from a dict
-link_type_read_form_dict = link_type_read.from_dict(link_type_read_dict)
+link_type_read_from_dict = LinkTypeRead.from_dict(link_type_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

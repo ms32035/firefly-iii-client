@@ -21,7 +21,7 @@ print(PolymorphicProperty.to_json())
 # convert the object into a dict
 polymorphic_property_dict = polymorphic_property_instance.to_dict()
 # create an instance of PolymorphicProperty from a dict
-polymorphic_property_form_dict = polymorphic_property.from_dict(polymorphic_property_dict)
+polymorphic_property_from_dict = PolymorphicProperty.from_dict(polymorphic_property_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -27,7 +27,7 @@ print(WebhookStore.to_json())
 # convert the object into a dict
 webhook_store_dict = webhook_store_instance.to_dict()
 # create an instance of WebhookStore from a dict
-webhook_store_form_dict = webhook_store.from_dict(webhook_store_dict)
+webhook_store_from_dict = WebhookStore.from_dict(webhook_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

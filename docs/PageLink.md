@@ -26,7 +26,7 @@ print(PageLink.to_json())
 # convert the object into a dict
 page_link_dict = page_link_instance.to_dict()
 # create an instance of PageLink from a dict
-page_link_form_dict = page_link.from_dict(page_link_dict)
+page_link_from_dict = PageLink.from_dict(page_link_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -27,7 +27,7 @@ print(RuleGroup.to_json())
 # convert the object into a dict
 rule_group_dict = rule_group_instance.to_dict()
 # create an instance of RuleGroup from a dict
-rule_group_form_dict = rule_group.from_dict(rule_group_dict)
+rule_group_from_dict = RuleGroup.from_dict(rule_group_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

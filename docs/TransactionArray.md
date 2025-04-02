@@ -24,7 +24,7 @@ print(TransactionArray.to_json())
 # convert the object into a dict
 transaction_array_dict = transaction_array_instance.to_dict()
 # create an instance of TransactionArray from a dict
-transaction_array_form_dict = transaction_array.from_dict(transaction_array_dict)
+transaction_array_from_dict = TransactionArray.from_dict(transaction_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

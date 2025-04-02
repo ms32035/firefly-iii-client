@@ -26,7 +26,7 @@ print(TransactionLinkStore.to_json())
 # convert the object into a dict
 transaction_link_store_dict = transaction_link_store_instance.to_dict()
 # create an instance of TransactionLinkStore from a dict
-transaction_link_store_form_dict = transaction_link_store.from_dict(transaction_link_store_dict)
+transaction_link_store_from_dict = TransactionLinkStore.from_dict(transaction_link_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,7 +23,7 @@ print(WebhookMessageArray.to_json())
 # convert the object into a dict
 webhook_message_array_dict = webhook_message_array_instance.to_dict()
 # create an instance of WebhookMessageArray from a dict
-webhook_message_array_form_dict = webhook_message_array.from_dict(webhook_message_array_dict)
+webhook_message_array_from_dict = WebhookMessageArray.from_dict(webhook_message_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

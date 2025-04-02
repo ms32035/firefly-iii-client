@@ -19,7 +19,8 @@ Method | HTTP request | Description
 
 Permanently delete account.
 
-Will permanently delete an account. Any associated transactions and piggy banks are ALSO deleted. Cannot be recovered from. 
+Will permanently delete an account. Any associated transactions and piggy banks are ALSO deleted. Cannot be recovered from.
+
 
 ### Example
 
@@ -54,7 +55,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AccountsApi(api_client)
     id = '123' # str | The ID of the account.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Permanently delete account.
@@ -103,7 +104,8 @@ void (empty response body)
 
 Get single account.
 
-Returns a single account by its ID. 
+Returns a single account by its ID.
+
 
 ### Example
 
@@ -139,7 +141,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AccountsApi(api_client)
     id = '123' # str | The ID of the account.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     var_date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 
     try:
@@ -192,7 +194,8 @@ Name | Type | Description  | Notes
 
 List all accounts.
 
-This endpoint returns a list of all the accounts owned by the authenticated user. 
+This endpoint returns a list of all the accounts owned by the authenticated user.
+
 
 ### Example
 
@@ -228,7 +231,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AccountsApi(api_client)
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     var_date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
@@ -322,7 +325,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AccountsApi(api_client)
     id = '123' # str | The ID of the account.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -377,7 +380,8 @@ Name | Type | Description  | Notes
 
 List all piggy banks related to the account.
 
-This endpoint returns a list of all the piggy banks connected to the account. 
+This endpoint returns a list of all the piggy banks connected to the account.
+
 
 ### Example
 
@@ -413,7 +417,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AccountsApi(api_client)
     id = '123' # str | The ID of the account.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
@@ -468,7 +472,8 @@ Name | Type | Description  | Notes
 
 List all transactions related to the account.
 
-This endpoint returns a list of all the transactions connected to the account. 
+This endpoint returns a list of all the transactions connected to the account.
+
 
 ### Example
 
@@ -505,7 +510,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AccountsApi(api_client)
     id = '123' # str | The ID of the account.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
     start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
@@ -603,7 +608,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AccountsApi(api_client)
     account_store = firefly_iii_client.AccountStore() # AccountStore | JSON array with the necessary account information or key=value pairs. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Create new account.
@@ -655,7 +660,8 @@ Name | Type | Description  | Notes
 
 Update existing account.
 
-Used to update a single account. All fields that are not submitted will be cleared (set to NULL). The model will tell you which fields are mandatory. 
+Used to update a single account. All fields that are not submitted will be cleared (set to NULL). The model will tell you which fields are mandatory.
+
 
 ### Example
 
@@ -693,7 +699,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.AccountsApi(api_client)
     id = '123' # str | The ID of the account.
     account_update = firefly_iii_client.AccountUpdate() # AccountUpdate | JSON array or formdata with updated account information. See the model for the exact specifications.
-    x_trace_id = 'x_trace_id_example' # str | Unique identifier associated with this request. (optional)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update existing account.

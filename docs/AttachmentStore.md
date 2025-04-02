@@ -26,7 +26,7 @@ print(AttachmentStore.to_json())
 # convert the object into a dict
 attachment_store_dict = attachment_store_instance.to_dict()
 # create an instance of AttachmentStore from a dict
-attachment_store_form_dict = attachment_store.from_dict(attachment_store_dict)
+attachment_store_from_dict = AttachmentStore.from_dict(attachment_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

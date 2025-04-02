@@ -23,7 +23,7 @@ print(AccountArray.to_json())
 # convert the object into a dict
 account_array_dict = account_array_instance.to_dict()
 # create an instance of AccountArray from a dict
-account_array_form_dict = account_array.from_dict(account_array_dict)
+account_array_from_dict = AccountArray.from_dict(account_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

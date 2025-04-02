@@ -24,7 +24,7 @@ print(LinkTypeUpdate.to_json())
 # convert the object into a dict
 link_type_update_dict = link_type_update_instance.to_dict()
 # create an instance of LinkTypeUpdate from a dict
-link_type_update_form_dict = link_type_update.from_dict(link_type_update_dict)
+link_type_update_from_dict = LinkTypeUpdate.from_dict(link_type_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

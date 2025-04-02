@@ -25,7 +25,7 @@ print(InsightTotalEntry.to_json())
 # convert the object into a dict
 insight_total_entry_dict = insight_total_entry_instance.to_dict()
 # create an instance of InsightTotalEntry from a dict
-insight_total_entry_form_dict = insight_total_entry.from_dict(insight_total_entry_dict)
+insight_total_entry_from_dict = InsightTotalEntry.from_dict(insight_total_entry_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

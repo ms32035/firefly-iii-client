@@ -22,7 +22,7 @@ print(TransactionLinkSingle.to_json())
 # convert the object into a dict
 transaction_link_single_dict = transaction_link_single_instance.to_dict()
 # create an instance of TransactionLinkSingle from a dict
-transaction_link_single_form_dict = transaction_link_single.from_dict(transaction_link_single_dict)
+transaction_link_single_from_dict = TransactionLinkSingle.from_dict(transaction_link_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

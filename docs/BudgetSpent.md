@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **currency_decimal_places** | **int** | Number of decimals supported by the currency | [optional] 
 **currency_id** | **str** |  | [optional] 
 **currency_symbol** | **str** |  | [optional] 
-**sum** | **str** | The amount spent. | [optional] 
+**sum** | **str** | The amount spent. This is in the administration&#39;s native currency, if the conversion is turned on. | [optional] 
 
 ## Example
 
@@ -26,7 +26,7 @@ print(BudgetSpent.to_json())
 # convert the object into a dict
 budget_spent_dict = budget_spent_instance.to_dict()
 # create an instance of BudgetSpent from a dict
-budget_spent_form_dict = budget_spent.from_dict(budget_spent_dict)
+budget_spent_from_dict = BudgetSpent.from_dict(budget_spent_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

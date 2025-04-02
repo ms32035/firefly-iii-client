@@ -32,7 +32,7 @@ print(RuleStore.to_json())
 # convert the object into a dict
 rule_store_dict = rule_store_instance.to_dict()
 # create an instance of RuleStore from a dict
-rule_store_form_dict = rule_store.from_dict(rule_store_dict)
+rule_store_from_dict = RuleStore.from_dict(rule_store_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

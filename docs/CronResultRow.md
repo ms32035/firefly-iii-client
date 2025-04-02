@@ -25,7 +25,7 @@ print(CronResultRow.to_json())
 # convert the object into a dict
 cron_result_row_dict = cron_result_row_instance.to_dict()
 # create an instance of CronResultRow from a dict
-cron_result_row_form_dict = cron_result_row.from_dict(cron_result_row_dict)
+cron_result_row_from_dict = CronResultRow.from_dict(cron_result_row_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

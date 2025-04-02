@@ -24,7 +24,7 @@ print(WebhookMessageRead.to_json())
 # convert the object into a dict
 webhook_message_read_dict = webhook_message_read_instance.to_dict()
 # create an instance of WebhookMessageRead from a dict
-webhook_message_read_form_dict = webhook_message_read.from_dict(webhook_message_read_dict)
+webhook_message_read_from_dict = WebhookMessageRead.from_dict(webhook_message_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

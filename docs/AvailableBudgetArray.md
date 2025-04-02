@@ -23,7 +23,7 @@ print(AvailableBudgetArray.to_json())
 # convert the object into a dict
 available_budget_array_dict = available_budget_array_instance.to_dict()
 # create an instance of AvailableBudgetArray from a dict
-available_budget_array_form_dict = available_budget_array.from_dict(available_budget_array_dict)
+available_budget_array_from_dict = AvailableBudgetArray.from_dict(available_budget_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

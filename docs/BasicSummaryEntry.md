@@ -31,7 +31,7 @@ print(BasicSummaryEntry.to_json())
 # convert the object into a dict
 basic_summary_entry_dict = basic_summary_entry_instance.to_dict()
 # create an instance of BasicSummaryEntry from a dict
-basic_summary_entry_form_dict = basic_summary_entry.from_dict(basic_summary_entry_dict)
+basic_summary_entry_from_dict = BasicSummaryEntry.from_dict(basic_summary_entry_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

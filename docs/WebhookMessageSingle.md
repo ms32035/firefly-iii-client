@@ -22,7 +22,7 @@ print(WebhookMessageSingle.to_json())
 # convert the object into a dict
 webhook_message_single_dict = webhook_message_single_instance.to_dict()
 # create an instance of WebhookMessageSingle from a dict
-webhook_message_single_form_dict = webhook_message_single.from_dict(webhook_message_single_dict)
+webhook_message_single_from_dict = WebhookMessageSingle.from_dict(webhook_message_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

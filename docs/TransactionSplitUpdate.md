@@ -70,7 +70,7 @@ print(TransactionSplitUpdate.to_json())
 # convert the object into a dict
 transaction_split_update_dict = transaction_split_update_instance.to_dict()
 # create an instance of TransactionSplitUpdate from a dict
-transaction_split_update_form_dict = transaction_split_update.from_dict(transaction_split_update_dict)
+transaction_split_update_from_dict = TransactionSplitUpdate.from_dict(transaction_split_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

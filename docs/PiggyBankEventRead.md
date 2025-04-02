@@ -25,7 +25,7 @@ print(PiggyBankEventRead.to_json())
 # convert the object into a dict
 piggy_bank_event_read_dict = piggy_bank_event_read_instance.to_dict()
 # create an instance of PiggyBankEventRead from a dict
-piggy_bank_event_read_form_dict = piggy_bank_event_read.from_dict(piggy_bank_event_read_dict)
+piggy_bank_event_read_from_dict = PiggyBankEventRead.from_dict(piggy_bank_event_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

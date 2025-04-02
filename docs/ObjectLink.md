@@ -23,7 +23,7 @@ print(ObjectLink.to_json())
 # convert the object into a dict
 object_link_dict = object_link_instance.to_dict()
 # create an instance of ObjectLink from a dict
-object_link_form_dict = object_link.from_dict(object_link_dict)
+object_link_from_dict = ObjectLink.from_dict(object_link_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

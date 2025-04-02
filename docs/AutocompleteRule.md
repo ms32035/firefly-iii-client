@@ -24,7 +24,7 @@ print(AutocompleteRule.to_json())
 # convert the object into a dict
 autocomplete_rule_dict = autocomplete_rule_instance.to_dict()
 # create an instance of AutocompleteRule from a dict
-autocomplete_rule_form_dict = autocomplete_rule.from_dict(autocomplete_rule_dict)
+autocomplete_rule_from_dict = AutocompleteRule.from_dict(autocomplete_rule_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

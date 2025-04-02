@@ -22,7 +22,7 @@ print(RuleSingle.to_json())
 # convert the object into a dict
 rule_single_dict = rule_single_instance.to_dict()
 # create an instance of RuleSingle from a dict
-rule_single_form_dict = rule_single.from_dict(rule_single_dict)
+rule_single_from_dict = RuleSingle.from_dict(rule_single_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

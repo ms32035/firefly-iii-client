@@ -23,7 +23,7 @@ print(CategoryArray.to_json())
 # convert the object into a dict
 category_array_dict = category_array_instance.to_dict()
 # create an instance of CategoryArray from a dict
-category_array_form_dict = category_array.from_dict(category_array_dict)
+category_array_from_dict = CategoryArray.from_dict(category_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

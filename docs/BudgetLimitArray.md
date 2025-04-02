@@ -23,7 +23,7 @@ print(BudgetLimitArray.to_json())
 # convert the object into a dict
 budget_limit_array_dict = budget_limit_array_instance.to_dict()
 # create an instance of BudgetLimitArray from a dict
-budget_limit_array_form_dict = budget_limit_array.from_dict(budget_limit_array_dict)
+budget_limit_array_from_dict = BudgetLimitArray.from_dict(budget_limit_array_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

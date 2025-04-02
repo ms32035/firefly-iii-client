@@ -24,7 +24,7 @@ print(BillRead.to_json())
 # convert the object into a dict
 bill_read_dict = bill_read_instance.to_dict()
 # create an instance of BillRead from a dict
-bill_read_form_dict = bill_read.from_dict(bill_read_dict)
+bill_read_from_dict = BillRead.from_dict(bill_read_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

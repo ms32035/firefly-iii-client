@@ -30,7 +30,7 @@ print(RuleTrigger.to_json())
 # convert the object into a dict
 rule_trigger_dict = rule_trigger_instance.to_dict()
 # create an instance of RuleTrigger from a dict
-rule_trigger_form_dict = rule_trigger.from_dict(rule_trigger_dict)
+rule_trigger_from_dict = RuleTrigger.from_dict(rule_trigger_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
