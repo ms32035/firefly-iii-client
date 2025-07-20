@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **key** | **str** | This is a reference to the type of info shared, not influenced by translations or user preferences. The EUR value is a reference to the currency code. Possibilities are: balance-in-ABC, spent-in-ABC, earned-in-ABC, bills-paid-in-ABC, bills-unpaid-in-ABC, left-to-spend-in-ABC and net-worth-in-ABC. | [optional] 
 **local_icon** | **str** | Reference to a font-awesome icon without the fa- part. | [optional] 
 **monetary_value** | **float** | The amount as a float. | [optional] 
+**no_available_budgets** | **bool** | True if there are no available budgets available. | [optional] 
 **sub_title** | **str** | A short explanation of the amounts origin. Already formatted according to the locale of the user or translated, if relevant. | [optional] 
 **title** | **str** | A translated title for the information shared. | [optional] 
 **value_parsed** | **str** | The amount formatted according to the users locale | [optional] 
