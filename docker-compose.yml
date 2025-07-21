@@ -9,6 +9,6 @@ services:
       - .:/build/src:ro
       - ./.generator:/generator
     environment:
-      API_VERSION: 6.2.10
+      API_VERSION: 6.2.21
       API_SUBVERSION: "-v1"
       PACKAGE_BUILD: 0

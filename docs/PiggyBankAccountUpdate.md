@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**account_id** | **str** | The ID of the account. | [optional] 
 **current_amount** | **str** | The amount saved currently. | [optional] 
-**id** | **str** | The ID of the account. | 
 **name** | **str** | The name of the account. | [optional] 
 
 ## Example
