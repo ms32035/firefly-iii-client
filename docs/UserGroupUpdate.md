@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**native_currency_code** | **str** | Use either native_currency_id or native_currency_code. This will set the native currency for the user group (&#39;financial administration&#39;). | [optional] 
-**native_currency_id** | **str** | Use either native_currency_id or native_currency_code. This will set the native currency for the user group (&#39;financial administration&#39;). | [optional] 
+**primary_currency_code** | **str** | Use either primary_currency_id or primary_currency_code. This will set the primary currency for the user group (&#39;financial administration&#39;). | [optional] 
+**primary_currency_id** | **str** | Use either primary_currency_id or primary_currency_code. This will set the primary currency for the user group (&#39;financial administration&#39;). | [optional] 
 **title** | **str** | A descriptive title for the user group. | 
 
 ## Example

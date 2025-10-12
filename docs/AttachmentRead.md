@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Attachment**](Attachment.md) |  | 
+**attributes** | [**AttachmentProperties**](AttachmentProperties.md) |  | 
 **id** | **str** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 

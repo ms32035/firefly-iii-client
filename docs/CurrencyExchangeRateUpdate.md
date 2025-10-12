@@ -6,7 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_date** | **date** | The date to which the exchange rate is applicable. | 
+**var_from** | **str** | The base currency code. | [optional] 
 **rate** | **str** | The exchange rate from the base currency to the destination currency. | 
+**to** | **str** | The destination currency code. | [optional] 
 
 ## Example
 

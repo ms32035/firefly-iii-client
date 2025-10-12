@@ -1,5 +1,3 @@
-# project uses setup.py / setup.cg
-pyproject.toml
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

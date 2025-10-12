@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**BudgetLimit**](BudgetLimit.md) |  | 
+**attributes** | [**BudgetLimitProperties**](BudgetLimitProperties.md) |  | 
 **id** | **str** |  | 
 **type** | **str** | Immutable value | 
 

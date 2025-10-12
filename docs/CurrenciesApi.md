@@ -4,12 +4,11 @@ All URIs are relative to *https://demo.firefly-iii.org/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**default_currency**](CurrenciesApi.md#default_currency) | **POST** /v1/currencies/{code}/default | Make currency default currency.
 [**delete_currency**](CurrenciesApi.md#delete_currency) | **DELETE** /v1/currencies/{code} | Delete a currency.
 [**disable_currency**](CurrenciesApi.md#disable_currency) | **POST** /v1/currencies/{code}/disable | Disable a currency.
 [**enable_currency**](CurrenciesApi.md#enable_currency) | **POST** /v1/currencies/{code}/enable | Enable a single currency.
 [**get_currency**](CurrenciesApi.md#get_currency) | **GET** /v1/currencies/{code} | Get a single currency.
-[**get_native_currency**](CurrenciesApi.md#get_native_currency) | **GET** /v1/currencies/native | Get the native currency of the current administration.
+[**get_primary_currency**](CurrenciesApi.md#get_primary_currency) | **GET** /v1/currencies/primary | Get the primary currency of the current administration.
 [**list_account_by_currency**](CurrenciesApi.md#list_account_by_currency) | **GET** /v1/currencies/{code}/accounts | List all accounts with this currency.
 [**list_available_budget_by_currency**](CurrenciesApi.md#list_available_budget_by_currency) | **GET** /v1/currencies/{code}/available-budgets | List all available budgets with this currency.
 [**list_bill_by_currency**](CurrenciesApi.md#list_bill_by_currency) | **GET** /v1/currencies/{code}/bills | List all bills with this currency.
@@ -18,96 +17,10 @@ Method | HTTP request | Description
 [**list_recurrence_by_currency**](CurrenciesApi.md#list_recurrence_by_currency) | **GET** /v1/currencies/{code}/recurrences | List all recurring transactions with this currency.
 [**list_rule_by_currency**](CurrenciesApi.md#list_rule_by_currency) | **GET** /v1/currencies/{code}/rules | List all rules with this currency.
 [**list_transaction_by_currency**](CurrenciesApi.md#list_transaction_by_currency) | **GET** /v1/currencies/{code}/transactions | List all transactions with this currency.
+[**primary_currency**](CurrenciesApi.md#primary_currency) | **POST** /v1/currencies/{code}/primary | Make currency primary currency.
 [**store_currency**](CurrenciesApi.md#store_currency) | **POST** /v1/currencies | Store a new currency
 [**update_currency**](CurrenciesApi.md#update_currency) | **PUT** /v1/currencies/{code} | Update existing currency.
 
-
-# **default_currency**
-> CurrencySingle default_currency(code, x_trace_id=x_trace_id)
-
-Make currency default currency.
-
-Make this currency the default currency for the user. If the currency is not enabled, it will be enabled as well.
-
-### Example
-
-* OAuth Authentication (firefly_iii_auth):
-* Bearer Authentication (local_bearer_auth):
-
-```python
-import firefly_iii_client
-from firefly_iii_client.models.currency_single import CurrencySingle
-from firefly_iii_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://demo.firefly-iii.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = firefly_iii_client.Configuration(
-    host = "https://demo.firefly-iii.org/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure Bearer authorization: local_bearer_auth
-configuration = firefly_iii_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with firefly_iii_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = firefly_iii_client.CurrenciesApi(api_client)
-    code = 'USD' # str | The currency code.
-    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
-
-    try:
-        # Make currency default currency.
-        api_response = api_instance.default_currency(code, x_trace_id=x_trace_id)
-        print("The response of CurrenciesApi->default_currency:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CurrenciesApi->default_currency: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **str**| The currency code. | 
- **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
-
-### Return type
-
-[**CurrencySingle**](CurrencySingle.md)
-
-### Authorization
-
-[firefly_iii_auth](../README.md#firefly_iii_auth), [local_bearer_auth](../README.md#local_bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/vnd.api+json, application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Currency has been made the default currency. |  -  |
-**400** | Bad request |  -  |
-**401** | Unauthenticated |  -  |
-**404** | Page not found |  -  |
-**500** | Internal exception |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_currency**
 > delete_currency(code, x_trace_id=x_trace_id)
@@ -455,12 +368,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_native_currency**
-> CurrencySingle get_native_currency(x_trace_id=x_trace_id)
+# **get_primary_currency**
+> CurrencySingle get_primary_currency(x_trace_id=x_trace_id)
 
-Get the native currency of the current administration.
+Get the primary currency of the current administration.
 
-Get the native currency of the current administration. This replaces what was called "the user's default currency" although they are essentially the same.
+Get the primary currency of the current administration. This replaces what was called "the user's default currency" although they are essentially the same.
 
 ### Example
 
@@ -498,12 +411,12 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
-        # Get the native currency of the current administration.
-        api_response = api_instance.get_native_currency(x_trace_id=x_trace_id)
-        print("The response of CurrenciesApi->get_native_currency:\n")
+        # Get the primary currency of the current administration.
+        api_response = api_instance.get_primary_currency(x_trace_id=x_trace_id)
+        print("The response of CurrenciesApi->get_primary_currency:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CurrenciesApi->get_native_currency: %s\n" % e)
+        print("Exception when calling CurrenciesApi->get_primary_currency: %s\n" % e)
 ```
 
 
@@ -532,7 +445,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The native currency |  -  |
+**200** | The primary currency |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
@@ -862,8 +775,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Jan 01 00:00:00 UTC 2018' # date | Start date for the budget limit list. (optional)
-    end = 'Wed Jan 31 00:00:00 UTC 2018' # date | End date for the budget limit list. (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | Start date for the budget limit list. (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | End date for the budget limit list. (optional)
 
     try:
         # List all budget limits with this currency
@@ -1229,8 +1142,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to limit the list of transactions.  (optional)
     type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
     try:
@@ -1275,6 +1188,93 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of transactions. |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthenticated |  -  |
+**404** | Page not found |  -  |
+**500** | Internal exception |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **primary_currency**
+> CurrencySingle primary_currency(code, x_trace_id=x_trace_id)
+
+Make currency primary currency.
+
+Make this currency the primary currency for the current financial administration. If the currency is not enabled, it will be enabled as well.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+* Bearer Authentication (local_bearer_auth):
+
+```python
+import firefly_iii_client
+from firefly_iii_client.models.currency_single import CurrencySingle
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://demo.firefly-iii.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization: local_bearer_auth
+configuration = firefly_iii_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.CurrenciesApi(api_client)
+    code = 'USD' # str | The currency code.
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
+
+    try:
+        # Make currency primary currency.
+        api_response = api_instance.primary_currency(code, x_trace_id=x_trace_id)
+        print("The response of CurrenciesApi->primary_currency:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CurrenciesApi->primary_currency: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **str**| The currency code. | 
+ **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
+
+### Return type
+
+[**CurrencySingle**](CurrencySingle.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth), [local_bearer_auth](../README.md#local_bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.api+json, application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Currency has been made the primary currency. |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |

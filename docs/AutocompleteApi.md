@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**get_recurring_ac**](AutocompleteApi.md#get_recurring_ac) | **GET** /v1/autocomplete/recurring | Returns all recurring transactions of the user returned in a basic auto-complete array.
 [**get_rule_groups_ac**](AutocompleteApi.md#get_rule_groups_ac) | **GET** /v1/autocomplete/rule-groups | Returns all rule groups of the user returned in a basic auto-complete array.
 [**get_rules_ac**](AutocompleteApi.md#get_rules_ac) | **GET** /v1/autocomplete/rules | Returns all rules of the user returned in a basic auto-complete array.
+[**get_subscriptions_ac**](AutocompleteApi.md#get_subscriptions_ac) | **GET** /v1/autocomplete/subscriptions | Returns all subscriptions of the user returned in a basic auto-complete array.
 [**get_tag_ac**](AutocompleteApi.md#get_tag_ac) | **GET** /v1/autocomplete/tags | Returns all tags of the user returned in a basic auto-complete array.
 [**get_transaction_types_ac**](AutocompleteApi.md#get_transaction_types_ac) | **GET** /v1/autocomplete/transaction-types | Returns all transaction types returned in a basic auto-complete array. English only.
 [**get_transactions_ac**](AutocompleteApi.md#get_transactions_ac) | **GET** /v1/autocomplete/transactions | Returns all transaction descriptions of the user returned in a basic auto-complete array.
@@ -64,7 +65,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     query = 'string' # str | The autocomplete search query. (optional)
     limit = 10 # int | The number of items returned. (optional)
-    var_date = '2020-09-17' # str | If the account is an asset account or a liability, the autocomplete will also return the balance of the account on this date. (optional)
+    var_date = '2025-10-01' # str | If the account is an asset account or a liability, the autocomplete will also return the balance of the account on this date. (optional)
     types = [firefly_iii_client.AccountTypeFilter()] # List[AccountTypeFilter] | Optional filter on the account type(s) used in the autocomplete. (optional)
 
     try:
@@ -1073,6 +1074,94 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | A list of rules with very basic information. |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthenticated |  -  |
+**404** | Page not found |  -  |
+**422** | Validation error. The body will have the exact details. |  -  |
+**500** | Internal exception |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_subscriptions_ac**
+> List[AutocompleteBill] get_subscriptions_ac(x_trace_id=x_trace_id, query=query, limit=limit)
+
+Returns all subscriptions of the user returned in a basic auto-complete array.
+
+### Example
+
+* OAuth Authentication (firefly_iii_auth):
+* Bearer Authentication (local_bearer_auth):
+
+```python
+import firefly_iii_client
+from firefly_iii_client.models.autocomplete_bill import AutocompleteBill
+from firefly_iii_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://demo.firefly-iii.org/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = firefly_iii_client.Configuration(
+    host = "https://demo.firefly-iii.org/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
+
+# Configure Bearer authorization: local_bearer_auth
+configuration = firefly_iii_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with firefly_iii_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = firefly_iii_client.AutocompleteApi(api_client)
+    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
+    query = 'string' # str | The autocomplete search query. (optional)
+    limit = 10 # int | The number of items returned. (optional)
+
+    try:
+        # Returns all subscriptions of the user returned in a basic auto-complete array.
+        api_response = api_instance.get_subscriptions_ac(x_trace_id=x_trace_id, query=query, limit=limit)
+        print("The response of AutocompleteApi->get_subscriptions_ac:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AutocompleteApi->get_subscriptions_ac: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
+ **query** | **str**| The autocomplete search query. | [optional] 
+ **limit** | **int**| The number of items returned. | [optional] 
+
+### Return type
+
+[**List[AutocompleteBill]**](AutocompleteBill.md)
+
+### Authorization
+
+[firefly_iii_auth](../README.md#firefly_iii_auth), [local_bearer_auth](../README.md#local_bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A list of subscriptions with very basic information. |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |

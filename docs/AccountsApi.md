@@ -100,7 +100,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account**
-> AccountSingle get_account(id, x_trace_id=x_trace_id, var_date=var_date)
+> AccountSingle get_account(id, x_trace_id=x_trace_id, start=start, end=end, var_date=var_date)
 
 Get single account.
 
@@ -142,11 +142,13 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.AccountsApi(api_client)
     id = '123' # str | The ID of the account.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
+    start = '2013-10-20' # date | A date formatted YYYY-MM-DD. May be omitted.  (optional)
+    end = '2013-10-20' # date | A date formatted YYYY-MM-DD. Must be after \"start\". Can not be the same as \"start\". May be omitted.  (optional)
     var_date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
 
     try:
         # Get single account.
-        api_response = api_instance.get_account(id, x_trace_id=x_trace_id, var_date=var_date)
+        api_response = api_instance.get_account(id, x_trace_id=x_trace_id, start=start, end=end, var_date=var_date)
         print("The response of AccountsApi->get_account:\n")
         pprint(api_response)
     except Exception as e:
@@ -162,6 +164,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The ID of the account. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD. May be omitted.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD. Must be after \&quot;start\&quot;. Can not be the same as \&quot;start\&quot;. May be omitted.  | [optional] 
  **var_date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional] 
 
 ### Return type
@@ -190,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_account**
-> AccountArray list_account(x_trace_id=x_trace_id, limit=limit, page=page, var_date=var_date, type=type)
+> AccountArray list_account(x_trace_id=x_trace_id, limit=limit, page=page, start=start, end=end, var_date=var_date, type=type)
 
 List all accounts.
 
@@ -234,12 +238,14 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
+    start = '2013-10-20' # date | A date formatted YYYY-MM-DD. May be omitted.  (optional)
+    end = '2013-10-20' # date | A date formatted YYYY-MM-DD. Must be after \"start\". Can not be the same as \"start\". May be omitted.  (optional)
     var_date = '2013-10-20' # date | A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account's balance on that day.  (optional)
     type = firefly_iii_client.AccountTypeFilter() # AccountTypeFilter | Optional filter on the account type(s) returned (optional)
 
     try:
         # List all accounts.
-        api_response = api_instance.list_account(x_trace_id=x_trace_id, limit=limit, page=page, var_date=var_date, type=type)
+        api_response = api_instance.list_account(x_trace_id=x_trace_id, limit=limit, page=page, start=start, end=end, var_date=var_date, type=type)
         print("The response of AccountsApi->list_account:\n")
         pprint(api_response)
     except Exception as e:
@@ -256,6 +262,8 @@ Name | Type | Description  | Notes
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
  **limit** | **int**| Number of items per page. The default pagination is per 50 items. | [optional] 
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
+ **start** | **date**| A date formatted YYYY-MM-DD. May be omitted.  | [optional] 
+ **end** | **date**| A date formatted YYYY-MM-DD. Must be after \&quot;start\&quot;. Can not be the same as \&quot;start\&quot;. May be omitted.  | [optional] 
  **var_date** | **date**| A date formatted YYYY-MM-DD. When added to the request, Firefly III will show the account&#39;s balance on that day.  | [optional] 
  **type** | [**AccountTypeFilter**](.md)| Optional filter on the account type(s) returned | [optional] 
 
@@ -513,8 +521,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
-    end = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
     type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
     try:
@@ -698,7 +706,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.AccountsApi(api_client)
     id = '123' # str | The ID of the account.
-    account_update = firefly_iii_client.AccountUpdate() # AccountUpdate | JSON array or formdata with updated account information. See the model for the exact specifications.
+    account_update = firefly_iii_client.AccountUpdate() # AccountUpdate | JSON array or form-data with updated account information. See the model for the exact specifications.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
@@ -718,7 +726,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The ID of the account. | 
- **account_update** | [**AccountUpdate**](AccountUpdate.md)| JSON array or formdata with updated account information. See the model for the exact specifications. | 
+ **account_update** | [**AccountUpdate**](AccountUpdate.md)| JSON array or form-data with updated account information. See the model for the exact specifications. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 
 ### Return type

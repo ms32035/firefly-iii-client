@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **first_date** | **date** | First time the recurring transaction will fire. | [optional] 
 **notes** | **str** |  | [optional] 
 **nr_of_repetitions** | **int** | Max number of created transactions. Use either this field or repeat_until. | [optional] 
-**repeat_until** | **date** | Date until the recurring transaction can fire. After that date, it&#39;s basically inactive. Use either this field or repetitions. | [optional] 
+**repeat_until** | **date** | Date until when the recurring transaction can fire. After that date, it&#39;s basically inactive. Use either this field or repetitions. | [optional] 
 **repetitions** | [**List[RecurrenceRepetitionUpdate]**](RecurrenceRepetitionUpdate.md) |  | [optional] 
 **title** | **str** |  | [optional] 
 **transactions** | [**List[RecurrenceTransactionUpdate]**](RecurrenceTransactionUpdate.md) |  | [optional] 

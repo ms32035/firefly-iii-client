@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**active** | **bool** | Is the budget active or not? | [optional] 
 **id** | **str** |  | 
 **name** | **str** | Name of the budget found by an auto-complete search. | 
 

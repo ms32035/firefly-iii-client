@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**active** | **bool** | Is the recurring transaction active or not? | [optional] 
 **description** | **str** | Description of the recurrence found by auto-complete. | [optional] 
 **id** | **str** |  | 
 **name** | **str** | Name of the recurrence found by an auto-complete search. | 

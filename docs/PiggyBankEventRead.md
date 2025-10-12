@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**PiggyBankEvent**](PiggyBankEvent.md) |  | 
+**attributes** | [**PiggyBankEventProperties**](PiggyBankEventProperties.md) |  | 
 **id** | **str** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 

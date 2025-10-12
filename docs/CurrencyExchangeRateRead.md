@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**CurrencyExchangeRateReadAttributes**](CurrencyExchangeRateReadAttributes.md) |  | 
-**id** | **str** |  | 
-**links** | [**ObjectLink**](ObjectLink.md) |  | 
-**type** | **str** | Immutable value | 
+**attributes** | [**CurrencyExchangeProperties**](CurrencyExchangeProperties.md) |  | [optional] 
+**id** | **str** |  | [optional] [readonly] 
+**links** | [**ObjectLink**](ObjectLink.md) |  | [optional] 
+**type** | **str** | Immutable value | [optional] [readonly] 
 
 ## Example
 

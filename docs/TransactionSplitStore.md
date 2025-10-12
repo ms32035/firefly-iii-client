@@ -11,11 +11,10 @@ Name | Type | Description | Notes
 **book_date** | **datetime** |  | [optional] 
 **budget_id** | **str** | The budget ID for this transaction. | [optional] 
 **budget_name** | **str** | The name of the budget to be used. If the budget name is unknown, the ID will be used or the value will be ignored. | [optional] 
-**bunq_payment_id** | **str** | Internal ID of bunq transaction. Field is no longer used but still works. | [optional] 
 **category_id** | **str** | The category ID for this transaction. | [optional] 
 **category_name** | **str** | The name of the category to be used. If the category is unknown, it will be created. If the ID and the name point to different categories, the ID overrules the name. | [optional] 
-**currency_code** | **str** | Currency code. Default is the source account&#39;s currency, or the user&#39;s default currency. The value you submit may be overruled by the source or destination account. | [optional] 
-**currency_id** | **str** | Currency ID. Default is the source account&#39;s currency, or the user&#39;s default currency. The value you submit may be overruled by the source or destination account. | [optional] 
+**currency_code** | **str** | Currency code. Default is the source account&#39;s currency, or the user&#39;s financial administration&#39;s primary currency. The value you submit may be overruled by the source or destination account. | [optional] 
+**currency_id** | **str** | Currency ID. Default is the source account&#39;s currency, or the user&#39;s financial administration&#39;s currency. The value you submit may be overruled by the source or destination account. | [optional] 
 **var_date** | **datetime** | Date of the transaction | 
 **description** | **str** | Description of the transaction. | 
 **destination_id** | **str** | ID of the destination account. For a deposit or a transfer, this must always be an asset account. For withdrawals this must be an expense account. | [optional] 

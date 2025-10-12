@@ -5,19 +5,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_currency_code** | **str** | Code for the currency used by this account. Even if \&quot;convertToNative\&quot; is on, the account currency code is displayed here. | [optional] 
-**account_currency_decimal_places** | **int** | Number of decimal places for the currency used by this account. Even if \&quot;convertToNative\&quot; is on, the account currency code is displayed here. | [optional] 
-**account_currency_id** | **str** | ID for the currency used by this account. Even if \&quot;convertToNative\&quot; is on, the account currency ID is displayed here. | [optional] 
-**account_currency_name** | **str** | Name for the currency used by this account. Even if \&quot;convertToNative\&quot; is on, the account currency name is displayed here. | [optional] 
-**account_currency_symbol** | **str** | Code for the currency used by this account. Even if \&quot;convertToNative\&quot; is on, the account currency code is displayed here. | [optional] 
-**currency_code** | **str** | Currency code for the currency used by this account. If the user prefers amounts converted to their native currency, this native currency is used instead. | 
-**currency_decimal_places** | **int** | Number of decimal places for the currency used by this account. If the user prefers amounts converted to their native currency, this native currency is used instead. | 
-**currency_id** | **str** | ID for the currency used by this account. If the user prefers amounts converted to their native currency, this native currency is used instead. | 
-**currency_name** | **str** | Currency name for the currency used by this account. If the user prefers amounts converted to their native currency, this native currency is used instead. | 
-**currency_symbol** | **str** | Currency symbol for the currency used by this account. If the user prefers amounts converted to their native currency, this native currency is used instead. | 
+**account_currency_code** | **str** | Code for the currency used by this account. Even if \&quot;convertToPrimary\&quot; is on, the account currency code is displayed here. | [optional] 
+**account_currency_decimal_places** | **int** | Number of decimal places for the currency used by this account. Even if \&quot;convertToPrimary\&quot; is on, the account currency code is displayed here. | [optional] 
+**account_currency_id** | **str** | ID for the currency used by this account. Even if \&quot;convertToPrimary\&quot; is on, the account currency ID is displayed here. | [optional] 
+**account_currency_name** | **str** | Name for the currency used by this account. Even if \&quot;convertToPrimary\&quot; is on, the account currency name is displayed here. | [optional] 
+**account_currency_symbol** | **str** | Code for the currency used by this account. Even if \&quot;convertToPrimary\&quot; is on, the account currency code is displayed here. | [optional] 
+**active** | **bool** | Is the bill active or not? | [optional] 
+**currency_code** | **str** | Currency code for the currency used by this account. If the user prefers amounts converted to their primary currency, this primary currency is used instead. | 
+**currency_decimal_places** | **int** | Number of decimal places for the currency used by this account. If the user prefers amounts converted to their primary currency, this primary currency is used instead. | 
+**currency_id** | **str** | ID for the currency used by this account. If the user prefers amounts converted to their primary currency, this primary currency is used instead. | 
+**currency_name** | **str** | Currency name for the currency used by this account. If the user prefers amounts converted to their primary currency, this primary currency is used instead. | 
+**currency_symbol** | **str** | Currency symbol for the currency used by this account. If the user prefers amounts converted to their primary currency, this primary currency is used instead. | 
 **id** | **str** |  | 
 **name** | **str** | Name of the account found by an auto-complete search. | 
-**name_with_balance** | **str** | Asset accounts and liabilities have a second field with the given date&#39;s account balance in the account currency or native currency. | 
+**name_with_balance** | **str** | Asset accounts and liabilities have a second field with the given date&#39;s account balance in the account currency or primary currency. | 
 **type** | **str** | Account type of the account found by the auto-complete search. | 
 
 ## Example

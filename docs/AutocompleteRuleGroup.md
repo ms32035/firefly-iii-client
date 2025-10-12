@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**active** | **bool** | Is the bill active or not? | [optional] 
 **description** | **str** | Description of the rule group found by auto-complete. | [optional] 
 **id** | **str** |  | 
 **name** | **str** | Name of the rule group found by an auto-complete search. | 
