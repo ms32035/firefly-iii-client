@@ -11,8 +11,8 @@ PRs directly to the code or docs will most likely be overwritten
 Generate the new python package
 
 ```
-docker-compose build
-docker-compose run firefly_iii_client_generator
+docker compose build
+docker compose run firefly_iii_client_generator
 ```
 
 This should generate a new package in `target` directory

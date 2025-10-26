@@ -3,12 +3,12 @@ services:
     build:
       context: .
       args:
-        - OPENAPI_TAG=v7.12.0
+        - OPENAPI_TAG=v7.16.0
     volumes:
       - ./target:/build/target
       - .:/build/src:ro
       - ./.generator:/generator
     environment:
-      API_VERSION: 6.2.21
+      API_VERSION: 6.4.0
       API_SUBVERSION: "-v1"
       PACKAGE_BUILD: 0
