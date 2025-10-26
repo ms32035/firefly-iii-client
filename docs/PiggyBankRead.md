@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**PiggyBank**](PiggyBank.md) |  | 
+**attributes** | [**PiggyBankProperties**](PiggyBankProperties.md) |  | 
 **id** | **str** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 

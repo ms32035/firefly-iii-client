@@ -4,8 +4,6 @@ The possible roles of the user in this user group are documented here: https://d
 
 ## Enum
 
-* `OWNER` (value: `'owner'`)
-
 * `RO` (value: `'ro'`)
 
 * `MNG_TRX` (value: `'mng_trx'`)

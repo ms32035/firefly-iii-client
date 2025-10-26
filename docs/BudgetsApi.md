@@ -233,8 +233,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.BudgetsApi(api_client)
     id = '123' # str | The ID of the requested budget.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent.  (optional)
 
     try:
         # Get a single budget.
@@ -504,8 +504,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to get info on how much the user has spent. You must submit both start and end.  (optional)
 
     try:
         # List all budgets.
@@ -595,8 +595,8 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.BudgetsApi(api_client)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD. 
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD. 
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD. 
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD. 
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
@@ -687,8 +687,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.BudgetsApi(api_client)
     id = '123' # str | The ID of the requested budget.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
 
     try:
         # Get all limits for a budget.
@@ -781,8 +781,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
     type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
     try:
@@ -973,8 +973,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
 
     try:
         # All transactions without a budget.
@@ -1296,7 +1296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_budget_limit**
-> BudgetLimitSingle update_budget_limit(id, limit_id, budget_limit, x_trace_id=x_trace_id)
+> BudgetLimitSingle update_budget_limit(id, limit_id, budget_limit_update, x_trace_id=x_trace_id)
 
 Update existing budget limit.
 
@@ -1309,8 +1309,8 @@ Update existing budget limit.
 
 ```python
 import firefly_iii_client
-from firefly_iii_client.models.budget_limit import BudgetLimit
 from firefly_iii_client.models.budget_limit_single import BudgetLimitSingle
+from firefly_iii_client.models.budget_limit_update import BudgetLimitUpdate
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
 
@@ -1338,12 +1338,12 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.BudgetsApi(api_client)
     id = '123' # str | The ID of the budget. The budget limit MUST be associated to the budget ID.
     limit_id = '123' # str | The ID of the budget limit. The budget limit MUST be associated to the budget ID.
-    budget_limit = firefly_iii_client.BudgetLimit() # BudgetLimit | JSON array with updated budget limit information. See the model for the exact specifications.
+    budget_limit_update = firefly_iii_client.BudgetLimitUpdate() # BudgetLimitUpdate | JSON array with updated budget limit information. See the model for the exact specifications.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Update existing budget limit.
-        api_response = api_instance.update_budget_limit(id, limit_id, budget_limit, x_trace_id=x_trace_id)
+        api_response = api_instance.update_budget_limit(id, limit_id, budget_limit_update, x_trace_id=x_trace_id)
         print("The response of BudgetsApi->update_budget_limit:\n")
         pprint(api_response)
     except Exception as e:
@@ -1359,7 +1359,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The ID of the budget. The budget limit MUST be associated to the budget ID. | 
  **limit_id** | **str**| The ID of the budget limit. The budget limit MUST be associated to the budget ID. | 
- **budget_limit** | [**BudgetLimit**](BudgetLimit.md)| JSON array with updated budget limit information. See the model for the exact specifications. | 
+ **budget_limit_update** | [**BudgetLimitUpdate**](BudgetLimitUpdate.md)| JSON array with updated budget limit information. See the model for the exact specifications. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 
 ### Return type

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Recurrence**](Recurrence.md) |  | 
+**attributes** | [**RecurrenceProperties**](RecurrenceProperties.md) |  | 
 **id** | **str** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 

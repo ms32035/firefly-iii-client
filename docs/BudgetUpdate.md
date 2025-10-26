@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [optional] 
 **auto_budget_amount** | **str** |  | [optional] 
-**auto_budget_currency_code** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
-**auto_budget_currency_id** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s default currency. | [optional] 
+**auto_budget_currency_code** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s financial administration&#39;s currency. | [optional] 
+**auto_budget_currency_id** | **str** | Use either currency_id or currency_code. Defaults to the user&#39;s financial administration&#39;s currency. | [optional] 
 **auto_budget_period** | [**AutoBudgetPeriod**](AutoBudgetPeriod.md) |  | [optional] 
 **auto_budget_type** | [**AutoBudgetType**](AutoBudgetType.md) |  | [optional] 
 **name** | **str** |  | 

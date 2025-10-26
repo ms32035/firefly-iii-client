@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** | The currency code | [optional] 
 **decimal_places** | **int** | How many decimals to use when displaying this currency. Between 0 and 16. | [optional] 
-**default** | **bool** | If the currency must be the default for the user. You can only submit TRUE. Submitting FALSE will not drop this currency as the default currency, because then the system would be without one. | [optional] 
 **enabled** | **bool** | If the currency is enabled | [optional] 
 **name** | **str** | The currency name | [optional] 
+**primary** | **bool** | If the currency must be the primary for the user. You can only submit TRUE. Submitting FALSE will not drop this currency as the primary currency, because then the system would be without one. | [optional] 
 **symbol** | **str** | The currency symbol | [optional] 
 
 ## Example

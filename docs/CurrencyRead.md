@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Currency**](Currency.md) |  | 
+**attributes** | [**CurrencyProperties**](CurrencyProperties.md) |  | 
 **id** | **str** |  | 
 **type** | **str** | Immutable value | 
 

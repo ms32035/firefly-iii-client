@@ -140,7 +140,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.AboutApi(api_client)
     cli_token = 'd5ea6b5fb774618dd6ad6ba6e0a7f55c' # str | The CLI token of any user in Firefly III, required to run the cron job.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
-    var_date = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD. This can be used to make the cron job pretend it's running on another day.  (optional)
+    var_date = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD. This can be used to make the cron job pretend it's running on another day.  (optional)
     force = false # bool | Forces the cron job to fire, regardless of whether it has fired before. This may result in double transactions or weird budgets, so be careful.  (optional)
 
     try:

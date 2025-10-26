@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**current_amount** | **str** |  | 
-**id** | **str** | The ID of the account. | [readonly] 
-**name** | **str** |  | [readonly] 
-**native_current_amount** | **str** | If convertToNative is on, this will show the amount in the native currency. | 
+**account_id** | **str** | The ID of the account. | [optional] [readonly] 
+**current_amount** | **str** |  | [optional] 
+**name** | **str** |  | [optional] [readonly] 
+**pc_current_amount** | **str** | If convertToPrimary is on, this will show the amount in the primary currency. | [optional] 
 
 ## Example
 

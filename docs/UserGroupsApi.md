@@ -229,7 +229,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.UserGroupsApi(api_client)
     id = '1' # str | The ID of the account.
-    user_group_update = firefly_iii_client.UserGroupUpdate() # UserGroupUpdate | JSON array or formdata with new user group information. See the model for the exact specifications.
+    user_group_update = firefly_iii_client.UserGroupUpdate() # UserGroupUpdate | JSON array or form-data with new user group information. See the model for the exact specifications.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
@@ -249,7 +249,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The ID of the account. | 
- **user_group_update** | [**UserGroupUpdate**](UserGroupUpdate.md)| JSON array or formdata with new user group information. See the model for the exact specifications. | 
+ **user_group_update** | [**UserGroupUpdate**](UserGroupUpdate.md)| JSON array or form-data with new user group information. See the model for the exact specifications. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 
 ### Return type

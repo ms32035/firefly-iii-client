@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Delete a user.
 
-Delete a user. You cannot delete the user you're authenticated with. This cannot be undone. Be careful!
+Delete a user. You cannot delete the user you're authenticated with. This cannot be undone. Be careful.
 
 ### Example
 

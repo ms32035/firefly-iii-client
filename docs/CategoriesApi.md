@@ -139,8 +139,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     api_instance = firefly_iii_client.CategoriesApi(api_client)
     id = '123' # str | The ID of the category.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to show spent and earned info.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to show spent and earned info.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to show spent and earned info.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to show spent and earned info.  (optional)
 
     try:
         # Get a single category.
@@ -413,8 +413,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to limit the result list.  (optional)
     type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned (optional)
 
     try:
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **store_category**
-> CategorySingle store_category(category, x_trace_id=x_trace_id)
+> CategorySingle store_category(category_store, x_trace_id=x_trace_id)
 
 Store a new category
 
@@ -480,8 +480,8 @@ Creates a new category. The data required can be submitted as a JSON body or as 
 
 ```python
 import firefly_iii_client
-from firefly_iii_client.models.category import Category
 from firefly_iii_client.models.category_single import CategorySingle
+from firefly_iii_client.models.category_store import CategoryStore
 from firefly_iii_client.rest import ApiException
 from pprint import pprint
 
@@ -507,12 +507,12 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.CategoriesApi(api_client)
-    category = firefly_iii_client.Category() # Category | JSON array or key=value pairs with the necessary category information. See the model for the exact specifications.
+    category_store = firefly_iii_client.CategoryStore() # CategoryStore | JSON array or key=value pairs with the necessary category information. See the model for the exact specifications.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
         # Store a new category
-        api_response = api_instance.store_category(category, x_trace_id=x_trace_id)
+        api_response = api_instance.store_category(category_store, x_trace_id=x_trace_id)
         print("The response of CategoriesApi->store_category:\n")
         pprint(api_response)
     except Exception as e:
@@ -526,7 +526,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category** | [**Category**](Category.md)| JSON array or key&#x3D;value pairs with the necessary category information. See the model for the exact specifications. | 
+ **category_store** | [**CategoryStore**](CategoryStore.md)| JSON array or key&#x3D;value pairs with the necessary category information. See the model for the exact specifications. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 
 ### Return type

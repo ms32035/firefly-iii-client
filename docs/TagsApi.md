@@ -52,7 +52,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
-    tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary.
+    tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your mileage may vary.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
@@ -69,7 +69,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | **str**| Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary. | 
+ **tag** | **str**| Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your mileage may vary. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 
 ### Return type
@@ -137,7 +137,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
-    tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary.
+    tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your mileage may vary.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
@@ -158,7 +158,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | **str**| Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary. | 
+ **tag** | **str**| Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your mileage may vary. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
  **limit** | **int**| Number of items per page. The default pagination is per 50 items. | [optional] 
  **page** | **int**| Page number. The default pagination is per 50 items. | [optional] 
@@ -413,8 +413,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
-    end = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD. This is the start date of the selected range (inclusive).  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD. This is the end date of the selected range (inclusive).  (optional)
     type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
     try:
@@ -596,7 +596,7 @@ configuration = firefly_iii_client.Configuration(
 with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.TagsApi(api_client)
-    tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary.
+    tag = 'groceries' # str | Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your mileage may vary.
     tag_model_update = firefly_iii_client.TagModelUpdate() # TagModelUpdate | JSON array with updated tag information. See the model for the exact specifications.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
@@ -616,7 +616,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tag** | **str**| Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your milage may vary. | 
+ **tag** | **str**| Either the tag itself or the tag ID. If you use the tag itself, and it contains international (non-ASCII) characters, your mileage may vary. | 
  **tag_model_update** | [**TagModelUpdate**](TagModelUpdate.md)| JSON array with updated tag information. See the model for the exact specifications. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 

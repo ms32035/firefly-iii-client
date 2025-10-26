@@ -5,7 +5,7 @@ All URIs are relative to *https://demo.firefly-iii.org/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_available_budget**](AvailableBudgetsApi.md#get_available_budget) | **GET** /v1/available-budgets/{id} | Get a single available budget.
-[**list_available_budget**](AvailableBudgetsApi.md#list_available_budget) | **GET** /v1/available-budgets | List all available budget amounts.
+[**list_available_budgets**](AvailableBudgetsApi.md#list_available_budgets) | **GET** /v1/available-budgets | List all available budget amounts.
 
 
 # **get_available_budget**
@@ -95,12 +95,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_available_budget**
-> AvailableBudgetArray list_available_budget(x_trace_id=x_trace_id, limit=limit, page=page, start=start, end=end)
+# **list_available_budgets**
+> AvailableBudgetArray list_available_budgets(x_trace_id=x_trace_id, limit=limit, page=page, start=start, end=end)
 
 List all available budget amounts.
 
-Firefly III allows users to set the amount that is available to be budgeted in so-called "available budgets". For example, the user could have 1200,- available to be divided during the coming month. This amount is used on the /budgets page. This endpoint returns all of these amounts and the periods for which they are set.
+Firefly III calculates the total amount of money budgeted in so-called "available budgets". This endpoint returns all of these amounts and the periods for which they are calculated.
 
 
 ### Example
@@ -139,16 +139,16 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
-    end = 'Mon Dec 31 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD.  (optional)
 
     try:
         # List all available budget amounts.
-        api_response = api_instance.list_available_budget(x_trace_id=x_trace_id, limit=limit, page=page, start=start, end=end)
-        print("The response of AvailableBudgetsApi->list_available_budget:\n")
+        api_response = api_instance.list_available_budgets(x_trace_id=x_trace_id, limit=limit, page=page, start=start, end=end)
+        print("The response of AvailableBudgetsApi->list_available_budgets:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AvailableBudgetsApi->list_available_budget: %s\n" % e)
+        print("Exception when calling AvailableBudgetsApi->list_available_budgets: %s\n" % e)
 ```
 
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Account**](Account.md) |  | 
+**attributes** | [**AccountProperties**](AccountProperties.md) |  | 
 **id** | **str** |  | 
 **type** | **str** | Immutable value | 
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Webhook**](Webhook.md) |  | 
+**attributes** | [**WebhookProperties**](WebhookProperties.md) |  | 
 **id** | **str** |  | 
 **links** | [**ObjectLink**](ObjectLink.md) |  | 
 **type** | **str** | Immutable value | 

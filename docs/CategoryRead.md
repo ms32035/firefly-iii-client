@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Category**](Category.md) |  | 
+**attributes** | [**CategoryProperties**](CategoryProperties.md) |  | 
 **id** | **str** |  | 
 **type** | **str** | Immutable value | 
 

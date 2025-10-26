@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**delete_object_group**](ObjectGroupsApi.md#delete_object_group) | **DELETE** /v1/object-groups/{id} | Delete a object group.
 [**get_object_group**](ObjectGroupsApi.md#get_object_group) | **GET** /v1/object-groups/{id} | Get a single object group.
 [**list_bill_by_object_group**](ObjectGroupsApi.md#list_bill_by_object_group) | **GET** /v1/object-groups/{id}/bills | List all bills with this object group.
-[**list_object_groups**](ObjectGroupsApi.md#list_object_groups) | **GET** /v1/object-groups | List all oject groups.
+[**list_object_groups**](ObjectGroupsApi.md#list_object_groups) | **GET** /v1/object-groups | List all object groups.
 [**list_piggy_bank_by_object_group**](ObjectGroupsApi.md#list_piggy_bank_by_object_group) | **GET** /v1/object-groups/{id}/piggy-banks | List all piggy banks related to the object group.
 [**update_object_group**](ObjectGroupsApi.md#update_object_group) | **PUT** /v1/object-groups/{id} | Update existing object group.
 
@@ -277,9 +277,9 @@ Name | Type | Description  | Notes
 # **list_object_groups**
 > ObjectGroupArray list_object_groups(x_trace_id=x_trace_id, limit=limit, page=page)
 
-List all oject groups.
+List all object groups.
 
-List all oject groups.
+List all object groups.
 
 ### Example
 
@@ -319,7 +319,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
 
     try:
-        # List all oject groups.
+        # List all object groups.
         api_response = api_instance.list_object_groups(x_trace_id=x_trace_id, limit=limit, page=page)
         print("The response of ObjectGroupsApi->list_object_groups:\n")
         pprint(api_response)

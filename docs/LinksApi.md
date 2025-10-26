@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**list_transaction_link**](LinksApi.md#list_transaction_link) | **GET** /v1/transaction-links | List all transaction links.
 [**store_link_type**](LinksApi.md#store_link_type) | **POST** /v1/link-types | Create a new link type
 [**store_transaction_link**](LinksApi.md#store_transaction_link) | **POST** /v1/transaction-links | Create a new link between transactions
-[**update_currency_exchange_rate**](LinksApi.md#update_currency_exchange_rate) | **PUT** /v1/exchange-rates/{id} | Update existing currency exchange rate.
 [**update_link_type**](LinksApi.md#update_link_type) | **PUT** /v1/link-types/{id} | Update existing link type.
 [**update_transaction_link**](LinksApi.md#update_transaction_link) | **PUT** /v1/transaction-links/{id} | Update an existing link between transactions.
 
@@ -500,8 +499,8 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
     limit = 10 # int | Number of items per page. The default pagination is per 50 items. (optional)
     page = 1 # int | Page number. The default pagination is per 50 items. (optional)
-    start = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
-    end = 'Mon Sep 17 00:00:00 UTC 2018' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
+    start = 'Wed Oct 01 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
+    end = 'Fri Oct 31 00:00:00 UTC 2025' # date | A date formatted YYYY-MM-DD, to limit the results.  (optional)
     type = firefly_iii_client.TransactionTypeFilter() # TransactionTypeFilter | Optional filter on the transaction type(s) returned. (optional)
 
     try:
@@ -821,97 +820,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_currency_exchange_rate**
-> CurrencyExchangeRateSingle update_currency_exchange_rate(id, currency_exchange_rate_update, x_trace_id=x_trace_id)
-
-Update existing currency exchange rate.
-
-Used to update a single currency exchange rate
-
-
-### Example
-
-* OAuth Authentication (firefly_iii_auth):
-* Bearer Authentication (local_bearer_auth):
-
-```python
-import firefly_iii_client
-from firefly_iii_client.models.currency_exchange_rate_single import CurrencyExchangeRateSingle
-from firefly_iii_client.models.currency_exchange_rate_update import CurrencyExchangeRateUpdate
-from firefly_iii_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://demo.firefly-iii.org/api
-# See configuration.py for a list of all supported configuration parameters.
-configuration = firefly_iii_client.Configuration(
-    host = "https://demo.firefly-iii.org/api"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-configuration.access_token = os.environ["ACCESS_TOKEN"]
-
-# Configure Bearer authorization: local_bearer_auth
-configuration = firefly_iii_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with firefly_iii_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = firefly_iii_client.LinksApi(api_client)
-    id = '123' # str | The ID of the currency exchange rate.
-    currency_exchange_rate_update = firefly_iii_client.CurrencyExchangeRateUpdate() # CurrencyExchangeRateUpdate | JSON array or formdata with updated exchange rate information. See the model for the exact specifications.
-    x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
-
-    try:
-        # Update existing currency exchange rate.
-        api_response = api_instance.update_currency_exchange_rate(id, currency_exchange_rate_update, x_trace_id=x_trace_id)
-        print("The response of LinksApi->update_currency_exchange_rate:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling LinksApi->update_currency_exchange_rate: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| The ID of the currency exchange rate. | 
- **currency_exchange_rate_update** | [**CurrencyExchangeRateUpdate**](CurrencyExchangeRateUpdate.md)| JSON array or formdata with updated exchange rate information. See the model for the exact specifications. | 
- **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
-
-### Return type
-
-[**CurrencyExchangeRateSingle**](CurrencyExchangeRateSingle.md)
-
-### Authorization
-
-[firefly_iii_auth](../README.md#firefly_iii_auth), [local_bearer_auth](../README.md#local_bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded
- - **Accept**: application/vnd.api+json, application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Updated exchange rate stored, result in response |  -  |
-**400** | Bad request |  -  |
-**401** | Unauthenticated |  -  |
-**404** | Page not found |  -  |
-**422** | Validation error. The body will have the exact details. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **update_link_type**
 > LinkTypeSingle update_link_type(id, link_type_update, x_trace_id=x_trace_id)
 
@@ -955,7 +863,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the link type.
-    link_type_update = firefly_iii_client.LinkTypeUpdate() # LinkTypeUpdate | JSON array or formdata with updated link type information. See the model for the exact specifications.
+    link_type_update = firefly_iii_client.LinkTypeUpdate() # LinkTypeUpdate | JSON array or form-data with updated link type information. See the model for the exact specifications.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
@@ -975,7 +883,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The ID of the link type. | 
- **link_type_update** | [**LinkTypeUpdate**](LinkTypeUpdate.md)| JSON array or formdata with updated link type information. See the model for the exact specifications. | 
+ **link_type_update** | [**LinkTypeUpdate**](LinkTypeUpdate.md)| JSON array or form-data with updated link type information. See the model for the exact specifications. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 
 ### Return type
@@ -1047,7 +955,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = firefly_iii_client.LinksApi(api_client)
     id = '123' # str | The ID of the transaction link.
-    transaction_link_update = firefly_iii_client.TransactionLinkUpdate() # TransactionLinkUpdate | JSON array or formdata with updated link type information. See the model for the exact specifications.
+    transaction_link_update = firefly_iii_client.TransactionLinkUpdate() # TransactionLinkUpdate | JSON array or form-data with updated link type information. See the model for the exact specifications.
     x_trace_id = '40c71bbb-c676-4f24-83cf-cc725d7d7a00' # str | Unique identifier associated with this request. (optional)
 
     try:
@@ -1067,7 +975,7 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The ID of the transaction link. | 
- **transaction_link_update** | [**TransactionLinkUpdate**](TransactionLinkUpdate.md)| JSON array or formdata with updated link type information. See the model for the exact specifications. | 
+ **transaction_link_update** | [**TransactionLinkUpdate**](TransactionLinkUpdate.md)| JSON array or form-data with updated link type information. See the model for the exact specifications. | 
  **x_trace_id** | **str**| Unique identifier associated with this request. | [optional] 
 
 ### Return type

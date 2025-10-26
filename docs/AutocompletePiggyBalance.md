@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency_code** | **str** | Currency code for the currency used by this piggy bank. This will always be the piggy bank&#39;s currency, never the native currency. | [optional] 
-**currency_decimal_places** | **int** | Currency decimal places for the currency used by this piggy bank. This will always be the piggy bank&#39;s currency, never the native currency. | [optional] 
-**currency_id** | **str** | Currency ID for the currency used by this piggy bank. This will always be the piggy bank&#39;s currency, never the native currency. | [optional] 
-**currency_symbol** | **str** | Currency symbol for the currency used by this piggy bank. This will always be the piggy bank&#39;s currency, never the native currency. | [optional] 
+**currency_code** | **str** | Currency code for the currency used by this piggy bank. This will always be the piggy bank&#39;s currency, never the primary currency. | [optional] 
+**currency_decimal_places** | **int** | Currency decimal places for the currency used by this piggy bank. This will always be the piggy bank&#39;s currency, never the primary currency. | [optional] 
+**currency_id** | **str** | Currency ID for the currency used by this piggy bank. This will always be the piggy bank&#39;s currency, never the primary currency. | [optional] 
+**currency_symbol** | **str** | Currency symbol for the currency used by this piggy bank. This will always be the piggy bank&#39;s currency, never the primary currency. | [optional] 
 **id** | **str** |  | 
 **name** | **str** | Name of the piggy bank found by an auto-complete search. | 
 **name_with_balance** | **str** | Name of the piggy bank found by an auto-complete search, including the currently saved amount and the target amount. | [optional] 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**get_webhook_messages**](WebhooksApi.md#get_webhook_messages) | **GET** /v1/webhooks/{id}/messages | Get all the messages of a single webhook.
 [**list_webhook**](WebhooksApi.md#list_webhook) | **GET** /v1/webhooks | List all webhooks.
 [**store_webhook**](WebhooksApi.md#store_webhook) | **POST** /v1/webhooks | Store a new webhook
-[**submit_webook**](WebhooksApi.md#submit_webook) | **POST** /v1/webhooks/{id}/submit | Submit messages for a webhook.
+[**submit_webhook**](WebhooksApi.md#submit_webhook) | **POST** /v1/webhooks/{id}/submit | Submit messages for a webhook.
 [**trigger_transaction_webhook**](WebhooksApi.md#trigger_transaction_webhook) | **POST** /v1/webhooks/{id}/trigger-transaction/{transactionId} | Trigger webhook for a given transaction.
 [**update_webhook**](WebhooksApi.md#update_webhook) | **PUT** /v1/webhooks/{id} | Update existing webhook.
 
@@ -903,8 +903,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **submit_webook**
-> submit_webook(id, x_trace_id=x_trace_id)
+# **submit_webhook**
+> submit_webhook(id, x_trace_id=x_trace_id)
 
 Submit messages for a webhook.
 
@@ -947,9 +947,9 @@ with firefly_iii_client.ApiClient(configuration) as api_client:
 
     try:
         # Submit messages for a webhook.
-        api_instance.submit_webook(id, x_trace_id=x_trace_id)
+        api_instance.submit_webhook(id, x_trace_id=x_trace_id)
     except Exception as e:
-        print("Exception when calling WebhooksApi->submit_webook: %s\n" % e)
+        print("Exception when calling WebhooksApi->submit_webhook: %s\n" % e)
 ```
 
 
@@ -979,7 +979,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK! |  -  |
+**200** | OK. |  -  |
 **204** | No messages to send, so did nothing. |  -  |
 **400** | Bad request |  -  |
 **404** | Page not found |  -  |

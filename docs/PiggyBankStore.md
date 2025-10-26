@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **object_group_id** | **str** | The group ID of the group this object is part of. NULL if no group. | [optional] 
 **object_group_title** | **str** | The name of the group. NULL if no group. | [optional] 
 **order** | **int** |  | [optional] 
-**start_date** | **date** | The date you started with this piggy bank. | [optional] 
+**start_date** | **date** | The date you started with this piggy bank. | 
 **target_amount** | **str** |  | 
 **target_date** | **date** | The date you intend to finish saving money. | [optional] 
 

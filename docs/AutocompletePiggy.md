@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currency_code** | **str** | Currency code for this piggy bank. This will always be the currency of the piggy bank, never the user&#39;s native currency. | [optional] 
-**currency_decimal_places** | **int** | Number of decimal places for the currency used by this piggy bank. This will always be the currency of the piggy bank, never the user&#39;s native currency. | [optional] 
-**currency_id** | **str** | Currency ID for this piggy bank. This will always be the currency of the piggy bank, never the user&#39;s native currency. | [optional] 
-**currency_name** | **str** | Currency name for the currency used by this piggy bank. This will always be the currency of the piggy bank, never the user&#39;s native currency. | [optional] 
+**currency_code** | **str** | Currency code for this piggy bank. This will always be the currency of the piggy bank, never the user&#39;s primary currency. | [optional] 
+**currency_decimal_places** | **int** | Number of decimal places for the currency used by this piggy bank. This will always be the currency of the piggy bank, never the user&#39;s primary currency. | [optional] 
+**currency_id** | **str** | Currency ID for this piggy bank. This will always be the currency of the piggy bank, never the user&#39;s primary currency. | [optional] 
+**currency_name** | **str** | Currency name for the currency used by this piggy bank. This will always be the currency of the piggy bank, never the user&#39;s primary currency. | [optional] 
 **currency_symbol** | **str** |  | [optional] 
 **id** | **str** |  | 
 **name** | **str** | Name of the piggy bank found by an auto-complete search. | 

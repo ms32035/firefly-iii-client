@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**AvailableBudget**](AvailableBudget.md) |  | 
+**attributes** | [**AvailableBudgetProperties**](AvailableBudgetProperties.md) |  | 
 **id** | **str** |  | 
 **type** | **str** | Immutable value | 
 

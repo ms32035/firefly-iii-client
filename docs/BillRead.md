@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Bill**](Bill.md) |  | 
+**attributes** | [**BillProperties**](BillProperties.md) |  | 
 **id** | **str** |  | 
 **type** | **str** | Immutable value | 
 

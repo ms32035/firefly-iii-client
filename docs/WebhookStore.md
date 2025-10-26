@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** | Boolean to indicate if the webhook is active | [optional] 
-**delivery** | [**WebhookDelivery**](WebhookDelivery.md) |  | 
-**response** | [**WebhookResponse**](WebhookResponse.md) |  | 
+**deliveries** | [**List[WebhookDelivery]**](WebhookDelivery.md) |  | [optional] 
+**responses** | [**List[WebhookResponse]**](WebhookResponse.md) |  | [optional] 
 **title** | **str** | A title for the webhook for easy recognition. | 
-**trigger** | [**WebhookTrigger**](WebhookTrigger.md) |  | 
+**triggers** | [**List[WebhookTrigger]**](WebhookTrigger.md) |  | [optional] 
 **url** | **str** | The URL of the webhook. Has to start with &#x60;https&#x60;. | 
 
 ## Example

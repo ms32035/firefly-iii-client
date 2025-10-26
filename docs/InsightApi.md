@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A list of expense accounts and expense details. Each expense acccount has one row per currency. |  -  |
+**200** | A list of expense accounts and expense details. Each expense account has one row per currency. |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
@@ -1519,7 +1519,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A list of revenue accounts and income details. Each revenue acccount has one row per currency. |  -  |
+**200** | A list of revenue accounts and income details. Each revenue account has one row per currency. |  -  |
 **400** | Bad request |  -  |
 **401** | Unauthenticated |  -  |
 **404** | Page not found |  -  |
