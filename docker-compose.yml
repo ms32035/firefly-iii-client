@@ -5,8 +5,7 @@ services:
       args:
         - OPENAPI_TAG=v7.16.0
     volumes:
-      - ./target:/build/target
-      - .:/build/src:ro
+      - .:/build/src
       - ./.generator:/generator
     environment:
       API_VERSION: 6.4.0

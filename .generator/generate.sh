@@ -44,8 +44,10 @@ python3 /generator/postprocess.py /stage
 USER=$(stat -c '%u' /build/src/docker-compose.yml)
 GROUP=$(stat -c '%g' /build/src/docker-compose.yml)
 
+echo 'Clean main directory'
+cd /build/src && find . -maxdepth 1 -not -name '.generator' -not -name 'docker-compose.yml' -not -name 'Dockerfile' -not -name '.git' -not -name '.' -exec rm -rf {} +
 
-cd /build/target && ls -A1 /build/target | xargs rm -rf
-echo 'Copy stage to target'
-cp -r /stage/{.[!.],}* /build/target/
-chown -R $USER:$GROUP /build/target
+echo 'Copy stage to main directory'
+cp -r /stage/{.[!.],}* /build/src/
+chown -R $USER:$GROUP /build/src
+
